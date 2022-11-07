@@ -192,8 +192,8 @@ public class UserServlet extends HttpServlet
     {
         resp.setContentType("image/jpeg");
         HttpSession session = req.getSession();
-        int width = 60;
-        int height = 20;
+        int width = 100 ;
+        int height = 60;
         //设置浏览器不要缓存此图片
         resp.setHeader("Pragma", "No-cache");
         resp.setHeader("Cache-Control", "no-cache");
