@@ -17,10 +17,10 @@
 		<a href="https://space.bilibili.com/388835447/" class="external" target="_blank">Web应用开发技术——宋铁老师</a>
 	</div>
 
-	<c:if test="${sessionScope.accountBean == null}">
+	<c:if test="${sessionScope.user == null}">
 		<div id="Banner"></div>
 	</c:if>
-	<c:if test="${sessionScope.accountBean != null}">
+	<c:if test="${sessionScope.user != null}">
 		<div id="Banner">
 			<img src="../images/banner_dogs.gif">
 		</div>

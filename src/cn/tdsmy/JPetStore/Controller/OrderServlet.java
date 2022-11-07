@@ -1,10 +1,9 @@
 package cn.tdsmy.JPetStore.Controller;
 
-import cn.tdsmy.JPetStore.Entity.CartItem;
-import cn.tdsmy.JPetStore.Entity.Order;
-import cn.tdsmy.JPetStore.Entity.Receiver;
-import cn.tdsmy.JPetStore.Entity.User;
+import cn.tdsmy.JPetStore.Entity.*;
+import cn.tdsmy.JPetStore.Service.LogService;
 import cn.tdsmy.JPetStore.Service.OrderService;
+import cn.tdsmy.JPetStore.Service.impl.LogServiceImpl;
 import cn.tdsmy.JPetStore.Service.impl.OrderServiceImpl;
 
 import javax.servlet.ServletException;
@@ -26,6 +25,7 @@ import java.util.List;
 public class OrderServlet extends HttpServlet
 {
     private OrderService orderService;
+    private LogService logService;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
@@ -44,6 +44,10 @@ public class OrderServlet extends HttpServlet
         if (orderService == null)
         {
             orderService = new OrderServiceImpl();
+        }
+        if (logService == null)
+        {
+            logService = new LogServiceImpl();
         }
 
         String url = req.getPathInfo();
@@ -75,10 +79,13 @@ public class OrderServlet extends HttpServlet
      */
     public void orderSubmit(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
     {
+        UserLog userLog = (UserLog) req.getAttribute("myLog");//日志
         User user = (User) req.getSession().getAttribute("user");
         Receiver receiver = orderService.getReceiver(user.getUsername());
         req.setAttribute("receiver", receiver);
 
+        userLog.setLog("Read", "查询收件人信息，生成订单", "true");
+        logService.addLog(userLog);
         req.getRequestDispatcher("/WEB-INF/jsp/Order/OrderSubmit.jsp").forward(req, resp);
     }
 
@@ -87,6 +94,8 @@ public class OrderServlet extends HttpServlet
      */
     public void orderPay(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
     {
+        UserLog userLog = (UserLog) req.getAttribute("myLog");//日志
+
         String Name = req.getParameter("Name");
         String Phone = req.getParameter("Phone");
         String Country = req.getParameter("Country");
@@ -105,6 +114,8 @@ public class OrderServlet extends HttpServlet
         receiver.setDetailedAddress(Address);
         req.getSession().setAttribute("receiver", receiver);
 
+        userLog.setLog("Other", "跳往支付页面", "true");
+        logService.addLog(userLog);
         req.getRequestDispatcher("/WEB-INF/jsp/Order/OrderPay.jsp").forward(req, resp);
     }
 
@@ -113,6 +124,7 @@ public class OrderServlet extends HttpServlet
      */
     public void newOrder(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
     {
+        UserLog userLog = (UserLog) req.getAttribute("myLog");//日志
         User user = (User) req.getSession().getAttribute("user");
         Order order = new Order();
         String orderID = orderService.createOrderID();
@@ -127,6 +139,9 @@ public class OrderServlet extends HttpServlet
 
         orderService.addOrder(user.getUsername(), order);//插入数据库
         orderService.clearCart(user.getUsername());//清空购物车
+
+        userLog.setLog("Create", "清空购物车,提交订单,orderID=" + orderID, "true");
+        logService.addLog(userLog);
         resp.sendRedirect(req.getContextPath() + "/Order/orderItem?orderID=" + orderID + "&newOrder=true");
     }
 
@@ -136,9 +151,13 @@ public class OrderServlet extends HttpServlet
      */
     public void deleteOrder(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
     {
-        String OrderID = req.getParameter("orderID");
-        orderService.deleteOrder(OrderID);
+        UserLog userLog = (UserLog) req.getAttribute("myLog");//日志
 
+        String orderID = req.getParameter("orderID");
+        orderService.deleteOrder(orderID);
+
+        userLog.setLog("Delete", "Delete除订单，orderID=" + orderID, "true");
+        logService.addLog(userLog);
         resp.sendRedirect(req.getContextPath() + "/Order/orderList");
     }
 
@@ -147,9 +166,12 @@ public class OrderServlet extends HttpServlet
      */
     public void orderList(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
     {
+        UserLog userLog = (UserLog) req.getAttribute("myLog");//日志
         User user = (User) req.getSession().getAttribute("user");
         if (user == null)
         {
+            userLog.setLog("Read", "查看订单列表", "false");
+            logService.addLog(userLog);
             resp.sendRedirect(req.getContextPath() + "/User/showLogin");
         }
         else
@@ -157,6 +179,8 @@ public class OrderServlet extends HttpServlet
             List<Order> orderList = orderService.selectOrderList(user.getUsername());
             req.setAttribute("orderList", orderList);
 
+            userLog.setLog("Read", "查看订单列表", "true");
+            logService.addLog(userLog);
             req.getRequestDispatcher("/WEB-INF/jsp/Order/OrderList.jsp").forward(req, resp);
         }
     }
@@ -167,10 +191,12 @@ public class OrderServlet extends HttpServlet
      */
     public void orderItem(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
     {
-        String param = req.getParameter("orderID");
+        UserLog userLog = (UserLog) req.getAttribute("myLog");//日志
+
+        String orderID = req.getParameter("orderID");
         String newOrder = req.getParameter("newOrder");
 
-        Order order = orderService.selectOrder(param);
+        Order order = orderService.selectOrder(orderID);
         req.setAttribute("order", order);
         if (newOrder.equals("true"))
         {
@@ -181,6 +207,8 @@ public class OrderServlet extends HttpServlet
             req.setAttribute("newOrder", false);
         }
 
+        userLog.setLog("Read", "查看订单详情,orderID=" + orderID, "true");
+        logService.addLog(userLog);
         req.getRequestDispatcher("/WEB-INF/jsp/Order/OrderItem.jsp").forward(req, resp);
     }
 }

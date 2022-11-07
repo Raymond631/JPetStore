@@ -23,7 +23,7 @@
 	</c:if>
 
 	<div id="BackLink">
-		<a href="${pageContext.request.contextPath}">Return to Main Menu</a>
+		<a href="../Pet/homePage">Return to Main Menu</a>
 	</div>
 
 	<div id="CenterForm">

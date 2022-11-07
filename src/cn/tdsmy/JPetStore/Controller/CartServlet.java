@@ -2,8 +2,11 @@ package cn.tdsmy.JPetStore.Controller;
 
 import cn.tdsmy.JPetStore.Entity.CartItem;
 import cn.tdsmy.JPetStore.Entity.User;
+import cn.tdsmy.JPetStore.Entity.UserLog;
 import cn.tdsmy.JPetStore.Service.CartService;
+import cn.tdsmy.JPetStore.Service.LogService;
 import cn.tdsmy.JPetStore.Service.impl.CartServiceImpl;
+import cn.tdsmy.JPetStore.Service.impl.LogServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,6 +28,7 @@ import java.util.List;
 public class CartServlet extends HttpServlet
 {
     private CartService cartService;
+    private LogService logService;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
@@ -45,13 +49,11 @@ public class CartServlet extends HttpServlet
         {
             cartService = new CartServiceImpl();
         }
-        
-        /*
-          req.getContextPath();  //web应用根路径，如/JPetStore_war_exploded
-          req.getServletPath();  //servlet映射路径，如/Cart
-          req.getPathInfo();     //与getServletPath()获取的路径互补，能得到模糊匹配*的路径部分 ，如/cartList
-          req.getRequestURI();   //除去host和端口号之外的所有路径，如/JPetStore_war_exploded/Cart/cartList
-         */
+        if (logService == null)
+        {
+            logService = new LogServiceImpl();
+        }
+
         String url = req.getPathInfo();
         switch (url)
         {
@@ -75,9 +77,12 @@ public class CartServlet extends HttpServlet
      */
     public void cartList(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
     {
+        UserLog userLog = (UserLog) req.getAttribute("myLog");//日志
         User user = (User) req.getSession().getAttribute("user");
         if (user == null)
         {
+            userLog.setLog("Read", "查看购物车", "false");
+            logService.addLog(userLog);
             resp.sendRedirect(req.getContextPath() + "/User/showLogin");
         }
         else
@@ -87,6 +92,8 @@ public class CartServlet extends HttpServlet
             req.getSession().setAttribute("cartItemList", cartItemList);
             req.getSession().setAttribute("allCost", allCost);
 
+            userLog.setLog("Read", "查看购物车", "true");
+            logService.addLog(userLog);
             req.getRequestDispatcher("/WEB-INF/jsp/Cart/Cart.jsp").forward(req, resp);
         }
     }
@@ -97,17 +104,21 @@ public class CartServlet extends HttpServlet
      */
     public void addCartItem(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
     {
+        UserLog userLog = (UserLog) req.getAttribute("myLog");//日志
         User user = (User) req.getSession().getAttribute("user");
         if (user == null)
         {
+            userLog.setLog("Create", "加入购物车", "false");
+            logService.addLog(userLog);
             resp.sendRedirect(req.getContextPath() + "/User/showLogin");
         }
         else
         {
             String itemID = req.getParameter("itemID");
-            int quantity = 1;//默认加入购物车时数量为1
+            cartService.addCartItem(user.getUsername(), itemID, 1);
 
-            cartService.addCartItem(user.getUsername(), itemID, quantity);
+            userLog.setLog("Create", "加入购物车,itemID=" + itemID, "true");
+            logService.addLog(userLog);
             resp.sendRedirect(req.getContextPath() + "/Cart/cartList");
         }
     }
@@ -117,6 +128,7 @@ public class CartServlet extends HttpServlet
      */
     public void updateCart(HttpServletRequest req, HttpServletResponse resp) throws IOException
     {
+        UserLog userLog = (UserLog) req.getAttribute("myLog");//日志
         User user = (User) req.getSession().getAttribute("user");
         Enumeration<String> itemList = req.getParameterNames();
         while (itemList.hasMoreElements())
@@ -125,6 +137,8 @@ public class CartServlet extends HttpServlet
             int quantity = Integer.parseInt(req.getParameter(itemID));
             cartService.updateCart(user.getUsername(), itemID, quantity);
         }
+        userLog.setLog("Update", "修改购物车商品数量", "true");
+        logService.addLog(userLog);
         resp.sendRedirect(req.getContextPath() + "/Cart/cartList");
     }
 
@@ -135,9 +149,13 @@ public class CartServlet extends HttpServlet
      */
     public void removeCartItem(HttpServletRequest req, HttpServletResponse resp) throws IOException
     {
+        UserLog userLog = (UserLog) req.getAttribute("myLog");//日志
         User user = (User) req.getSession().getAttribute("user");
         String itemID = req.getParameter("itemID");
         cartService.removeCartItem(user.getUsername(), itemID);
+
+        userLog.setLog("Delete", itemID.equals("0") ? "清空购物车" : "移出购物车，itemID=" + itemID, "true");
+        logService.addLog(userLog);
         resp.sendRedirect(req.getContextPath() + "/Cart/cartList");
     }
 }
