@@ -83,13 +83,13 @@
         if (flag)
         {
             $(".pre-box").css("transform", "translateX(100%)")
-            $(".pre-box").css("background-color", "rgb(205,228,238)")
+            $(".pre-box").css("background-color", "rgb(96,96,97)")
             $(".img01").attr("src", "../images/login02.jpg")
 
         } else
         {
             $(".pre-box").css("transform", "translateX(0%)")
-            $(".pre-box").css("background-color", "rgb(230,226,224)")
+            $(".pre-box").css("background-color", "rgb(128,128,130)")
             $(".img01").attr("src", "../images/login01.png")
         }
         flag = !flag
