@@ -21,9 +21,10 @@ import java.util.List;
  */
 public class OrderServiceImpl implements OrderService
 {
-    private UserDao userDao;
     private OrderDao orderDao;
-    private CartDao cartDao;
+    private UserDao userDao;//用于查询收件人
+    private CartDao cartDao;//用于清空购物车
+
     private static int num = 1000;//用于生成订单号
 
     @Override

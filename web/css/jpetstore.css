@@ -18,7 +18,7 @@
 }
 
 #Header {
-    background-color: #333;
+    background-color: white;
     color: #eaac00;
 }
 
@@ -92,25 +92,26 @@ body > #Menu {
 #Footer {
     background-color: #333;
     color: #fff;
-    overflow: auto;
+    /*overflow: auto;*/
     /* border-radius: 0 0 10px 10px; */
+    height: 100px;
 }
 
 #PoweredBy {
     width: 50%;
-    height: 9ex;
+    height: 70px;
     margin: 0;
     padding: 10px 0 0 15px;
     float: left;
 }
 
 body > #PoweredBy {
-    height: 9ex;
+    height: 100px;
 }
 
 #Banner {
     width: 50%;
-    height: 9ex;
+    height: 5ex;
     margin: 0;
     padding: 0;
     float: right;
@@ -119,13 +120,14 @@ body > #PoweredBy {
 }
 
 body > #Banner {
-    height: 9ex;
+    height: 5ex;
 }
 
 #Content {
     padding: 15px;
     width: 100%;
-    min-height: 200px;
+    height: 500px;
+    /*min-height: 200px;*/
     border-width: 0;
     clear: both;
     position: relative;
@@ -169,6 +171,7 @@ body > #Banner {
 
 #Main {
     margin: 0;
+    height: 100%;
 }
 
 #Welcome {
@@ -261,4 +264,13 @@ body > #Banner {
 
 .error-msg {
     color: red;
+}
+
+.inChange {
+    margin-left: 22%;
+}
+
+.inChange .inChangeInput {
+    width: 75%;
+    font-size: 25px;
 }

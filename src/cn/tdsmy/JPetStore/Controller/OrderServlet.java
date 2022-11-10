@@ -112,7 +112,8 @@ public class OrderServlet extends HttpServlet
         receiver.setCity(City);
         receiver.setDistrict(District);
         receiver.setDetailedAddress(Address);
-        req.getSession().setAttribute("receiver", receiver);
+
+        req.setAttribute("receiver", receiver);
 
         userLog.setLog("Other", "跳往支付页面", "true");
         logService.addLog(userLog);
@@ -126,6 +127,7 @@ public class OrderServlet extends HttpServlet
     {
         UserLog userLog = (UserLog) req.getAttribute("myLog");//日志
         User user = (User) req.getSession().getAttribute("user");
+
         Order order = new Order();
         String orderID = orderService.createOrderID();
         order.setOrderID(orderID);

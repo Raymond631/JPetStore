@@ -2,6 +2,7 @@ package cn.tdsmy.JPetStore.Dao.impl;
 
 import cn.tdsmy.JPetStore.Dao.UserDao;
 import cn.tdsmy.JPetStore.Dao.Utils.DBUtils;
+import cn.tdsmy.JPetStore.Entity.Profile;
 import cn.tdsmy.JPetStore.Entity.Receiver;
 import cn.tdsmy.JPetStore.Entity.User;
 
@@ -17,6 +18,25 @@ import java.sql.SQLException;
  */
 public class UserDaoImpl implements UserDao
 {
+    @Override
+    public boolean login(User user)
+    {
+        boolean isSuccess = false;
+        String sql = "select * from user where username ='" + user.getUsername() + "' and password ='" + user.getPassword() + "'";
+        try (Connection connection = DBUtils.getConnection(); PreparedStatement statement = connection.prepareStatement(sql); ResultSet res = statement.executeQuery(sql))
+        {
+            if (res.next())//用户名和密码匹配成功
+            {
+                isSuccess = true;
+            }
+        }
+        catch (SQLException e)
+        {
+            throw new RuntimeException(e);
+        }
+        return isSuccess;
+    }
+
     @Override
     public boolean register(User user)
     {
@@ -41,6 +61,25 @@ public class UserDaoImpl implements UserDao
                 {
                     statement.executeUpdate();
                 }
+
+                //偏好初始化
+                Profile profile = new Profile();
+                String value = "'" + user.getUsername() + "','" + profile.getLanguagePreference() + "','" + profile.getFavouriteCategory() + "','" + profile.getEnableMyList() + "','" + profile.getEnableMyBanner() + "'";
+                String sql3 = "insert into profile (username,languagePreference,favouriteCategory,enableMyList,enableMyBanner) values (" + value + ")";
+                try (PreparedStatement statement = connection.prepareStatement(sql3))
+                {
+                    statement.executeUpdate();
+                }
+
+                //收件人初始化
+                Receiver receiver = new Receiver();
+                String value2 = "'" + user.getUsername() + "','" + receiver.getReceiverName() + "','" + receiver.getEmail() + "','" + receiver.getPhoneNumber() + "','" + receiver.getCountry()
+                        + "','" + receiver.getProvince() + "','" + receiver.getCity() + "','" + receiver.getDistrict() + "','" + receiver.getDetailedAddress() + "'";
+                String sql4 = "insert into receiver (username,receiverName,email,phoneNumber,country,province,city,district,detailedAddress) values (" + value2 + ")";
+                try (PreparedStatement statement = connection.prepareStatement(sql4))
+                {
+                    statement.executeUpdate();
+                }
             }
 
         }
@@ -49,25 +88,6 @@ public class UserDaoImpl implements UserDao
             throw new RuntimeException(e);
         }
         return isSuccess;//返回是否注册成功
-    }
-
-    @Override
-    public boolean login(User user)
-    {
-        boolean isSuccess = false;
-        String sql = "select * from user where username ='" + user.getUsername() + "' and password ='" + user.getPassword() + "'";
-        try (Connection connection = DBUtils.getConnection(); PreparedStatement statement = connection.prepareStatement(sql); ResultSet res = statement.executeQuery(sql))
-        {
-            if (res.next())//用户名和密码匹配成功
-            {
-                isSuccess = true;
-            }
-        }
-        catch (SQLException e)
-        {
-            throw new RuntimeException(e);
-        }
-        return isSuccess;
     }
 
     @Override
@@ -106,9 +126,50 @@ public class UserDaoImpl implements UserDao
     }
 
     @Override
-    public void updateUser(User user)
+    public Profile getProfile(String username)
     {
-        Receiver receiver = user.getReceiver();
+        Profile profile = new Profile();
+        String sql = "select * from profile where username = '" + username + "'";
+        try (Connection connection = DBUtils.getConnection(); PreparedStatement statement = connection.prepareStatement(sql); ResultSet res = statement.executeQuery(sql))
+        {
+            if (res.next())
+            {
+                String languagePreference = res.getString("languagePreference");
+                String favouriteCategory = res.getString("favouriteCategory");
+                String enableMyList = res.getString("enableMyList");
+                String enableMyBanner = res.getString("enableMyBanner");
+
+                profile.setLanguagePreference(languagePreference);
+                profile.setFavouriteCategory(favouriteCategory);
+                profile.setEnableMyList(enableMyList);
+                profile.setEnableMyBanner(enableMyBanner);
+            }
+        }
+        catch (SQLException e)
+        {
+            throw new RuntimeException(e);
+        }
+        return profile;
+    }
+
+
+    @Override
+    public void changePassword(User user)
+    {
+        String sql = "update user set password ='" + user.getPassword() + "' where username ='" + user.getUsername() + "'";
+        try (Connection connection = DBUtils.getConnection(); PreparedStatement statement = connection.prepareStatement(sql))
+        {
+            statement.executeUpdate();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void updateReceiver(String username, Receiver receiver)
+    {
         String receiverName = receiver.getReceiverName();
         String email = receiver.getEmail();
         String phoneNumber = receiver.getPhoneNumber();
@@ -118,24 +179,30 @@ public class UserDaoImpl implements UserDao
         String district = receiver.getDistrict();
         String detailedAddress = receiver.getDetailedAddress();
 
-        try (Connection connection = DBUtils.getConnection())
+        String sql = "update receiver set receiverName='" + receiverName + "',email ='" + email + "',phoneNumber='" + phoneNumber
+                + "',country='" + country + "',province='" + province + "',city='" + city + "',district='" + district + "',detailedAddress='" + detailedAddress + "' where username ='" + username + "'";
+        try (Connection connection = DBUtils.getConnection(); PreparedStatement statement = connection.prepareStatement(sql))
         {
-            String sql = "update user set password ='" + user.getPassword() + "' where username ='" + user.getUsername() + "'";
-            try (PreparedStatement statement = connection.prepareStatement(sql))
-            {
-                statement.executeUpdate();
-            }
-
-            String sql2 = "update receiver set receiverName='" + receiverName + "',email ='" + email + "',phoneNumber='" + phoneNumber
-                    + "',country='" + country + "',province='" + province + "',city='" + city + "',district='" + district + "',detailedAddress='" + detailedAddress + "'";
-            try (PreparedStatement statement = connection.prepareStatement(sql2))
-            {
-                statement.executeUpdate();
-            }
+            statement.executeUpdate();
         }
         catch (Exception e)
         {
             e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void updateProfile(String username, Profile profile)
+    {
+        String sql = "update receiver set languagePreference='" + profile.getLanguagePreference() + "',favouriteCategory ='"
+                + profile.getFavouriteCategory() + "',enableMyList='" + profile.getEnableMyList() + "',enableMyBanner='" + profile.getEnableMyBanner() + "' where username ='" + username + "'";
+        try (Connection connection = DBUtils.getConnection(); PreparedStatement statement = connection.prepareStatement(sql))
+        {
+            statement.executeUpdate();
+        }
+        catch (SQLException e)
+        {
+            throw new RuntimeException(e);
         }
     }
 }

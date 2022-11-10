@@ -36,15 +36,15 @@
 			</colgroup>
 			<tr>
 				<td>Receiver Name:</td>
-				<td>${sessionScope.receiver.receiverName}</td>
+				<td>${requestScope.receiver.receiverName}</td>
 			</tr>
 			<tr>
 				<td>Phone Number:</td>
-				<td>${sessionScope.receiver.phoneNumber}</td>
+				<td>${requestScope.receiver.phoneNumber}</td>
 			</tr>
 			<tr>
 				<td>Receiver Address:</td>
-				<td>${sessionScope.receiver.country} ${sessionScope.receiver.province} ${sessionScope.receiver.city} ${sessionScope.receiver.district} ${sessionScope.receiver.detailedAddress}</td>
+				<td>${requestScope.receiver.country} ${requestScope.receiver.province} ${requestScope.receiver.city} ${requestScope.receiver.district} ${requestScope.receiver.detailedAddress}</td>
 			</tr>
 		</table>
 

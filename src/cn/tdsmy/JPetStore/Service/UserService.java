@@ -1,5 +1,6 @@
 package cn.tdsmy.JPetStore.Service;
 
+import cn.tdsmy.JPetStore.Entity.Profile;
 import cn.tdsmy.JPetStore.Entity.Receiver;
 import cn.tdsmy.JPetStore.Entity.User;
 
@@ -10,11 +11,19 @@ import cn.tdsmy.JPetStore.Entity.User;
  */
 public interface UserService
 {
-    public boolean register(User user);
-
     public boolean login(User user);
+
+    public boolean register(User user);
+    
 
     public Receiver getReceiver(String username);
 
-    public void updateUser(User user);
+    public Profile getProfile(String username);
+
+
+    public void changePassword(User user);
+
+    public void updateReceiver(String username, Receiver receiver);
+
+    public void updateProfile(String username, Profile profile);
 }

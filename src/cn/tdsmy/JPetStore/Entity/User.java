@@ -14,17 +14,18 @@ public class User implements Serializable
     private String username;
     private String password;
     private Receiver receiver;
+    private Profile profile;
 
-    public User(String username, String password, Receiver receiver)
+    public User(String username, String password, Receiver receiver, Profile profile)
     {
         this.username = username;
         this.password = password;
         this.receiver = receiver;
+        this.profile = profile;
     }
 
     public User()
     {
-        receiver = new Receiver();
     }
 
     public String getUsername()
@@ -55,5 +56,15 @@ public class User implements Serializable
     public void setReceiver(Receiver receiver)
     {
         this.receiver = receiver;
+    }
+
+    public Profile getProfile()
+    {
+        return profile;
+    }
+
+    public void setProfile(Profile profile)
+    {
+        this.profile = profile;
     }
 }

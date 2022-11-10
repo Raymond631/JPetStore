@@ -6,6 +6,7 @@
         <entry key="file://$PROJECT_DIR$/web/WEB-INF/jsp/Cart.jsp" value="file://$PROJECT_DIR$/web/WEB-INF/jsp" />
         <entry key="file://$PROJECT_DIR$/web/WEB-INF/jsp/Pet/Category.jsp" value="file://$PROJECT_DIR$/web" />
         <entry key="file://$PROJECT_DIR$/web/WEB-INF/jsp/Pet/HomePage.jsp" value="file://$PROJECT_DIR$/web" />
+        <entry key="file://$PROJECT_DIR$/web/WEB-INF/jsp/Pet/PetProduct.jsp" value="file://$PROJECT_DIR$/web/WEB-INF/jsp/Pet" />
         <entry key="file://$PROJECT_DIR$/web/WEB-INF/jsp/common/top.jsp" value="file://$PROJECT_DIR$/web" />
         <entry key="file://$PROJECT_DIR$/web/WEB-INF/jsp/top.jsp" value="file://$PROJECT_DIR$/web" />
         <entry key="file://$PROJECT_DIR$/web/css/Login.css" value="file://$PROJECT_DIR$/web" />
