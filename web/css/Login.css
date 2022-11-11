@@ -91,11 +91,12 @@ input:focus::placeholder{
 }
 
 .title-box{
-    height: 200px;
+    height: 100px;
     line-height: 300px;
 }
 
 .title-box h1{
+    margin-top: 100px;
     text-align: center;
     letter-spacing: 5px;
     color: white;

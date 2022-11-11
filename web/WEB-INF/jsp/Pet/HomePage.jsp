@@ -53,20 +53,20 @@
         <%--		</div>--%>
         <div class="layout">
             <ul>
-                <li><a href="../Pet/petList?category=fish">
-                    Fish
+                <li><a href="../Pet/petList?category=cats">
+                    <img style="height: 100%; width:100%" src="../images/cat.png">
                 </a></li>
                 <li><a href="../Pet/petList?category=dogs">
-                    Dogs
+                    <img style="height: 100%; width:100%" src="../images/dog.png">
                 </a></li>
                 <li><a href="../Pet/petList?category=reptiles">
-                    Reptiles
+                    <img style="height: 100%; width:100%" src="../images/reptiles.jpg">
                 </a></li>
-                <li><a href="../Pet/petList?category=cats">
-                    Cats
+                <li><a href="../Pet/petList?category=fish">
+                    <img style="height: 100%; width:100%" src="../images/fish.png">
                 </a></li>
                 <li><a href="../Pet/petList?category=birds">
-                    Birds
+                    <img style="height: 100%; width:100%" src="../images/bird.jpg">
                 </a></li>
             </ul>
         </div>
