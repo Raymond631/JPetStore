@@ -14,7 +14,7 @@
 
 <%@include file="../Common/Top.jsp" %>
 
-<div id="Content">
+<div class="Content">
 	<div id="Catalog">
 
 		<h3>My Orders</h3>
@@ -44,8 +44,6 @@
 		</table>
 	</div>
 </div>
-
-<%@include file="../Common/Bottom.jsp" %>
 
 </body>
 </html>

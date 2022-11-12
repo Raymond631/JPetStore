@@ -16,14 +16,10 @@
 
 <%@include file="../Common/Top.jsp" %>
 
-<div id="Content">
+<div class="Content">
 
 	<div id="MessageBar">
 		<p>Please confirm the information below and then press "Pay"...</p>
-	</div>
-
-	<div id="BackLink">
-		<a href="../Pet/homePage">Return to Main Menu</a>
 	</div>
 
 	<div id="CenterForm">
@@ -36,15 +32,15 @@
 			</colgroup>
 			<tr>
 				<td>Receiver Name:</td>
-				<td>${requestScope.receiver.receiverName}</td>
+				<td>${sessionScope.receiver.receiverName}</td>
 			</tr>
 			<tr>
 				<td>Phone Number:</td>
-				<td>${requestScope.receiver.phoneNumber}</td>
+				<td>${sessionScope.receiver.phoneNumber}</td>
 			</tr>
 			<tr>
 				<td>Receiver Address:</td>
-				<td>${requestScope.receiver.country} ${requestScope.receiver.province} ${requestScope.receiver.city} ${requestScope.receiver.district} ${requestScope.receiver.detailedAddress}</td>
+				<td>${sessionScope.receiver.country} ${sessionScope.receiver.province} ${sessionScope.receiver.city} ${sessionScope.receiver.district} ${sessionScope.receiver.detailedAddress}</td>
 			</tr>
 		</table>
 
@@ -123,9 +119,9 @@
 					<img id="Pic" src="../images/Alipay.jpg" width="300"/>
 					<div>
 						<%--跳往下一个界面--%>
-						<button class="determine">支付成功</button>
+						<button class="determine">Success</button>
 						<%--关闭弹窗--%>
-						<button class="cancel">取消支付</button>
+						<button class="cancel">Cancel</button>
 					</div>
 				</div>
 			</div>
@@ -175,8 +171,6 @@
 
 	</div>
 </div>
-
-<%@include file="../Common/Bottom.jsp" %>
 
 </body>
 </html>

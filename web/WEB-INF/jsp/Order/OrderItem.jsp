@@ -14,17 +14,13 @@
 
 <%@include file="../Common/Top.jsp" %>
 
-<div id="Content">
+<div class="Content">
 
 	<c:if test="${requestScope.newOrder}">
 		<div id="MessageBar">
 			<p>Thank you, your order has been submitted.</p>
 		</div>
 	</c:if>
-
-	<div id="BackLink">
-		<a href="../Pet/homePage">Return to Main Menu</a>
-	</div>
 
 	<div id="CenterForm">
 
@@ -102,12 +98,13 @@
 		</table>
 
 		<div class="button-bar">
-			<button type="button" class="button" onclick="location.href='../Order/deleteOrder?orderID=${requestScope.order.getOrderID()}'">Delete Order</button>
+			<button type="button" class="button"
+			        onclick="location.href='../Order/deleteOrder?orderID=${requestScope.order.getOrderID()}'">Delete
+				Order
+			</button>
 		</div>
 	</div>
 </div>
-
-<%@include file="../Common/Bottom.jsp" %>
 
 </body>
 </html>

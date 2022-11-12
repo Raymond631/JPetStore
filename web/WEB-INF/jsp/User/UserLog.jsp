@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Raymond Li
@@ -7,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
 	<title>用户日志</title>
@@ -20,13 +20,14 @@
 		<div class="topLeft">
 			<div>
 				<span>USER LOGS</span>
-				<span><a href="../Pet/homePage">Return to HomePage</a></span>
+				<span style="margin-left: 800px"></span>
+				<span><a href="../User/signOut">Return to HomePage</a></span>
 			</div>
 		</div>
 	</div>
 	<div class="bottom">
-		<div class="container">
-			<table id="example" class="table table-hover responsive nowrap" style="width:100%;overflow-y: scroll">
+		<div class="container" style=" overflow-y:auto; overflow-x:auto; height:625px;">
+			<table id="example" class="table table-hover responsive nowrap" style="width:99%;overflow-y: scroll">
 				<tr>
 					<th>ID</th>
 					<th>Username</th>

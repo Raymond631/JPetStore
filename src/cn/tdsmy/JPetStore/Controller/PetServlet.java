@@ -114,7 +114,7 @@ public class PetServlet extends HttpServlet
 
     /**
      * get请求
-     * 参数/petProduct?productID=
+     * 参数/petProduct?productID= &search=
      */
     public void petProduct(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
     {

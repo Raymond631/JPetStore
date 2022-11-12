@@ -10,8 +10,6 @@
 <head>
 	<title>Title</title>
 	<link rel="stylesheet" type="text/css" href="../css/category.css"/>
-	<script>
-	</script>
 </head>
 <body>
 <%@include file="../Common/Top.jsp" %>
@@ -32,7 +30,6 @@
 		</div>
 	</div>
 
-	<%--    这里面放一个table吧--%>
 	<div class="right">
 		<c:forEach items="${requestScope.product.getItemMap()}" var="item">
 			<div class="box">
@@ -43,18 +40,17 @@
 				</div>
 				<div class="boxMiddle">
 					<div class="ID">${item.key}</div>
-					<div class="stock">库存：${item.value.getStock()}</div>
+					<div class="stock">stock：${item.value.getStock()}</div>
 					<span style="padding-left: -120px;padding-top: 140px">$</span>
 					<span class="itemPrice">${item.value.getListPrice()}</span>
 				</div>
 				<div class="boxRight">
 					<a class="toCart" href="../Cart/addCartItem?itemID=${item.key}"> Add to cart</a>
-						<%--                        href="../Cart/addCartItem?itemID=${item.key}"--%>
 				</div>
 			</div>
 		</c:forEach>
 	</div>
 </div>
-<%@include file="../Common/Bottom.jsp" %>
+
 </body>
 </html>

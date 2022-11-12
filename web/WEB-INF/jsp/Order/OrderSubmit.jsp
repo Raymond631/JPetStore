@@ -14,7 +14,7 @@
 
 <%@include file="../Common/Top.jsp" %>
 
-<div id="Content">
+<div class="Content">
 	<div id="CenterForm">
 
 		<form method="post" action="../Order/orderPay">
@@ -110,8 +110,6 @@
 		</form>
 	</div>
 </div>
-
-<%@include file="../Common/Bottom.jsp" %>
 
 </body>
 </html>

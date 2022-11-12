@@ -14,11 +14,7 @@
 
 <%@include file="../Common/Top.jsp" %>
 
-<div id="Content">
-
-	<div id="BackLink">
-		<a href="../Pet/homePage">Return to Main Menu</a>
-	</div>
+<div class="Content">
 
 	<div id="Catalog">
 		<div id="Cart">
@@ -52,15 +48,15 @@
 					<c:if test="${!sessionScope.cartItemList.isEmpty()}">
 						<c:forEach items="${sessionScope.cartItemList}" var="cartItem">
 							<tr>
-									<%--下面的href需要修改--%>
-								<td><a href="catalog/items/EST-1">${cartItem.itemID}</a></td>
+								<td>${cartItem.itemID}</td>
 								<td>${cartItem.productID}</td>
 								<td>${cartItem.description}</td>
 								<td>${cartItem.stock}</td>
 								<td><input type="number" name="${cartItem.itemID}" size="3" maxlength="3" value="${cartItem.quantity}"/></td>
 								<td>$${cartItem.listPrice}</td>
 								<td>$${(cartItem.listPrice)*(cartItem.quantity)}</td>
-								<td><a class="button" href="../Cart/removeCartItem?itemID=${cartItem.itemID}">Remove</a></td>
+								<td><a class="button" href="../Cart/removeCartItem?itemID=${cartItem.itemID}">Remove</a>
+								</td>
 							</tr>
 						</c:forEach>
 						<tr>
@@ -77,36 +73,14 @@
 				</table>
 			</form>
 
-			<%--此处应添加js判断库存是否满足需求--%>
 			<c:if test="${!sessionScope.cartItemList.isEmpty()}">
 				<a class="button" href="../Order/orderSubmit">Proceed to Checkout</a>
 			</c:if>
 		</div>
 
-
-		<c:if test="${sessionScope.accountBean != null}">
-			<div id="MyList">
-				<div class="panel">
-					<h4>Pet Favorites </h4>
-					<p>Shop for more of your favorite pets here.</p>
-					<ul>
-							<%--下面的href需要修改--%>
-						<li><a href="catalog/products/K9-BD-01">Bulldog</a></li>
-						<li><a href="catalog/products/K9-PO-02">Poodle</a></li>
-						<li><a href="catalog/products/K9-DL-01">Dalmation</a></li>
-						<li><a href="catalog/products/K9-RT-01">Golden Retriever</a></li>
-						<li><a href="catalog/products/K9-RT-02">Labrador Retriever</a></li>
-						<li><a href="catalog/products/K9-CW-01">Chihuahua</a></li>
-					</ul>
-				</div>
-			</div>
-		</c:if>
-
 		<div id="Separator">&nbsp;</div>
 	</div>
 </div>
-
-<%@include file="../Common/Bottom.jsp" %>
 
 </body>
 </html>

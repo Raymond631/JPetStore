@@ -1,12 +1,12 @@
 .mainBox {
-    width: 100%;
+    width: 90%;
     height: 100%;
     display: flex;
 }
 
 .mainBox .left {
     margin-top: 28px;
-    margin-left: 50px;
+    margin-left: 130px;
     width: 40%;
     height: 88%;
     background-color: rgba(255, 255, 255, 0);
@@ -16,7 +16,7 @@
 
 .mainBox .left .left-top {
     margin-top: 10px;
-    margin-left: 30px;
+    margin-left: 80px;
     margin-bottom: 20px;
     width: 90%;
     height: 15%;
@@ -41,7 +41,7 @@
 .mainBox .left .left-top .info .userName {
     margin-top: 0px;
     margin-left: 20px;
-    width: 90%;
+    width: 80%;
     height: 90%;
     /*border: 1px solid black;*/
     /*border-radius: 10px;*/
@@ -67,15 +67,24 @@
     margin-left: 20px;
     width: 20%;
     height: 60%;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     border-radius: 10px;
 }
 
+/*.mainBox .left .left-top .changeButton {*/
+/*    !*margin-top: 20px;*!*/
+/*    !*margin-left: 20px;*!*/
+/*    width: 40%;*/
+/*    height: 70%;*/
+/*    !*border: 1px solid black;*!*/
+/*    border-radius: 10px;*/
+/*}*/
+
 .mainBox .left .left-bottom {
-    margin-top: 20px;
-    margin-left: 30px;
+    margin-top: 25px;
+    margin-left: 80px;
     width: 90%;
-    height: 65%;
+    height: 68%;
     border: 1px solid black;
     border-radius: 20px;
     /*background-color: lightblue;*/
@@ -85,7 +94,7 @@
 }
 
 .mainBox .left .left-bottom .saveProfile {
-    margin-left: 30%;
+    margin-left: 25%;
     background-color: darkgreen;
     height: 10%;
     width: 200px;
@@ -94,7 +103,7 @@
 }
 
 .mainBox .left .left-bottom .frontProfile {
-    margin-top: 35px;
+    margin-top: 5px;
     font-size: 18px;
     /*margin-left: 20px;*/
     width: 35%;
@@ -137,19 +146,19 @@
 }
 
 .mainBox .right {
-    margin-left: 48px;
+    margin-left: 88px;
     margin-top: 28px;
-    width: 50%;
+    width: 60%;
     height: 90%;
     /*border: 1px solid black;*/
     /*border-radius: 20px;*/
 }
 
 .mainBox .right .account {
-    margin-top: 0px;
-    margin-left: 10px;
-    width: 90%;
-    height: 92%;
+    margin-top: 10px;
+    margin-left: 100px;
+    width: 98%;
+    height: 96.5%;
     border: 1px solid black;
     border-radius: 20px;
     background-color: white;

@@ -102,7 +102,7 @@ public class UserServlet extends HttpServlet
         UserLog userLog = (UserLog) req.getAttribute("myLog");//日志
         userLog.setLog("Other", "跳往注册界面", "true");
         logService.addLog(userLog);
-        req.getRequestDispatcher("/WEB-INF/jsp/User/Login.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/jsp/User/Register.jsp").forward(req, resp);
     }
 
     public void register(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
@@ -179,6 +179,7 @@ public class UserServlet extends HttpServlet
                 {
                     userLog.setLog("Read", "管理员查看用户日志" + username, "true");
                     logService.addLog(userLog);
+                    req.getSession().setAttribute("user", user);//通过session保持登录状态
                     resp.sendRedirect(req.getContextPath() + "/User/userLog");
                 }
                 else
@@ -215,9 +216,9 @@ public class UserServlet extends HttpServlet
     {
         UserLog userLog = (UserLog) req.getAttribute("myLog");//日志
         User user = (User) req.getSession().getAttribute("user");
-        Receiver receiver = userService.getReceiver(user.getUsername());
-        req.setAttribute("receiver", receiver);
-
+        user.setReceiver(userService.getReceiver(user.getUsername()));
+        user.setProfile((userService.getProfile(user.getUsername())));
+        req.getSession().setAttribute("user", user);
         userLog.setLog("Read", "查看个人中心", "true");
         logService.addLog(userLog);
         req.getRequestDispatcher("/WEB-INF/jsp/User/PersonalCenter.jsp").forward(req, resp);
@@ -295,11 +296,11 @@ public class UserServlet extends HttpServlet
         Graphics g = image.getGraphics();
 
         //产生随机验证码
-        String chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String chars = "23456789ABCDEFGHJKLMNPQRSTUVWXYZ";//去掉了01IO
         char[] rands = new char[4];
         for (int i = 0; i < 4; i++)
         {
-            int rand = (int) (Math.random() * 36);
+            int rand = (int) (Math.random() * 32);
             rands[i] = chars.charAt(rand);
 
         }
@@ -344,8 +345,12 @@ public class UserServlet extends HttpServlet
 
     public void userLog(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
     {
-        List<UserLog> userLogList = logService.getLog();
-        req.setAttribute("userLogList", userLogList);
-        req.getRequestDispatcher("/WEB-INF/jsp/User/UserLog.jsp").forward(req, resp);
+        User user = (User) req.getSession().getAttribute("user");
+        if (user.getUsername().equals("root"))//防止普通用户直接访问
+        {
+            List<UserLog> userLogList = logService.getLog();
+            req.setAttribute("userLogList", userLogList);
+            req.getRequestDispatcher("/WEB-INF/jsp/User/UserLog.jsp").forward(req, resp);
+        }
     }
 }

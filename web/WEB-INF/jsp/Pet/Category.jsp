@@ -17,7 +17,7 @@
 <%@include file="../Common/Top.jsp" %>
 
 <div class="mainBox">
-	<div style="margin-left: -120px;margin-right: 10px">
+	<div style="margin-left: 0;margin-right: -10px">
 		<h2>${sessionScope.category}</h2>
 	</div>
 	<div class="center" id="centerContent">
@@ -40,6 +40,5 @@
 	</div>
 </div>
 
-<%@include file="../Common/Bottom.jsp" %>
 </body>
 </html>

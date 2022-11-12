@@ -152,7 +152,6 @@ public class UserDaoImpl implements UserDao
         return profile;
     }
 
-
     @Override
     public void changePassword(User user)
     {
@@ -194,7 +193,7 @@ public class UserDaoImpl implements UserDao
     @Override
     public void updateProfile(String username, Profile profile)
     {
-        String sql = "update receiver set languagePreference='" + profile.getLanguagePreference() + "',favouriteCategory ='"
+        String sql = "update profile set languagePreference='" + profile.getLanguagePreference() + "',favouriteCategory ='"
                 + profile.getFavouriteCategory() + "',enableMyList='" + profile.getEnableMyList() + "',enableMyBanner='" + profile.getEnableMyBanner() + "' where username ='" + username + "'";
         try (Connection connection = DBUtils.getConnection(); PreparedStatement statement = connection.prepareStatement(sql))
         {

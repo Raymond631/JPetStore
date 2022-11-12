@@ -123,9 +123,11 @@ body > #Banner {
     height: 5ex;
 }
 
-#Content {
+.Content {
     padding: 15px;
-    width: 100%;
+    /*width: 80%;*/
+    /*margin-left: 16%;*/
+    margin-left: 130px;
     height: 500px;
     /*min-height: 200px;*/
     border-width: 0;
@@ -134,30 +136,30 @@ body > #Banner {
     background-color: #fff;
 }
 
-#Content h3 {
+.Content h3 {
     text-align: left;
 }
 
-#Content table {
+.Content table {
     border-collapse: collapse;
     border-spacing: 0;
     margin-left: auto;
     margin-right: auto;
 }
 
-#Content table td {
+.Content table td {
     vertical-align: middle;
 }
 
-#Content table td .button {
+.Content table td .button {
     margin: 0;
 }
 
-#Content table td input, #Content table td select {
+.Content table td input, .Content table td select {
     margin: 0;
 }
 
-#Content #CenterForm {
+.Content #CenterForm {
     width: 60%;
     min-width: 680px;
     margin: 0 auto;
@@ -169,7 +171,7 @@ body > #Banner {
     height: 0;
 }
 
-#Main {
+.Main {
     margin: 0;
     height: 100%;
 }

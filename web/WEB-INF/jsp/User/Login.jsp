@@ -6,18 +6,12 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<title>Login</title>
-	<link rel="stylesheet" type="text/css" href="../css/Login.css">
-	<title>登录界面</title>
-	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/Login.css"/>
+	<title>登录</title>
 	<script>
         function check()
         {
@@ -52,101 +46,67 @@
             console.log(result);
             // return false;
             return result;
-            // if (name == "root" && pass == "123") {
-            //     console.log("yeap");
-            //     // window.location.href = '../User/root';
-            //     return false;
-            // }
         }
 
         function newVerification()
         {
             let image = document.getElementById("verificationCode");
-            image.src = "../User/verificationCode";
+            image.src = "../User/verificationCode?" + new Date().getMilliseconds();
         }
 
 	</script>
 </head>
+<body style="background-image: url('../images/login_background.jpg');background-size: cover">
 
-<body>
-<%--<%@ include file="../Common/Top.jsp" %>--%>
-
-<div class="all">
-	<div class="box">
-		<div class="pre-box">
-			<h1>WELCOME</h1>
-			<p>JOIN US!</p>
-			<div class="img-box">
-				<img src="" alt="" class="img01">
-			</div>
-		</div>
-
-		<%--注册--%>
-		<div class="register-form">
-			<div class="title-box">
-				<h1>Register</h1>
-			</div>
-			<form action="../User/register" method="post" class="input-box">
-				<input type="text" name="username" placeholder="ID">
-				<input type="password" name="password" placeholder="password">
-				<input type="password" placeholder="Repeat password">
-				<div class="vf">
-					<input type="text" name="vCode" placeholder="verificationCode"/>
-					<a href="../User/showLogin"><img border="0" src="../User/verificationCode" name="checkcode"></a>
-				</div>
-				<div style="color: red;text-align: right">${requestScope.messageBox}</div>
-				<input type="submit" class="btn" value="Register">
-			</form>
-			<div class="btn-box">
-				<p onclick="mySwitch()">Have an account already? TO Login!</p>
-			</div>
-		</div>
-
-		<%--登录--%>
-		<div class="login-form">
-			<div class="title-box">
-				<h1>Login</h1>
-			</div>
-
-			<form action="../User/login" method="post" class="input-box" name="loginForm">
-				<input type="text" name="username" placeholder="ID" id="username">
-				<span style="color: red;" id="nameNull"></span>
-				<input type="password" name="password" placeholder="password" id="password">
-				<span style="color: red;" id="passwordNull"></span>
-				<div class="vf">
-					<input type="text" name="vCode" placeholder="verificationCode"/>
-					<a href="../User/showLogin"><img border="0" src="../User/verificationCode" name="checkcode"></a>
-				</div>
-				<div style="color: red;text-align: right">${requestScope.messageBox}</div>
-				<input type="submit" class="btn" value="Login" onclick="return check();">
-			</form>
-
-			<div class="btn-box">
-				<p onclick="mySwitch()">Need an account? Register Now!</p>
-			</div>
-		</div>
-
+<div class="mainbox">
+	<div class="boxTop">
+		<h1>
+			<span>L</span>
+			<span>O</span>
+			<span>G</span>
+			<span>I</span>
+			<span>N</span>
+		</h1>
 	</div>
+
+    <div class="boxBottom">
+        <form action="../User/login" method="post" class="" name="loginForm">
+            <%--用户名--%>
+            <div class="content">
+                <div class="together">
+                    <div class="front">ID</div>
+                    <input type="text" class="middle" name="username" id="username">
+                </div>
+                <div class="back" style="color: red;" id="nameNull"></div>
+            </div>
+            <%--密码--%>
+            <div class="content">
+                <div class="together">
+                    <div class="front">Password</div>
+                    <input type="password" class="middle" name="password" id="password">
+                </div>
+                <div class="back" style="color: red;" id="passwordNull"></div>
+            </div>
+            <%--验证码--%>
+            <div class="content">
+                <div class="together" style="border: 1px solid rgba(255,255,255,0)">
+                    <div>
+                        <input type="text"
+                               style=" background-color: transparent;border:2px solid black;height:50px;width: 128%; top:0;border-radius: 10px;"
+                               name="vCode"/>
+                    </div>
+                    <a href="#"><img border="0" width="150px" style="margin-left: 80px;" id=" verificationCode"
+                                     onclick="newVerification()"
+                                     src="../User/verificationCode" name="checkcode"></a>
+                </div>
+            </div>
+            <div style="color: red;margin-top: 5px;text-align: center">${requestScope.messageBox}</div>
+            <input type="submit" class="button" value="Login" onclick="return check();">
+        </form>
+        <div style="width: 120px;height:23px"><a href="../User/showRegister">to Register</a></div>
+    </div>
 </div>
 
-<script>
-    let flag = true
-    const mySwitch = () =>
-    {
-        if (flag)
-        {
-            $(".pre-box").css("transform", "translateX(100%)")
-            $(".pre-box").css("background-color", "rgb(96,96,97)")
-            $(".img01").attr("src", "../images/login02.jpg")
-
-        } else
-        {
-            $(".pre-box").css("transform", "translateX(0%)")
-            $(".pre-box").css("background-color", "rgb(128,128,130)")
-            $(".img01").attr("src", "../images/login01.png")
-        }
-        flag = !flag
-    }
-</script>
+</div>
 </body>
 </html>

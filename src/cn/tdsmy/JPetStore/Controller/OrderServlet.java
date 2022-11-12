@@ -113,7 +113,7 @@ public class OrderServlet extends HttpServlet
         receiver.setDistrict(District);
         receiver.setDetailedAddress(Address);
 
-        req.setAttribute("receiver", receiver);
+        req.getSession().setAttribute("receiver", receiver);
 
         userLog.setLog("Other", "跳往支付页面", "true");
         logService.addLog(userLog);
