@@ -146,7 +146,7 @@
             {
                 originFalse.innerText = "";
                 console.log("ok");
-                if (newPassword == confirmNewPassword)
+                if (newPassword == confirmNewPassword && newPassword != null)
                 {
                     console.log("ajax");
                     const xhr = new XMLHttpRequest();

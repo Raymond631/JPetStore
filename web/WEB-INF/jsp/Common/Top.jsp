@@ -25,6 +25,7 @@
 	</div>
 
 	<div class="top-cover">
+
 		<form action="../Pet/searchPet">
 			<div class="tb">
 				<div class="td"><input type="text" name="keyword" placeholder="Product Search" required></div>
@@ -35,6 +36,7 @@
 					</button>
 				</div>
 			</div>
+
 		</form>
 	</div>
 
@@ -69,6 +71,7 @@
 
 	</div>
 </div>
+
 <nav id="navbar" style="z-index: 9999">
 	<ul class="navbar-items flexbox-col">
 		<li class="navbar-logo flexbox-left">
