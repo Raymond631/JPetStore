@@ -11,14 +11,10 @@
 	<title>OrderList</title>
 </head>
 <body>
-
 <%@include file="../Common/Top.jsp" %>
-
 <div class="Content">
 	<div id="Catalog">
-
 		<h3>My Orders</h3>
-
 		<table style="text-align: center">
 			<tr>
 				<th>Order ID</th>
@@ -44,6 +40,5 @@
 		</table>
 	</div>
 </div>
-
 </body>
 </html>

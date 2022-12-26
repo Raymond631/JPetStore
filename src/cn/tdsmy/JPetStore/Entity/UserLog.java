@@ -19,13 +19,6 @@ public class UserLog implements Serializable
     private String operationContent;
     private String status;
 
-    public void setLog(String sqlType, String operationContent, String status)
-    {
-        this.sqlType = sqlType;
-        this.operationContent = operationContent;
-        this.status = status;
-    }
-
     public UserLog(String username, String time, String ip, String url, String sqlType, String operationContent, String status)
     {
         this.username = username;

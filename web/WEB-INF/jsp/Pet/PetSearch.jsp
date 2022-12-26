@@ -11,7 +11,6 @@
 	<title>Title</title>
 </head>
 <body>
-
 <%@include file="../Common/Top.jsp" %>
 <div class="Content">
 	<table style="text-align: center">
@@ -20,7 +19,6 @@
 			<th><b>Name</b></th>
 			<th><b>Introduce</b></th>
 		</tr>
-
 		<c:forEach items="${requestScope.productMap}" var="product">
 			<tr>
 				<td><a href="../Pet/petProduct?productID=${product.key}&search=true">${product.key}</a></td>
@@ -30,7 +28,5 @@
 		</c:forEach>
 	</table>
 </div>
-
-
 </body>
 </html>

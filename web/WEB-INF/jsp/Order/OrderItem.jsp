@@ -11,19 +11,14 @@
 	<title>OrderView</title>
 </head>
 <body>
-
 <%@include file="../Common/Top.jsp" %>
-
 <div class="Content">
-
 	<c:if test="${requestScope.newOrder}">
 		<div id="MessageBar">
 			<p>Thank you, your order has been submitted.</p>
 		</div>
 	</c:if>
-
 	<div id="CenterForm">
-
 		<h3>Order</h3>
 		<table>
 			<colgroup>
@@ -47,7 +42,6 @@
 				<td>${requestScope.order.getPayMethod()}</td>
 			</tr>
 		</table>
-
 		<h3>Shipping Address</h3>
 		<table>
 			<colgroup>
@@ -67,7 +61,6 @@
 				<td>${requestScope.order.getReceiver().getCountry()} ${requestScope.order.getReceiver().getProvince()} ${requestScope.order.getReceiver().getCity()} ${requestScope.order.getReceiver().getDistrict()} ${requestScope.order.getReceiver().getDetailedAddress()}</td>
 			</tr>
 		</table>
-
 		<h3>Ordering Products</h3>
 		<table style="text-align: center">
 			<tr>
@@ -96,15 +89,10 @@
 				<td><strong>$${requestScope.order.getTotalPrice()}</strong></td>
 			</tr>
 		</table>
-
 		<div class="button-bar">
-			<button type="button" class="button"
-			        onclick="location.href='../Order/deleteOrder?orderID=${requestScope.order.getOrderID()}'">Delete
-				Order
-			</button>
+			<button type="button" class="button" onclick="location.href='../Order/deleteOrder?orderID=${requestScope.order.getOrderID()}'">Delete Order</button>
 		</div>
 	</div>
 </div>
-
 </body>
 </html>

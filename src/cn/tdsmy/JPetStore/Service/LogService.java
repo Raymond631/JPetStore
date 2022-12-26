@@ -2,6 +2,7 @@ package cn.tdsmy.JPetStore.Service;
 
 import cn.tdsmy.JPetStore.Entity.UserLog;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -11,7 +12,7 @@ import java.util.List;
  */
 public interface LogService
 {
-    public void addLog(UserLog userLog);
+    public void addLog(HttpServletRequest req, String sqlType, String operationContent, String status);
 
     public List<UserLog> getLog();
 }

@@ -10,172 +10,9 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="../css/selfCenter.css"/>
-	<script>
-        function AccountCheck()
-        {
-            var whetherFull = true;
-            var receiver = document.getElementById("receiverInfo");
-            if (receiver.value.trim() == "")
-            {//没有输入用户名是显示提示
-                console.log("receiverIn");
-                var findNodes = document.getElementById("receiverNull");
-                findNodes.innerText = "Receiver can not be null";
-                whetherFull = false;
-            } else
-            {//输入了内容后清除节点内容
-                document.getElementById("receiverNull").textContent = "";
-                if (whetherFull)
-                    whetherFull = true;
-            }
-
-            var email = document.getElementById("emailInfo");
-            if (email.value.trim() == "")
-            {
-                var findNodes2 = document.getElementById("emailNull");
-                findNodes2.innerText = "Email can not be null";
-                whetherFull = false;
-            } else
-            {
-                document.getElementById("emailNull").innerText = "";
-                if (whetherFull)
-                    whetherFull = true;
-            }
-
-            var phone = document.getElementById("phoneInfo");
-            if (phone.value.trim() == "")
-            {
-                var findNodes3 = document.getElementById("phoneNull");
-                findNodes3.innerText = "Phone can not be null";
-                whetherFull = false;
-            } else
-            {
-                document.getElementById("phoneNull").innerText = "";
-                if (whetherFull)
-                    whetherFull = true;
-            }
-
-            var country = document.getElementById("countryInfo");
-            if (country.value.trim() == "")
-            {
-                var findNodes4 = document.getElementById("countryNull");
-                findNodes4.innerText = "Country can not be null";
-                whetherFull = false;
-            } else
-            {
-                document.getElementById("countryNull").innerText = "";
-                if (whetherFull)
-                    whetherFull = true;
-            }
-
-            var province = document.getElementById("provinceInfo");
-            if (province.value.trim() == "")
-            {
-                var findNodes5 = document.getElementById("provinceNull");
-                findNodes5.innerText = "Province can not be null";
-                whetherFull = false;
-            } else
-            {
-                document.getElementById("provinceNull").innerText = "";
-                if (whetherFull)
-                    whetherFull = true;
-            }
-
-            var city = document.getElementById("cityInfo");
-            if (city.value.trim() == "")
-            {
-                var findNodes6 = document.getElementById("cityNull");
-                findNodes6.innerText = "City can not be null";
-                whetherFull = false;
-            } else
-            {
-                document.getElementById("cityNull").innerText = "";
-                if (whetherFull)
-                    whetherFull = true;
-            }
-
-            var district = document.getElementById("districtInfo");
-            if (district.value.trim() == "")
-            {
-                var findNodes7 = document.getElementById("districtNull");
-                findNodes7.innerText = "District can not be null";
-                whetherFull = false;
-            } else
-            {
-                document.getElementById("districtNull").innerText = "";
-                if (whetherFull)
-                    whetherFull = true;
-            }
-
-            var detailedAddress = document.getElementById("detailedAddressInfo");
-            if (detailedAddress.value.trim() == "")
-            {
-                var findNodes8 = document.getElementById("detailedAddressNull");
-                findNodes8.innerText = "DetailedAddress can not be null";
-                whetherFull = false;
-            } else
-            {
-                document.getElementById("detailedAddressNull").innerText = "";
-                if (whetherFull)
-                    whetherFull = true;
-            }
-
-            return whetherFull;
-        }
-
-        // var button = document.getElementById("changePassword");
-        function Change()
-        {
-            var modal = document.querySelector(".modal");
-            modal.style.display = "block";
-        }
-
-        function savePassword()
-        {
-            let originWrite = document.getElementById("origin").value;
-            let originTrue = "${sessionScope.user.getPassword()}";
-            let newPassword = document.getElementById("newPassword").value;
-            let param = 'newPassword=' + newPassword;
-            console.log(param);
-            let confirmNewPassword = document.getElementById("confirmNewPassword").value;
-            console.log(originWrite);
-            console.log(originTrue);
-            console.log(newPassword);
-            console.log(confirmNewPassword);
-            let originFalse = document.getElementById("originFalse");
-            if (originWrite == originTrue)
-            {
-                originFalse.innerText = "";
-                console.log("ok");
-                if (newPassword == confirmNewPassword && newPassword != null)
-                {
-                    console.log("ajax");
-                    const xhr = new XMLHttpRequest();
-                    //初始化，设置请求方法和url
-                    xhr.open("post", "../User/changePassword", true);
-                    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                    //发送
-                    xhr.send(param);
-                    console(cancel());
-                } else
-                {
-
-                }
-            } else
-            {
-                originFalse.innerText = "Password is wrong";
-            }
-
-        }
-
-        function cancel()
-        {
-            var modal = document.querySelector(".modal");
-            modal.style.display = "none";
-        }
-
-	</script>
+	<link rel="stylesheet" type="text/css" href="../css/ChangePassword.css">
+	<script type="text/javascript" src="../js/SelfCenter.js"></script>
 </head>
-
 <body>
 <%@ include file="../Common/Top.jsp" %>
 <div class="mainBox">
@@ -187,17 +24,12 @@
 					<span>Name:</span>
 					<span style="padding-left: 40px">${sessionScope.user.getUsername()}</span>
 				</div>
-
 			</div>
 			<%--打开弹窗--%>
 			<div class="changePassword">
-				<button class="button" style="margin-left: -40px;margin-right: 10px" id="changePassword"
-				        onclick="Change();">change
-					Password
-				</button>
+				<button class="button" style="margin-left: -40px;margin-right: 10px" id="changePassword" onclick="Change();">change Password</button>
 			</div>
 		</div>
-
 		<%--弹窗--%>
 		<div class="modal">
 			<div class="modal-content">
@@ -212,7 +44,6 @@
 						<div class="inChange">
 							Confirm New Password:<input class="inChangeInput" type="password" name="originalPassword" value="" id="confirmNewPassword" autocomplete="off"/>
 						</div>
-
 						<%--跳往下一个界面--%>
 						<button class="determine" onclick="savePassword()">Save</button>
 						<%--关闭弹窗--%>
@@ -221,11 +52,10 @@
 				</div>
 			</div>
 		</div>
-
+		<script type="text/javascript" src="../js/ChangePassword.js"></script>
 		<h3>Profile Information</h3>
 		<div class="left-bottom">
 			<form action="../User/updateProfile" method="post">
-
 				<div class="frontProfile">Language Preference:</div>
 				<div class="profileInformation">
 					<select class="selectBox" name="languagePreference">
@@ -236,7 +66,6 @@
 						<option value="Japanese">Japanese</option>
 					</select>
 				</div>
-
 				<div class="frontProfile">Favourite Category:</div>
 				<div class="profileInformation">
 					<select class="selectBox" name="favouriteCategoryId">
@@ -247,7 +76,6 @@
 						<option value="BIRDS">Birds</option>
 					</select>
 				</div>
-
 				<div class="frontProfile">Enable<br>MyList:</div>
 				<div class="profileInformation">
 					<input class="checkBox" type="checkbox" name="listOption" value="true"/>
@@ -260,7 +88,6 @@
 			</form>
 		</div>
 	</div>
-
 	<div class="right">
 		<h3>Account Information</h3>
 		<form action="../User/updateReceiver" method="post" name="AccountForm">
@@ -316,95 +143,7 @@
 				<input class="saveAccount" type="submit" value="Save Account" onclick="return AccountCheck();">
 			</div>
 		</form>
-
-
 	</div>
 </div>
-
 </body>
 </html>
-
-<style>
-    /* 遮罩层 */
-    .modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.2);
-        z-index: 1;
-    }
-
-    /* 弹窗 */
-    .modal-content {
-        position: fixed;
-        top: 15%;
-        left: 50%;
-        margin-left: -25%;
-        width: 14%;
-        height: 40%;
-        min-width: 31.125rem;
-        min-height: 18.625rem;
-        border-radius: .125rem;
-        background-color: white;
-        z-index: 2;
-    }
-
-    .modal-body {
-        position: relative;
-        width: 100%;
-        height: 100%;
-    }
-
-    .mb_revise {
-        padding: .625rem 0 0 1.5625rem;
-    }
-
-    .mb_revise > p {
-        padding-left: .25rem;
-        margin-top: .125rem;
-        font-family: 'FangSong', Times, serif;
-        font-size: 15px;
-        border-left: solid .125rem royalblue;
-    }
-
-    /* 确定和取消 */
-    .determine,
-    .cancel {
-        position: absolute;
-        width: 4.125rem;
-        height: 2.1875rem;
-        color: #fff;
-        border: 0;
-        outline: none;
-        box-shadow: 0 .125rem .125rem rgb(107, 96, 96);
-        cursor: pointer;
-    }
-
-    .determine {
-        width: 14%;
-        right: 6.5rem;
-        bottom: .725rem;
-        background-color: rgba(9, 139, 245, 0.788);
-    }
-
-    .cancel {
-        width: 14%;
-        right: 2rem;
-        bottom: .725rem;
-        background-color: rgba(212, 37, 37, 0.788);
-    }
-
-    .determine:hover,
-    .cancel:hover {
-        color: #fff;
-        box-shadow: 0 .134rem .1275rem rgb(58, 57, 57);
-    }
-
-    .determine:active,
-    .cancel:active {
-        box-shadow: 0 .134rem .1275rem rgba(230, 227, 227, .758);
-    }
-</style>

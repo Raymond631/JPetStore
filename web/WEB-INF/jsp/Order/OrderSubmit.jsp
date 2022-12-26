@@ -11,12 +11,9 @@
 	<title>OrderForm</title>
 </head>
 <body>
-
 <%@include file="../Common/Top.jsp" %>
-
 <div class="Content">
 	<div id="CenterForm">
-
 		<form method="post" action="../Order/orderPay">
 			<h3>Shipping Address</h3>
 			<table>
@@ -72,7 +69,6 @@
 					</td>
 				</tr>
 			</table>
-
 			<h3>Ordering Products</h3>
 			<table style="text-align: center">
 				<tr>
@@ -101,15 +97,12 @@
 					<td><strong>$${sessionScope.allCost}</strong></td>
 				</tr>
 			</table>
-
 			<div class="button-bar">
 				<button type="submit" class="button">Submit</button>
 				<button type="button" class="button" onclick="location.href='../Cart/cartList';">Cancel</button>
 			</div>
-
 		</form>
 	</div>
 </div>
-
 </body>
 </html>

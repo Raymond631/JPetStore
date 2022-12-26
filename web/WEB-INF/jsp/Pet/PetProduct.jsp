@@ -13,7 +13,6 @@
 </head>
 <body>
 <%@include file="../Common/Top.jsp" %>
-
 <div class="mainBox">
 	<div class="left">
 		<div class="left-top">
@@ -29,14 +28,11 @@
 			<div id="description" class="description">${requestScope.product.getIntroduce()}</div>
 		</div>
 	</div>
-
 	<div class="right">
 		<c:forEach items="${requestScope.product.getItemMap()}" var="item">
 			<div class="box">
 				<div class="boxLeft">
-					<div>
-							${item.value.getDescription()}
-					</div>
+					<div>${item.value.getDescription()}</div>
 				</div>
 				<div class="boxMiddle">
 					<div class="ID">${item.key}</div>
@@ -51,6 +47,5 @@
 		</c:forEach>
 	</div>
 </div>
-
 </body>
 </html>

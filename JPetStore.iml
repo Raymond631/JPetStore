@@ -25,5 +25,7 @@
     <orderEntry type="library" name="jsp-api" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.49" level="project" />
     <orderEntry type="library" name="jquery-latest" level="application" />
+    <orderEntry type="library" name="jquery" level="application" />
+    <orderEntry type="library" name="fastjson-1.2.83" level="project" />
   </component>
 </module>

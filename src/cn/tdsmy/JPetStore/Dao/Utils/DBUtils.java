@@ -5,25 +5,20 @@ import com.mysql.cj.jdbc.MysqlDataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-public class DBUtils
-{
+public class DBUtils {
     private static final String url = "jdbc:mysql://localhost:3306/jpetstore";
     private static final String user = "root";
-    private static final String password = "forhim579";
+    private static final String password = "pr112358";
 
-    public static Connection getConnection()
-    {
+    public static Connection getConnection() {
         Connection connection;
-        try
-        {
+        try {
             MysqlDataSource dataSource = new MysqlDataSource();
             dataSource.setURL(url);
             dataSource.setUser(user);
             dataSource.setPassword(password);
             connection = dataSource.getConnection();
-        }
-        catch (SQLException e)
-        {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
         return connection;

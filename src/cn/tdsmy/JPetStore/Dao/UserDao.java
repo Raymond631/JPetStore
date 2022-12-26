@@ -9,12 +9,14 @@ import cn.tdsmy.JPetStore.Entity.User;
  * @Date: 2022/10/25 8:41
  * @Version 1.0
  */
-public interface UserDao
-{
+public interface UserDao {
+
     public boolean login(User user);
 
 
     public boolean register(User user);
+
+    public boolean registerSuccess(User user);
 
 
     public Receiver getReceiver(String username);

@@ -20,9 +20,9 @@ public interface OrderService
 
     public void deleteOrder(String orderID);//删除订单
 
-    public Order selectOrder(String orderID);//查询订单详情
-
     public List<Order> selectOrderList(String username);//查询订单列表
+
+    public Order selectOrder(String orderID);//查询订单详情
 
     public String getTimeNow();
 

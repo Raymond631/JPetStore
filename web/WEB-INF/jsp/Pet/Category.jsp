@@ -6,8 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
-
 <html>
 <head>
 	<title>Category</title>
@@ -15,13 +13,11 @@
 </head>
 <body>
 <%@include file="../Common/Top.jsp" %>
-
 <div class="mainBox">
 	<div style="margin-left: 0;margin-right: -10px">
 		<h2>${sessionScope.category}</h2>
 	</div>
 	<div class="center" id="centerContent">
-
 		<c:forEach items="${sessionScope.productMap}" var="product" varStatus="line">
 			<div class="smallCate"
 			     id=${product.key} onclick="window.location.href='../Pet/petProduct?productID=${product.key}&search=false'">
@@ -39,6 +35,5 @@
 		</c:forEach>
 	</div>
 </div>
-
 </body>
 </html>

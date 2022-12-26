@@ -3,6 +3,8 @@
     width: 100%;
     border: 1px solid black;
     /* background-color: aqua; */
+
+    top: 0;
     display: flex;
     margin: 0;
     background-color: #ffd8d8;
@@ -63,7 +65,7 @@
     right: 0;
     width: 1100px;
     height: 105px;
-    padding-left: 10px;
+    padding-left: 30px;
     padding-top: 5px;
     /* padding-left: 100px; */
     margin: -10px auto 0 30px;
@@ -108,7 +110,7 @@
     width: 43px;
     height: 43px;
     margin-top: 0;
-    border-width: 15px;
+    /*border-width: 15px;*/
     border: 35px solid #FFFFFF;
     background-color: transparent;
     border-radius: 50%;
@@ -259,7 +261,6 @@
     font-weight: normal;
     font-size: 50px;
     text-align: center;
-    margin-bottom: 0;
     margin-bottom: -0.25em;
     display: block;
     margin-left: auto;
@@ -268,3 +269,26 @@
     width: 100%;
 }
 
+#productAutoComplete {
+    /*这个地方是先不显示*/
+    display: none;
+    background: white;
+    position: relative;
+    top: 5px;
+    left: 0;
+    width: 720px;
+    font-size: 40px;
+}
+
+.productAutoList {
+    margin: 0;
+    padding: 0;
+}
+
+.productAutoItem {
+    list-style: none;
+    text-align: left;
+    padding-left: 30px;
+    border-bottom: solid 1px black;
+    cursor: pointer;
+}

@@ -114,9 +114,6 @@
 .left .left-top {
     height: 60%;
     width: 100%;
-    /*background-color: #00aaff;*/
-    /*border: 2px solid black;*/
-    /*border-radius: 80px;*/
     --blur: 2px;
 }
 
@@ -274,7 +271,7 @@
     width: 700px;
     border: 1px solid black;
     border-radius: 10px;
-    position: relative;
+    /*position: relative;*/
     background-color: #39454b;
     color: white;
 }
@@ -315,7 +312,7 @@
     height: 80%;
     width: 25%;
     font-size: 25px;
-    position: relative;
+    /*position: relative;*/
     float: left;
 }
 

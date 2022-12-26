@@ -5,6 +5,7 @@ import cn.tdsmy.JPetStore.Dao.impl.LogDaoImpl;
 import cn.tdsmy.JPetStore.Entity.UserLog;
 import cn.tdsmy.JPetStore.Service.LogService;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -17,12 +18,18 @@ public class LogServiceImpl implements LogService
     private LogDao logDao;
 
     @Override
-    public void addLog(UserLog userLog)
+    public void addLog(HttpServletRequest req, String sqlType, String operationContent, String status)
     {
         if (logDao == null)
         {
             logDao = new LogDaoImpl();
         }
+        UserLog userLog = (UserLog) req.getAttribute("myLog");//日志
+        
+        userLog.setSqlType(sqlType);
+        userLog.setOperationContent(operationContent);
+        userLog.setStatus(status);
+
         logDao.addLog(userLog);
     }
 
