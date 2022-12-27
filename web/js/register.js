@@ -53,6 +53,7 @@ function newVerification() {
     image.src = "../User/verificationCode?" + new Date().getMilliseconds();
 }
 
+//jquery闭包
 $(function () {
     $('#username').on('blur', function (e) {
         e.preventDefault();

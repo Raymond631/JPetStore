@@ -64,7 +64,8 @@ public class PetDaoImpl implements PetDao {
                     }
                 }
             }
-        } catch (SQLException e) {
+        }
+        catch (SQLException e) {
             throw new RuntimeException(e);
         }
         return productMap;
@@ -72,47 +73,22 @@ public class PetDaoImpl implements PetDao {
 
     public List<Product> searchTips(String key) {
         List<Product> Tips = new ArrayList<>();
-        try (Connection connection = DBUtils.getConnection()) {
-            String sql = "select * from product where category like '%" + key + "%' or productID like '%" + key + "%' or name like '%" + key
-                    + "%' or introduce like '%" + key + "%'";
-            try (PreparedStatement statement = connection.prepareStatement(sql); ResultSet res = statement.executeQuery(sql)) {
-                while (res.next()) {
-                    String productID = res.getString("productID");//品种ID
-                    String name = res.getString("name");//品种名
-                    String introduce = res.getString("introduce");//品种简介
+        String sql = "select * from product where category like '%" + key + "%' or name like '%" + key + "%' or introduce like '%" + key + "%'";
+        try (Connection connection = DBUtils.getConnection(); PreparedStatement statement = connection.prepareStatement(sql); ResultSet res = statement.executeQuery(sql)) {
+            while (res.next()) {
+                String category = res.getString("category");
+                String name = res.getString("name");
+                String introduce = res.getString("introduce");
 
+                Product product = new Product();
+                product.setCategory(category);
+                product.setName(name);
+                product.setIntroduce(introduce);
 
-                    Product product = new Product();
-                    product.setProductID(productID);
-                    product.setName(name);
-                    product.setIntroduce(introduce);
-
-                    Tips.add(product);
-                }
+                Tips.add(product);
             }
-
-            String sql2 = "select * from item where itemID like '%" + key + "%' or description like '%" + key + "%'";
-            try (PreparedStatement statement = connection.prepareStatement(sql2); ResultSet res = statement.executeQuery(sql2)) {
-                while (res.next()) {
-                    String productID = res.getString("productID");//品种ID
-
-                    String sql3 = "select * from product where productID ='" + productID + "'";
-                    try (PreparedStatement statement2 = connection.prepareStatement(sql3); ResultSet res2 = statement2.executeQuery(sql3)) {
-                        while (res2.next()) {
-                            String name = res2.getString("name");//品种名
-                            String introduce = res2.getString("introduce");//品种简介
-
-                            Product product = new Product();
-                            product.setProductID(productID);
-                            product.setName(name);
-                            product.setIntroduce(introduce);
-
-                            Tips.add(product);
-                        }
-                    }
-                }
-            }
-        } catch (SQLException e) {
+        }
+        catch (SQLException e) {
             throw new RuntimeException(e);
         }
         return Tips;
@@ -146,7 +122,8 @@ public class PetDaoImpl implements PetDao {
                     product.getItemMap().put(itemID, item);
                 }
             }
-        } catch (SQLException e) {
+        }
+        catch (SQLException e) {
             throw new RuntimeException(e);
         }
         return product;
@@ -185,11 +162,13 @@ public class PetDaoImpl implements PetDao {
                         Item item = new Item(itemID, description, stock, listPrice);
                         product.getItemMap().put(itemID, item);
                     }
-                } catch (SQLException e) {
+                }
+                catch (SQLException e) {
                     throw new RuntimeException(e);
                 }
             });
-        } catch (SQLException e) {
+        }
+        catch (SQLException e) {
             throw new RuntimeException(e);
         }
         return productMap;

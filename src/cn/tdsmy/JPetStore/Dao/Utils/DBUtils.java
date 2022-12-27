@@ -7,8 +7,8 @@ import java.sql.SQLException;
 
 public class DBUtils {
     private static final String url = "jdbc:mysql://localhost:3306/jpetstore";
-    private static final String user = "root";
-    private static final String password = "pr112358";
+    private static final String user = "Raymond";
+    private static final String password = "CSU@82092102";
 
     public static Connection getConnection() {
         Connection connection;
@@ -18,7 +18,8 @@ public class DBUtils {
             dataSource.setUser(user);
             dataSource.setPassword(password);
             connection = dataSource.getConnection();
-        } catch (SQLException e) {
+        }
+        catch (SQLException e) {
             throw new RuntimeException(e);
         }
         return connection;

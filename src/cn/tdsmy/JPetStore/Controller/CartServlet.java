@@ -7,6 +7,7 @@ import cn.tdsmy.JPetStore.Service.LogService;
 import cn.tdsmy.JPetStore.Service.impl.CartServiceImpl;
 import cn.tdsmy.JPetStore.Service.impl.LogServiceImpl;
 import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -102,16 +103,16 @@ public class CartServlet extends HttpServlet {
     public void updateCart(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         User user = (User) req.getSession().getAttribute("user");
         String jsonObj = req.getParameter("jsonObj");
-        System.out.println(JSONArray.parseArray(jsonObj));
-//        Enumeration<String> itemList = req.getParameterNames();
-//        while (itemList.hasMoreElements()) {
-//            String itemID = itemList.nextElement();
-//            int quantity = Integer.parseInt(req.getParameter(itemID));
-//            cartService.updateCart(user.getUsername(), itemID, quantity);
-//        }
-//
-//        logService.addLog(req, "Update", "修改购物车商品数量", "true");
-//        resp.sendRedirect(req.getContextPath() + "/Cart/cartList");
+        JSONArray jsonArr = JSONArray.parseArray(jsonObj);
+        for (int i = 0; i < jsonArr.size(); i++) {
+            JSONObject obj = jsonArr.getJSONObject(i);
+            String itemID = (String) obj.get("itemID");
+            int quantity = (int) obj.get("quantity");
+            System.out.println(itemID + "   " + quantity);
+            cartService.updateCart(user.getUsername(), itemID, quantity);
+        }
+        logService.addLog(req, "Update", "修改购物车商品数量", "true");
+        resp.sendRedirect(req.getContextPath() + "/Cart/cartList");
     }
 
     public void cartList(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

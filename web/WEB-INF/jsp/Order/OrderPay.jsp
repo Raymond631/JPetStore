@@ -68,7 +68,7 @@
 			</tr>
 		</table>
 		<h3>Order Details</h3>
-		<form id="PayForm" method="post" action="../Order/newOrder">
+		<form id="PayForm" method="post" action="../Order/newOrder" autocomplete="off">
 			<table>
 				<colgroup>
 					<col style="width: 25%"/>

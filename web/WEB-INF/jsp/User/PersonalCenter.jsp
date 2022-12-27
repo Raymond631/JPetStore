@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="../js/ChangePassword.js"></script>
 		<h3>Profile Information</h3>
 		<div class="left-bottom">
-			<form action="../User/updateProfile" method="post">
+			<form action="../User/updateProfile" method="post" autocomplete="off">
 				<div class="frontProfile">Language Preference:</div>
 				<div class="profileInformation">
 					<select class="selectBox" name="languagePreference">
@@ -90,7 +90,7 @@
 	</div>
 	<div class="right">
 		<h3>Account Information</h3>
-		<form action="../User/updateReceiver" method="post" name="AccountForm">
+		<form action="../User/updateReceiver" method="post" name="AccountForm" autocomplete="off">
 			<div class="account">
 				<div class="frontAccount">ReceiverName:</div>
 				<div class="accountInformation">
