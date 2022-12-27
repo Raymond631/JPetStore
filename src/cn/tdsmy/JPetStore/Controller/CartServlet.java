@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -60,6 +61,9 @@ public class CartServlet extends HttpServlet {
             case "/cartList":
                 cartList(req, resp);//查
                 break;
+            case "/InNumber":
+                InNumber(req, resp);//比对个数
+                break;
         }
     }
 
@@ -73,8 +77,7 @@ public class CartServlet extends HttpServlet {
         if (user == null) {
             logService.addLog(req, "Create", "加入购物车", "false");
             resp.sendRedirect(req.getContextPath() + "/User/showLogin");
-        }
-        else {
+        } else {
             String itemID = req.getParameter("itemID");
             cartService.addCartItem(user.getUsername(), itemID, 1);
 
@@ -116,8 +119,7 @@ public class CartServlet extends HttpServlet {
         if (user == null) {
             logService.addLog(req, "Read", "查看购物车", "false");
             resp.sendRedirect(req.getContextPath() + "/User/showLogin");
-        }
-        else {
+        } else {
             List<CartItem> cartItemList = cartService.selectCartList(user.getUsername());
             BigDecimal allCost = cartService.getAllCost(cartItemList);
             req.getSession().setAttribute("cartItemList", cartItemList);
@@ -126,5 +128,19 @@ public class CartServlet extends HttpServlet {
             logService.addLog(req, "Read", "查看购物车", "true");
             req.getRequestDispatcher("/WEB-INF/jsp/Cart/Cart.jsp").forward(req, resp);
         }
+    }
+
+    public void InNumber(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String name = req.getParameter("name");
+        System.out.println("key " + name);
+        //下面需要在数据库中查询有关该字符的所有内容
+
+        int total = 14;//这里将查询到的值赋予
+        resp.setContentType("text/plain");
+        resp.setHeader("Access-Control-Allow-Origin", "*");//跨域，这里其实不需要设置
+        PrintWriter out = resp.getWriter();
+        out.println(total);
+
+
     }
 }
