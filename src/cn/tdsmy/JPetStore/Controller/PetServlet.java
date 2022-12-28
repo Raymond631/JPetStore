@@ -17,6 +17,12 @@ import java.io.PrintWriter;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @Author: Raymond Li
+ * @Date: 2022/10/29 22:59
+ * @Version 1.0
+ */
+
 @WebServlet("/Pet/*")
 public class PetServlet extends HttpServlet {
     public PetService petService;
@@ -98,7 +104,8 @@ public class PetServlet extends HttpServlet {
             Map<String, Product> productMap = (Map<String, Product>) req.getSession().getAttribute("productMap");
             Product product = productMap.get(productID);
             req.setAttribute("product", product);
-        } else if (search.equals("true")) {
+        }
+        else if (search.equals("true")) {
             Product product = petService.getProduct(productID);
             req.setAttribute("product", product);
         }
@@ -109,17 +116,12 @@ public class PetServlet extends HttpServlet {
 
     public void searchTips(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String keyword = req.getParameter("keyword");
-        System.out.println("key " + keyword);
-        //下面需要在数据库中查询有关该字符的所有内容
         List<Product> ProductList = petService.searchTips(keyword);
-        //获得json对象
         String SearchResult = JSON.toJSONString(ProductList);
-        System.out.println("what" + SearchResult);
+        System.out.println(SearchResult);
         resp.setContentType("text/plain");
         resp.setHeader("Access-Control-Allow-Origin", "*");//跨域，这里其实不需要设置
         PrintWriter out = resp.getWriter();
         out.println(SearchResult);
-
-
     }
 }

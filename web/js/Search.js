@@ -2,10 +2,11 @@ $(function () {
     $('#keyword').on('keyup', function () {
         var keyword = $(this).val();
         console.log(keyword);
-        if (keyword !== null && keyword !== '') {
+        if (keyword !== null && keyword !== '' && keyword.length !== 0) {
             $.ajax({
                 type: 'GET',
                 url: '../Pet/searchTips?keyword=' + keyword,
+                dataType: "json",
                 success: function (data) {
                     console.log(data);
                     let productListHtml = '';
@@ -24,7 +25,7 @@ $(function () {
                 }
             })
         } else {
-            //do nothing?
+            $('#productAutoComplete').hide();
         }
     })
 });

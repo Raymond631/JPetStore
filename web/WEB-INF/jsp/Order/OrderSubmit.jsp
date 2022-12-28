@@ -14,7 +14,7 @@
 <%@include file="../Common/Top.jsp" %>
 <div class="Content">
 	<div id="CenterForm">
-		<form method="post" action="../Order/orderPay">
+		<form method="post" action="../Order/orderPay" autocomplete="off">
 			<h3>Shipping Address</h3>
 			<table>
 				<colgroup>

@@ -26,7 +26,8 @@ public class UserDaoImpl implements UserDao {
             {
                 isSuccess = true;
             }
-        } catch (SQLException e) {
+        }
+        catch (SQLException e) {
             throw new RuntimeException(e);
         }
         return isSuccess;
@@ -34,15 +35,13 @@ public class UserDaoImpl implements UserDao {
 
     public boolean registerSuccess(User user) {
         boolean isSuccess = false;
-        try (Connection connection = DBUtils.getConnection()) {
-            //用户名查重
-            String sql = "select * from user where username ='" + user.getUsername() + "'";
-            try (PreparedStatement statement = connection.prepareStatement(sql); ResultSet res = statement.executeQuery(sql)) {
-                if (!res.next()) {
-                    isSuccess = true;
-                }
+        String sql = "select * from user where username ='" + user.getUsername() + "'";
+        try (Connection connection = DBUtils.getConnection(); PreparedStatement statement = connection.prepareStatement(sql); ResultSet res = statement.executeQuery(sql)) {
+            if (!res.next()) {
+                isSuccess = true;
             }
-        } catch (SQLException e) {
+        }
+        catch (SQLException e) {
             throw new RuntimeException(e);
         }
         return isSuccess;//返回是否注册成功
@@ -76,7 +75,8 @@ public class UserDaoImpl implements UserDao {
                     statement.executeUpdate();
                 }
             }
-        } catch (SQLException e) {
+        }
+        catch (SQLException e) {
             throw new RuntimeException(e);
         }
         return isSuccess;//返回是否注册成功
@@ -106,7 +106,8 @@ public class UserDaoImpl implements UserDao {
                 receiver.setDistrict(district);
                 receiver.setDetailedAddress(detailedAddress);
             }
-        } catch (SQLException e) {
+        }
+        catch (SQLException e) {
             throw new RuntimeException(e);
         }
         return receiver;
@@ -128,7 +129,8 @@ public class UserDaoImpl implements UserDao {
                 profile.setEnableMyList(enableMyList);
                 profile.setEnableMyBanner(enableMyBanner);
             }
-        } catch (SQLException e) {
+        }
+        catch (SQLException e) {
             throw new RuntimeException(e);
         }
         return profile;
@@ -139,7 +141,8 @@ public class UserDaoImpl implements UserDao {
         String sql = "update user set password ='" + user.getPassword() + "' where username ='" + user.getUsername() + "'";
         try (Connection connection = DBUtils.getConnection(); PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.executeUpdate();
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -159,7 +162,8 @@ public class UserDaoImpl implements UserDao {
                 + "',country='" + country + "',province='" + province + "',city='" + city + "',district='" + district + "',detailedAddress='" + detailedAddress + "' where username ='" + username + "'";
         try (Connection connection = DBUtils.getConnection(); PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.executeUpdate();
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -170,7 +174,8 @@ public class UserDaoImpl implements UserDao {
                 + profile.getFavouriteCategory() + "',enableMyList='" + profile.getEnableMyList() + "',enableMyBanner='" + profile.getEnableMyBanner() + "' where username ='" + username + "'";
         try (Connection connection = DBUtils.getConnection(); PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.executeUpdate();
-        } catch (SQLException e) {
+        }
+        catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }

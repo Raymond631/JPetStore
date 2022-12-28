@@ -332,7 +332,6 @@ public class UserServlet extends HttpServlet {
         String username = req.getParameter("username");
         User user = new User();
         user.setUsername(username);
-        //下面需要在数据库中查询是否存在该名字
 
         if (userService.registerSuccess(user))//注册成功（进行用户名查重）
         {
@@ -348,7 +347,5 @@ public class UserServlet extends HttpServlet {
             PrintWriter out = resp.getWriter();
             out.println("用户名已存在");
         }
-
-
     }
 }
