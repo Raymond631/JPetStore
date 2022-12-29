@@ -84,8 +84,8 @@ public class UserServlet extends HttpServlet {
             case "/verificationCode"://验证码
                 verificationCode(req, resp);
                 break;
-            case "/userLog"://管理员查看日志
-                userLog(req, resp);
+            case "/IndexBack"://管理员查看日志
+                IndexBack(req, resp);
                 break;
             case "/UsernameExist"://判断用户名是否存在
                 userExist(req, resp);
@@ -108,8 +108,7 @@ public class UserServlet extends HttpServlet {
 
             logService.addLog(req, "Other", "注册验证码错误", "false");
             req.getRequestDispatcher("/WEB-INF/jsp/User/Register.jsp").forward(req, resp);
-        }
-        else {
+        } else {
             //获取用户输入的用户名和密码
             String username = req.getParameter("username");
             String password = req.getParameter("password");
@@ -125,8 +124,7 @@ public class UserServlet extends HttpServlet {
 
                 logService.addLog(req, "Create", "注册新用户,username=" + username, "true");
                 resp.sendRedirect(req.getContextPath() + "/Pet/homePage");//请求重定向，避免刷新时重复提交表单
-            }
-            else//用户名已存在
+            } else//用户名已存在
             {
                 req.setAttribute("messageBox", "Username already exists.");
 
@@ -150,8 +148,7 @@ public class UserServlet extends HttpServlet {
 
             logService.addLog(req, "Other", "登录验证码错误", "false");
             req.getRequestDispatcher("/WEB-INF/jsp/User/Login.jsp").forward(req, resp);
-        }
-        else {
+        } else {
             String username = req.getParameter("username");
             String password = req.getParameter("password");
             User user = new User();
@@ -165,9 +162,8 @@ public class UserServlet extends HttpServlet {
                     req.getSession().setAttribute("user", user);
 
                     logService.addLog(req, "Read", "管理员查看用户日志" + username, "true");
-                    resp.sendRedirect(req.getContextPath() + "/User/userLog");
-                }
-                else//普通用户
+                    resp.sendRedirect(req.getContextPath() + "/User/IndexBack");
+                } else//普通用户
                 {
                     user.setReceiver(userService.getReceiver(username));
                     user.setProfile(userService.getProfile(username));
@@ -176,8 +172,7 @@ public class UserServlet extends HttpServlet {
                     logService.addLog(req, "Read", "登录,username=" + username, "true");
                     resp.sendRedirect(req.getContextPath() + "/Pet/homePage");
                 }
-            }
-            else//用户名或密码错误
+            } else//用户名或密码错误
             {
                 req.setAttribute("messageBox", "Invalid username or password.");
 
@@ -318,13 +313,13 @@ public class UserServlet extends HttpServlet {
         }
     }
 
-    public void userLog(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void IndexBack(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         User user = (User) req.getSession().getAttribute("user");
         if (user.getUsername().equals("root"))//防止普通用户直接访问
         {
             List<UserLog> userLogList = logService.getLog();
             req.setAttribute("userLogList", userLogList);
-            req.getRequestDispatcher("/WEB-INF/jsp/User/UserLog.jsp").forward(req, resp);
+            req.getRequestDispatcher("/WEB-INF/jsp/User/IndexBack.jsp").forward(req, resp);
         }
     }
 
@@ -339,8 +334,7 @@ public class UserServlet extends HttpServlet {
             resp.setHeader("Access-Control-Allow-Origin", "*");
             PrintWriter out = resp.getWriter();
             out.println("");
-        }
-        else//用户名已存在
+        } else//用户名已存在
         {
             resp.setContentType("text/plain");
             resp.setHeader("Access-Control-Allow-Origin", "*");

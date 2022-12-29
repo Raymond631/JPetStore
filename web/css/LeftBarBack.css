@@ -1,0 +1,71 @@
+
+.side-left {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 200px;
+    background-color: rgb(47, 64, 80);
+    position: absolute;
+}
+
+.username {
+    margin-top: 10px;
+    background-color: #282B33;
+    height: 70px;
+    border: 1px solid #009688;
+}
+
+/*左侧侧边栏样式*/
+.list_one {
+    /*width: 200px;*/
+    height: 45px;
+    padding-left: 49px;
+    border-left: solid 6px rgb(47, 64, 80);
+    text-align: left;
+    line-height: 45px;
+    color: darkgray;
+}
+
+.list_one:hover {
+    color: white;
+    border-left: solid 6px #009688;
+    cursor: pointer;
+}
+
+.list_two {
+    width: 200px;
+    height: auto;
+    text-align: left;
+    line-height: 45px;
+    color: darkgray;
+    background-color: rgb(41, 56, 70);
+    display: none;
+}
+
+.list_two > div {
+    width: 150px;
+    height: 45px;
+    padding-left: 50px;
+}
+
+.list_two > div:hover {
+    color: darkgray;
+    cursor: pointer;
+}
+
+.thisColor {
+    background-color: #009688;
+}
+
+.another {
+    background-color: #393D49;
+}
+
+#mr {
+    margin-right: 10px;
+    opacity: 0.7;
+    margin-left: 50px;
+    transition: all .3s;
+}
+
+
