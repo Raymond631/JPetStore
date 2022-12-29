@@ -217,12 +217,12 @@
                                         <div class="bar red" style="width:78%;"></div>
                                     </div>
                                 </li>
-                                <li>? <span class="pull-right">50%</span>
+                                <li>reptils <span class="pull-right">50%</span>
                                     <div class="progress progress-striped active progress-right">
                                         <div class="bar blue" style="width:50%;"></div>
                                     </div>
                                 </li>
-                                <li>? <span class="pull-right">80%</span>
+                                <li>birds <span class="pull-right">80%</span>
                                     <div class="progress progress-striped active progress-right">
                                         <div class="bar light-blue" style="width:80%;"></div>
                                     </div>

@@ -190,7 +190,7 @@ h4.title {
     width: 100%;
 }
 .wid-social {
-    display: inline-block;
+    display: block;
     width: 27.3%;
     padding: 11px;
     float: left;
@@ -199,6 +199,7 @@ h4.title {
 .facebook {
     background-color:#3b5998 !important;
     color: #ffffff !important;
+    height: 103.2px;
 }
 .icon-xlg {
     font-size: 30px;
@@ -218,44 +219,43 @@ h4.title {
 .twitter {
     background-color:#55acee !important;
     color: #ffffff !important;
+    height: 103.2px;
 }
 .google-plus {
     background-color: #dc4e41 !important;
     color: #ffffff !important;
+    height: 103.2px;
 }
 .dribbble {
     background-color:#ea4c89 !important;
     color: #ffffff !important;
+    height: 103.2px;
 }
 .xing {
     background-color: #cfdc00 !important;
     color: #ffffff !important;
+    height: 103.2px;
 }
 .vimeo {
     background-color: #162221 !important;
     color: #ffffff !important;
+    height: 103.2px;
 }
 .yahoo {
     background-color: #410093 !important;
     color: #ffffff !important;
+    height: 103.2px;
 }
 .flickr {
     background-color: #a4c639 !important;
     color: #ffffff !important;
+    height: 103.2px;
 }
 .rss {
     background-color: #f26522 !important;
     color: #ffffff !important;
+    height: 103.2px;
 }
-.wid-social.youtube {
-    width: 100%;
-    background-color: #cd201f !important;
-    color: #ffffff !important;
-}
-.wid-social.youtube .icon-xlg {
-    font-size: 38px;
-}
-
 .wid-social:hover .social-icon {
     transform: rotatey(360deg);
     transition: .5s all;
