@@ -8,6 +8,7 @@
         <entry key="file://$PROJECT_DIR$/web/WEB-INF/jsp/Pet/Category.jsp" value="file://$PROJECT_DIR$/web" />
         <entry key="file://$PROJECT_DIR$/web/WEB-INF/jsp/Pet/HomePage.jsp" value="file://$PROJECT_DIR$/web" />
         <entry key="file://$PROJECT_DIR$/web/WEB-INF/jsp/Pet/PetProduct.jsp" value="file://$PROJECT_DIR$/web/WEB-INF/jsp/Pet" />
+        <entry key="file://$PROJECT_DIR$/web/WEB-INF/jsp/Pet/ProductDetailBack.jsp" value="file://$PROJECT_DIR$/web/WEB-INF/jsp/Pet" />
         <entry key="file://$PROJECT_DIR$/web/WEB-INF/jsp/User/IndexBack.jsp" value="file://$PROJECT_DIR$/web/WEB-INF/jsp/User" />
         <entry key="file://$PROJECT_DIR$/web/WEB-INF/jsp/User/ProductAllBack.jsp" value="file://$PROJECT_DIR$/web/WEB-INF/jsp/User" />
         <entry key="file://$PROJECT_DIR$/web/WEB-INF/jsp/User/Register.jsp" value="file://$PROJECT_DIR$/web/WEB-INF/jsp/User" />

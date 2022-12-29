@@ -16,7 +16,7 @@
 <div class="mainBox">
     <div class="view">
         <div class="label">
-            <span style="margin-left:10px;">Incom</span>
+            <span style="margin-left:10px;">Income</span>
             <span style="margin-left:130px;font-size: 12px; color: white; background-color: rgb(28,132,198); padding: 1px 8px 1px 8px  ;">
                 Monthly
             </span>
@@ -58,7 +58,7 @@
     </div>
     <div class="view" style="margin-left:50px">
         <div class="label">
-            <span style="margin-left:10px;">Visiter</span>
+            <span style="margin-left:10px;">Visitor</span>
             <span style="margin-left:145px;font-size: 12px; color: white; background-color: rgb(237,85,101); padding: 1px 8px 1px 8px  ;">
                 Today
             </span>
@@ -148,11 +148,11 @@
         </div>
         <div class="orderDo">
             Order/Y:
-            <span id="orderFinish" style="padding-left:10px;font-size:20px;">1123</span>
+            <span id="orderFinished" style="padding-left:10px;font-size:20px;">1123</span>
         </div>
         <div class="orderUndo">
             Order/N:
-            <span id="orderUnfinish" style="padding-left:10px;font-size:20px;">1123</span>
+            <span id="orderUnfinished" style="padding-left:10px;font-size:20px;">1123</span>
         </div>
     </div>
     <div class="bottomRight">
