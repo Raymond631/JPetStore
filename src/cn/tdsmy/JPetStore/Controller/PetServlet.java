@@ -63,6 +63,12 @@ public class PetServlet extends HttpServlet {
             case "/searchTips":
                 searchTips(req, resp);//小类，展示每个Product中所有的Item
                 break;
+            case "/ProductAllBack":
+                productAllBack(req, resp);//小类，展示每个Product中所有的Item
+                break;
+            case "/ProductDetailBack":
+                productDetailBack(req, resp);//小类，展示每个Product中所有的Item
+                break;
         }
     }
 
@@ -104,8 +110,7 @@ public class PetServlet extends HttpServlet {
             Map<String, Product> productMap = (Map<String, Product>) req.getSession().getAttribute("productMap");
             Product product = productMap.get(productID);
             req.setAttribute("product", product);
-        }
-        else if (search.equals("true")) {
+        } else if (search.equals("true")) {
             Product product = petService.getProduct(productID);
             req.setAttribute("product", product);
         }
@@ -123,5 +128,19 @@ public class PetServlet extends HttpServlet {
         resp.setHeader("Access-Control-Allow-Origin", "*");//跨域，这里其实不需要设置
         PrintWriter out = resp.getWriter();
         out.println(SearchResult);
+    }
+
+    public void productAllBack(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getSession().setAttribute("user", null);
+
+        //logService.addLog(req, "Other", "退出登录", "true");
+        req.getRequestDispatcher("/WEB-INF/jsp/Pet/ProductAllBack.jsp").forward(req, resp);
+    }
+
+    public void productDetailBack(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String Category = req.getParameter("Category");//如果不是从search中眺过来的，可以直接从session中获取信息，不用再查数据库
+        System.out.println(Category);
+        //logService.addLog(req, "Read", "查看宠物详情,productID=" + productID, "true");
+        req.getRequestDispatcher("/WEB-INF/jsp/Pet/ProductDetailBack.jsp").forward(req, resp);
     }
 }

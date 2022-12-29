@@ -11,11 +11,12 @@
     <title>首页</title>
     <link rel="stylesheet" href="../css/IndexBack.css">
     <script src="https://cdn.staticfile.org/Chart.js/3.9.1/chart.js"></script>
-<%-- 图片--%>
+    <%-- 图片--%>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
+<%@include file="../Common/LeftBack.jsp" %>
 <div id="page-wrapper">
     <div class="main-page">
         <div class="row-one">
@@ -28,18 +29,18 @@
                 <div class="stats-right">
                     <label> 45</label>
                 </div>
-                <div class="clearfix"> </div>
+                <div class="clearfix"></div>
             </div>
             <div class="col-md-4 widget states-mdl">
                 <div class="stats-left">
                     <h5>Today</h5>
                     <h4>Visitors</h4>
                 </div>
-<%--                来访人数--%>
+                <%--                来访人数--%>
                 <div class="stats-right">
                     <label> 80</label>
                 </div>
-                <div class="clearfix"> </div>
+                <div class="clearfix"></div>
             </div>
             <div class="col-md-4 widget states-last">
                 <div class="stats-left">
@@ -49,14 +50,14 @@
                 <div class="stats-right">
                     <label>51</label>
                 </div>
-                <div class="clearfix"> </div>
+                <div class="clearfix"></div>
             </div>
-            <div class="clearfix"> </div>
+            <div class="clearfix"></div>
         </div>
         <div class="charts">
             <div class="col-md-4 charts-grids widget">
                 <h4 class="title">Bar Chart Example</h4>
-                <canvas id="bar" height="314" width="400"> </canvas>
+                <canvas id="bar" height="314" width="400"></canvas>
                 <script>
                     const ctxs = document.getElementById('bar');
                     const datas = {
@@ -69,7 +70,7 @@
                         ],
                         datasets: [{
                             label: '',
-                            data: [45,80,51],
+                            data: [45, 80, 51],
                             backgroundColor: [
 
                                 'rgb(79,82,186)',
@@ -95,7 +96,9 @@
                 <div class="col-md-4 social-media widget-shadow">
                     <div class="wid-social twitter">
                         <div class="social-icon">
-                            <i class="fa fa-twitter text-light icon-xlg "><ion-icon name="logo-twitter"></ion-icon></i>
+                            <i class="fa fa-twitter text-light icon-xlg ">
+                                <ion-icon name="logo-twitter"></ion-icon>
+                            </i>
                         </div>
                         <div class="social-info">
                             <h3 class="number_counter bold count text-light start_timer counted">3.1 K</h3>
@@ -113,7 +116,9 @@
                     </div>
                     <div class="wid-social facebook">
                         <div class="social-icon">
-                            <i class="fa fa-facebook text-light icon-xlg "><ion-icon name="logo-facebook"></ion-icon></i>
+                            <i class="fa fa-facebook text-light icon-xlg ">
+                                <ion-icon name="logo-facebook"></ion-icon>
+                            </i>
                         </div>
                         <div class="social-info">
                             <h3 class="number_counter bold count text-light start_timer counted">1.06K</h3>
@@ -122,7 +127,9 @@
                     </div>
                     <div class="wid-social dribbble">
                         <div class="social-icon">
-                            <i class="fa fa-dribbble text-light icon-xlg "><ion-icon name="logo-dribbble"></ion-icon></i>
+                            <i class="fa fa-dribbble text-light icon-xlg ">
+                                <ion-icon name="logo-dribbble"></ion-icon>
+                            </i>
                         </div>
                         <div class="social-info">
                             <h3 class="number_counter bold count text-light start_timer counted">1.6 K</h3>
@@ -131,7 +138,9 @@
                     </div>
                     <div class="wid-social vimeo">
                         <div class="social-icon">
-                            <i class="fa fa-vimeo-square text-light icon-xlg"><ion-icon name="logo-vimeo"></ion-icon> </i>
+                            <i class="fa fa-vimeo-square text-light icon-xlg">
+                                <ion-icon name="logo-vimeo"></ion-icon>
+                            </i>
                         </div>
                         <div class="social-info">
                             <h3 class="number_counter bold count text-light start_timer counted">2.1 m</h3>
@@ -140,7 +149,9 @@
                     </div>
                     <div class="wid-social xing">
                         <div class="social-icon">
-                            <i class="fa fa-xing text-light icon-xlg "><ion-icon name="logo-xing"></ion-icon></i>
+                            <i class="fa fa-xing text-light icon-xlg ">
+                                <ion-icon name="logo-xing"></ion-icon>
+                            </i>
                         </div>
                         <div class="social-info">
                             <h3 class="number_counter bold count text-light start_timer counted">2525</h3>
@@ -149,7 +160,9 @@
                     </div>
                     <div class="wid-social flickr">
                         <div class="social-icon">
-                            <i class="fa fa-android text-light icon-xlg"><ion-icon name="logo-android"></ion-icon></i>
+                            <i class="fa fa-android text-light icon-xlg">
+                                <ion-icon name="logo-android"></ion-icon>
+                            </i>
                         </div>
                         <div class="social-info">
                             <h3 class="number_counter bold count text-light start_timer counted">1221</h3>
@@ -167,7 +180,9 @@
                     </div>
                     <div class="wid-social rss">
                         <div class="social-icon">
-                            <i class="fa fa-rss text-light icon-xlg"><ion-icon name="logo-rss"></ion-icon></i>
+                            <i class="fa fa-rss text-light icon-xlg">
+                                <ion-icon name="logo-rss"></ion-icon>
+                            </i>
                         </div>
                         <div class="social-info">
                             <h3 class="number_counter bold count text-light start_timer counted">1523</h3>
@@ -175,7 +190,7 @@
                         </div>
                     </div>
 
-                    <div class="clearfix"> </div>
+                    <div class="clearfix"></div>
                 </div>
             </div>
             <div class="stats">
@@ -186,7 +201,7 @@
                         </div>
                         <div class="stats-body">
                             <ul class="list-unstyled">
-<%--                                用户购买各个商品的百分率--%>
+                                <%--                                用户购买各个商品的百分率--%>
                                 <li>fish <span class="pull-right">85%</span>
                                     <div class="progress progress-striped active progress-right">
                                         <div class="bar green" style="width:85%;"></div>
@@ -221,11 +236,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="clearfix"> </div>
+                <div class="clearfix"></div>
             </div>
-            <div class="clearfix"> </div>
+            <div class="clearfix"></div>
         </div>
-        <div class="clearfix"> </div>
+        <div class="clearfix"></div>
     </div>
 </div>
 </body>

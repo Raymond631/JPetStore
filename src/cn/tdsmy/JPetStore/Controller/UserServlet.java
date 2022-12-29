@@ -90,6 +90,9 @@ public class UserServlet extends HttpServlet {
             case "/UsernameExist"://判断用户名是否存在
                 userExist(req, resp);
                 break;
+            case "/ServiceBack"://后台前往客服
+                serviceBack(req, resp);
+                break;
         }
     }
 
@@ -315,12 +318,13 @@ public class UserServlet extends HttpServlet {
 
     public void IndexBack(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         User user = (User) req.getSession().getAttribute("user");
-        if (user.getUsername().equals("root"))//防止普通用户直接访问
-        {
-            List<UserLog> userLogList = logService.getLog();
-            req.setAttribute("userLogList", userLogList);
-            req.getRequestDispatcher("/WEB-INF/jsp/User/IndexBack.jsp").forward(req, resp);
-        }
+        //下面先注释掉
+//        if (user.getUsername().equals("root"))//防止普通用户直接访问
+//        {
+        List<UserLog> userLogList = logService.getLog();
+        req.setAttribute("userLogList", userLogList);
+        req.getRequestDispatcher("/WEB-INF/jsp/User/IndexBack.jsp").forward(req, resp);
+//        }
     }
 
     public void userExist(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -341,5 +345,11 @@ public class UserServlet extends HttpServlet {
             PrintWriter out = resp.getWriter();
             out.println("用户名已存在");
         }
+    }
+
+    public void serviceBack(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getSession().setAttribute("user", null);
+        //  logService.addLog(req, "Other", "", "true");
+        req.getRequestDispatcher("/WEB-INF/jsp/User/ServiceBack.jsp").forward(req, resp);
     }
 }

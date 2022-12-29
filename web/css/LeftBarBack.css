@@ -68,4 +68,6 @@
     transition: all .3s;
 }
 
-
+.addColor {
+    padding-left: 50px;
+}

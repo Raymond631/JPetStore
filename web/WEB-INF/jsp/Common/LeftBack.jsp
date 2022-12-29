@@ -25,7 +25,9 @@
         <span> <i class="fa fa-balance-scale" aria-hidden="true"></i></span>
         <div class="list_one" id="one">首页</div>
         <div class="list_two">
-            <div class="addColor" id="index">首页</div>
+            <a href="../User/IndexBack" style="text-decoration: none; color:white">
+                <div class="addColor" id="index">首页</div>
+            </a>
         </div>
     </div>
     <div>
@@ -38,25 +40,39 @@
     </div>
     <div>
         <span><i class="fa fa-telegram" aria-hidden="true"></i></span>
-        <div class="list_one" id="three">供需服务</div>
+        <div class="list_one" id="three">商品信息</div>
         <div class="list_two">
-            <div class="addColor" id="total">汇总</div>
-            <div class="addColor" id="product1">Fish</div>
-            <div class="addColor" id="product2">Dogs</div>
-            <div class="addColor" id="product3">Reptiles</div>
-            <div class="addColor" id="product4">Cats</div>
-            <div class="addColor" id="product5">Birds</div>
+            <a href="../Pet/ProductAllBack" style="text-decoration: none; color:white">
+                <div class="addColor" id="total">汇总</div>
+            </a>
+            <a href="../Pet/ProductDetailBack?Category=Fish" style="text-decoration: none; color:white">
+                <div class="addColor" id="product1">Fish</div>
+            </a>
+            <a href="../Pet/ProductDetailBack?Category=Dogs" style="text-decoration: none; color:white">
+                <div class="addColor" id="product2">Dogs</div>
+            </a>
+            <a href="../Pet/ProductDetailBack?Category=Reptiles" style="text-decoration: none; color:white">
+                <div class="addColor" id="product3">Reptiles</div>
+            </a>
+            <a href="../Pet/ProductDetailBack?Category=Cats" style="text-decoration: none; color:white">
+                <div class="addColor" id="product4">Cats</div>
+            </a>
+            <a href="../Pet/ProductDetailBack?Category=Bird" style="text-decoration: none; color:white">
+                <div class="addColor" id="product5">Birds</div>
+            </a>
         </div>
     </div>
     <div>
         <span> <i class="fa fa-user-circle-o" aria-hidden="true"></i></span>
         <div class="list_one" id="four">客服</div>
         <div class="list_two">
-            <div class="addColor" id="src3">专家信息</div>
+            <a href="../User/ServiceBack" style="text-decoration: none; color:white">
+                <div class="addColor" id="src3">专家信息</div>
+            </a>
         </div>
     </div>
 </div>
-
-</body>
 <script src="../js/LeftBack.js"></script>
+</body>
+
 </html>
