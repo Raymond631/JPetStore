@@ -57,7 +57,7 @@
             <a href="../Pet/ProductDetailBack?Category=Cats" style="text-decoration: none; color:white">
                 <div class="addColor" id="product4">Cats</div>
             </a>
-            <a href="../Pet/ProductDetailBack?Category=Bird" style="text-decoration: none; color:white">
+            <a href="../Pet/ProductDetailBack?Category=Birds" style="text-decoration: none; color:white">
                 <div class="addColor" id="product5">Birds</div>
             </a>
         </div>
