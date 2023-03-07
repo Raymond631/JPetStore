@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/jpetstore
+    #TODO ????????????????
+    username: Raymond
+    password: CSU@82092102
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+server:
+  servlet:
+    context-path: "/jpetstore"
