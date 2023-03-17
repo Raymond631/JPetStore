@@ -4,11 +4,13 @@ import com.zlp.jpetstore_spring.entity.Message;
 import com.zlp.jpetstore_spring.entity.User;
 import com.zlp.jpetstore_spring.service.UserService;
 import jakarta.servlet.http.HttpSession;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @RequestMapping("/User")
+@Slf4j
 public class UserController {
     @Autowired
     private UserService userService;
@@ -37,8 +40,8 @@ public class UserController {
         return "User/SelfCenter";
     }
 
+    @PostMapping("/login")
     public String login(@Validated User user, HttpSession session, ModelMap modelMap){
-        System.out.println("测试");
         String checkCode= (String) session.getAttribute("checkCode");
         if(!checkCode.equals(user.getVCode())){
             modelMap.addAttribute(new Message(0,"验证码错误"));
@@ -50,6 +53,7 @@ public class UserController {
                 return "User/Login";
             }
             else {
+                log.info(user.getUsername()+"成功登录");
                 session.setAttribute("loginUser",user);
                 return "Pet/Index";
             }

@@ -1,9 +1,8 @@
 package com.zlp.jpetstore_spring.controller;
 
 import jakarta.servlet.ServletOutputStream;
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import lombok.extern.slf4j.Slf4j;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -19,10 +18,9 @@ import java.io.IOException;
  * @description
  */
 @Controller
-@Slf4j
 public class ImageController {
     @GetMapping("/verificationCode")
-    public void verificationCode(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    public void verificationCode(HttpSession session, HttpServletResponse resp) throws IOException {
         int width = 60;
         int height = 20;
         BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
@@ -43,7 +41,7 @@ public class ImageController {
             int rand = (int) (Math.random() * 36);
             rands[i] = chars.charAt(rand);
         }
-        req.getSession().setAttribute("checkCode", new String(rands));
+        session.setAttribute("checkCode", new String(rands));
 
         //画字符
         g.setColor(Color.BLACK);
