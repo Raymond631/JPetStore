@@ -28,7 +28,7 @@ a {
 .main-wrap {
     width: 100%;
     height: 588px;
-    background-image: url(../images/login/back.png);
+    background-image: url(../image/login/back.png);
     background-repeat: no-repeat;
     background-position: top center;
     position: relative;
@@ -129,7 +129,7 @@ a {
     overflow: hidden;
     display: inline-block;
     vertical-align: middle;
-    background: url(../images/login/sprite_login.gif) no-repeat;
+    background: url(../image/login/sprite_login.gif) no-repeat;
     background-position: 0 -69px;
 }
 
@@ -181,7 +181,7 @@ a {
 }
 
 .btn_sns_icontype {
-    background: url(../images/login/icons_type.png);
+    background: url(../image/login/icons_type.png);
     width: 18px;
     height: 18px;
     margin-right: 10px;
@@ -272,7 +272,7 @@ a {
 .ercode_box .code_iframe {
     width: 302px;
     height: 180px;
-    background-image: url(../images/login/iframe.png);
+    background-image: url(../image/login/iframe.png);
     background-repeat: no-repeat;
     background-position: center center;
 }

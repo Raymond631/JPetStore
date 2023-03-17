@@ -95,7 +95,7 @@ body {
     margin: auto;
     display: inline-block;
     vertical-align: -6px;
-    background-image: url(../images/header/cart.png);
+    background-image: url(../image/header/cart.png);
     background-size: 20px;
 }
 
@@ -104,7 +104,7 @@ body {
 }
 
 .topbar-cart:hover em {
-    background-image: url(../images/header/cart_hover.png);
+    background-image: url(../image/header/cart_hover.png);
 }
 
 .topbar-cart:hover a {
@@ -275,11 +275,11 @@ body {
 
 .header-logo li:nth-of-type(1) {
     background-color: #3385ff;
-    background-image: url(../images/header/logo.png);
+    background-image: url(../image/header/logo.png);
 }
 
 .header-logo li:nth-of-type(2) {
-    background-image: url(../images/header/logo.png);
+    background-image: url(../image/header/logo.png);
 }
 
 /* 导航栏 */
@@ -399,7 +399,7 @@ body {
     line-height: 24px;
     background-color: #fff;
     color: #616161;
-    background-image: url(../images/header/search.png);
+    background-image: url(../image/header/search.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 23px;
@@ -514,7 +514,7 @@ body {
     width: 16px;
     height: 16px;
     display: block;
-    background-image: url(../images/section/header/arrow-right-big.png);
+    background-image: url(../image/section/header/arrow-right-big.png);
 }
 
 .swiper-category-list .children {
@@ -636,7 +636,7 @@ body {
     z-index: 10;
     cursor: pointer;
     outline: none;
-    background-image: url(../images/section/header/icon-slides.png);
+    background-image: url(../image/section/header/icon-slides.png);
 }
 
 .swiper-button-prev {
@@ -803,7 +803,7 @@ body {
     width: 20px;
     height: 20px;
     display: block;
-    background-image: url(../images/section/main/left.png);
+    background-image: url(../image/section/main/left.png);
     background-size: 20px;
     -webkit-transition: all .4s;
     transition: all .4s;
@@ -814,7 +814,7 @@ body {
 }
 
 .main .box-hd .more2 .more-link:hover i {
-    background-image: url(../images/section/main/lefthover.png);
+    background-image: url(../image/section/main/lefthover.png);
 }
 
 /* 标题的ul */
@@ -1271,7 +1271,7 @@ body {
     -webkit-transition: all .2s;
     transition: all .2s;
     overflow: hidden;
-    background-image: url(../images/section/mian8/play.png);
+    background-image: url(../image/section/mian8/play.png);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 12px;
@@ -1373,7 +1373,7 @@ body {
     margin-left: -45px;
     cursor: pointer;
     z-index: 2;
-    background: url(../images/section/mian8/big_play_btn.png) no-repeat;
+    background: url(../image/section/mian8/big_play_btn.png) no-repeat;
     display: none;
 }
 
@@ -1426,27 +1426,27 @@ body {
 .site-footer .list-service .em1 {
     left: 58px;
     background-size: 30px;
-    background-image: url(../images/footer/维修.png);
+    background-image: url(../image/footer/维修.png);
 }
 
 .site-footer .list-service .em2 {
     left: 54px;
-    background-image: url(../images/footer/7天.png);
+    background-image: url(../image/footer/7天.png);
 }
 
 .site-footer .list-service .em3 {
     left: 59px;
-    background-image: url(../images/footer/15天.png);
+    background-image: url(../image/footer/15天.png);
 }
 
 .site-footer .list-service .em4 {
     left: 65px;
-    background-image: url(../images/footer/礼物.png);
+    background-image: url(../image/footer/礼物.png);
 }
 
 .site-footer .list-service .em5 {
     left: 48px;
-    background-image: url(../images/footer/定位.png);
+    background-image: url(../image/footer/定位.png);
 }
 
 .site-footer .footer-links {
@@ -1543,7 +1543,7 @@ body {
     width: 57px;
     height: 57px;
     margin-right: 10px;
-    background: url(../images/footer/logo-footer.png) no-repeat 50% 50%;
+    background: url(../image/footer/logo-footer.png) no-repeat 50% 50%;
     position: absolute;
     top: 0;
     left: 0;
@@ -1600,7 +1600,7 @@ body {
     margin: 30px auto 0;
     width: 267px;
     height: 19px;
-    background: url(../images/footer/slogan2016.png) no-repeat center 0;
+    background: url(../image/footer/slogan2016.png) no-repeat center 0;
 }
 
 /* 页脚end */
@@ -1650,50 +1650,50 @@ body {
 }
 
 .home1 {
-    background-image: url(../images/fixed/xm11.png);
+    background-image: url(../image/fixed/xm11.png);
 }
 
 .home1:hover {
-    background-image: url(../images/fixed/xm1.png);
+    background-image: url(../image/fixed/xm1.png);
 }
 
 .home2 {
-    background-image: url(../images/fixed/xm22.png);
+    background-image: url(../image/fixed/xm22.png);
 }
 
 .home2:hover {
-    background-image: url(../images/fixed/xm2.png);
+    background-image: url(../image/fixed/xm2.png);
 }
 
 .home3 {
-    background-image: url(../images/fixed/xm33.png);
+    background-image: url(../image/fixed/xm33.png);
 }
 
 .home3:hover {
-    background-image: url(../images/fixed/xm3.png);
+    background-image: url(../image/fixed/xm3.png);
 }
 
 .home4 {
-    background-image: url(../images/fixed/xm44.png);
+    background-image: url(../image/fixed/xm44.png);
 }
 
 .home4:hover {
-    background-image: url(../images/fixed/xm4.png);
+    background-image: url(../image/fixed/xm4.png);
 }
 
 .home5 {
-    background-image: url(../images/fixed/xm55.png);
+    background-image: url(../image/fixed/xm55.png);
 }
 
 .home5:hover {
-    background-image: url(../images/fixed/xm5.png);
+    background-image: url(../image/fixed/xm5.png);
 }
 
 .div_home .img_yincang {
     /*display: none;*/
-    background-image: url(../images/fixed/xm66.png);
+    background-image: url(../image/fixed/xm66.png);
 }
 
 .img_yincang:hover {
-    background-image: url(../images/fixed/xm6.png);
+    background-image: url(../image/fixed/xm6.png);
 }

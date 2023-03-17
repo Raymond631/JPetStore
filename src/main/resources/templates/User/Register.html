@@ -3,17 +3,17 @@
 <head>
 	<meta charset="utf-8">
 	<title>注册</title>
-	<link rel="stylesheet" href="../css/Login.css"/>
+	<link rel="stylesheet" href="/jpetstore/css/Login.css"/>
 	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-	<script type="text/javascript" src="/js/register.js"></script>
+	<script type="text/javascript" src="/jpetstore/js/register.js"></script>
 </head>
 <body>
 <div class="wrap">
 	<!-- 头部logo -->
 	<header class="header-wrap">
 		<div class="header-logo">
-			<a href="../">
-				<img src="/image/login/placeholder.png">
+			<a href="/jpetstore">
+				<img src="/jpetstore/image/login/placeholder.png">
 			</a>
 		</div>
 	</header>
@@ -33,7 +33,7 @@
 							<input class="item_account" type="password" placeholder="确认密码" id="password_repeat" name="password_repeat" required="required">
 							<input class="code_input" type="text" name="vCode" id="code" placeholder="验证码" required="required">
 							<a class="code_link">
-								<img id="verificationCode" class="code_img" src="../User/verificationCode" alt="验证码" onclick="newVerification()">
+								<img id="verificationCode" class="code_img" src="/jpetstore/verificationCode" alt="验证码" onclick="newVerification()">
 							</a>
 							<div id="errer" class="err_tip">
 								<span class="error-con">${requestScope.messageBox}</span>
@@ -42,7 +42,7 @@
 						</form>
 						<div class="other_panel myclear">
 							<div class="links_area">
-								<a href="../User/showLogin">已有账号？立即登录</a>
+								<a href="/jpetstore/User/Login.html">已有账号？立即登录</a>
 							</div>
 						</div>
 					</div>
