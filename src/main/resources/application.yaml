@@ -10,6 +10,9 @@ server:
   servlet:
     context-path: /jpetstore
 
+
 logging:
   file:
     path: log
+mybatis:
+  mapper-locations: classpath:mapper/*.xml

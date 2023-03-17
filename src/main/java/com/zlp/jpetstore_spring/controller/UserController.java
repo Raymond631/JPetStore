@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -37,6 +38,7 @@ public class UserController {
         return "User/SelfCenter";
     }
 
+    @PostMapping("/login")
     public String login(@Validated User user, HttpSession session, ModelMap modelMap){
         System.out.println("测试");
         String checkCode= (String) session.getAttribute("checkCode");
