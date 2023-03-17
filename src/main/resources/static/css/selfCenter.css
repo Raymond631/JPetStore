@@ -1,0 +1,219 @@
+.mainBox {
+    width: 90%;
+    height: 100%;
+    display: flex;
+}
+
+.mainBox .left {
+    margin-top: 28px;
+    margin-left: 130px;
+    width: 40%;
+    height: 88%;
+    background-color: rgba(255, 255, 255, 0);
+    /*border: 1px solid black;*/
+    /*border-radius: 20px;*/
+}
+
+.mainBox .left .left-top {
+    margin-top: 10px;
+    margin-left: 80px;
+    margin-bottom: 20px;
+    width: 90%;
+    height: 15%;
+    border: 1px solid black;
+    border-radius: 20px;
+    /*background-color: hotpink;*/
+    display: flex;
+    /* 使背景模糊化 */
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 20px black;
+}
+
+.mainBox .left .left-top .info {
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 70%;
+    height: 90%;
+    /*border: 1px solid black;*/
+    /*border-radius: 10px;*/
+}
+
+.mainBox .left .left-top .info .userName {
+    margin-top: 0px;
+    margin-left: 20px;
+    width: 80%;
+    height: 90%;
+    /*border: 1px solid black;*/
+    /*border-radius: 10px;*/
+    font-size: 25px;
+    padding-left: 30px;
+    padding-top: 15px;
+}
+
+.mainBox .left .left-top .info .password {
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 90%;
+    height: 40%;
+    /*border: 1px solid black;*/
+    /*border-radius: 10px;*/
+    font-size: 30px;
+    /*padding-left: 30px;*/
+    padding-top: 15px;
+}
+
+.mainBox .left .left-top .changePassword {
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 20%;
+    height: 60%;
+    /*border: 1px solid black;*/
+    border-radius: 10px;
+}
+
+/*.mainBox .left .left-top .changeButton {*/
+/*    !*margin-top: 20px;*!*/
+/*    !*margin-left: 20px;*!*/
+/*    width: 40%;*/
+/*    height: 70%;*/
+/*    !*border: 1px solid black;*!*/
+/*    border-radius: 10px;*/
+/*}*/
+
+.mainBox .left .left-bottom {
+    margin-top: 25px;
+    margin-left: 80px;
+    width: 90%;
+    height: 68%;
+    border: 1px solid black;
+    border-radius: 20px;
+    /*background-color: lightblue;*/
+    /* 使背景模糊化 */
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 20px black;
+}
+
+.mainBox .left .left-bottom .saveProfile {
+    margin-left: 25%;
+    background-color: darkgreen;
+    height: 10%;
+    width: 200px;
+    color: white;
+    margin-top: -5px;
+}
+
+.mainBox .left .left-bottom .frontProfile {
+    margin-top: 5px;
+    font-size: 18px;
+    /*margin-left: 20px;*/
+    width: 35%;
+    height: 10%;
+    /*border: 1px solid black;*/
+    /*border-radius: 20px;*/
+    /*background-color: white;*/
+    float: left;
+    text-align: center;
+}
+
+.mainBox .left .left-bottom .profileInformation {
+    margin-top: 10px;
+    margin-left: 35%;
+    width: 60%;
+    height: 20%;
+    /*border: 1px solid black;*/
+    /*border-radius: 20px;*/
+    /*background-color: white;*/
+}
+
+.mainBox .left .left-bottom .profileInformation .selectBox {
+    margin-top: 15px;
+    margin-left: 10%;
+    width: 70%;
+    height: 50%;
+    /*border: 1px solid black;*/
+    /*border-radius: 20px;*/
+    background-color: white;
+}
+
+.mainBox .left .left-bottom .profileInformation .checkBox {
+    margin-top: 8%;
+    margin-left: 10px;
+    width: 40%;
+    height: 30%;
+    /*border: 1px solid black;*/
+    /*border-radius: 20px;*/
+    background-color: white;
+}
+
+.mainBox .right {
+    margin-left: 88px;
+    margin-top: 28px;
+    width: 60%;
+    height: 90%;
+    /*border: 1px solid black;*/
+    /*border-radius: 20px;*/
+}
+
+.mainBox .right .account {
+    margin-top: 10px;
+    margin-left: 100px;
+    width: 98%;
+    height: 96.5%;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: white;
+    /* 使背景模糊化 */
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 20px black;
+}
+
+.mainBox .right .account .frontAccount {
+    margin-top: 20px;
+    font-size: 20px;
+    /*margin-left: 20px;*/
+    width: 30%;
+    height: 5%;
+    /*border: 1px solid black;*/
+    /*border-radius: 20px;*/
+    /*background-color: white;*/
+    float: left;
+    text-align: center;
+}
+
+.mainBox .right .account .accountInformation {
+    margin-top: 10px;
+    margin-left: 30%;
+    width: 70%;
+    height: 10%;
+    /*border: 1px solid black;*/
+    /*border-radius: 20px;*/
+    background-color: white;
+    display: flex;
+}
+
+.mainBox .right .account .accountInformation .backInput {
+    margin-top: 8px;
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.mainBox .right .account .accountInformation .error-msg {
+    height: 70%;
+    margin-top: 3px;
+    margin-left: 15px;
+    color: red;
+    width: 120px;
+    /*border: 1px solid black;*/
+}
+
+.mainBox .right .account .saveAccount {
+    margin-left: 38%;
+    background-color: darkgreen;
+    height: 7%;
+    width: 200px;
+    color: white;
+    margin-top: -7px;
+}
+
