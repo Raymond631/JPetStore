@@ -1,8 +1,13 @@
 package com.zlp.jpetstore_spring.controller;
 
+import com.zlp.jpetstore_spring.entity.Message;
+import com.zlp.jpetstore_spring.entity.User;
 import com.zlp.jpetstore_spring.service.UserService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -30,5 +35,24 @@ public class UserController {
     @GetMapping("/SelfCenter.html")
     public String showSelfCenter(){
         return "User/SelfCenter";
+    }
+
+    public String login(@Validated User user, HttpSession session, ModelMap modelMap){
+        System.out.println("测试");
+        String checkCode= (String) session.getAttribute("checkCode");
+        if(!checkCode.equals(user.getVCode())){
+            modelMap.addAttribute(new Message(0,"验证码错误"));
+            return "User/Login";
+        }
+        else {
+            if(!userService.loign(user)){
+                modelMap.addAttribute(new Message(0,"用户名或密码错误"));
+                return "User/Login";
+            }
+            else {
+                session.setAttribute("loginUser",user);
+                return "Pet/Index";
+            }
+        }
     }
 }

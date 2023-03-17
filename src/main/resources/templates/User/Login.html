@@ -3,9 +3,9 @@
 <head>
 	<meta charset="utf-8">
 	<title>登录</title>
-	<link rel="stylesheet" href="/css/Login.css"/>
+	<link rel="stylesheet" href="/jpetstore/css/Login.css"/>
 	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-	<script type="text/javascript" src="/js/login.js"></script>
+	<script type="text/javascript" src="/jpetstore/js/login.js"></script>
 </head>
 <body>
 <div class="wrap">
@@ -13,7 +13,7 @@
 	<header class="header-wrap">
 		<div class="header-logo">
 			<a href="../">
-				<img src="/image/login/placeholder.png">
+				<img src="/jpetstore/image/login/placeholder.png">
 			</a>
 		</div>
 	</header>
@@ -26,22 +26,21 @@
 				</div>
 				<div class="loginbox">
 					<div class="btn login_area">
-						<form action="../User/login" method="post" autocomplete="off">
+						<form action="/jpetstore/User/login" method="post" autocomplete="off">
 							<input class="item_account" type="text" name="username" id="username" placeholder="用户名" required="required">
 							<input class="item_account" type="password" placeholder="密码" id="pwd" name="password" required="required">
 							<input class="code_input" type="text" name="vCode" id="code" placeholder="验证码" required="required">
 							<a class="code_link">
-								<img id="verificationCode" class="code_img" src="../User/verificationCode" alt="验证码" onclick="newVerification()">
+								<img id="verificationCode" class="code_img" src="/jpetstore/verificationCode" alt="验证码" onclick="newVerification()">
 							</a>
 							<div id="errer" class="err_tip">
-								<%--								<em class="icon_error"></em>--%>
 								<span class="error-con">${requestScope.messageBox}</span>
 							</div>
 							<input class="btnadpt item_account" type="submit" value="登录">
 						</form>
 						<div class="other_panel myclear">
 							<div class="links_area">
-								<a href="../User/showRegister">没有账号？立即注册</a>
+								<a href="/jpetstore/User/Register.html">没有账号？立即注册</a>
 							</div>
 							<div class="other_login_type">
 								<p>------------其他方式登录(敬请期待)------------</p>

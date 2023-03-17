@@ -8,4 +8,8 @@ spring:
 
 server:
   servlet:
-    context-path: "/jpetstore"
+    context-path: /jpetstore
+
+logging:
+  file:
+    path: log
