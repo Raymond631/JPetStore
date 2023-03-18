@@ -11,7 +11,7 @@
  Target Server Version : 80032 (8.0.32)
  File Encoding         : 65001
 
- Date: 17/03/2023 12:42:28
+ Date: 18/03/2023 11:27:22
 */
 
 SET NAMES utf8mb4;
@@ -41,15 +41,21 @@ CREATE TABLE `order_item`  (
   `order_item_id` int NOT NULL AUTO_INCREMENT,
   `order_id` bigint NOT NULL COMMENT '订单编号',
   `item_id` int NOT NULL COMMENT '宠物id',
+  `item_image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '图片url',
+  `product_name_Chinese` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '中文名',
+  `item_specification` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '规格',
+  `item_price` decimal(10, 2) NOT NULL COMMENT '单价',
   `item_quantity` int NOT NULL COMMENT '购买数量',
   `item_cost` decimal(10, 2) NOT NULL COMMENT '单价*购买数量',
   `whether_ship` varchar(3) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '未发货、已发货、已接收',
   PRIMARY KEY (`order_item_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of order_item
 -- ----------------------------
+INSERT INTO `order_item` VALUES (1, 1, 1, '/jpetstore/image/pet/1.jpg', '1', '1', 1.00, 1, 1.00, '1');
+INSERT INTO `order_item` VALUES (2, 1, 2, '/jpetstore/image/pet/2.jpg', '2', '2', 2.00, 2, 4.00, '2');
 
 -- ----------------------------
 -- Table structure for order_main
@@ -70,6 +76,8 @@ CREATE TABLE `order_main`  (
 -- ----------------------------
 -- Records of order_main
 -- ----------------------------
+INSERT INTO `order_main` VALUES (1, 'csu001', '2023-03-17 21:14:59', 123.14, '微信支付', '张三', '15879465812', '中南大学');
+INSERT INTO `order_main` VALUES (2, 'csu001', '2023-03-17 21:14:59', 123.14, '微信支付', '张三', '15879465812', '中南大学');
 
 -- ----------------------------
 -- Table structure for pet_item
@@ -424,7 +432,7 @@ CREATE TABLE `user_main`  (
 -- ----------------------------
 -- Records of user_main
 -- ----------------------------
-INSERT INTO `user_main` VALUES ('csu001', '123456');
+INSERT INTO `user_main` VALUES ('csu001', '123');
 
 -- ----------------------------
 -- Table structure for user_receiver
