@@ -10,7 +10,7 @@ import java.util.List;
  * @description
  */
 public interface CartService {
-    public int addCartItem(Cart cart);//增
+    public void addCartItem(Cart cart);//增
 
     public List<Cart> selectCartList(String userId);//查
 

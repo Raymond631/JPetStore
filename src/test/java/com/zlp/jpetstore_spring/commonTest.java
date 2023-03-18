@@ -1,10 +1,7 @@
 package com.zlp.jpetstore_spring;
 
-import com.zlp.jpetstore_spring.controller.CartController;
 import com.zlp.jpetstore_spring.entity.Cart;
-import com.zlp.jpetstore_spring.mapper.CartMapper;
-import com.zlp.jpetstore_spring.mapper.OrderMapper;
-import com.zlp.jpetstore_spring.service.impl.CartServiceImpl;
+import com.zlp.jpetstore_spring.service.CartService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,16 +17,15 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class commonTest {
     @Autowired
-    private CartMapper cartMapper;
-
-    @Autowired
-    private CartController cartController;
-
-
-
+    private CartService cartService;
 
     @Test
     public void abc() {
-
+        Cart cart=new Cart();
+        cart.setUserId("csu001");
+        cart.setProductId(1);
+        cart.setItemId(2);
+        cart.setQuantity(10);
+        cartService.addCartItem(cart);
     }
 }

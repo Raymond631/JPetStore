@@ -29,7 +29,7 @@ public class AuthInterceptor implements HandlerInterceptor {
             return true;
         }
         //未登录
-        response.sendRedirect("/jpetstore/Error/NotLogin.html");
+        //response.sendRedirect("/jpetstore/Error/NotLogin.html");
         return false;
     }
 }
