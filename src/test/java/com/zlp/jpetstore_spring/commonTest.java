@@ -1,6 +1,10 @@
 package com.zlp.jpetstore_spring;
 
+import com.zlp.jpetstore_spring.controller.CartController;
+import com.zlp.jpetstore_spring.entity.Cart;
+import com.zlp.jpetstore_spring.mapper.CartMapper;
 import com.zlp.jpetstore_spring.mapper.OrderMapper;
+import com.zlp.jpetstore_spring.service.impl.CartServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,10 +20,16 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class commonTest {
     @Autowired
-    private OrderMapper orderMapper;
+    private CartMapper cartMapper;
+
+    @Autowired
+    private CartController cartController;
+
+
+
 
     @Test
     public void abc() {
-        orderMapper.updateWhetherShip(1,"已接收");
+
     }
 }

@@ -8,5 +8,5 @@ import com.zlp.jpetstore_spring.entity.User;
  * @description
  */
 public interface UserService {
-    boolean loign(User user);
+    public boolean login(User user);
 }
