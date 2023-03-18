@@ -6,4 +6,5 @@ package com.zlp.jpetstore_spring.service;
  * @description
  */
 public interface PetService {
+
 }

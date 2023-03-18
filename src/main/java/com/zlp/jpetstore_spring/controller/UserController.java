@@ -53,7 +53,7 @@ public class UserController {
                 return "User/Login";
             }
             else {
-                log.info(user.getUsername()+"成功登录");
+                log.info(user.getUserId()+"成功登录");
                 session.setAttribute("loginUser",user);
                 return "Pet/Index";
             }

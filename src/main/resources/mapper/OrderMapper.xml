@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zlp.jpetstore_spring.mapper.OrderMapper">
+
+    <select id="getOrderList" resultType="order">
+        select * from order_main where user_Id = #{username}
+    </select>
+
+    <select id="getOrderDetails" resultMap="order">
+        select * from order_main where order_id = #{orderId}
+    </select>
+    <resultMap type="Order" id="order">
+        <id property="orderId" column="order_id" />
+        <result property="orderTime" column="order_time" />
+        <result property="orderCost" column="order_cost" />
+        <result property="orderPayment" column="order_payment" />
+        <result property="receiverName" column="receiver_name" />
+        <result property="receiverPhone" column="receiver_phone" />
+        <result property="receiverAddress" column="receiver_address" />
+        <collection property="orderItemList"
+                    column="order_id"
+                    select="selectOrderItemById"
+                    ofType="orderItem" />
+    </resultMap>
+
+    <select id="selectOrderItemById" resultType="orderItem">
+        select * from order_item where order_id = #{orderId}
+    </select>
+</mapper>

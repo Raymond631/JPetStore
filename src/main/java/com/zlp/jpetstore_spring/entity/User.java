@@ -17,7 +17,7 @@ import org.hibernate.validator.constraints.Length;
 public class User {
     @NotBlank(message = "用户名不能为空")
     @Length(max = 8,message = "用户名不能超过8位")
-    private String username;
+    private String userId;
 
     @NotBlank(message = "密码不能为空")
     @Length(max = 16,message = "密码不能超过16位")
