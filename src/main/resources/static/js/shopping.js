@@ -18,7 +18,7 @@ var xiaomi = {
     ajaxFun() {
         //TODO 前端json解析标准格式
         $.ajax({
-            url: "../Cart/getData",
+            url: "/jpetstore/Cart/selectCartList",
             type: "get",
             dataType: "json",
             success: function (obj) {
@@ -33,22 +33,22 @@ var xiaomi = {
                         str +=
                             `<div class="list-body myclear" data-checked = "false">
 								<div class="col col-check"><i class="iconfont icon-checkbox J_select">√</i></div>
-								<div class="col col-img"><a href="javascript:;"><img src="${obj[key].img}" alt=""></a></div>
-								<div class="col col-name">${obj[key].name}</div>
-								<div class="col col-price">$${obj[key].proc}</div>
+								<div class="col col-img"><a href="javascript:;"><img src="${obj[key].petProduct.productImage}" alt=""></a></div>
+								<div class="col col-name">${obj[key].petProduct.productNameChinese}:${obj[key].petItem.itemSpecification}</div>
+								<div class="col col-price">${obj[key].petItem.itemPrice}</div>
 								<div class="col col-num">
 									<div class="change-goods-num myclear J_changeGoodsNum">
 										<a href="javascript:void(0)" class="J_minus"><i class="iconfont">-</i></a>
-										<input tyep="text" value="${obj[key].number}" class="goods-num J_goodsNum">
+										<input tyep="text" value="${obj[key].quantity}" class="goods-num J_goodsNum">
 										<a href="javascript:void(0)" class="J_plus"><i class="iconfont">+</i></a>
 									</div>
 								</div>
-								<div class="col col-total">$${obj[key].proc * obj[key].number}</div>
+								<div class="col col-total">${obj[key].petItem.itemPrice * obj[key].quantity}</div>
 								<div class="col col-action">×</div>
 							</div>`;
-                        index.push(obj[key].xz);
-                        proc.push(obj[key].proc);
-                        itemID.push(obj[key].itemID)
+                        index.push(obj[key].petItem.itemStock);
+                        proc.push(obj[key].petItem.itemPrice);
+                        itemID.push(obj[key].itemId)
                     }
                     document.getElementById('wapper').innerHTML = str;
                     xiaomi.updata(index, proc, itemID);
@@ -88,12 +88,13 @@ var xiaomi = {
 
                     //TODO 前端json-post标准格式
                     let data = {
-                        itemID: itemID[i],
+                        itemId: itemID[i],
                         quantity: quantity
                     };
                     $.ajax({
-                        url: "../Cart/updateCart",
-                        type: "post",
+                        url: "/jpetstore/Cart/updateItemQuantity",
+                        type: "put",
+                        contentType:'application/json',
                         data: JSON.stringify(data),
                         success: function () {
                             console.log("+1");
@@ -110,12 +111,13 @@ var xiaomi = {
                     sum();
 
                     let data = {
-                        itemID: itemID[i],
+                        itemId: itemID[i],
                         quantity: quantity
                     };
                     $.ajax({
-                        url: "../Cart/updateCart",
-                        type: "post",
+                        url: "/jpetstore/Cart/updateItemQuantity",
+                        type: "put",
+                        contentType:'application/json',
                         data: JSON.stringify(data),
                         success: function () {
                             console.log("+1");
@@ -157,14 +159,9 @@ var xiaomi = {
                     check.length--;
                     document.getElementById('J_cartTotalNum').innerHTML = check.length - 1;
                     sum();
-
-                    let data = {
-                        itemID: itemID[i - 1],
-                    };
                     $.ajax({
-                        url: "../Cart/removeCartItem",
-                        type: "post",
-                        data: JSON.stringify(data),
+                        url: "/jpetstore/Cart/removeCartItem?itemId="+itemID[i - 1],
+                        type: "delete",
                         success: function () {
                             console.log("delete");
                         }

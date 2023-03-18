@@ -1,14 +1,14 @@
 package com.zlp.jpetstore_spring.controller;
 
 import com.zlp.jpetstore_spring.entity.Cart;
+import com.zlp.jpetstore_spring.entity.Message;
+import com.zlp.jpetstore_spring.entity.User;
 import com.zlp.jpetstore_spring.service.CartService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 /**
  * @author Raymond Li
@@ -27,36 +27,31 @@ public class CartController {
         return "/Cart/MyCart";
     }
 
+    @GetMapping("/selectCartList")
+    @ResponseBody
+    public Object selectCartList(HttpSession session){
+        User user = (User) session.getAttribute("loginUser");
+        return cartService.selectCartList(user.getUserId());
+    }
 
-    @PostMapping(value = "/addCartItem")
-    public String addCartItem(
-            @ModelAttribute Cart cart)
-    {
+    @PostMapping("/addCartItem")
+    @ResponseBody
+    public Object addCartItem(@RequestBody Cart cart) {
         cartService.addCartItem(cart);
-        return "/Cart/MyCart";
+        return new Message(1,"加入购物车成功");
     }
 
-    @GetMapping(value = "/selectCartList")
-    public String selectCartList(
-            @RequestParam("userId")String userId
-    ){
-        List<Cart> cartList = cartService.selectCartList(userId);
-        return "/Cart/MyCart";
-    }
-    @GetMapping(value = "/removeCartItem")
-    public String removeCartItem(
-            @RequestParam("itemId") int itemId
-    ){
+    @DeleteMapping("/removeCartItem")
+    @ResponseBody
+    public Object removeCartItem(@RequestParam("itemId") int itemId) {
         cartService.removeCartItem(itemId);
-        return "/Cart/MyCart";
+        return new Message(1,"购物车宠物移除成功");
     }
-    // public int updateItemQuantity(int itemID,int quantity);//改
-    @GetMapping(value = "/updateItemQuantity")
-    public String updateItemQuantity(
-            @RequestParam("itemId") int itemId,
-            @RequestParam("quantity") int quantity
-    ){
-        cartService.updateItemQuantity(itemId,quantity);
-        return "/Cart/MyCart";
+
+    @PutMapping("/updateItemQuantity")
+    @ResponseBody
+    public Object updateItemQuantity(@RequestBody Cart cart){
+        cartService.updateItemQuantity(cart.getItemId(),cart.getQuantity());
+        return new Message(1,"购物车宠物数量修改成功");
     }
 }

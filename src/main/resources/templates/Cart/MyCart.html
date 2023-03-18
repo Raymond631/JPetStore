@@ -3,9 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>购物车</title>
-	<link rel="stylesheet" type="text/css" href="../css/shopping.css"/>
+	<link rel="stylesheet" type="text/css" href="/jpetstore/css/shopping.css"/>
 	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-	<script type="text/javascript" src="/js/shopping.js"></script>
+	<script type="text/javascript" src="/jpetstore/js/shopping.js"></script>
 </head>
 <body>
 <!-- 头部 -->
@@ -13,7 +13,7 @@
 	<div class="container">
 		<!--logo -->
 		<div class="header-logo">
-			<a class="logo ir" href="../"></a>
+			<a class="logo ir" href="/jpetstore"></a>
 		</div>
 		<!-- 标题 -->
 		<div class="header-title has-more" id="J_miniHeaderTitle">
@@ -21,9 +21,9 @@
 			<p>温馨提示：产品是否购买成功，以最终下单为准哦，请尽快结算</p>
 		</div>
 		<div class="topbar-info" id="J_userInfo">
-			<a rel="nofollow" class="link link-order" href="#">欢迎光临：${sessionScope.user.username}</a>
+			<a rel="nofollow" class="link link-order" href="#" th:text="${session.loginUser.userId}"></a>
 			<span class="sep">|</span>
-			<a rel="nofollow" class="link link-order" href="../Order/showMyOrder">我的订单</a>
+			<a rel="nofollow" class="link link-order" href="/jpetstore/Order/MyOrder.html">我的订单</a>
 		</div>
 	</div>
 </header>

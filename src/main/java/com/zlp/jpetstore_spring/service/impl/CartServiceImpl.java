@@ -3,7 +3,6 @@ package com.zlp.jpetstore_spring.service.impl;
 import com.zlp.jpetstore_spring.entity.Cart;
 import com.zlp.jpetstore_spring.mapper.CartMapper;
 import com.zlp.jpetstore_spring.service.CartService;
-import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,10 +18,19 @@ public class CartServiceImpl implements CartService {
     @Autowired
     private CartMapper cartMapper;
 
-
+    /**
+     * 有则合并，无则插入
+     * @param cart
+     * @return
+     */
     @Override
-    public int addCartItem(Cart cart) {
-        return cartMapper.addCartItem(cart);
+    public void addCartItem(Cart cart) {
+        Integer num=cartMapper.selectQuantity(cart.getItemId());
+        if(num==null){
+            cartMapper.addCartItem(cart);
+        }else{
+            updateItemQuantity(cart.getItemId(),num+cart.getQuantity());
+        }
     }
 
     @Override
@@ -31,13 +39,12 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public int removeCartItem(int itemID) {
-        return cartMapper.removeCartItem(itemID);
+    public int removeCartItem(int itemId) {
+        return cartMapper.removeCartItem(itemId);
     }
 
     @Override
-    public int updateItemQuantity(int itemID, int quantity) {
-        return cartMapper.updateItemQuantity(itemID,quantity);
-
+    public int updateItemQuantity(int itemId, int quantity) {
+        return cartMapper.updateItemQuantity(itemId,quantity);
     }
 }
