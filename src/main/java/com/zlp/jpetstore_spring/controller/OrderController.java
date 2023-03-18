@@ -38,6 +38,7 @@ public class OrderController {
         return "/Order/OrderSubmit";
     }
 
+
     @GetMapping("/list")
     public String getOrderList(HttpSession session, ModelMap modelMap) {
         User user = (User) session.getAttribute("loginUser");
@@ -53,9 +54,17 @@ public class OrderController {
         return "/Order/OrderDetails";
     }
 
-    @PutMapping("confirmReceipt")
+    @PutMapping("/confirmReceipt")
     @ResponseBody
     public void confirmReceipt(@Param("orderItemId") int orderItemId){
         orderService.confirmReceipt(orderItemId);
+    }
+
+
+    @GetMapping("/OrderManage.html")
+    public String showOrderManage(HttpSession session, ModelMap modelMap){
+        User user = (User) session.getAttribute("loginUser");
+
+        return "/Backstage/production/OrderManage";
     }
 }

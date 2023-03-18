@@ -3,6 +3,7 @@
     let orderItemIdList = document.getElementsByClassName("orderItemIdList");
     let orderStatus=document.getElementsByClassName("orderStatus");
     let length = buttons.length;
+
     for(let i = 0;i<length;i++){
         buttons[i].onclick=function () {
             let orderItemId = orderItemIdList[i].innerHTML;
