@@ -1,4 +1,67 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.zlp.jpetstore_spring.mapper.CartMapper">
+
+    <resultMap id="BaseResultMap" type="com.zlp.jpetstore_spring.entity.Cart">
+        <result column="cart_item_id" jdbcType="INTEGER" property="cartItemId" />
+        <result column="user_id" jdbcType="VARCHAR" property="userId" />
+        <result column="item_id" jdbcType="INTEGER" property="itemId" />
+        <result column="quantity" jdbcType="INTEGER" property="quantity" />
+    </resultMap>
+
+    <!--增加购物车信息-->
+    <insert id="addCartItem" parameterType="com.zlp.jpetstore_spring.entity.Cart" >
+        insert into cart
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="cartItemId != null" >
+                cart_item_id,
+            </if>
+            <if test="userId != null" >
+                user_id,
+            </if>
+            <if test="itemId != null" >
+                item_id,
+            </if>
+
+            <if test="quantity != null" >
+                quantity,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="cartItemId != null" >
+                #{cartItemId,jdbcType=INTEGER},
+            </if>
+            <if test="userId != null" >
+                #{userId,jdbcType=VARCHAR},
+            </if>
+            <if test="itemId != null" >
+                #{itemId,jdbcType=INTEGER},
+            </if>
+            <if test="quantity != null" >
+                #{quantity,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+
+<!--    根据userId查询用户购物车所有信息-->
+    <select id="selectCartList" resultType="com.zlp.jpetstore_spring.entity.Cart">
+        select * from cart where user_id = #{userId}
+    </select>
+<!--根据itemID删除-->
+    <delete id="removeCartItem">
+        delete from cart where item_id=#{itemID}
+    </delete>
+<!--    根据itemId修改商品数量quantity-->
+    <update id="updateItemQuantity">
+        update cart
+        <set >
+            <if test="quantity != null" >
+                quantity = #{quantity,jdbcType=INTEGER},
+            </if>
+        </set>
+        where item_id = #{itemID,jdbcType=INTEGER}
+    </update>
+
+
+
 </mapper>

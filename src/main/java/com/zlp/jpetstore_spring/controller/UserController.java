@@ -48,7 +48,7 @@ public class UserController {
             return "User/Login";
         }
         else {
-            if(!userService.loign(user)){
+            if(!userService.login(user)){
                 modelMap.addAttribute(new Message(0,"用户名或密码错误"));
                 return "User/Login";
             }
