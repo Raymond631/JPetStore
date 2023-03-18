@@ -17,7 +17,7 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    public boolean loign(User user) {
+    public boolean login(User user) {
         if(userMapper.selectUser(user)==null){
             return false;
         }
