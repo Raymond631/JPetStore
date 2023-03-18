@@ -3,6 +3,6 @@
 <mapper namespace="com.zlp.jpetstore_spring.mapper.UserMapper">
 
     <select id="selectUser" resultType="com.zlp.jpetstore_spring.entity.User">
-        select * from user_main where user_id = #{username} and password = #{password}
+        select * from user_main where user_id = #{userId} and password = #{password}
     </select>
 </mapper>

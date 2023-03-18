@@ -3,20 +3,20 @@
 <head>
 	<meta charset="UTF-8">
 	<title>详情</title>
-	<link rel="stylesheet" href="../css/orderSubmit.css">
+	<link rel="stylesheet" href="/jpetstore/css/orderSubmit.css">
 	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-	<script type="text/javascript" src="/js/OrderDetails.js"></script>
+	<script type="text/javascript" src="/jpetstore/js/OrderDetails.js"></script>
 </head>
 <body>
 <div class="order_head">
 	<div class="head_background">
 		<div class="head_box">
-			<a href="../" class="head_left_a"><img src="/image/header/logo.png" alt="" class="head_left_p"></a>
+			<a href="/jpetstore" class="head_left_a"><img src="/jpetstore/image/header/logo.png" alt="" class="head_left_p"></a>
 			<h1 class="head_h1">订单详情</h1>
 			<div class="head_right">
-				<span class="head_right_in">欢迎光临：${sessionScope.user.username}</span>
+				<span class="head_right_in" th:text="'欢迎光临：'+${session.loginUser.userId}"></span>
 				<span class="head_right_in">|</span>
-				<a href="../Order/showMyOrder" class="head_right_in">返回订单列表</a>
+				<a href="/jpetstore/Order/list" class="head_right_in">返回订单列表</a>
 			</div>
 		</div>
 	</div>
@@ -30,15 +30,28 @@
 			<div class="order_lien_in"></div>
 		</div>
 		<div class="order_box" id="adr_list">
-			<a class="order_box_in address_box"></a>
-			<a class="order_box_in address_box"></a>
-			<a class="order_box_in address_box"></a>
+			<a class="order_box_in address_box">
+				<p class="order_box_p">
+					<label for="receiver_name">姓名</label>
+					<input type="text" id="receiver_name" name="receiver_name" th:value = "${order.receiverName}" disabled>
+				</p>
+				<p class="order_box_p">
+					<label for="receiver_tel">联系方式</label>
+					<input type="tel" id="receiver_tel" name="receiver_tel" th:value = "${order.receiverPhone}" disabled>
+				</p>
+				<p class="order_box_p">
+					<label for="receiver_adr">收货地址</label>
+					<input type="text" id="receiver_adr" name="receiver_adr" th:value = "${order.receiverAddress}" disabled>
+				</p>
+			</a>
 		</div>
 		<div class="order_line order_line_bordtr">
 			<div class="order_lien_in" id="payMethod">
 				<h3 class="order_title">支付方式</h3>
 			</div>
-			<div class="order_lien_in"></div>
+			<div class="order_lien_in">
+				<p class="order_PStime" th:text="${order.orderPayment}"></p>
+			</div>
 		</div>
 		<div class="order_line order_line_bordtr">
 			<div class="order_lien_in">
@@ -47,22 +60,35 @@
 			<div class="order_lien_in"></div>
 		</div>
 		<div id="order_item">
-
-		</div>
+			<div class="order_line order_line_bordtr" th:each="orderItem:${order.orderItemList}">
+				<div class="order_lien_in">
+					<img class="order_price_tv" style="height: 40px" th:src="${orderItem.itemImage}" alt="">
+					<p class="order_price" style="margin-top: 20px;width: 635px" th:text="${orderItem.productNameChinese}+' : '+${orderItem.itemSpecification}"></p>
+				</div>
+				<div class="order_lien_in">
+					<p class="order_price_1" style="margin-top: 20px" th:text="${orderItem.itemPrice}+' x '+${orderItem.itemQuantity}"></p>
+				</div>
+				<div class="order_price1">
+					<p class="order_price_2" style="margin-top: 20px" th:text="${orderItem.itemCost}"></p>
+				</div>
+				<div class="order_lien_in">
+					<p class="order_price_1" style="margin-top: 20px" th:text="${orderItem.whetherShip}"></p>
+				</div>
+			</div>
 		<div class="order_line order_line_bordtr">
 			<div class="order_lien_in">
 				<p class="order_price_11"><br>应付总额:</p>
 			</div>
 			<div class="order_price1">
 				<p class="order_price_2">
-					<span id="cost" style="font-size: 35px"></span>元
+					<span id="cost" style="font-size: 35px" th:text="${order.orderCost}"></span>元
 				</p>
-
 			</div>
 		</div>
 		<div class="pay">
-			<a href="../Order/showMyOrder" class="pay_a" id="order_submit">返回订单列表</a>
+			<a href="/jpetstore/Order/list" class="pay_a" id="order_submit">返回订单列表</a>
 		</div>
+	</div>
 	</div>
 </div>
 </body>

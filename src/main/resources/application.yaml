@@ -16,3 +16,6 @@ logging:
     path: log
 mybatis:
   mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.zlp.jpetstore_spring.entity
+  configuration:
+    map-underscore-to-camel-case: true
