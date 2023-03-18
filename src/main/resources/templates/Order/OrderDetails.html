@@ -23,13 +23,13 @@
 </div>
 	<div class="order_body">
 		<div class="order_body_background">
-			<!--订单号-->
+			<!--1 订单号-->
 			<div class="order_line order_line_bordtr">
 				<div class="order_lien_in">
 					<h3 class="order_title">订单编号</h3>
 				</div>
 				<div class="order_lien_in">
-					<p class="order_PStime" th:text="${order.orderId}"></p>
+					<p class="order_PStime" id="orderId"></p>
 				</div>
 			</div>
 			<!--收货地址-->
@@ -40,20 +40,9 @@
 				<div class="order_lien_in"></div>
 			</div>
 			<div class="order_box" id="adr_list">
-				<a class="order_box_in address_box">
-					<p class="order_box_p">
-						<label for="receiver_name">姓名</label>
-						<input type="text" id="receiver_name" name="receiver_name" th:value = "${order.receiverName}" disabled>
-					</p>
-					<p class="order_box_p">
-						<label for="receiver_tel">联系方式</label>
-						<input type="tel" id="receiver_tel" name="receiver_tel" th:value = "${order.receiverPhone}" disabled>
-					</p>
-					<p class="order_box_p">
-						<label for="receiver_adr">收货地址</label>
-						<input type="text" id="receiver_adr" name="receiver_adr" th:value = "${order.receiverAddress}" disabled>
-					</p>
-				</a>
+				<a class="order_box_in address_box"></a>
+				<a class="order_box_in address_box"></a>
+				<a class="order_box_in address_box"></a>
 			</div>
 			<!--商品清单-->
 			<div class="order_line order_line_bordtr">
@@ -62,51 +51,36 @@
 				</div>
 				<div class="order_lien_in"></div>
 			</div>
-			<div id="order_item">
-				<div class="order_line order_line_bordtr">
-					<p class="order_price" style="margin-top: 20px;width: 200px">宠物</p>
-					<p class="order_price" style="margin-top: 20px;width: 200px">金额</p>
-					<p class="order_price" style="margin-top: 20px;width: 200px">物流</p>
-					<p class="order_price" style="margin-top: 20px;width: 200px">操作</p>
-				</div>
-				<div class="order_line order_line_bordtr" th:each="orderItem:${order.orderItemList}">
-					<div class="order_lien_in">
-						<img class="order_price_tv" style="height: 40px" th:src="${orderItem.itemImage}" alt="">
-						<p class="order_price" style="margin-top: 20px;width: 300px" th:text="${orderItem.productNameChinese}+' : '+${orderItem.itemSpecification}"></p>
-					</div>
-					<div class="order_lien_in">
-						<p class="order_price_1" style="margin-top: 20px" th:text="${orderItem.itemPrice}+' x '+${orderItem.itemQuantity}"></p>
-					</div>
-					<div class="order_lien_in" style="width: 300px;margin-top: 20px">
-						<p class="order_price_1 orderStatus" th:text="${orderItem.whetherShip}"></p>
-						<button class="confirm_receipt" th:if="${orderItem.whetherShip.equals('已发货')}">确认收货</button>
-						<button class="confirm_receipt" th:unless="${orderItem.whetherShip.equals('已发货')}" hidden="hidden">确认收货</button>
-						<!--隐藏节点,存储ID-->
-						<div class="orderItemIdList" hidden="hidden" th:text="${orderItem.orderItemId}"></div>
-					</div>
-				</div>
+			<div class="order_line order_line_bordtr">
+				<p class="order_price" style="margin-top: 20px;width: 200px">宠物</p>
+				<p class="order_price" style="margin-top: 20px;width: 200px">金额</p>
+				<p class="order_price" style="margin-top: 20px;width: 200px">物流</p>
+				<p class="order_price" style="margin-top: 20px;width: 200px">操作</p>
 			</div>
-			<!--总金额-->
+			<div id="order_item">
+
+			</div>
+			<!--1 总金额-->
 			<div class="order_line order_line_bordtr">
 				<div class="order_lien_in">
 					<p class="order_price_11"><br>应付总额:</p>
 				</div>
 				<div class="order_price1">
 					<p class="order_price_2">
-						<span id="cost" style="font-size: 35px" th:text="${order.orderCost}"></span>元
+						<span id="cost" style="font-size: 35px"></span>元
 					</p>
 				</div>
 			</div>
-			<!--支付方式-->
+			<!--1 支付方式-->
 			<div class="order_line order_line_bordtr">
-				<div class="order_lien_in" id="payMethod">
+				<div class="order_lien_in">
 					<h3 class="order_title">支付方式</h3>
 				</div>
 				<div class="order_lien_in">
-					<p class="order_PStime" th:text="${order.orderPayment}"></p>
+					<p class="order_PStime" id="payMethod"></p>
 				</div>
 			</div>
-			<!--返回订单列表-->
+			<!--1 返回订单列表-->
 			<div class="pay">
 				<a href="/jpetstore/Order/list" class="pay_a" id="order_submit">返回订单列表</a>
 			</div>

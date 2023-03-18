@@ -1,6 +1,5 @@
 package com.zlp.jpetstore_spring.controller;
 
-import com.zlp.jpetstore_spring.entity.Order;
 import com.zlp.jpetstore_spring.entity.User;
 import com.zlp.jpetstore_spring.service.OrderService;
 import jakarta.servlet.http.HttpSession;
@@ -9,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 /**
  * @author Raymond Li
@@ -23,6 +20,7 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
+    // 请求页面
     @GetMapping("/MyOrder.html")
     public String showMyOrder() {
         return "/Order/MyOrder";
@@ -39,19 +37,18 @@ public class OrderController {
     }
 
 
+    // AJAX请求数据
     @GetMapping("/list")
-    public String getOrderList(HttpSession session, ModelMap modelMap) {
+    @ResponseBody
+    public Object getOrderList(HttpSession session) {
         User user = (User) session.getAttribute("loginUser");
-        List<Order> orderList = orderService.getOrderList(user.getUserId());
-        modelMap.addAttribute("orderList", orderList);
-        return "/Order/MyOrder";
+        return orderService.getOrderList(user.getUserId());
     }
 
     @GetMapping("/details")
-    public String getOrderDetails(@RequestParam("orderId") Long orderId,ModelMap modelMap) {
-        Order order = orderService.getOrderDetails(orderId);
-        modelMap.addAttribute("order", order);
-        return "/Order/OrderDetails";
+    @ResponseBody
+    public Object getOrderDetails(@RequestParam("orderId") String orderId) {
+        return orderService.getOrderDetails(Long.valueOf(orderId));
     }
 
     @PutMapping("/confirmReceipt")

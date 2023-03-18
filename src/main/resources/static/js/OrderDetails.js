@@ -1,16 +1,65 @@
 ﻿$(document).ready(function () {
+    getDetails();
+})
+
+var orderItemIdList = [];
+
+function getDetails() {
+    let orderId = getQueryVariable("orderId");
+    $.ajax({
+        url: "/jpetstore/Order/details?orderId=" + orderId,
+        type: "get",
+        dataType: "json",
+        success: function (data) {
+            $("#orderId").html(data.orderId)
+            $("#payMethod").html(data.orderPayment);
+            $("#cost").html(data.orderCost);
+
+            let str = '<p class="order_box_p"><label for="receiver_name">姓名</label><input type="text" id="receiver_name" name="receiver_name" value="' + data.receiverName + '" disabled></p>' +
+                '<p class="order_box_p"><label for="receiver_tel">联系方式</label><input type="tel" id="receiver_tel" name="receiver_tel" value="' + data.receiverPhone + '" disabled></p>' +
+                '<p class="order_box_p"><label for="receiver_adr">收货地址</label><input type="text" id="receiver_adr" name="receiver_adr" value="' + data.receiverAddress + '" disabled></p>';
+            $(".address_box").eq(0).html(str);
+
+            let orderItem = data.orderItemList;
+            let str2 = "";
+            let temp = "";
+            for (let i = 0; i < orderItem.length; i++) {
+                orderItemIdList.push(orderItem[i].orderItemId);
+                if(orderItem[i].whetherShip==='已发货'){
+                    temp = `<button class="confirm_receipt">确认收货</button>`;
+                }else{
+                    temp = `<button class="confirm_receipt" hidden="hidden">确认收货</button>`;
+                }
+                str2 += `<div class="order_line order_line_bordtr">
+                             <div class="order_lien_in">
+                                <img class="order_price_tv" style="height: 40px" src="${orderItem[i].itemImage}" alt="">
+                                <p class="order_price" style="margin-top: 20px;width: 300px">${orderItem[i].productNameChinese} : ${orderItem[i].itemSpecification}</p>
+                             </div>
+                             <div class="order_lien_in">
+                                <p class="order_price_1" style="margin-top: 20px">${orderItem[i].itemPrice} x ${orderItem[i].itemQuantity}</p>
+                             </div>
+                             <div class="order_lien_in" style="width: 300px;margin-top: 20px">
+                                <p class="order_price_1 orderStatus">${orderItem[i].whetherShip}</p>
+                                ${temp}
+                             </div>
+                         </div>`;
+            }
+            $("#order_item").html(str2);
+            confirmReceipt();
+        }
+    });
+}
+
+function confirmReceipt() {
     let buttons = document.getElementsByClassName("confirm_receipt");
-    let orderItemIdList = document.getElementsByClassName("orderItemIdList");
     let orderStatus=document.getElementsByClassName("orderStatus");
     let length = buttons.length;
-
     for(let i = 0;i<length;i++){
         buttons[i].onclick=function () {
-            let orderItemId = orderItemIdList[i].innerHTML;
             $.ajax({
                 url: "/jpetstore/Order/confirmReceipt",
                 data: {
-                    "orderItemId":orderItemId
+                    "orderItemId":orderItemIdList[i]
                 },
                 type: "put",
                 success: function () {
@@ -20,51 +69,17 @@
             })
         }
     }
-})
+}
 
-// var adr_num = 0;
-// var adr_index = 0;
-// var pay_index = 0;
-
-// function getDetails() {
-//     let orderID = getQueryVariable("orderID");
-//     $.ajax({
-//         url: "../Order/getDetails?orderID=" + orderID,
-//         type: "get",
-//         dataType: "json",
-//         success: function (data) {
-//             let str = '' +
-//                 '' +
-//                 '';
-//             $(".address_box").eq(0).html(str);
-//
-//             let payMethod = '';
-//             $("#payMethod").after(payMethod);
-//             $("#cost").html();
-//
-//             let items = data.cartItemList;
-//             let str2 = "";
-//             for (let i = 0; i < items.length; i++) {
-//                 let item_cost = items[i].listPrice * items[i].quantity;
-//                 str2 += '' +
-//                     '' +
-//                     '' +
-//                     '' +
-//                     '';
-//             }
-//             $("#order_item").html(str2);
-//         }
-//     });
-// }
-//
-// function getQueryVariable(variable) {
-//     var query = window.location.search.substring(1);
-//     var vars = query.split("&");
-//     for (var i = 0; i < vars.length; i++) {
-//         var pair = vars[i].split("=");
-//         if (pair[0] == variable) {
-//             return pair[1];
-//         }
-//     }
-//     return false;
-// }
+// 获取url参数
+function getQueryVariable(variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split("=");
+        if (pair[0] == variable) {
+            return pair[1];
+        }
+    }
+    return false;
+}
