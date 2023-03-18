@@ -19,4 +19,6 @@ public interface OrderMapper {
     Order getOrderDetails(@Param("orderId") Long orderId);
 
     List<OrderItem> selectOrderItemById(@Param("order_id") Long orderId);
+
+    void updateWhetherShip(int orderItemId, String whetherShip);
 }

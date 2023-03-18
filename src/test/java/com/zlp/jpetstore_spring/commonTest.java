@@ -20,6 +20,6 @@ public class commonTest {
 
     @Test
     public void abc() {
-        System.out.println(orderMapper.getOrderDetails(1L));
+        orderMapper.updateWhetherShip(1,"已接收");
     }
 }

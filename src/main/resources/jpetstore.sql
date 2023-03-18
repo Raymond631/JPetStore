@@ -11,7 +11,7 @@
  Target Server Version : 80032 (8.0.32)
  File Encoding         : 65001
 
- Date: 18/03/2023 11:27:22
+ Date: 18/03/2023 14:32:18
 */
 
 SET NAMES utf8mb4;
@@ -27,7 +27,7 @@ CREATE TABLE `cart`  (
   `item_id` int NOT NULL COMMENT '宠物id',
   `quantity` int NOT NULL COMMENT '数量',
   PRIMARY KEY (`cart_item_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of cart
@@ -46,7 +46,6 @@ CREATE TABLE `order_item`  (
   `item_specification` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '规格',
   `item_price` decimal(10, 2) NOT NULL COMMENT '单价',
   `item_quantity` int NOT NULL COMMENT '购买数量',
-  `item_cost` decimal(10, 2) NOT NULL COMMENT '单价*购买数量',
   `whether_ship` varchar(3) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '未发货、已发货、已接收',
   PRIMARY KEY (`order_item_id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
@@ -54,8 +53,8 @@ CREATE TABLE `order_item`  (
 -- ----------------------------
 -- Records of order_item
 -- ----------------------------
-INSERT INTO `order_item` VALUES (1, 1, 1, '/jpetstore/image/pet/1.jpg', '1', '1', 1.00, 1, 1.00, '1');
-INSERT INTO `order_item` VALUES (2, 1, 2, '/jpetstore/image/pet/2.jpg', '2', '2', 2.00, 2, 4.00, '2');
+INSERT INTO `order_item` VALUES (1, 1, 1, '/jpetstore/image/pet/1.jpg', '1', '1', 1.00, 1, '1');
+INSERT INTO `order_item` VALUES (2, 1, 2, '/jpetstore/image/pet/2.jpg', '2', '2', 2.00, 2, '2');
 
 -- ----------------------------
 -- Table structure for order_main
@@ -445,7 +444,7 @@ CREATE TABLE `user_receiver`  (
   `receiver_phone` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '收件人电话',
   `receiver_address` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '收件人地址',
   PRIMARY KEY (`receiver_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of user_receiver
