@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.zlp.jpetstore_spring.mapper.OrderMapper">
-
     <select id="getOrderList" resultType="order">
         select * from order_main where user_Id = #{username}
     </select>
@@ -22,8 +21,11 @@
                     select="selectOrderItemById"
                     ofType="orderItem" />
     </resultMap>
-
     <select id="selectOrderItemById" resultType="orderItem">
         select * from order_item where order_id = #{orderId}
     </select>
+
+    <update id="updateWhetherShip">
+        update order_item set whether_ship = #{whetherShip} where order_item_id = #{orderItemId}
+    </update>
 </mapper>

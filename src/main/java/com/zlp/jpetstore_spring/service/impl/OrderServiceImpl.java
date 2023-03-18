@@ -27,4 +27,9 @@ public class OrderServiceImpl implements OrderService {
     public Order getOrderDetails(Long orderId) {
         return orderMapper.getOrderDetails(orderId);
     }
+
+    @Override
+    public void confirmReceipt(int orderItemId) {
+        orderMapper.updateWhetherShip(orderItemId,"已接收");
+    }
 }

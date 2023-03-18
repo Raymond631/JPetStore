@@ -4,12 +4,11 @@ import com.zlp.jpetstore_spring.entity.Order;
 import com.zlp.jpetstore_spring.entity.User;
 import com.zlp.jpetstore_spring.service.OrderService;
 import jakarta.servlet.http.HttpSession;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -54,4 +53,9 @@ public class OrderController {
         return "/Order/OrderDetails";
     }
 
+    @PutMapping("confirmReceipt")
+    @ResponseBody
+    public void confirmReceipt(@Param("orderItemId") int orderItemId){
+        orderService.confirmReceipt(orderItemId);
+    }
 }

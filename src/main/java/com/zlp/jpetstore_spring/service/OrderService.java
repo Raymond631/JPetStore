@@ -13,4 +13,6 @@ public interface OrderService {
     List<Order> getOrderList(String username);
 
     Order getOrderDetails(Long orderId);
+
+    void confirmReceipt(int orderItemId);
 }

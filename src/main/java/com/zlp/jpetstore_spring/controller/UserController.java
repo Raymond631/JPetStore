@@ -43,7 +43,7 @@ public class UserController {
     @PostMapping("/login")
     public String login(@Validated User user, HttpSession session, ModelMap modelMap){
         String checkCode= (String) session.getAttribute("checkCode");
-        if(!checkCode.equals(user.getVCode())){
+        if(!checkCode.equalsIgnoreCase(user.getVCode())){
             modelMap.addAttribute(new Message(0,"验证码错误"));
             return "User/Login";
         }

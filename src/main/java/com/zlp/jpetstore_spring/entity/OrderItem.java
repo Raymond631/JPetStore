@@ -23,6 +23,5 @@ public class OrderItem {
     private String itemSpecification;
     private BigDecimal itemPrice;
     private int itemQuantity;
-    private BigDecimal itemCost;
     private String whetherShip;
 }

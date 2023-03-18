@@ -35,10 +35,10 @@ public class ImageController {
         g.drawRect(0, 0, width - 1, height - 1);
 
         //产生随机验证码
-        String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        String chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
         char[] rands = new char[4];
         for (int i = 0; i < 4; i++) {
-            int rand = (int) (Math.random() * 36);
+            int rand = (int) (Math.random() * 32);
             rands[i] = chars.charAt(rand);
         }
         session.setAttribute("checkCode", new String(rands));

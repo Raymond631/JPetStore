@@ -1323,7 +1323,7 @@ a {
 .order_price_1 {
     font-size: 14px;
     float: left;
-    margin-left: 200px;
+    /*margin-left: 200px;*/
 }
 
 .order_price_2 {

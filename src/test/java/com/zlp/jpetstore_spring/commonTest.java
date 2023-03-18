@@ -30,25 +30,6 @@ public class commonTest {
 
     @Test
     public void abc() {
-        Cart cart = new Cart();
-        cart.setCartItemId(4);
-        cart.setUserId("a");
-        cart.setItemId(1);
-        cart.setQuantity(2);
-//        Cart cart1 = new Cart();
-//        cart1.setCartItemId(3);
-//        cart1.setUserId("a");
-//        cart1.setItemId(3);
-//        cart1.setQuantity(1);
 
-//        System.out.println(cartMapper.addCartItem(cart1));
-//        System.out.println(cartMapper.selectCartList(cart.getUserId()));
-//        System.out.println(cartMapper.updateItemQuantity(cart.getCartItemId(),10));
- //       System.out.println(cartMapper.removeCartItem(cart1.getItemId()));
-
-        //cartController.addCartItem(cart);
-        // cartController.selectCartList(cart.getUserId());
-        //cartController.updateItemQuantity(cart.getItemId(),66);
-        cartController.removeCartItem(cart.getItemId());
     }
 }
