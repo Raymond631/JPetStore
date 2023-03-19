@@ -37,11 +37,11 @@ function getData() {
     for (let i = 0; i < item_index.length; i++) {
         str += `<div class="order_line order_line_bordtr">
                     <div class="order_lien_in">
-                        <img class="order_price_tv" style="height: 40px" src="${cart_info[i].petProduct.productImage}" alt="">
-                        <p class="order_price" style="margin-top: 20px;width: 300px">${cart_info[i].petProduct.productNameChinese}:${cart_info[i].petItem.itemSpecification}</p>
+                        <img class="order_price_tv" style="height: 40px" src="${cart_info[item_index[i]].petProduct.productImage}" alt="">
+                        <p class="order_price" style="margin-top: 20px;width: 300px">${cart_info[item_index[i]].petProduct.productNameChinese}:${cart_info[item_index[i]].petItem.itemSpecification}</p>
                     </div>
                     <div class="order_lien_in">
-                        <p class="order_price_1" style="margin-top: 20px">${cart_info[i].petItem.itemPrice} x ${cart_info[i].quantity}</p>
+                        <p class="order_price_1" style="margin-top: 20px">${cart_info[item_index[i]].petItem.itemPrice} x ${cart_info[item_index[i]].quantity}</p>
                     </div>
                 </div>`;
     }
@@ -98,17 +98,18 @@ function save() {
     for (let i = 0; i < adr_num; i++) {
         let input_set = $(".address_box").eq(i).find("input");
         let adrs = {
-            name: input_set[0].value,
-            tel: input_set[1].value,
-            adr: input_set[2].value
+            receiverName: input_set[0].value,
+            receiverPhone: input_set[1].value,
+            receiverAddress: input_set[2].value
         }
-        if (adrs.name != null && adrs.name != "" && adrs.tel != null && adrs.tel != "" && adrs.adr != null && adrs.adr != "") {
+        if (adrs.receiverName != null && adrs.receiverName != "" && adrs.receiverPhone != null && adrs.receiverPhone != "" && adrs.receiverAddress != null && adrs.receiverAddress != "") {
             data.push(adrs)
         }
     }
     $.ajax({
-        url: "../User/updateReceiver",
+        url: "/jpetstore/User/updateReceiver",
         type: "post",
+        contentType: 'application/json',
         data: JSON.stringify(data),
         success: function () {
             let btn = $("#adr_save_div")
@@ -138,31 +139,37 @@ function choosePay() {
 
 function newOrder() {
     //商品信息后端直接从session获取
+    let cart_data = JSON.parse(sessionStorage.getItem("cart_data"))
     if (adr_index < adr_num) {
         let input_set = $(".address_box").eq(adr_index).find("input");
         let data = {
-            name: input_set[0].value,
-            tel: input_set[1].value,
-            adr: input_set[2].value
+            receiverName: input_set[0].value,
+            receiverPhone: input_set[1].value,
+            receiverAddress: input_set[2].value,
+            orderCost: cart_data.cost,
+            orderTime: getCurrentTime(),
+            orderItemList: chooseItem(cart_data.cart_info, cart_data.item_index)
         }
         switch (pay_index) {
             case 0:
-                data.pay = "微信支付";
+                data.orderPayment = "微信支付";
                 break;
             case 1:
-                data.pay = "支付宝";
+                data.orderPayment = "支付宝";
                 break;
             case 2:
-                data.pay = "货到付款";
+                data.orderPayment = "货到付款";
                 break;
         }
-        if (data.name != null && data.name != "" && data.tel != null && data.tel != "" && data.adr != null && data.adr != "") {
+        console.log(data)
+        if (data.receiverName != null && data.receiverName != "" && data.receiverPhone != null && data.receiverPhone != "" && data.receiverAddress != null && data.receiverAddress != "") {
             $.ajax({
-                url: "../Order/newOrder",
+                url: "/jpetstore/Order/newOrder",
                 type: "post",
+                contentType: 'application/json',
                 data: JSON.stringify(data),
                 success: function () {
-                    window.location.href = "../Order/showMyOrder"
+                    window.location.href = "/jpetstore/Order/MyOrder.html"
                 }
             });
         } else {
@@ -186,5 +193,52 @@ function newOrder() {
             btn2.text("结算")
             btn2.css("background", "#ff6700")
         }, 2000)
+    }
+}
+
+function chooseItem(cart_info, item_index) {
+    let orderItemList = [];
+    for (let i = 0; i < item_index.length; i++) {
+        let tempObj = {};
+        tempObj.itemId = cart_info[item_index[i]].itemId;
+        tempObj.productId = cart_info[item_index[i]].productId;
+        tempObj.itemImage = cart_info[item_index[i]].petProduct.productImage;
+        tempObj.productNameChinese = cart_info[item_index[i]].petProduct.productNameChinese;
+        tempObj.itemSpecification = cart_info[item_index[i]].petItem.itemSpecification;
+        tempObj.itemPrice = cart_info[item_index[i]].petItem.itemPrice;
+        tempObj.itemQuantity = cart_info[item_index[i]].quantity;
+        tempObj.whetherShip = '未发货';
+        tempObj.supplier = cart_info[item_index[i]].petProduct.productSupplier;
+        orderItemList.push(tempObj);
+    }
+    return orderItemList;
+}
+
+/**
+ * 获取当前时间 格式：yyyy-MM-dd HH:MM:SS
+ */
+function getCurrentTime() {
+    var date = new Date();//当前时间
+    var month = zeroFill(date.getMonth() + 1);//月
+    var day = zeroFill(date.getDate());//日
+    var hour = zeroFill(date.getHours());//时
+    var minute = zeroFill(date.getMinutes());//分
+    var second = zeroFill(date.getSeconds());//秒
+
+    //当前时间
+    var curTime = date.getFullYear() + "-" + month + "-" + day
+        + " " + hour + ":" + minute + ":" + second;
+
+    return curTime;
+}
+
+/**
+ * 补零
+ */
+function zeroFill(i) {
+    if (i >= 0 && i <= 9) {
+        return "0" + i;
+    } else {
+        return i;
     }
 }

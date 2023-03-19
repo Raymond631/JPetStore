@@ -1,5 +1,6 @@
 package com.zlp.jpetstore_spring.controller;
 
+import com.zlp.jpetstore_spring.entity.Order;
 import com.zlp.jpetstore_spring.entity.User;
 import com.zlp.jpetstore_spring.service.OrderService;
 import jakarta.servlet.http.HttpSession;
@@ -63,11 +64,11 @@ public class OrderController {
         return orderService.getAddress(user.getUserId());
     }
 
-
-    // @GetMapping("/OrderManage.html")
-    // public String showOrderManage(HttpSession session, ModelMap modelMap){
-    //     User user = (User) session.getAttribute("loginUser");
-    //
-    //     return "/Backstage/production/OrderManage";
-    // }
+    @PostMapping("/newOrder")
+    @ResponseBody
+    public void newOrder(@RequestBody Order order, HttpSession session) {
+        System.out.println("后端接收" + order);
+        User user = (User) session.getAttribute("loginUser");
+        orderService.newOrder(user.getUserId(), order);
+    }
 }

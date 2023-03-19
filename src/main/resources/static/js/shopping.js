@@ -145,11 +145,11 @@ var xiaomi = {
             let total = 0;
             for (let i = 1, len = check.length; i < len; i++) {
                 if (check[i].parentNode.parentNode.dataset.checked == 'true') {
-                    total += parseFloat(colTotal[i].innerText);
+                    total = math.add(math.bignumber(total), math.bignumber(colTotal[i].innerText))
                 }
             }
             J_cartTotalPrice.innerText = total;
-            money = total;
+            money = parseFloat(J_cartTotalPrice.innerText);
             Select();
         }
 

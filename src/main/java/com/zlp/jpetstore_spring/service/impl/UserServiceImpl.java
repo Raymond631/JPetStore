@@ -1,10 +1,13 @@
 package com.zlp.jpetstore_spring.service.impl;
 
+import com.zlp.jpetstore_spring.entity.Receiver;
 import com.zlp.jpetstore_spring.entity.User;
 import com.zlp.jpetstore_spring.mapper.UserMapper;
 import com.zlp.jpetstore_spring.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @author Raymond Li
@@ -18,11 +21,19 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean login(User user) {
-        if(userMapper.selectUser(user)==null){
+        if (userMapper.selectUser(user) == null) {
             return false;
-        }
-        else{
+        } else {
             return true;
+        }
+    }
+
+    @Override
+    public void updateReceiver(String userId, List<Receiver> receiverList) {
+        userMapper.deleteOldReceiver(userId);
+        for (Receiver receiver : receiverList) {
+            receiver.setUserId(userId);
+            userMapper.insertNewReceiver(receiver);
         }
     }
 }
