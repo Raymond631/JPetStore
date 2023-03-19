@@ -1,4 +1,4 @@
-package com.zlp.jpetstore_spring.controller;
+package com.zlp.jpetstore_spring.common;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class AuthController {
     @GetMapping("/")
-    public String showIndex(){
+    public String showIndex() {
         return "redirect:/Pet/Index.html";
     }
 
     @GetMapping("/Error/NotLogin.html")
-    public String showNotLogin(){
+    public String showNotLogin() {
         return "/Error/NotLogin";
     }
 }

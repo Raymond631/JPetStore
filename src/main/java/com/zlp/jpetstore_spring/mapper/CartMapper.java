@@ -16,47 +16,52 @@ import java.util.List;
 public interface CartMapper {
 
     /**
-     * 加入购物车
+     * 加入购物车,有一样的则数量叠加
+     *
      * @param cart
      * @return
      */
-    int addCartItem (Cart cart);
-    /**
-     * 有一样的则数量叠加
-     * @param itemId
-     * @return
-     */
-    Integer selectQuantity(int itemId);
+
+    int addCartItem(Cart cart);
+
+    Integer selectQuantity(String userId, int itemId);
+
+    void updateQuantityWhenAdd(String userId, int itemId, int quantity);
+
+
 
     /**
      * 根据userId查询用户购物车所有信息
+     *
      * @param userId
      * @return
      */
     List<Cart> selectCartList(String userId);
 
+    PetProduct selectProductInfo(int productId);
+
+    PetItem selectItemInfo(int itemId);
+
+
     /**
      * 根据itemID删除
-     * @param itemID
+     *
+     * @param cartItemId
      * @return
      */
-    int removeCartItem(int itemID);
+    int removeCartItem(int cartItemId);
+
 
     /**
      * 根据itemId修改商品数量quantity
+
      * @param cartItemId
      * @param quantity
      * @return
      */
-    int updateItemQuantity (int cartItemId,int quantity);
 
+    int updateItemQuantity(int cartItemId, int quantity);
 
-    /**
-     * 用于级联查询
-     * @param productId
-     * @return
-     */
-    PetProduct selectProductInfo(int productId);
 
     /**
      * 用于级联查询

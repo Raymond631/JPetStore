@@ -6,7 +6,6 @@ import jakarta.servlet.http.HttpSession;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -53,15 +52,24 @@ public class OrderController {
 
     @PutMapping("/confirmReceipt")
     @ResponseBody
-    public void confirmReceipt(@Param("orderItemId") int orderItemId){
+    public void confirmReceipt(@Param("orderItemId") int orderItemId) {
         orderService.confirmReceipt(orderItemId);
     }
 
 
-    @GetMapping("/OrderManage.html")
-    public String showOrderManage(HttpSession session, ModelMap modelMap){
+    @GetMapping("/getAddress")
+    @ResponseBody
+    public Object getAddress(HttpSession session) {
         User user = (User) session.getAttribute("loginUser");
+        return orderService.getAddress(user.getUserId());
+    }
 
-        return "/Backstage/production/OrderManage";
+    @PostMapping("/newOrder")
+    @ResponseBody
+    public void newOrder(@RequestBody Order order, HttpSession session) {
+        System.out.println("后端接收" + order);
+        User user = (User) session.getAttribute("loginUser");
+        orderService.newOrder(user.getUserId(), order);
+
     }
 }

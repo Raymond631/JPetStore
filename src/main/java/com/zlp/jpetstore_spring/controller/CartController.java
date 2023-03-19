@@ -12,8 +12,7 @@ import org.springframework.stereotype.Controller;
 
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
+
 
 /**
  * @author Raymond Li
@@ -28,37 +27,46 @@ public class CartController {
     private CartService cartService;
 
     @GetMapping("/MyCart.html")
-    public String showMyCart(){
+    public String showMyCart() {
         return "/Cart/MyCart";
     }
 
     @GetMapping("/selectCartList")
     @ResponseBody
-    public Object selectCartList(HttpSession session){
+
+    public Object selectCartList(HttpSession session) {
         User user = (User) session.getAttribute("loginUser");
         return cartService.selectCartList(user.getUserId());
     }
 
+    /**
+     * 前端用json发送
+     * cart中只需包含 productId,itemId,quantity 这3个字段
+     */
     @PostMapping("/addCartItem")
     @ResponseBody
-    public Object addCartItem(@RequestBody Cart cart) {
-        cartService.addCartItem(cart);
-        return new Message(1,"加入购物车成功");
+    public Object addCartItem(@RequestBody Cart cart, HttpSession session) {
+        User user = (User) session.getAttribute("loginUser");
+        cartService.addCartItem(user.getUserId(), cart);
+        return new Message(1, "加入购物车成功");
+    }
+
+    /**
+     * 前端用json发送
+     * cart中只需包含 cartItemId,quantity 这2个字段
+     */
+    @PutMapping("/updateItemQuantity")
+    @ResponseBody
+    public Object updateItemQuantity(@RequestBody Cart cart) {
+        cartService.updateItemQuantity(cart.getCartItemId(), cart.getQuantity());
+        return new Message(1, "购物车宠物数量修改成功");
     }
 
     @DeleteMapping("/removeCartItem")
     @ResponseBody
-    public Object removeCartItem(@RequestParam("itemId") int itemId) {
-        cartService.removeCartItem(itemId);
-        return new Message(1,"购物车宠物移除成功");
-    }
-
-
-    @PutMapping("/updateItemQuantity")
-    @ResponseBody
-    public Object updateItemQuantity(@RequestBody Cart cart){
-        cartService.updateItemQuantity(cart.getItemId(),cart.getQuantity());
-        return new Message(1,"购物车宠物数量修改成功");
+    public Object removeCartItem(@RequestParam("cartItemId") int cartItemId) {
+        cartService.removeCartItem(cartItemId);
+        return new Message(1, "购物车宠物移除成功");
 
     }
 

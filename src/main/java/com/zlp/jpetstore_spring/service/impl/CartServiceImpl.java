@@ -20,16 +20,23 @@ public class CartServiceImpl implements CartService {
 
     /**
      * 有则合并，无则插入
+
+     *
+     * @param userId
+
      * @param cart
      * @return
      */
     @Override
-    public void addCartItem(Cart cart) {
-        Integer num=cartMapper.selectQuantity(cart.getItemId());
-        if(num==null){
+
+    public void addCartItem(String userId, Cart cart) {
+        Integer num = cartMapper.selectQuantity(userId, cart.getItemId());
+        if (num == null) {
+            cart.setUserId(userId);
             cartMapper.addCartItem(cart);
-        }else{
-            updateItemQuantity(cart.getItemId(),num+cart.getQuantity());
+        } else {
+            cartMapper.updateQuantityWhenAdd(cart.getUserId(), cart.getItemId(), num + cart.getQuantity());
+
         }
     }
 
@@ -39,12 +46,14 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public int removeCartItem(int itemId) {
-        return cartMapper.removeCartItem(itemId);
+
+    public int removeCartItem(int cartItemId) {
+        return cartMapper.removeCartItem(cartItemId);
     }
 
     @Override
-    public int updateItemQuantity(int itemId, int quantity) {
-        return cartMapper.updateItemQuantity(itemId,quantity);
+    public int updateItemQuantity(int cartItemId, int quantity) {
+        return cartMapper.updateItemQuantity(cartItemId, quantity);
+
     }
 }

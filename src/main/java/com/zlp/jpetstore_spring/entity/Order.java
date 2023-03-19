@@ -17,7 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 public class Order {
     private Long orderId;
-    private String username;
+    private String userId;
     private String orderTime;
     private BigDecimal orderCost;
     private String orderPayment;

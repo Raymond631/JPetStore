@@ -27,16 +27,23 @@
         insert into cart (user_id,product_id,item_id,quantity) values (#{userId},#{productId},#{itemId},#{quantity})
     </insert>
     <select id="selectQuantity" resultType="java.lang.Integer">
-        select quantity from cart where item_id = #{itemId}
+
+        select quantity from cart where user_id = #{userId} and item_id = #{itemId}
     </select>
+    <update id="updateQuantityWhenAdd">
+        update cart set quantity = #{quantity} where user_id = #{userId} and item_id = #{itemId}
+    </update>
+
+
 
     <!--根据itemID删除-->
     <delete id="removeCartItem">
-        delete from cart where item_id=#{itemID}
+        delete from cart where cart_item_id = #{cartItemId}
     </delete>
 
     <!--根据itemId修改商品数量quantity-->
     <update id="updateItemQuantity">
         update cart set quantity = #{quantity} where cart_item_id = #{cartItemId}
     </update>
+
 </mapper>
