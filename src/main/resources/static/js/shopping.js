@@ -28,8 +28,10 @@ var xiaomi = {
                     let str = '',
                         index = [],
                         proc = [],
-                        itemID = [];
-                    for (var key in obj) {
+                        cartItemId = [];
+                    let total_cost;
+                    for (let key in obj) {
+                        total_cost = math.multiply(math.bignumber(obj[key].petItem.itemPrice), math.bignumber(obj[key].quantity))
                         str +=
                             `<div class="list-body myclear" data-checked = "false">
 								<div class="col col-check"><i class="iconfont icon-checkbox J_select">√</i></div>
@@ -43,15 +45,15 @@ var xiaomi = {
 										<a href="javascript:void(0)" class="J_plus"><i class="iconfont">+</i></a>
 									</div>
 								</div>
-								<div class="col col-total">${obj[key].petItem.itemPrice * obj[key].quantity}</div>
+								<div class="col col-total">${total_cost}</div>
 								<div class="col col-action">×</div>
 							</div>`;
                         index.push(obj[key].petItem.itemStock);
                         proc.push(obj[key].petItem.itemPrice);
-                        itemID.push(obj[key].itemId)
+                        cartItemId.push(obj[key].cartItemId)
                     }
                     document.getElementById('wapper').innerHTML = str;
-                    xiaomi.updata(index, proc, itemID);
+                    xiaomi.updata(index, proc, cartItemId);
                 } else {
                     isEmpty = true;
                 }
@@ -60,7 +62,7 @@ var xiaomi = {
     },
 
     // 操作数据
-    updata(index, proc, itemID) {
+    updata(index, proc, cartItemId) {
         // 减加
         let J_minus = document.getElementsByClassName('J_minus');
         let J_plus = document.getElementsByClassName('J_plus');
@@ -83,18 +85,18 @@ var xiaomi = {
             J_plus[i].onclick = function () {
                 if (J_goodsNum[i].value < index[i]) {
                     let quantity = ++J_goodsNum[i].value;
-                    colTotal[i + 1].innerHTML = '$' + proc[i] * J_goodsNum[i].value;
+                    colTotal[i + 1].innerHTML = math.multiply(math.bignumber(proc[i]), math.bignumber(J_goodsNum[i].value));
                     sum();
 
                     //TODO 前端json-post标准格式
                     let data = {
-                        itemId: itemID[i],
+                        cartItemId: cartItemId[i],
                         quantity: quantity
                     };
                     $.ajax({
                         url: "/jpetstore/Cart/updateItemQuantity",
                         type: "put",
-                        contentType:'application/json',
+                        contentType: 'application/json',
                         data: JSON.stringify(data),
                         success: function () {
                             console.log("+1");
@@ -107,17 +109,17 @@ var xiaomi = {
             J_minus[i].onclick = function () {
                 if (J_goodsNum[i].value > 1) {
                     let quantity = --J_goodsNum[i].value;
-                    colTotal[i + 1].innerHTML = '$' + proc[i] * J_goodsNum[i].value;
+                    colTotal[i + 1].innerHTML = math.multiply(math.bignumber(proc[i]), math.bignumber(J_goodsNum[i].value));
                     sum();
 
                     let data = {
-                        itemId: itemID[i],
+                        cartItemId: cartItemId[i],
                         quantity: quantity
                     };
                     $.ajax({
                         url: "/jpetstore/Cart/updateItemQuantity",
                         type: "put",
-                        contentType:'application/json',
+                        contentType: 'application/json',
                         data: JSON.stringify(data),
                         success: function () {
                             console.log("+1");
@@ -143,7 +145,7 @@ var xiaomi = {
             let total = 0;
             for (let i = 1, len = check.length; i < len; i++) {
                 if (check[i].parentNode.parentNode.dataset.checked == 'true') {
-                    total += parseFloat(colTotal[i].innerText.slice(1));
+                    total += parseFloat(colTotal[i].innerText);
                 }
             }
             J_cartTotalPrice.innerText = total;
@@ -160,7 +162,7 @@ var xiaomi = {
                     document.getElementById('J_cartTotalNum').innerHTML = check.length - 1;
                     sum();
                     $.ajax({
-                        url: "/jpetstore/Cart/removeCartItem?itemId="+itemID[i - 1],
+                        url: "/jpetstore/Cart/removeCartItem?cartItemId=" + cartItemId[i - 1],
                         type: "delete",
                         success: function () {
                             console.log("delete");
@@ -252,14 +254,16 @@ var xiaomi = {
                 item_index: index_set,
                 cost: money
             };
-            $.ajax({
-                url: "../Cart/CheckOut",
-                type: "post",
-                data: JSON.stringify(data),
-                success: function () {
-                    window.location.href = "../Order/showOrderSubmit"
-                }
-            });
+            sessionStorage.setItem("cart_data", JSON.stringify(data))
+            window.location.href = "/jpetstore/Order/OrderSubmit.html"
+            // $.ajax({
+            //     url: "../Cart/CheckOut",
+            //     type: "post",
+            //     data: JSON.stringify(data),
+            //     success: function () {
+            //         window.location.href = "../Order/showOrderSubmit"
+            //     }
+            // });
         }
     },
 }

@@ -21,11 +21,11 @@ public class commonTest {
 
     @Test
     public void abc() {
-        Cart cart=new Cart();
-        cart.setUserId("csu001");
-        cart.setProductId(1);
-        cart.setItemId(2);
-        cart.setQuantity(10);
-        cartService.addCartItem(cart);
+        Cart cart = new Cart();
+        cart.setProductId(4);
+        cart.setItemId(18);
+        cart.setQuantity(5);
+        cartService.addCartItem("csu001", cart);
+        System.out.println();
     }
 }
