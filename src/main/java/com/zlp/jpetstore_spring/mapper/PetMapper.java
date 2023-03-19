@@ -1,6 +1,11 @@
 package com.zlp.jpetstore_spring.mapper;
 
+import com.zlp.jpetstore_spring.entity.PetItem;
+import com.zlp.jpetstore_spring.entity.PetProduct;
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * @author Raymond Li
@@ -9,5 +14,7 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface PetMapper {
+    List<PetProduct> getPetProductListByCategory(String Category);
+    List<PetItem> getPetItemListByProductId(String ProductId);
 
 }
