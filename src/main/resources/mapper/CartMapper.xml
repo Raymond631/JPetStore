@@ -1,42 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.zlp.jpetstore_spring.mapper.CartMapper">
-    <!--根据userId查询用户购物车所有信息-->
-    <select id="selectCartList" resultMap="cartList">
-        select * from cart where user_id = #{userId}
-    </select>
-    <resultMap id="cartList" type="Cart">
-        <id property="cartItemId" column="cart_item_id" />
-        <result property="productId" column="product_id" />
-        <result property="itemId" column="item_id" />
-        <result property="quantity" column="quantity" />
-        <association  property="petProduct" column="product_id" select="selectProductInfo" javaType="PetProduct" />
-        <association  property="petItem" column="item_id" select="selectItemInfo" javaType="PetItem" />
-    </resultMap>
-    <select id="selectProductInfo" resultType="com.zlp.jpetstore_spring.entity.PetProduct">
-        select product_name_Chinese,product_image,product_supplier from pet_product where product_id = #{productId}
-    </select>
-    <select id="selectItemInfo" resultType="com.zlp.jpetstore_spring.entity.PetItem">
-        select item_specification,item_price,item_stock from pet_item where item_id = #{itemId}
-    </select>
-
-
-
-    <!--增加购物车信息-->
-    <insert id="addCartItem" parameterType="com.zlp.jpetstore_spring.entity.Cart" >
-        insert into cart (user_id,product_id,item_id,quantity) values (#{userId},#{productId},#{itemId},#{quantity})
-    </insert>
-    <select id="selectQuantity" resultType="java.lang.Integer">
-        select quantity from cart where item_id = #{itemId}
-    </select>
-
-    <!--根据itemID删除-->
-    <delete id="removeCartItem">
-        delete from cart where item_id=#{itemID}
-    </delete>
-
-    <!--根据itemId修改商品数量quantity-->
-    <update id="updateItemQuantity">
-        update cart set quantity = #{quantity} where cart_item_id = #{cartItemId}
-    </update>
 </mapper>

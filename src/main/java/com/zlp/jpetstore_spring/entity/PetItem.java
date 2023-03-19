@@ -20,4 +20,44 @@ public class PetItem {
     private String itemSpecification;
     private BigDecimal itemPrice;
     private int itemStock;
+
+    public int getItemId() {
+        return itemId;
+    }
+
+    public void setItemId(int itemId) {
+        this.itemId = itemId;
+    }
+
+    public int getProductId() {
+        return productId;
+    }
+
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
+
+    public String getItemSpecification() {
+        return itemSpecification;
+    }
+
+    public void setItemSpecification(String itemSpecification) {
+        this.itemSpecification = itemSpecification;
+    }
+
+    public BigDecimal getItemPrice() {
+        return itemPrice;
+    }
+
+    public void setItemPrice(BigDecimal itemPrice) {
+        this.itemPrice = itemPrice;
+    }
+
+    public int getItemStock() {
+        return itemStock;
+    }
+
+    public void setItemStock(int itemStock) {
+        this.itemStock = itemStock;
+    }
 }

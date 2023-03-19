@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
 <mapper namespace="com.zlp.jpetstore_spring.mapper.PetMapper">
 
+    <select id="getPetProductListByCategory" parameterType="string" resultType="PetProduct">
+        SELECT
+            PRODUCT_ID as productId,
+            CATEGORY as category,
+            PRODUCT_NAME_CHINESE as productNameChinese,
+            PRODUCT_NAME_ENGLISH as productNameEnglish,
+            PRODUCT_CHARACTER as productCharacter,
+            PRODUCT_ANCESTRY as productAncestry,
+            PRODUCT_DISEASE as productDisease,
+            PRODUCT_LIFE as productLife,
+            PRODUCT_INTRODUCE as productIntroduce,
+            PRODUCT_IMAGE as productImage,
+            PRODUCT_SUPPLIER as productSupplier
+        FROM PET_PRODUCT
+        WHERE CATEGORY = #{Category}
+    </select>
+
+    <select id="getPetItemListByProductId" parameterType="string" resultType="PetItem">
+        SELECT
+            ITEM_ID as itemId,
+            PRODUCT_ID as productId,
+            ITEM_SPECIFICATION as itemSpecification,
+            ITEM_PRICE as itemPrice,
+            ITEM_STOCK as itemStock
+        FROM PET_ITEM
+        WHERE PRODUCT_ID = #{ProductId}
+    </select>
 </mapper>
