@@ -34,6 +34,10 @@ public class CartController {
         return cartService.selectCartList(user.getUserId());
     }
 
+    /**
+     * 前端用json发送
+     * cart中只需包含 productId,itemId,quantity 这3个字段
+     */
     @PostMapping("/addCartItem")
     @ResponseBody
     public Object addCartItem(@RequestBody Cart cart, HttpSession session) {
@@ -42,6 +46,10 @@ public class CartController {
         return new Message(1, "加入购物车成功");
     }
 
+    /**
+     * 前端用json发送
+     * cart中只需包含 cartItemId,quantity 这2个字段
+     */
     @PutMapping("/updateItemQuantity")
     @ResponseBody
     public Object updateItemQuantity(@RequestBody Cart cart) {

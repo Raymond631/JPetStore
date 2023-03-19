@@ -10,11 +10,13 @@ import java.util.List;
  * @description
  */
 public interface OrderService {
-    List<Order> getOrderList(String username);
+    List<Order> getOrderList(String userId);
 
     Order getOrderDetails(Long orderId);
 
     void confirmReceipt(int orderItemId);
 
     Object getAddress(String userId);
+
+    void newOrder(String userId, Order order);
 }

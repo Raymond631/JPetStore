@@ -14,14 +14,16 @@ import java.math.BigDecimal;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class OrderItem{
+public class OrderItem {
     private int orderItemId;
     private Long orderId;
     private int itemId;
+    private int productId;
     private String itemImage;
     private String productNameChinese;
     private String itemSpecification;
     private BigDecimal itemPrice;
     private int itemQuantity;
     private String whetherShip;
+    private String supplier;
 }

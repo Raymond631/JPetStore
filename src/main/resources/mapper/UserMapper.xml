@@ -5,4 +5,11 @@
     <select id="selectUser" resultType="com.zlp.jpetstore_spring.entity.User">
         select * from user_main where user_id = #{userId} and password = #{password}
     </select>
+
+    <delete id="deleteOldReceiver">
+        delete from user_receiver where user_id = #{userId}
+    </delete>
+    <insert id="insertNewReceiver">
+        insert into user_receiver (user_id,receiver_name,receiver_phone,receiver_address) values (#{userId},#{receiverName},#{receiverPhone},#{receiverAddress})
+    </insert>
 </mapper>
