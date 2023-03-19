@@ -2,6 +2,7 @@ package com.zlp.jpetstore_spring.mapper;
 
 import com.zlp.jpetstore_spring.entity.Order;
 import com.zlp.jpetstore_spring.entity.OrderItem;
+import com.zlp.jpetstore_spring.entity.Receiver;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -21,4 +22,6 @@ public interface OrderMapper {
     List<OrderItem> selectOrderItemById(@Param("order_id") Long orderId);
 
     void updateWhetherShip(int orderItemId, String whetherShip);
+
+    List<Receiver> selectReceiver(String userId);
 }

@@ -15,4 +15,6 @@ public interface OrderService {
     Order getOrderDetails(Long orderId);
 
     void confirmReceipt(int orderItemId);
+
+    Object getAddress(String userId);
 }

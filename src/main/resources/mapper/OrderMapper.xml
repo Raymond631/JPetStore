@@ -28,4 +28,8 @@
     <update id="updateWhetherShip">
         update order_item set whether_ship = #{whetherShip} where order_item_id = #{orderItemId}
     </update>
+
+    <select id="selectReceiver" resultType="com.zlp.jpetstore_spring.entity.Receiver">
+        select * from user_receiver where user_id = #{userId}
+    </select>
 </mapper>

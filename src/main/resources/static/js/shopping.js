@@ -29,7 +29,7 @@ var xiaomi = {
                         index = [],
                         proc = [],
                         itemID = [];
-                    for (var key in obj) {
+                    for (let key in obj) {
                         str +=
                             `<div class="list-body myclear" data-checked = "false">
 								<div class="col col-check"><i class="iconfont icon-checkbox J_select">√</i></div>
@@ -94,7 +94,7 @@ var xiaomi = {
                     $.ajax({
                         url: "/jpetstore/Cart/updateItemQuantity",
                         type: "put",
-                        contentType:'application/json',
+                        contentType: 'application/json',
                         data: JSON.stringify(data),
                         success: function () {
                             console.log("+1");
@@ -117,7 +117,7 @@ var xiaomi = {
                     $.ajax({
                         url: "/jpetstore/Cart/updateItemQuantity",
                         type: "put",
-                        contentType:'application/json',
+                        contentType: 'application/json',
                         data: JSON.stringify(data),
                         success: function () {
                             console.log("+1");
@@ -160,7 +160,7 @@ var xiaomi = {
                     document.getElementById('J_cartTotalNum').innerHTML = check.length - 1;
                     sum();
                     $.ajax({
-                        url: "/jpetstore/Cart/removeCartItem?itemId="+itemID[i - 1],
+                        url: "/jpetstore/Cart/removeCartItem?itemId=" + itemID[i - 1],
                         type: "delete",
                         success: function () {
                             console.log("delete");
@@ -252,14 +252,16 @@ var xiaomi = {
                 item_index: index_set,
                 cost: money
             };
-            $.ajax({
-                url: "../Cart/CheckOut",
-                type: "post",
-                data: JSON.stringify(data),
-                success: function () {
-                    window.location.href = "../Order/showOrderSubmit"
-                }
-            });
+            sessionStorage.setItem("cart_data", JSON.stringify(data))
+            window.location.href = "/jpetstore/Order/OrderSubmit.html"
+            // $.ajax({
+            //     url: "../Cart/CheckOut",
+            //     type: "post",
+            //     data: JSON.stringify(data),
+            //     success: function () {
+            //         window.location.href = "../Order/showOrderSubmit"
+            //     }
+            // });
         }
     },
 }

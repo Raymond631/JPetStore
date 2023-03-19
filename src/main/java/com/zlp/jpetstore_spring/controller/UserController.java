@@ -26,36 +26,34 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/Login.html")
-    public String showLogin(){
+    public String showLogin() {
         return "User/Login";
     }
 
     @GetMapping("/Register.html")
-    public String showRegister(){
+    public String showRegister() {
         return "User/Register";
     }
 
     @GetMapping("/SelfCenter.html")
-    public String showSelfCenter(){
+    public String showSelfCenter() {
         return "User/SelfCenter";
     }
 
     @PostMapping("/login")
-    public String login(@Validated User user, HttpSession session, ModelMap modelMap){
-        String checkCode= (String) session.getAttribute("checkCode");
-        if(!checkCode.equalsIgnoreCase(user.getVCode())){
-            modelMap.addAttribute(new Message(0,"验证码错误"));
-            return "User/Login";
-        }
-        else {
-            if(!userService.login(user)){
-                modelMap.addAttribute(new Message(0,"用户名或密码错误"));
-                return "User/Login";
-            }
-            else {
-                log.info(user.getUserId()+"成功登录");
-                session.setAttribute("loginUser",user);
-                return "Pet/Index";
+    public String login(@Validated User user, HttpSession session, ModelMap modelMap) {
+        String checkCode = (String) session.getAttribute("checkCode");
+        if (!checkCode.equalsIgnoreCase(user.getVCode())) {
+            modelMap.addAttribute(new Message(0, "验证码错误"));
+            return "/User/Login";
+        } else {
+            if (!userService.login(user)) {
+                modelMap.addAttribute(new Message(0, "用户名或密码错误"));
+                return "/User/Login";
+            } else {
+                log.info(user.getUserId() + "成功登录");
+                session.setAttribute("loginUser", user);
+                return "redirect:/Pet/Index.html";
             }
         }
     }

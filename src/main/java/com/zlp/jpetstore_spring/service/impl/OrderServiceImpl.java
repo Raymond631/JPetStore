@@ -1,6 +1,7 @@
 package com.zlp.jpetstore_spring.service.impl;
 
 import com.zlp.jpetstore_spring.entity.Order;
+import com.zlp.jpetstore_spring.entity.Receiver;
 import com.zlp.jpetstore_spring.mapper.OrderMapper;
 import com.zlp.jpetstore_spring.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,11 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public void confirmReceipt(int orderItemId) {
-        orderMapper.updateWhetherShip(orderItemId,"已接收");
+        orderMapper.updateWhetherShip(orderItemId, "已接收");
+    }
+
+    @Override
+    public List<Receiver> getAddress(String userId) {
+        return orderMapper.selectReceiver(userId);
     }
 }
