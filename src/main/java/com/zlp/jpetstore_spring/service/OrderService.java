@@ -1,6 +1,7 @@
 package com.zlp.jpetstore_spring.service;
 
 import com.zlp.jpetstore_spring.entity.Order;
+import com.zlp.jpetstore_spring.entity.OrderManage;
 
 import java.util.List;
 
@@ -19,4 +20,8 @@ public interface OrderService {
     Object getAddress(String userId);
 
     void newOrder(String userId, Order order);
+
+    List<OrderManage> getOrderManageData(String userId);
+
+    void ship(int orderItemId);
 }

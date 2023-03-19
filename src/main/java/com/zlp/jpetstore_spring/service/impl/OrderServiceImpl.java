@@ -1,8 +1,6 @@
 package com.zlp.jpetstore_spring.service.impl;
 
-import com.zlp.jpetstore_spring.entity.Order;
-import com.zlp.jpetstore_spring.entity.OrderItem;
-import com.zlp.jpetstore_spring.entity.Receiver;
+import com.zlp.jpetstore_spring.entity.*;
 import com.zlp.jpetstore_spring.mapper.OrderMapper;
 import com.zlp.jpetstore_spring.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,6 +66,30 @@ public class OrderServiceImpl implements OrderService {
                 orderMapper.deleteFromCart(userId, orderItemList.get(i).getItemId());
             }
         }
+    }
+
+    @Override
+    public List<OrderManage> getOrderManageData(String userId) {
+        List<OrderManage> orderManageList = new ArrayList<>();
+        List<OrderManageTemp> orderManageTempList = orderMapper.selectOrderItemBySupplier(userId);
+        for (OrderManageTemp temp : orderManageTempList) {
+            OrderManage orderManage = new OrderManage();
+            orderManage.setId(temp.getOrderItemId());
+            orderManage.setName(temp.getOrder().getReceiverName());
+            orderManage.setPhone(temp.getOrder().getReceiverPhone());
+            orderManage.setPosition(temp.getOrder().getReceiverAddress());
+            orderManage.setDate(temp.getOrder().getOrderTime());
+            orderManage.setStatus(temp.getWhetherShip());
+            orderManage.setAmount(temp.getItemQuantity());
+            orderManage.setCategory(temp.getProductNameChinese() + ":" + temp.getItemSpecification());
+            orderManageList.add(orderManage);
+        }
+        return orderManageList;
+    }
+
+    @Override
+    public void ship(int orderItemId) {
+        orderMapper.updateWhetherShip(orderItemId, "已发货");
     }
 
     public boolean stockEnough(List<Integer> stockList, List<Integer> quantityList) {

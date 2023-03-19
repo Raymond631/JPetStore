@@ -71,12 +71,4 @@ public class OrderController {
         User user = (User) session.getAttribute("loginUser");
         orderService.newOrder(user.getUserId(), order);
     }
-
-
-    // @GetMapping("/OrderManage.html")
-    // public String showOrderManage(HttpSession session, ModelMap modelMap){
-    //     User user = (User) session.getAttribute("loginUser");
-    //
-    //     return "/Backstage/production/OrderManage";
-    // }
 }

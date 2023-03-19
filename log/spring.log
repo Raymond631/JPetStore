@@ -2774,3 +2774,19 @@ java.lang.IllegalStateException: Optional int parameter 'itemId' is present but 
 2023-03-19T18:12:27.153+08:00  INFO 10180 --- [http-nio-8080-exec-10] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
 2023-03-19T18:25:00.152+08:00  INFO 10180 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
 2023-03-19T18:25:00.155+08:00  INFO 10180 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-19T20:13:00.329+08:00  INFO 19132 --- [main] com.zlp.jpetstore_spring.commonTest      : Starting commonTest using Java 17.0.6 with PID 19132 (started by Raymond Li in D:\Project\Web\JPetStore_Spring)
+2023-03-19T20:13:00.331+08:00  INFO 19132 --- [main] com.zlp.jpetstore_spring.commonTest      : No active profile set, falling back to 1 default profile: "default"
+2023-03-19T20:13:00.975+08:00  INFO 19132 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-03-19T20:13:00.990+08:00  INFO 19132 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 JDBC repository interfaces.
+2023-03-19T20:13:02.552+08:00  INFO 19132 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-19T20:13:03.020+08:00  INFO 19132 --- [main] com.zlp.jpetstore_spring.commonTest      : Started commonTest in 3.038 seconds (process running for 3.845)
+2023-03-19T20:13:03.456+08:00  INFO 19132 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-19T20:13:03.463+08:00  INFO 19132 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-19T20:21:23.067+08:00  INFO 9712 --- [main] com.zlp.jpetstore_spring.commonTest      : Starting commonTest using Java 17.0.6 with PID 9712 (started by Raymond Li in D:\Project\Web\JPetStore_Spring)
+2023-03-19T20:21:23.069+08:00  INFO 9712 --- [main] com.zlp.jpetstore_spring.commonTest      : No active profile set, falling back to 1 default profile: "default"
+2023-03-19T20:21:23.687+08:00  INFO 9712 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-03-19T20:21:23.703+08:00  INFO 9712 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 JDBC repository interfaces.
+2023-03-19T20:21:25.142+08:00  INFO 9712 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-19T20:21:25.625+08:00  INFO 9712 --- [main] com.zlp.jpetstore_spring.commonTest      : Started commonTest in 2.897 seconds (process running for 3.683)
+2023-03-19T20:21:26.022+08:00  INFO 9712 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-19T20:21:26.026+08:00  INFO 9712 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed

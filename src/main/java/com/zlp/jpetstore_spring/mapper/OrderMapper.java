@@ -2,6 +2,7 @@ package com.zlp.jpetstore_spring.mapper;
 
 import com.zlp.jpetstore_spring.entity.Order;
 import com.zlp.jpetstore_spring.entity.OrderItem;
+import com.zlp.jpetstore_spring.entity.OrderManageTemp;
 import com.zlp.jpetstore_spring.entity.Receiver;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -34,4 +35,8 @@ public interface OrderMapper {
     void updateStock(int itemId, int itemStock);
 
     void deleteFromCart(String userId, int itemId);
+
+    List<OrderManageTemp> selectOrderItemBySupplier(String userId);
+
+    Order selectOrderCommon(Long orderId);
 }

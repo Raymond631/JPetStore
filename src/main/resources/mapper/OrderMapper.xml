@@ -53,4 +53,21 @@
     <delete id="deleteFromCart">
         delete from cart where user_id = #{userId} and item_id = #{itemId}
     </delete>
+
+
+
+    <select id="selectOrderItemBySupplier" resultMap="OrderItemManage">
+        select * from order_item where supplier = #{userId}
+    </select>
+    <resultMap type="OrderManageTemp" id="OrderItemManage">
+        <id property="orderItemId" column="order_item_id" />
+        <result property="productNameChinese" column="product_name_Chinese" />
+        <result property="itemSpecification" column="item_specification" />
+        <result property="itemQuantity" column="item_quantity" />
+        <result property="whetherShip" column="whether_ship" />
+        <association  property="order" column="order_id" select="selectOrderCommon" javaType="Order" />
+    </resultMap>
+    <select id="selectOrderCommon" resultType="com.zlp.jpetstore_spring.entity.Order">
+        select order_time,receiver_name,receiver_phone,receiver_address from order_main where order_id = #{orderId}
+    </select>
 </mapper>
