@@ -48,7 +48,7 @@
                 <a href="/jpetstore/User/Register.html">注册</a>
             </div>
             <div class="topbar-info" th:if="${session.loginUser!=null}">
-                <a href="#" th:text="'欢迎光临：'+${session.loginUser.userId}"></a>
+                <a href="/jpetstore/User/SelfCenter.html" th:text="'欢迎光临：'+${session.loginUser.userId}"></a>
                 <span class="sep">|</span>
                 <a href="/jpetstore/User/signOut">退出登录</a>
                 <span class="sep">|</span>
