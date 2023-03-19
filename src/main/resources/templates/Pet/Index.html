@@ -121,49 +121,11 @@
 						</a>
 						<div class="children">
 							<ul class="children-list myclear">
-								<li>
-									<a class="link myclear" href="Pet/showDetails?name=Bulldog">
+								<li th:each="product,productStat:${dogList}" th:if="${productStat.index} le 5">
+									<a class="link myclear" th:href="@{Pet/showDetails(productid=${product.productId})}">
 										<img class="small-img"
-										     src="http://img.ixiupet.com/uploads/150403/2-150403152450K3.jpg" alt="">
-										<span class="text">Bulldog</span>
-									</a>
-								</li>
-								<li>
-									<a class="link myclear" href="Pet/showDetails?name=Chihuahua">
-										<img class="small-img"
-										     src="http://img.ixiupet.com/uploads/allimg/150617/3-15061G055460-L.jpg"
-										     alt="">
-										<span class="text">Chihuahua</span>
-									</a>
-								</li>
-								<li>
-									<a class="link myclear" href="Pet/showDetails?name=Dalmation">
-										<img class="small-img"
-										     src="http://img.ixiupet.com/uploads/150413/3-150413105534b0.jpg" alt="">
-										<span class="text">Dalmation</span>
-									</a>
-								</li>
-								<li>
-									<a class="link myclear" href="Pet/showDetails?name=Poodle">
-										<img class="small-img"
-										     src="http://img.ixiupet.com/uploads/150410/2-150410144413b3.jpg" alt="">
-										<span class="text">Poodle</span>
-									</a>
-								</li>
-								<li>
-									<a class="link myclear" href="Pet/showDetails?name=GoldenRetriever">
-										<img class="small-img"
-										     src="http://img.ixiupet.com/uploads/allimg/150520/3-1505201145220-L.jpg"
-										     alt="">
-										<span class="text">Golden Retriever</span>
-									</a>
-								</li>
-								<li>
-									<a class="link myclear" href="Pet/showDetails?name=LabradorRetriever">
-										<img class="small-img"
-										     src="http://img.ixiupet.com/uploads/allimg/150525/3-1505250931020-L.jpg"
-										     alt="">
-										<span class="text">Labrador Retriever</span>
+											 th:src="${product.productImage}" alt="">
+										<span class="text" th:text="${product.productNameChinese}">Bulldog</span>
 									</a>
 								</li>
 							</ul>
@@ -176,18 +138,11 @@
 						</a>
 						<div class="children">
 							<ul class="children-list myclear">
-								<li>
-									<a class="link myclear" href="Pet/showDetails?name=Persian">
+								<li th:each="product,productStat:${catList}" th:if="${productStat.index} le 5">
+									<a class="link myclear" th:href="@{Pet/showDetails(productid=${product.productId})}">
 										<img class="small-img"
-										     src="http://img.ixiupet.com/uploads/150309/2-15030920514b57.jpg" alt="">
-										<span class="text">Persian</span>
-									</a>
-								</li>
-								<li>
-									<a class="link myclear" href="Pet/showDetails?name=Manx">
-										<img class="small-img"
-										     src="http://img.ixiupet.com/uploads/150410/3-15041014351HZ.jpg" alt="">
-										<span class="text">Manx</span>
+											 th:src="${product.productImage}" alt="">
+										<span class="text" th:text="${product.productNameChinese}">Bulldog</span>
 									</a>
 								</li>
 							</ul>
@@ -200,19 +155,11 @@
 						</a>
 						<div class="children">
 							<ul class="children-list myclear">
-								<li>
-									<a class="link myclear" href="Pet/showDetails?name=AmazonParrot">
+								<li th:each="product,productStat:${smallList}" th:if="${productStat.index} le 5">
+									<a class="link myclear" th:href="@{Pet/showDetails(productid=${product.productId})}">
 										<img class="small-img"
-										     src="http://img.ixiupet.com/uploads/allimg/150521/3-1505210941520-L.jpg"
-										     alt="">
-										<span class="text">Amazon Parrot</span>
-									</a>
-								</li>
-								<li>
-									<a class="link myclear" href="Pet/showDetails?name=Finch">
-										<img class="small-img"
-										     src="http://img.ixiupet.com/uploads/150305/2-150305163023627.jpg" alt="">
-										<span class="text">Finch</span>
+											 th:src="${product.productImage}" alt="">
+										<span class="text" th:text="${product.productNameChinese}">Bulldog</span>
 									</a>
 								</li>
 							</ul>
@@ -225,35 +172,11 @@
 						</a>
 						<div class="children">
 							<ul class="children-list myclear">
-								<li>
-									<a class="link myclear" href="Pet/showDetails?name=Koi">
+								<li th:each="product,productStat:${fishList}" th:if="${productStat.index} le 5">
+									<a class="link myclear" th:href="@{Pet/showDetails(productid=${product.productId})}">
 										<img class="small-img"
-										     src="http://img.ixiupet.com/uploads/allimg/150417/3-15041G459570-L.jpg"
-										     alt="">
-										<span class="text">Koi</span>
-									</a>
-								</li>
-								<li>
-									<a class="link myclear" href="Pet/showDetails?name=Goldfish">
-										<img class="small-img"
-										     src="http://img.ixiupet.com/uploads/150305/2-1503051622519B.jpg" alt="">
-										<span class="text">Goldfish</span>
-									</a>
-								</li>
-								<li>
-									<a class="link myclear" href="Pet/showDetails?name=Angelfish">
-										<img class="small-img"
-										     src="http://img.ixiupet.com/uploads/allimg/150423/3-1504230946360-L.jpg"
-										     alt="">
-										<span class="text">Angelfish</span>
-									</a>
-								</li>
-								<li>
-									<a class="link myclear" href="Pet/showDetails?name=TigerShark">
-										<img class="small-img"
-										     src="http://img.ixiupet.com/uploads/allimg/150525/3-1505251130140-L.jpg"
-										     alt="">
-										<span class="text">Tiger Shark</span>
+											 th:src="${product.productImage}" alt="">
+										<span class="text" th:text="${product.productNameChinese}">Bulldog</span>
 									</a>
 								</li>
 							</ul>
@@ -266,20 +189,11 @@
 						</a>
 						<div class="children">
 							<ul class="children-list myclear">
-								<li>
-									<a class="link myclear" href="Pet/showDetails?name=Iguana">
+								<li th:each="product,productStat:${pythonList}" th:if="${productStat.index} le 5">
+									<a class="link myclear" th:href="@{Pet/showDetails(productid=${product.productId})}">
 										<img class="small-img"
-										     src="http://img.ixiupet.com/uploads/allimg/150420/3-1504201405240-L.jpg"
-										     alt="">
-										<span class="text">Iguana</span>
-									</a>
-								</li>
-								<li>
-									<a class="link myclear" href="Pet/showDetails?name=Rattlesnake">
-										<img class="small-img"
-										     src="http://img.ixiupet.com/uploads/allimg/150519/3-15051Z930560-L.jpg"
-										     alt="">
-										<span class="text">Rattlesnake</span>
+											 th:src="${product.productImage}" alt="">
+										<span class="text" th:text="${product.productNameChinese}">Bulldog</span>
 									</a>
 								</li>
 							</ul>
@@ -355,6 +269,7 @@
 	<div class="page-main">
 		<div class="container">
 
+
 			<a name="dogs"></a>
 			<div class="main main-iphon">
 				<div class="box-hd">
@@ -363,8 +278,6 @@
 						<a class="more-link" href="javascript:;">查看全部<i></i></a>
 					</div>
 				</div>
-
-
 				<div class="box-content myclear">
 					<div class="left">
 						<ul>
@@ -376,17 +289,10 @@
 							</li>
 						</ul>
 					</div>
-
-
-
-
-					<!--修改部分part1-->
 					<div class="right" style="display: block;">
 						<ul class="myclear">
-
-
-							<li class="brick-item brick-item-m"th:each="product:${dogList}">
-								<a th:href="@{Pet/showDetails(name=${product.productNameEnglish})}">
+							<li class="brick-item brick-item-m" th:each="product,productStat:${dogList}" th:if="${productStat.index} le 7">
+								<a th:href="@{Pet/showDetails(productid=${product.productId})}">
 									<div class="figure-img"><img
 											th:src="${product.productImage}"alt="">
 									</div>
@@ -395,86 +301,11 @@
 									<p class="price"th:text="${product.productLife}">$18.50</p>
 								</a>
 							</li>
-
-							<!--重复部分-->
-							<li class="brick-item brick-item-m">
-								<a href="Pet/showDetails?name=Chihuahua">
-									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/allimg/150617/3-15061G055460-L.jpg"alt="">
-									</div>
-									<h3 class="title">Chihuahua</h3>
-									<p class="desc">Great companion dog</p>
-									<p class="price">$125.50</p>
-								</a>
-							</li>
-							<li class="brick-item brick-item-m">
-								<a href="Pet/showDetails?name=Dalmation">
-									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/150413/3-150413105534b0.jpg" alt="">
-									</div>
-									<h3 class="title">Dalmation</h3>
-									<p class="desc">Great dog for a Fire Station</p>
-									<p class="price">$18.50</p>
-								</a>
-							</li>
-							<li class="brick-item brick-item-m">
-								<a href="Pet/showDetails?name=Poodle">
-									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/150410/2-150410144413b3.jpg" alt="">
-									</div>
-									<h3 class="title">Poodle</h3>
-									<p class="desc">Cute dog from France</p>
-									<p class="price">$18.50</p>
-								</a>
-							</li>
-							<li class="brick-item brick-item-m">
-								<a href="Pet/showDetails?name=GoldenRetriever">
-									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/allimg/150520/3-1505201145220-L.jpg"
-											alt=""></div>
-									<h3 class="title">Golden Retriever</h3>
-									<p class="desc">Great family dog</p>
-									<p class="price">$155.50</p>
-								</a>
-							</li>
-							<li class="brick-item brick-item-m">
-								<a href="Pet/showDetails?name=LabradorRetriever">
-									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/allimg/150525/3-1505250931020-L.jpg"
-											alt=""></div>
-									<h3 class="title">Labrador Retriever</h3>
-									<p class="desc">Great hunting dog</p>
-									<p class="price">$135.50</p>
-								</a>
-							</li>
-							<li class="brick-item brick-item-m">
-								<a href="javascript:;">
-									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/allimg/150523/3-1505231055560-L.jpg"
-											alt=""></div>
-									<h3 class="title">……</h3>
-									<p class="desc">……</p>
-									<p class="price">缺货</p>
-								</a>
-							</li>
-							<li class="brick-item brick-item-m">
-								<a href="javascript:;">
-									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/150416/3-150416134913937.jpg" alt="">
-									</div>
-									<h3 class="title">……</h3>
-									<p class="desc">……</p>
-									<p class="price">缺货</p>
-								</a>
-							</li>
-							<!--重复部分-->
 						</ul>
 					</div>
 				</div>
 			</div>
 
-
-			<!----------------------------------------------------------重复内容---------------------------------------------------------->
 			<a name="cats"></a>
 			<div class="main main-iphon">
 				<div class="box-hd">
@@ -493,84 +324,14 @@
 					</div>
 					<div class="right" style="display: block;">
 						<ul class="myclear">
-							<li class="brick-item brick-item-m">
-								<a href="Pet/showDetails?name=Persian">
+							<li class="brick-item brick-item-m" th:each="product,productStat:${catList}" th:if="${productStat.index} le 7">
+								<a th:href="@{Pet/showDetails(productid=${product.productId})}">
 									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/150309/2-15030920514b57.jpg" alt="">
+											th:src="${product.productImage}"alt="">
 									</div>
-									<h3 class="title">Persian</h3>
-									<p class="desc">Friendly house cat, doubles as a princess</p>
-									<p class="price">$93.50</p>
-								</a>
-							</li>
-							<li class="brick-item brick-item-m">
-								<a href="Pet/showDetails?name=Manx">
-									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/150410/3-15041014351HZ.jpg" alt="">
-									</div>
-									<h3 class="title">Manx</h3>
-									<p class="desc">Great for reducing mouse populations</p>
-									<p class="price">$23.50</p>
-								</a>
-							</li>
-							<li class="brick-item brick-item-m">
-								<a href="javascript:;">
-									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/allimg/150403/2-1504031J035.jpg" alt="">
-									</div>
-									<h3 class="title">……</h3>
-									<p class="desc">……</p>
-									<p class="price">缺货</p>
-								</a>
-							</li>
-							<li class="brick-item brick-item-m">
-								<a href="javascript:;">
-									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/allimg/150603/3-1506031001400-L.jpg"
-											alt=""></div>
-									<h3 class="title">……</h3>
-									<p class="desc">……</p>
-									<p class="price">缺货</p>
-								</a>
-							</li>
-							<li class="brick-item brick-item-m">
-								<a href="javascript:;">
-									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/150410/3-15041011232C39.jpg" alt="">
-									</div>
-									<h3 class="title">……</h3>
-									<p class="desc">……</p>
-									<p class="price">缺货</p>
-								</a>
-							</li>
-							<li class="brick-item brick-item-m">
-								<a href="javascript:;">
-									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/150309/2-1503091F253250.jpg" alt="">
-									</div>
-									<h3 class="title">……</h3>
-									<p class="desc">……</p>
-									<p class="price">缺货</p>
-								</a>
-							</li>
-							<li class="brick-item brick-item-m">
-								<a href="javascript:;">
-									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/allimg/150403/2-1504031S512.jpg" alt="">
-									</div>
-									<h3 class="title">……</h3>
-									<p class="desc">……</p>
-									<p class="price">缺货</p>
-								</a>
-							</li>
-							<li class="brick-item brick-item-m">
-								<a href="javascript:;">
-									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/allimg/150603/3-1506031129130-L.jpg"
-											alt=""></div>
-									<h3 class="title">……</h3>
-									<p class="desc">……</p>
-									<p class="price">缺货</p>
+									<h3 class="title" th:text="${product.productNameChinese}">Bulldog</h3>
+									<p class="desc" th:text="${product.productNameEnglish}">Friendly dog from England</p>
+									<p class="price"th:text="${product.productLife}">$18.50</p>
 								</a>
 							</li>
 						</ul>
@@ -596,83 +357,14 @@
 					</div>
 					<div class="right" style="display: block;">
 						<ul class="myclear">
-							<li class="brick-item brick-item-m">
-								<a href="Pet/showDetails?name=AmazonParrot">
+							<li class="brick-item brick-item-m" th:each="product,productStat:${smallList}" th:if="${productStat.index} le 7">
+								<a th:href="@{Pet/showDetails(productid=${product.productId})}">
 									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/allimg/150521/3-1505210941520-L.jpg"
-											alt=""></div>
-									<h3 class="title">Amazon Parrot</h3>
-									<p class="desc">Great companion for up to 75 years</p>
-									<p class="price">$193.50</p>
-								</a>
-							</li>
-							<li class="brick-item brick-item-m">
-								<a href="Pet/showDetails?name=Finch">
-									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/150305/2-150305163023627.jpg" alt="">
+											th:src="${product.productImage}"alt="">
 									</div>
-									<h3 class="title">Finch</h3>
-									<p class="desc">Great stress reliever</p>
-									<p class="price">$15.50</p>
-								</a>
-							</li>
-							<li class="brick-item brick-item-m">
-								<a href="javascript:;">
-									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/allimg/150505/3-1505051512060-L.jpg"
-											alt=""></div>
-									<h3 class="title">……</h3>
-									<p class="desc">……</p>
-									<p class="price">缺货</p>
-								</a>
-							</li>
-							<li class="brick-item brick-item-m">
-								<a href="javascript:;">
-									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/150417/3-15041G05631X8.jpg" alt="">
-									</div>
-									<h3 class="title">……</h3>
-									<p class="desc">……</p>
-									<p class="price">缺货</p>
-								</a>
-							</li>
-							<li class="brick-item brick-item-m">
-								<a href="javascript:;">
-									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/150417/3-15041F9335D92.jpg" alt="">
-									</div>
-									<h3 class="title">……</h3>
-									<p class="desc">……</p>
-									<p class="price">缺货</p>
-								</a>
-							</li>
-							<li class="brick-item brick-item-m">
-								<a href="javascript:;">
-									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/allimg/150505/3-1505051513460-L.jpg"
-											alt=""></div>
-									<h3 class="title">……</h3>
-									<p class="desc">……</p>
-									<p class="price">缺货</p>
-								</a>
-							</li>
-							<li class="brick-item brick-item-m">
-								<a href="javascript:;">
-									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/allimg/150521/3-1505210920260-L.jpg"
-											alt=""></div>
-									<h3 class="title">……</h3>
-									<p class="desc">……</p>
-									<p class="price">缺货</p>
-								</a>
-							</li>
-							<li class="brick-item brick-item-m">
-								<a href="javascript:;">
-									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/150417/3-15041G00S1S7.jpg" alt=""></div>
-									<h3 class="title">……</h3>
-									<p class="desc">……</p>
-									<p class="price">缺货</p>
+									<h3 class="title" th:text="${product.productNameChinese}">Bulldog</h3>
+									<p class="desc" th:text="${product.productNameEnglish}">Friendly dog from England</p>
+									<p class="price"th:text="${product.productLife}">$18.50</p>
 								</a>
 							</li>
 						</ul>
@@ -698,84 +390,14 @@
 					</div>
 					<div class="right" style="display: block;">
 						<ul class="myclear">
-							<li class="brick-item brick-item-m">
-								<a href="Pet/showDetails?name=Koi">
+							<li class="brick-item brick-item-m" th:each="product,productStat:${fishList}" th:if="${productStat.index} le 7">
+								<a th:href="@{Pet/showDetails(productid=${product.productId})}">
 									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/allimg/150417/3-15041G459570-L.jpg"
-											alt=""></div>
-									<h3 class="title">Koi</h3>
-									<p class="desc">Fresh Water fish from Japan</p>
-									<p class="price">$18.50</p>
-								</a>
-							</li>
-							<li class="brick-item brick-item-m">
-								<a href="Pet/showDetails?name=Goldfish">
-									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/150305/2-1503051622519B.jpg" alt="">
+											th:src="${product.productImage}"alt="">
 									</div>
-									<h3 class="title">Goldfish</h3>
-									<p class="desc">Fresh Water fish from China</p>
-									<p class="price">$5.50</p>
-								</a>
-							</li>
-							<li class="brick-item brick-item-m">
-								<a href="Pet/showDetails?name=Angelfish">
-									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/allimg/150423/3-1504230946360-L.jpg"
-											alt=""></div>
-									<h3 class="title">Angelfish</h3>
-									<p class="desc">Salt Water fish from Australia</p>
-									<p class="price">$16.50</p>
-								</a>
-							</li>
-							<li class="brick-item brick-item-m">
-								<a href="Pet/showDetails?name=TigerShark">
-									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/allimg/150525/3-1505251130140-L.jpg"
-											alt=""></div>
-									<h3 class="title">Tiger Shark</h3>
-									<p class="desc">Salt Water fish from Australia</p>
-									<p class="price">$18.50</p>
-								</a>
-							</li>
-							<li class="brick-item brick-item-m">
-								<a href="javascript:;">
-									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/allimg/150525/3-1505251112520-L.jpg"
-											alt=""></div>
-									<h3 class="title">……</h3>
-									<p class="desc">……</p>
-									<p class="price">缺货</p>
-								</a>
-							</li>
-							<li class="brick-item brick-item-m">
-								<a href="javascript:;">
-									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/allimg/150417/3-15041G433040-L.jpg"
-											alt=""></div>
-									<h3 class="title">……</h3>
-									<p class="desc">……</p>
-									<p class="price">缺货</p>
-								</a>
-							</li>
-							<li class="brick-item brick-item-m">
-								<a href="javascript:;">
-									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/allimg/150417/3-15041G50S60-L.jpg"
-											alt=""></div>
-									<h3 class="title">……</h3>
-									<p class="desc">……</p>
-									<p class="price">缺货</p>
-								</a>
-							</li>
-							<li class="brick-item brick-item-m">
-								<a href="javascript:;">
-									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/allimg/150423/3-1504230924050-L.jpg"
-											alt=""></div>
-									<h3 class="title">……</h3>
-									<p class="desc">……</p>
-									<p class="price">缺货</p>
+									<h3 class="title" th:text="${product.productNameChinese}">Bulldog</h3>
+									<p class="desc" th:text="${product.productNameEnglish}">Friendly dog from England</p>
+									<p class="price"th:text="${product.productLife}">$18.50</p>
 								</a>
 							</li>
 						</ul>
@@ -801,84 +423,14 @@
 					</div>
 					<div class="right" style="display: block;">
 						<ul class="myclear">
-							<li class="brick-item brick-item-m">
-								<a href="Pet/showDetails?name=Iguana">
+							<li class="brick-item brick-item-m" th:each="product,productStat:${pythonList}" th:if="${productStat.index} le 7">
+								<a th:href="@{Pet/showDetails(productid=${product.productId})}">
 									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/allimg/150420/3-1504201405240-L.jpg"
-											alt=""></div>
-									<h3 class="title">Iguana</h3>
-									<p class="desc">Friendly green friend</p>
-									<p class="price">$18.50</p>
-								</a>
-							</li>
-							<li class="brick-item brick-item-m">
-								<a href="Pet/showDetails?name=Rattlesnake">
-									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/allimg/150519/3-15051Z930560-L.jpg"
-											alt=""></div>
-									<h3 class="title">Rattlesnake</h3>
-									<p class="desc">Doubles as a watch dog</p>
-									<p class="price">$18.50</p>
-								</a>
-							</li>
-							<li class="brick-item brick-item-m">
-								<a href="javascript:;">
-									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/allimg/150417/3-15041GRH80-L.jpg"
-											alt=""></div>
-									<h3 class="title">……</h3>
-									<p class="desc">……</p>
-									<p class="price">缺货</p>
-								</a>
-							</li>
-							<li class="brick-item brick-item-m">
-								<a href="javascript:;">
-									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/allimg/150515/3-1505150920160-L.jpg"
-											alt=""></div>
-									<h3 class="title">……</h3>
-									<p class="desc">……</p>
-									<p class="price">缺货</p>
-								</a>
-							</li>
-							<li class="brick-item brick-item-m">
-								<a href="javascript:;">
-									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/allimg/150420/3-1504200Z5230-L.jpg"
-											alt=""></div>
-									<h3 class="title">……</h3>
-									<p class="desc">……</p>
-									<p class="price">缺货</p>
-								</a>
-							</li>
-							<li class="brick-item brick-item-m">
-								<a href="javascript:;">
-									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/allimg/150519/3-15051Z95F60-L.jpg"
-											alt=""></div>
-									<h3 class="title">……</h3>
-									<p class="desc">……</p>
-									<p class="price">缺货</p>
-								</a>
-							</li>
-							<li class="brick-item brick-item-m">
-								<a href="javascript:;">
-									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/allimg/150420/3-1504201204160-L.jpg"
-											alt=""></div>
-									<h3 class="title">……</h3>
-									<p class="desc">……</p>
-									<p class="price">缺货</p>
-								</a>
-							</li>
-							<li class="brick-item brick-item-m">
-								<a href="javascript:;">
-									<div class="figure-img"><img
-											src="http://img.ixiupet.com/uploads/allimg/150523/3-150523093Z20-L.jpg"
-											alt=""></div>
-									<h3 class="title">……</h3>
-									<p class="desc">……</p>
-									<p class="price">缺货</p>
+											th:src="${product.productImage}"alt="">
+									</div>
+									<h3 class="title" th:text="${product.productNameChinese}">Bulldog</h3>
+									<p class="desc" th:text="${product.productNameEnglish}">Friendly dog from England</p>
+									<p class="price"th:text="${product.productLife}">$18.50</p>
 								</a>
 							</li>
 						</ul>
