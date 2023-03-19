@@ -1500,3 +1500,452 @@ java.lang.IllegalStateException: Optional int parameter 'itemId' is present but 
 2023-03-19T11:49:17.843+08:00  INFO 19492 --- [http-nio-8080-exec-2] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
 2023-03-19T11:49:27.132+08:00  INFO 19492 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
 2023-03-19T11:49:27.135+08:00  INFO 19492 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-19T11:52:38.208+08:00  INFO 8116 --- [main] c.z.j.JPetStoreSpringApplication         : Starting JPetStoreSpringApplication using Java 17.0.6 with PID 8116 (D:\Project\Web\JPetStore_Spring\target\classes started by Raymond Li in D:\Project\Web\JPetStore_Spring)
+2023-03-19T11:52:38.210+08:00  INFO 8116 --- [main] c.z.j.JPetStoreSpringApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-03-19T11:52:38.649+08:00  INFO 8116 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-03-19T11:52:38.658+08:00  INFO 8116 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JDBC repository interfaces.
+2023-03-19T11:52:38.994+08:00  INFO 8116 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-03-19T11:52:39.002+08:00  INFO 8116 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-19T11:52:39.002+08:00  INFO 8116 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-03-19T11:52:39.062+08:00  INFO 8116 --- [main] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring embedded WebApplicationContext
+2023-03-19T11:52:39.062+08:00  INFO 8116 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 813 ms
+2023-03-19T11:52:39.595+08:00  INFO 8116 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-19T11:52:39.887+08:00  INFO 8116 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/jpetstore'
+2023-03-19T11:52:39.894+08:00  INFO 8116 --- [main] c.z.j.JPetStoreSpringApplication         : Started JPetStoreSpringApplication in 2.036 seconds (process running for 2.512)
+2023-03-19T11:52:42.700+08:00  INFO 8116 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-19T11:52:42.700+08:00  INFO 8116 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-19T11:52:42.701+08:00  INFO 8116 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-03-19T11:52:42.936+08:00  INFO 8116 --- [http-nio-8080-exec-1] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T11:52:42.936+08:00  INFO 8116 --- [http-nio-8080-exec-3] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T11:52:42.936+08:00  INFO 8116 --- [http-nio-8080-exec-8] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T11:52:51.302+08:00  INFO 8116 --- [http-nio-8080-exec-8] c.z.j.controller.UserController          : csu001成功登录
+2023-03-19T11:52:51.388+08:00  INFO 8116 --- [http-nio-8080-exec-9] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T11:52:51.388+08:00  INFO 8116 --- [http-nio-8080-exec-10] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T11:52:51.388+08:00  INFO 8116 --- [http-nio-8080-exec-3] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T11:52:52.829+08:00  INFO 8116 --- [http-nio-8080-exec-4] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/MyCart.html
+2023-03-19T11:52:52.874+08:00  INFO 8116 --- [http-nio-8080-exec-6] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/selectCartList
+2023-03-19T11:53:26.257+08:00  INFO 8116 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-19T11:53:26.260+08:00  INFO 8116 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-19T11:53:28.530+08:00  INFO 12688 --- [main] c.z.j.JPetStoreSpringApplication         : Starting JPetStoreSpringApplication using Java 17.0.6 with PID 12688 (D:\Project\Web\JPetStore_Spring\target\classes started by Raymond Li in D:\Project\Web\JPetStore_Spring)
+2023-03-19T11:53:28.532+08:00  INFO 12688 --- [main] c.z.j.JPetStoreSpringApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-03-19T11:53:28.984+08:00  INFO 12688 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-03-19T11:53:28.996+08:00  INFO 12688 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JDBC repository interfaces.
+2023-03-19T11:53:29.328+08:00  INFO 12688 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-03-19T11:53:29.335+08:00  INFO 12688 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-19T11:53:29.336+08:00  INFO 12688 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-03-19T11:53:29.394+08:00  INFO 12688 --- [main] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring embedded WebApplicationContext
+2023-03-19T11:53:29.395+08:00  INFO 12688 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 823 ms
+2023-03-19T11:53:29.922+08:00  INFO 12688 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-19T11:53:30.212+08:00  INFO 12688 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/jpetstore'
+2023-03-19T11:53:30.219+08:00  INFO 12688 --- [main] c.z.j.JPetStoreSpringApplication         : Started JPetStoreSpringApplication in 2.039 seconds (process running for 2.469)
+2023-03-19T11:53:34.784+08:00  INFO 12688 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-19T11:53:34.785+08:00  INFO 12688 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-19T11:53:34.785+08:00  INFO 12688 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-03-19T11:53:34.799+08:00  INFO 12688 --- [http-nio-8080-exec-1] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/MyCart.html
+2023-03-19T11:53:43.505+08:00  INFO 12688 --- [http-nio-8080-exec-6] c.z.j.controller.UserController          : csu001成功登录
+2023-03-19T11:53:43.656+08:00  INFO 12688 --- [http-nio-8080-exec-10] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T11:53:43.656+08:00  INFO 12688 --- [http-nio-8080-exec-9] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T11:53:43.656+08:00  INFO 12688 --- [http-nio-8080-exec-8] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T11:53:45.537+08:00  INFO 12688 --- [http-nio-8080-exec-1] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/MyCart.html
+2023-03-19T11:53:45.584+08:00  INFO 12688 --- [http-nio-8080-exec-3] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/selectCartList
+2023-03-19T11:54:19.314+08:00  INFO 12688 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-19T11:54:19.317+08:00  INFO 12688 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-19T11:54:21.744+08:00  INFO 5768 --- [main] c.z.j.JPetStoreSpringApplication         : Starting JPetStoreSpringApplication using Java 17.0.6 with PID 5768 (D:\Project\Web\JPetStore_Spring\target\classes started by Raymond Li in D:\Project\Web\JPetStore_Spring)
+2023-03-19T11:54:21.747+08:00  INFO 5768 --- [main] c.z.j.JPetStoreSpringApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-03-19T11:54:22.198+08:00  INFO 5768 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-03-19T11:54:22.210+08:00  INFO 5768 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 JDBC repository interfaces.
+2023-03-19T11:54:22.536+08:00  INFO 5768 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-03-19T11:54:22.544+08:00  INFO 5768 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-19T11:54:22.544+08:00  INFO 5768 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-03-19T11:54:22.604+08:00  INFO 5768 --- [main] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring embedded WebApplicationContext
+2023-03-19T11:54:22.605+08:00  INFO 5768 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 821 ms
+2023-03-19T11:54:23.129+08:00  INFO 5768 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-19T11:54:23.420+08:00  INFO 5768 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/jpetstore'
+2023-03-19T11:54:23.427+08:00  INFO 5768 --- [main] c.z.j.JPetStoreSpringApplication         : Started JPetStoreSpringApplication in 2.109 seconds (process running for 2.654)
+2023-03-19T11:54:27.651+08:00  INFO 5768 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-19T11:54:27.651+08:00  INFO 5768 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-19T11:54:27.652+08:00  INFO 5768 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-03-19T11:54:27.667+08:00  INFO 5768 --- [http-nio-8080-exec-1] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/MyCart.html
+2023-03-19T11:54:44.811+08:00  INFO 5768 --- [http-nio-8080-exec-5] c.z.j.controller.UserController          : csu001成功登录
+2023-03-19T11:54:44.963+08:00  INFO 5768 --- [http-nio-8080-exec-8] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T11:54:44.963+08:00  INFO 5768 --- [http-nio-8080-exec-9] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T11:54:44.963+08:00  INFO 5768 --- [http-nio-8080-exec-7] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T11:54:46.783+08:00  INFO 5768 --- [http-nio-8080-exec-10] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/MyCart.html
+2023-03-19T11:54:46.827+08:00  INFO 5768 --- [http-nio-8080-exec-4] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/selectCartList
+2023-03-19T11:55:48.560+08:00  INFO 5768 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-19T11:55:48.563+08:00  INFO 5768 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-19T11:55:50.943+08:00  INFO 11972 --- [main] c.z.j.JPetStoreSpringApplication         : Starting JPetStoreSpringApplication using Java 17.0.6 with PID 11972 (D:\Project\Web\JPetStore_Spring\target\classes started by Raymond Li in D:\Project\Web\JPetStore_Spring)
+2023-03-19T11:55:50.949+08:00  INFO 11972 --- [main] c.z.j.JPetStoreSpringApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-03-19T11:55:51.420+08:00  INFO 11972 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-03-19T11:55:51.429+08:00  INFO 11972 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JDBC repository interfaces.
+2023-03-19T11:55:51.791+08:00  INFO 11972 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-03-19T11:55:51.799+08:00  INFO 11972 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-19T11:55:51.799+08:00  INFO 11972 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-03-19T11:55:51.860+08:00  INFO 11972 --- [main] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring embedded WebApplicationContext
+2023-03-19T11:55:51.861+08:00  INFO 11972 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 878 ms
+2023-03-19T11:55:52.409+08:00  INFO 11972 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-19T11:55:52.722+08:00  INFO 11972 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/jpetstore'
+2023-03-19T11:55:52.728+08:00  INFO 11972 --- [main] c.z.j.JPetStoreSpringApplication         : Started JPetStoreSpringApplication in 2.135 seconds (process running for 2.588)
+2023-03-19T11:55:55.051+08:00  INFO 11972 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-19T11:55:55.051+08:00  INFO 11972 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-19T11:55:55.052+08:00  INFO 11972 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-03-19T11:55:55.069+08:00  INFO 11972 --- [http-nio-8080-exec-1] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/MyCart.html
+2023-03-19T11:56:04.680+08:00  INFO 11972 --- [http-nio-8080-exec-6] c.z.j.controller.UserController          : csu001成功登录
+2023-03-19T11:56:04.831+08:00  INFO 11972 --- [http-nio-8080-exec-5] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T11:56:04.831+08:00  INFO 11972 --- [http-nio-8080-exec-4] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T11:56:04.831+08:00  INFO 11972 --- [http-nio-8080-exec-9] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T11:56:06.469+08:00  INFO 11972 --- [http-nio-8080-exec-1] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/MyCart.html
+2023-03-19T11:56:06.516+08:00  INFO 11972 --- [http-nio-8080-exec-3] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/selectCartList
+2023-03-19T11:56:13.964+08:00  INFO 11972 --- [http-nio-8080-exec-10] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:56:14.151+08:00  INFO 11972 --- [http-nio-8080-exec-8] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:56:14.309+08:00  INFO 11972 --- [http-nio-8080-exec-6] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:56:14.630+08:00  INFO 11972 --- [http-nio-8080-exec-7] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:56:14.840+08:00  INFO 11972 --- [http-nio-8080-exec-5] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:56:15.298+08:00  INFO 11972 --- [http-nio-8080-exec-4] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:56:15.785+08:00  INFO 11972 --- [http-nio-8080-exec-9] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:56:16.206+08:00  INFO 11972 --- [http-nio-8080-exec-1] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:56:16.670+08:00  INFO 11972 --- [http-nio-8080-exec-2] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:56:17.789+08:00  INFO 11972 --- [http-nio-8080-exec-3] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:56:17.976+08:00  INFO 11972 --- [http-nio-8080-exec-10] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:56:18.148+08:00  INFO 11972 --- [http-nio-8080-exec-8] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:56:18.328+08:00  INFO 11972 --- [http-nio-8080-exec-6] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:56:18.538+08:00  INFO 11972 --- [http-nio-8080-exec-7] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:56:45.950+08:00  INFO 11972 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-19T11:56:45.953+08:00  INFO 11972 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-19T11:56:47.614+08:00  INFO 3844 --- [main] c.z.j.JPetStoreSpringApplication         : Starting JPetStoreSpringApplication using Java 17.0.6 with PID 3844 (D:\Project\Web\JPetStore_Spring\target\classes started by Raymond Li in D:\Project\Web\JPetStore_Spring)
+2023-03-19T11:56:47.617+08:00  INFO 3844 --- [main] c.z.j.JPetStoreSpringApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-03-19T11:56:48.052+08:00  INFO 3844 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-03-19T11:56:48.061+08:00  INFO 3844 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JDBC repository interfaces.
+2023-03-19T11:56:48.397+08:00  INFO 3844 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-03-19T11:56:48.404+08:00  INFO 3844 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-19T11:56:48.404+08:00  INFO 3844 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-03-19T11:56:48.463+08:00  INFO 3844 --- [main] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring embedded WebApplicationContext
+2023-03-19T11:56:48.464+08:00  INFO 3844 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 809 ms
+2023-03-19T11:56:48.979+08:00  INFO 3844 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-19T11:56:49.262+08:00  INFO 3844 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/jpetstore'
+2023-03-19T11:56:49.269+08:00  INFO 3844 --- [main] c.z.j.JPetStoreSpringApplication         : Started JPetStoreSpringApplication in 2.027 seconds (process running for 2.571)
+2023-03-19T11:56:52.614+08:00  INFO 3844 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-19T11:56:52.615+08:00  INFO 3844 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-19T11:56:52.615+08:00  INFO 3844 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-03-19T11:56:52.640+08:00  INFO 3844 --- [http-nio-8080-exec-1] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/MyCart.html
+2023-03-19T11:57:01.479+08:00  INFO 3844 --- [http-nio-8080-exec-6] c.z.j.controller.UserController          : csu001成功登录
+2023-03-19T11:57:01.629+08:00  INFO 3844 --- [http-nio-8080-exec-10] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T11:57:01.629+08:00  INFO 3844 --- [http-nio-8080-exec-8] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T11:57:01.629+08:00  INFO 3844 --- [http-nio-8080-exec-9] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T11:57:02.855+08:00  INFO 3844 --- [http-nio-8080-exec-1] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/MyCart.html
+2023-03-19T11:57:02.906+08:00  INFO 3844 --- [http-nio-8080-exec-2] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/selectCartList
+2023-03-19T11:57:10.874+08:00  INFO 3844 --- [http-nio-8080-exec-4] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:57:16.342+08:00  INFO 3844 --- [http-nio-8080-exec-5] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:57:53.518+08:00  INFO 3844 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-19T11:57:53.521+08:00  INFO 3844 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-19T11:57:55.985+08:00  INFO 19240 --- [main] c.z.j.JPetStoreSpringApplication         : Starting JPetStoreSpringApplication using Java 17.0.6 with PID 19240 (D:\Project\Web\JPetStore_Spring\target\classes started by Raymond Li in D:\Project\Web\JPetStore_Spring)
+2023-03-19T11:57:55.992+08:00  INFO 19240 --- [main] c.z.j.JPetStoreSpringApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-03-19T11:57:56.446+08:00  INFO 19240 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-03-19T11:57:56.456+08:00  INFO 19240 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JDBC repository interfaces.
+2023-03-19T11:57:56.804+08:00  INFO 19240 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-03-19T11:57:56.811+08:00  INFO 19240 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-19T11:57:56.812+08:00  INFO 19240 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-03-19T11:57:56.872+08:00  INFO 19240 --- [main] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring embedded WebApplicationContext
+2023-03-19T11:57:56.873+08:00  INFO 19240 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 846 ms
+2023-03-19T11:57:57.406+08:00  INFO 19240 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-19T11:57:57.697+08:00  INFO 19240 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/jpetstore'
+2023-03-19T11:57:57.704+08:00  INFO 19240 --- [main] c.z.j.JPetStoreSpringApplication         : Started JPetStoreSpringApplication in 2.076 seconds (process running for 2.516)
+2023-03-19T11:57:59.757+08:00  INFO 19240 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-19T11:57:59.757+08:00  INFO 19240 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-19T11:57:59.758+08:00  INFO 19240 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-03-19T11:57:59.775+08:00  INFO 19240 --- [http-nio-8080-exec-1] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/MyCart.html
+2023-03-19T11:58:10.011+08:00  INFO 19240 --- [http-nio-8080-exec-6] c.z.j.controller.UserController          : csu001成功登录
+2023-03-19T11:58:10.162+08:00  INFO 19240 --- [http-nio-8080-exec-10] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T11:58:10.162+08:00  INFO 19240 --- [http-nio-8080-exec-8] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T11:58:10.162+08:00  INFO 19240 --- [http-nio-8080-exec-9] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T11:58:12.214+08:00  INFO 19240 --- [http-nio-8080-exec-1] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/MyCart.html
+2023-03-19T11:58:12.261+08:00  INFO 19240 --- [http-nio-8080-exec-3] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/selectCartList
+2023-03-19T11:58:15.134+08:00  INFO 19240 --- [http-nio-8080-exec-4] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:58:17.241+08:00  INFO 19240 --- [http-nio-8080-exec-5] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:58:18.785+08:00  INFO 19240 --- [http-nio-8080-exec-6] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:58:19.633+08:00  INFO 19240 --- [http-nio-8080-exec-7] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:58:20.420+08:00  INFO 19240 --- [http-nio-8080-exec-10] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:58:27.644+08:00  INFO 19240 --- [http-nio-8080-exec-8] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:58:29.368+08:00  INFO 19240 --- [http-nio-8080-exec-9] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:58:42.298+08:00  INFO 19240 --- [http-nio-8080-exec-1] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:58:59.097+08:00  INFO 19240 --- [http-nio-8080-exec-2] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:59:24.816+08:00  INFO 19240 --- [http-nio-8080-exec-5] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:59:25.452+08:00  INFO 19240 --- [http-nio-8080-exec-6] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:59:25.617+08:00  INFO 19240 --- [http-nio-8080-exec-7] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:59:25.798+08:00  INFO 19240 --- [http-nio-8080-exec-10] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:59:25.977+08:00  INFO 19240 --- [http-nio-8080-exec-8] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:59:26.975+08:00  INFO 19240 --- [http-nio-8080-exec-9] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:59:31.296+08:00  INFO 19240 --- [http-nio-8080-exec-1] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:59:31.452+08:00  INFO 19240 --- [http-nio-8080-exec-2] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:59:31.602+08:00  INFO 19240 --- [http-nio-8080-exec-4] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:59:31.767+08:00  INFO 19240 --- [http-nio-8080-exec-3] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:59:36.238+08:00  INFO 19240 --- [http-nio-8080-exec-5] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T11:59:37.438+08:00  INFO 19240 --- [http-nio-8080-exec-6] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:00:29.187+08:00  INFO 19240 --- [http-nio-8080-exec-7] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:00:29.561+08:00  INFO 19240 --- [http-nio-8080-exec-10] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:01:40.805+08:00  INFO 19240 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-19T12:01:40.808+08:00  INFO 19240 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-19T12:01:45.040+08:00  INFO 17652 --- [main] c.z.j.JPetStoreSpringApplication         : Starting JPetStoreSpringApplication using Java 17.0.6 with PID 17652 (D:\Project\Web\JPetStore_Spring\target\classes started by Raymond Li in D:\Project\Web\JPetStore_Spring)
+2023-03-19T12:01:45.043+08:00  INFO 17652 --- [main] c.z.j.JPetStoreSpringApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-03-19T12:01:45.498+08:00  INFO 17652 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-03-19T12:01:45.507+08:00  INFO 17652 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JDBC repository interfaces.
+2023-03-19T12:01:45.836+08:00  INFO 17652 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-03-19T12:01:45.844+08:00  INFO 17652 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-19T12:01:45.844+08:00  INFO 17652 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-03-19T12:01:45.904+08:00  INFO 17652 --- [main] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring embedded WebApplicationContext
+2023-03-19T12:01:45.905+08:00  INFO 17652 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 823 ms
+2023-03-19T12:01:46.434+08:00  INFO 17652 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-19T12:01:46.720+08:00  INFO 17652 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/jpetstore'
+2023-03-19T12:01:46.727+08:00  INFO 17652 --- [main] c.z.j.JPetStoreSpringApplication         : Started JPetStoreSpringApplication in 2.033 seconds (process running for 2.477)
+2023-03-19T12:01:49.227+08:00  INFO 17652 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-19T12:01:49.227+08:00  INFO 17652 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-19T12:01:49.228+08:00  INFO 17652 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-03-19T12:01:49.246+08:00  INFO 17652 --- [http-nio-8080-exec-1] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/MyCart.html
+2023-03-19T12:01:56.717+08:00  INFO 17652 --- [http-nio-8080-exec-6] c.z.j.controller.UserController          : csu001成功登录
+2023-03-19T12:01:56.868+08:00  INFO 17652 --- [http-nio-8080-exec-10] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T12:01:56.868+08:00  INFO 17652 --- [http-nio-8080-exec-9] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T12:01:56.868+08:00  INFO 17652 --- [http-nio-8080-exec-8] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T12:01:58.600+08:00  INFO 17652 --- [http-nio-8080-exec-1] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/MyCart.html
+2023-03-19T12:01:58.647+08:00  INFO 17652 --- [http-nio-8080-exec-3] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/selectCartList
+2023-03-19T12:02:01.445+08:00  INFO 17652 --- [http-nio-8080-exec-4] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:02:09.582+08:00  INFO 17652 --- [http-nio-8080-exec-5] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:02:13.234+08:00  INFO 17652 --- [http-nio-8080-exec-6] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:02:18.018+08:00  INFO 17652 --- [http-nio-8080-exec-7] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:03:44.011+08:00  INFO 6440 --- [main] com.zlp.jpetstore_spring.commonTest      : Starting commonTest using Java 17.0.6 with PID 6440 (started by Raymond Li in D:\Project\Web\JPetStore_Spring)
+2023-03-19T12:03:44.012+08:00  INFO 6440 --- [main] com.zlp.jpetstore_spring.commonTest      : No active profile set, falling back to 1 default profile: "default"
+2023-03-19T12:03:44.630+08:00  INFO 6440 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-03-19T12:03:44.646+08:00  INFO 6440 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 JDBC repository interfaces.
+2023-03-19T12:03:46.066+08:00  INFO 6440 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-19T12:03:46.547+08:00  INFO 6440 --- [main] com.zlp.jpetstore_spring.commonTest      : Started commonTest in 2.876 seconds (process running for 3.693)
+2023-03-19T12:03:46.931+08:00  INFO 6440 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-19T12:03:46.936+08:00  INFO 6440 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-19T12:04:48.703+08:00  INFO 9984 --- [main] com.zlp.jpetstore_spring.commonTest      : Starting commonTest using Java 17.0.6 with PID 9984 (started by Raymond Li in D:\Project\Web\JPetStore_Spring)
+2023-03-19T12:04:48.705+08:00  INFO 9984 --- [main] com.zlp.jpetstore_spring.commonTest      : No active profile set, falling back to 1 default profile: "default"
+2023-03-19T12:04:49.344+08:00  INFO 9984 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-03-19T12:04:49.359+08:00  INFO 9984 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JDBC repository interfaces.
+2023-03-19T12:04:50.922+08:00  INFO 9984 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-19T12:04:51.398+08:00  INFO 9984 --- [main] com.zlp.jpetstore_spring.commonTest      : Started commonTest in 3.024 seconds (process running for 3.845)
+2023-03-19T12:04:51.796+08:00  INFO 9984 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-19T12:04:51.801+08:00  INFO 9984 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-19T12:07:28.946+08:00  INFO 17652 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-19T12:07:28.949+08:00  INFO 17652 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-19T12:07:33.194+08:00  INFO 18420 --- [main] c.z.j.JPetStoreSpringApplication         : Starting JPetStoreSpringApplication using Java 17.0.6 with PID 18420 (D:\Project\Web\JPetStore_Spring\target\classes started by Raymond Li in D:\Project\Web\JPetStore_Spring)
+2023-03-19T12:07:33.196+08:00  INFO 18420 --- [main] c.z.j.JPetStoreSpringApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-03-19T12:07:33.653+08:00  INFO 18420 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-03-19T12:07:33.662+08:00  INFO 18420 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JDBC repository interfaces.
+2023-03-19T12:07:33.994+08:00  INFO 18420 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-03-19T12:07:34.001+08:00  INFO 18420 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-19T12:07:34.002+08:00  INFO 18420 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-03-19T12:07:34.061+08:00  INFO 18420 --- [main] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring embedded WebApplicationContext
+2023-03-19T12:07:34.061+08:00  INFO 18420 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 826 ms
+2023-03-19T12:07:34.594+08:00  INFO 18420 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-19T12:07:34.886+08:00  INFO 18420 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/jpetstore'
+2023-03-19T12:07:34.893+08:00  INFO 18420 --- [main] c.z.j.JPetStoreSpringApplication         : Started JPetStoreSpringApplication in 2.054 seconds (process running for 2.492)
+2023-03-19T12:07:44.581+08:00  INFO 18420 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-19T12:07:44.582+08:00  INFO 18420 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-19T12:07:44.583+08:00  INFO 18420 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-03-19T12:07:44.602+08:00  INFO 18420 --- [http-nio-8080-exec-1] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/MyCart.html
+2023-03-19T12:07:53.922+08:00  INFO 18420 --- [http-nio-8080-exec-6] c.z.j.controller.UserController          : csu001成功登录
+2023-03-19T12:07:54.077+08:00  INFO 18420 --- [http-nio-8080-exec-10] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T12:07:54.077+08:00  INFO 18420 --- [http-nio-8080-exec-8] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T12:07:54.077+08:00  INFO 18420 --- [http-nio-8080-exec-9] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T12:08:03.322+08:00  INFO 18420 --- [http-nio-8080-exec-1] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/MyCart.html
+2023-03-19T12:08:03.378+08:00  INFO 18420 --- [http-nio-8080-exec-2] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/selectCartList
+2023-03-19T12:08:11.770+08:00  INFO 18420 --- [http-nio-8080-exec-4] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:08:12.144+08:00  INFO 18420 --- [http-nio-8080-exec-5] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:08:12.324+08:00  INFO 18420 --- [http-nio-8080-exec-6] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:08:12.496+08:00  INFO 18420 --- [http-nio-8080-exec-7] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:08:12.684+08:00  INFO 18420 --- [http-nio-8080-exec-10] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:08:13.225+08:00  INFO 18420 --- [http-nio-8080-exec-9] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:08:25.608+08:00  INFO 18420 --- [http-nio-8080-exec-8] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:08:25.809+08:00  INFO 18420 --- [http-nio-8080-exec-1] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:08:26.079+08:00  INFO 18420 --- [http-nio-8080-exec-3] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:08:26.281+08:00  INFO 18420 --- [http-nio-8080-exec-2] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:08:26.723+08:00  INFO 18420 --- [http-nio-8080-exec-4] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:09:50.950+08:00  INFO 18420 --- [http-nio-8080-exec-10] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:09:55.584+08:00  INFO 18420 --- [http-nio-8080-exec-9] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:11:21.699+08:00  INFO 18420 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-19T12:11:21.702+08:00  INFO 18420 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-19T12:11:24.248+08:00  INFO 10284 --- [main] c.z.j.JPetStoreSpringApplication         : Starting JPetStoreSpringApplication using Java 17.0.6 with PID 10284 (D:\Project\Web\JPetStore_Spring\target\classes started by Raymond Li in D:\Project\Web\JPetStore_Spring)
+2023-03-19T12:11:24.251+08:00  INFO 10284 --- [main] c.z.j.JPetStoreSpringApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-03-19T12:11:24.688+08:00  INFO 10284 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-03-19T12:11:24.698+08:00  INFO 10284 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JDBC repository interfaces.
+2023-03-19T12:11:25.026+08:00  INFO 10284 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-03-19T12:11:25.038+08:00  INFO 10284 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-19T12:11:25.038+08:00  INFO 10284 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-03-19T12:11:25.098+08:00  INFO 10284 --- [main] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring embedded WebApplicationContext
+2023-03-19T12:11:25.098+08:00  INFO 10284 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 810 ms
+2023-03-19T12:11:25.616+08:00  INFO 10284 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-19T12:11:25.900+08:00  INFO 10284 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/jpetstore'
+2023-03-19T12:11:25.906+08:00  INFO 10284 --- [main] c.z.j.JPetStoreSpringApplication         : Started JPetStoreSpringApplication in 2.015 seconds (process running for 2.449)
+2023-03-19T12:11:34.806+08:00  INFO 10284 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-19T12:11:34.806+08:00  INFO 10284 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-19T12:11:34.807+08:00  INFO 10284 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-03-19T12:11:34.821+08:00  INFO 10284 --- [http-nio-8080-exec-1] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/MyCart.html
+2023-03-19T12:11:47.794+08:00  INFO 10284 --- [http-nio-8080-exec-6] c.z.j.controller.UserController          : csu001成功登录
+2023-03-19T12:11:47.949+08:00  INFO 10284 --- [http-nio-8080-exec-5] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T12:11:47.949+08:00  INFO 10284 --- [http-nio-8080-exec-8] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T12:11:47.949+08:00  INFO 10284 --- [http-nio-8080-exec-9] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T12:11:49.830+08:00  INFO 10284 --- [http-nio-8080-exec-1] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/MyCart.html
+2023-03-19T12:11:49.872+08:00  INFO 10284 --- [http-nio-8080-exec-3] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/selectCartList
+2023-03-19T12:11:56.559+08:00  INFO 10284 --- [http-nio-8080-exec-4] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:11:56.783+08:00  INFO 10284 --- [http-nio-8080-exec-10] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:12:19.426+08:00  INFO 10284 --- [http-nio-8080-exec-6] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:12:19.912+08:00  INFO 10284 --- [http-nio-8080-exec-7] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:12:58.325+08:00  INFO 16832 --- [main] com.zlp.jpetstore_spring.commonTest      : Starting commonTest using Java 17.0.6 with PID 16832 (started by Raymond Li in D:\Project\Web\JPetStore_Spring)
+2023-03-19T12:12:58.327+08:00  INFO 16832 --- [main] com.zlp.jpetstore_spring.commonTest      : No active profile set, falling back to 1 default profile: "default"
+2023-03-19T12:12:58.936+08:00  INFO 16832 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-03-19T12:12:58.951+08:00  INFO 16832 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 JDBC repository interfaces.
+2023-03-19T12:13:00.378+08:00  INFO 16832 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-19T12:13:00.876+08:00  INFO 16832 --- [main] com.zlp.jpetstore_spring.commonTest      : Started commonTest in 2.894 seconds (process running for 3.641)
+2023-03-19T12:13:01.266+08:00  INFO 16832 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-19T12:13:01.271+08:00  INFO 16832 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-19T12:14:32.879+08:00  INFO 10284 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-19T12:14:32.882+08:00  INFO 10284 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-19T12:14:45.101+08:00  INFO 16072 --- [main] c.z.j.JPetStoreSpringApplication         : Starting JPetStoreSpringApplication using Java 17.0.6 with PID 16072 (D:\Project\Web\JPetStore_Spring\target\classes started by Raymond Li in D:\Project\Web\JPetStore_Spring)
+2023-03-19T12:14:45.104+08:00  INFO 16072 --- [main] c.z.j.JPetStoreSpringApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-03-19T12:14:45.546+08:00  INFO 16072 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-03-19T12:14:45.555+08:00  INFO 16072 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JDBC repository interfaces.
+2023-03-19T12:14:45.889+08:00  INFO 16072 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-03-19T12:14:45.896+08:00  INFO 16072 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-19T12:14:45.896+08:00  INFO 16072 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-03-19T12:14:45.955+08:00  INFO 16072 --- [main] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring embedded WebApplicationContext
+2023-03-19T12:14:45.956+08:00  INFO 16072 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 813 ms
+2023-03-19T12:14:46.496+08:00  INFO 16072 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-19T12:14:46.784+08:00  INFO 16072 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/jpetstore'
+2023-03-19T12:14:46.791+08:00  INFO 16072 --- [main] c.z.j.JPetStoreSpringApplication         : Started JPetStoreSpringApplication in 2.042 seconds (process running for 2.472)
+2023-03-19T12:14:53.361+08:00  INFO 16072 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-19T12:14:53.362+08:00  INFO 16072 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-19T12:14:53.362+08:00  INFO 16072 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-03-19T12:14:53.377+08:00  INFO 16072 --- [http-nio-8080-exec-1] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/MyCart.html
+2023-03-19T12:15:04.522+08:00  INFO 16072 --- [http-nio-8080-exec-2] c.z.j.controller.UserController          : csu001成功登录
+2023-03-19T12:15:04.670+08:00  INFO 16072 --- [http-nio-8080-exec-3] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T12:15:04.670+08:00  INFO 16072 --- [http-nio-8080-exec-4] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T12:15:04.670+08:00  INFO 16072 --- [http-nio-8080-exec-7] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T12:15:06.838+08:00  INFO 16072 --- [http-nio-8080-exec-10] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/MyCart.html
+2023-03-19T12:15:06.883+08:00  INFO 16072 --- [http-nio-8080-exec-8] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/selectCartList
+2023-03-19T12:15:09.284+08:00  INFO 16072 --- [http-nio-8080-exec-6] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:15:16.357+08:00  INFO 16072 --- [http-nio-8080-exec-9] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:15:16.732+08:00  INFO 16072 --- [http-nio-8080-exec-2] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:15:22.026+08:00  INFO 16072 --- [http-nio-8080-exec-5] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:15:22.200+08:00  INFO 16072 --- [http-nio-8080-exec-3] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:15:22.394+08:00  INFO 16072 --- [http-nio-8080-exec-4] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:15:22.574+08:00  INFO 16072 --- [http-nio-8080-exec-7] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:15:22.792+08:00  INFO 16072 --- [http-nio-8080-exec-10] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:15:23.002+08:00  INFO 16072 --- [http-nio-8080-exec-1] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:15:23.526+08:00  INFO 16072 --- [http-nio-8080-exec-8] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:15:23.856+08:00  INFO 16072 --- [http-nio-8080-exec-6] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:15:24.367+08:00  INFO 16072 --- [http-nio-8080-exec-9] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:15:25.086+08:00  INFO 16072 --- [http-nio-8080-exec-2] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:15:25.297+08:00  INFO 16072 --- [http-nio-8080-exec-5] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:15:25.559+08:00  INFO 16072 --- [http-nio-8080-exec-3] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:15:25.942+08:00  INFO 16072 --- [http-nio-8080-exec-4] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T12:15:26.325+08:00  INFO 16072 --- [http-nio-8080-exec-7] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T14:21:53.801+08:00  INFO 16072 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-19T14:21:53.803+08:00  INFO 16072 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-19T14:21:58.733+08:00  INFO 18568 --- [main] c.z.j.JPetStoreSpringApplication         : Starting JPetStoreSpringApplication using Java 17.0.6 with PID 18568 (D:\Project\Web\JPetStore_Spring\target\classes started by Raymond Li in D:\Project\Web\JPetStore_Spring)
+2023-03-19T14:21:58.740+08:00  INFO 18568 --- [main] c.z.j.JPetStoreSpringApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-03-19T14:21:59.188+08:00  INFO 18568 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-03-19T14:21:59.197+08:00  INFO 18568 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JDBC repository interfaces.
+2023-03-19T14:21:59.521+08:00  INFO 18568 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-03-19T14:21:59.528+08:00  INFO 18568 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-19T14:21:59.529+08:00  INFO 18568 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-03-19T14:21:59.589+08:00  INFO 18568 --- [main] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring embedded WebApplicationContext
+2023-03-19T14:21:59.589+08:00  INFO 18568 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 812 ms
+2023-03-19T14:22:00.122+08:00  INFO 18568 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-19T14:22:00.412+08:00  INFO 18568 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/jpetstore'
+2023-03-19T14:22:00.419+08:00  INFO 18568 --- [main] c.z.j.JPetStoreSpringApplication         : Started JPetStoreSpringApplication in 2.043 seconds (process running for 2.465)
+2023-03-19T14:22:05.340+08:00  INFO 18568 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-19T14:22:05.340+08:00  INFO 18568 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-19T14:22:05.341+08:00  INFO 18568 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-03-19T14:22:05.600+08:00  INFO 18568 --- [http-nio-8080-exec-7] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T14:22:05.600+08:00  INFO 18568 --- [http-nio-8080-exec-2] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T14:22:05.600+08:00  INFO 18568 --- [http-nio-8080-exec-5] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T14:22:17.111+08:00  INFO 18568 --- [http-nio-8080-exec-1] c.z.j.controller.UserController          : csu001成功登录
+2023-03-19T14:22:17.214+08:00  INFO 18568 --- [http-nio-8080-exec-2] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T14:22:17.214+08:00  INFO 18568 --- [http-nio-8080-exec-5] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T14:22:17.214+08:00  INFO 18568 --- [http-nio-8080-exec-7] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T14:22:22.724+08:00  INFO 18568 --- [http-nio-8080-exec-6] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/MyCart.html
+2023-03-19T14:22:22.763+08:00  INFO 18568 --- [http-nio-8080-exec-8] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/selectCartList
+2023-03-19T14:22:35.146+08:00  INFO 18568 --- [http-nio-8080-exec-9] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T14:22:41.061+08:00  INFO 18568 --- [http-nio-8080-exec-10] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T14:22:48.704+08:00  INFO 18568 --- [http-nio-8080-exec-1] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T14:22:53.766+08:00  INFO 18568 --- [http-nio-8080-exec-3] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T14:23:02.760+08:00  INFO 18568 --- [http-nio-8080-exec-2] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/removeCartItem
+2023-03-19T14:26:06.699+08:00  INFO 10360 --- [main] com.zlp.jpetstore_spring.commonTest      : Starting commonTest using Java 17.0.6 with PID 10360 (started by Raymond Li in D:\Project\Web\JPetStore_Spring)
+2023-03-19T14:26:06.701+08:00  INFO 10360 --- [main] com.zlp.jpetstore_spring.commonTest      : No active profile set, falling back to 1 default profile: "default"
+2023-03-19T14:26:07.316+08:00  INFO 10360 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-03-19T14:26:07.332+08:00  INFO 10360 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 JDBC repository interfaces.
+2023-03-19T14:26:08.823+08:00  INFO 10360 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-19T14:26:09.314+08:00  INFO 10360 --- [main] com.zlp.jpetstore_spring.commonTest      : Started commonTest in 2.94 seconds (process running for 3.729)
+2023-03-19T14:26:09.727+08:00  INFO 10360 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-19T14:26:09.733+08:00  INFO 10360 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-19T14:28:04.235+08:00  INFO 15456 --- [main] com.zlp.jpetstore_spring.commonTest      : Starting commonTest using Java 17.0.6 with PID 15456 (started by Raymond Li in D:\Project\Web\JPetStore_Spring)
+2023-03-19T14:28:04.236+08:00  INFO 15456 --- [main] com.zlp.jpetstore_spring.commonTest      : No active profile set, falling back to 1 default profile: "default"
+2023-03-19T14:28:04.849+08:00  INFO 15456 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-03-19T14:28:04.863+08:00  INFO 15456 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JDBC repository interfaces.
+2023-03-19T14:28:06.385+08:00  INFO 15456 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-19T14:28:06.867+08:00  INFO 15456 --- [main] com.zlp.jpetstore_spring.commonTest      : Started commonTest in 2.974 seconds (process running for 3.738)
+2023-03-19T14:28:07.272+08:00  INFO 15456 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-19T14:28:07.279+08:00  INFO 15456 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-19T14:28:21.939+08:00  INFO 18568 --- [http-nio-8080-exec-4] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/MyCart.html
+2023-03-19T14:28:21.963+08:00  INFO 18568 --- [http-nio-8080-exec-8] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/selectCartList
+2023-03-19T14:28:27.905+08:00  INFO 18568 --- [http-nio-8080-exec-10] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T14:28:28.272+08:00  INFO 18568 --- [http-nio-8080-exec-1] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T14:28:28.632+08:00  INFO 18568 --- [http-nio-8080-exec-3] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T14:28:28.909+08:00  INFO 18568 --- [http-nio-8080-exec-2] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T14:28:29.615+08:00  INFO 18568 --- [http-nio-8080-exec-5] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T14:28:41.578+08:00  INFO 18568 --- [http-nio-8080-exec-7] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/removeCartItem
+2023-03-19T14:28:57.555+08:00  INFO 18568 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-19T14:28:57.558+08:00  INFO 18568 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-19T14:43:03.438+08:00  INFO 6072 --- [main] c.z.j.JPetStoreSpringApplication         : Starting JPetStoreSpringApplication using Java 17.0.6 with PID 6072 (D:\Project\Web\JPetStore_Spring\target\classes started by Raymond Li in D:\Project\Web\JPetStore_Spring)
+2023-03-19T14:43:03.441+08:00  INFO 6072 --- [main] c.z.j.JPetStoreSpringApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-03-19T14:43:03.909+08:00  INFO 6072 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-03-19T14:43:03.918+08:00  INFO 6072 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JDBC repository interfaces.
+2023-03-19T14:43:04.263+08:00  INFO 6072 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-03-19T14:43:04.270+08:00  INFO 6072 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-19T14:43:04.271+08:00  INFO 6072 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-03-19T14:43:04.330+08:00  INFO 6072 --- [main] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring embedded WebApplicationContext
+2023-03-19T14:43:04.330+08:00  INFO 6072 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 850 ms
+2023-03-19T14:43:04.870+08:00  INFO 6072 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-19T14:43:05.163+08:00  INFO 6072 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/jpetstore'
+2023-03-19T14:43:05.170+08:00  INFO 6072 --- [main] c.z.j.JPetStoreSpringApplication         : Started JPetStoreSpringApplication in 2.087 seconds (process running for 2.53)
+2023-03-19T14:43:08.407+08:00  INFO 6072 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-19T14:43:08.407+08:00  INFO 6072 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-19T14:43:08.408+08:00  INFO 6072 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-03-19T14:43:08.426+08:00  INFO 6072 --- [http-nio-8080-exec-1] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/MyCart.html
+2023-03-19T14:43:16.348+08:00  INFO 6072 --- [http-nio-8080-exec-3] c.z.j.controller.UserController          : csu001成功登录
+2023-03-19T14:43:16.497+08:00  INFO 6072 --- [http-nio-8080-exec-7] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T14:43:16.497+08:00  INFO 6072 --- [http-nio-8080-exec-8] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T14:43:16.497+08:00  INFO 6072 --- [http-nio-8080-exec-9] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T14:43:17.954+08:00  INFO 6072 --- [http-nio-8080-exec-10] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/MyCart.html
+2023-03-19T14:43:18.649+08:00  INFO 6072 --- [http-nio-8080-exec-2] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/selectCartList
+2023-03-19T14:43:20.504+08:00  INFO 6072 --- [http-nio-8080-exec-5] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T14:43:21.539+08:00  INFO 6072 --- [http-nio-8080-exec-4] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T14:43:22.109+08:00  INFO 6072 --- [http-nio-8080-exec-3] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T14:43:22.882+08:00  INFO 6072 --- [http-nio-8080-exec-6] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T14:43:29.492+08:00  INFO 6072 --- [http-nio-8080-exec-9] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/MyCart.html
+2023-03-19T14:43:29.553+08:00  INFO 6072 --- [http-nio-8080-exec-7] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/selectCartList
+2023-03-19T14:43:32.584+08:00  INFO 6072 --- [http-nio-8080-exec-4] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T14:43:32.584+08:00  INFO 6072 --- [http-nio-8080-exec-3] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T14:43:32.584+08:00  INFO 6072 --- [http-nio-8080-exec-5] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T14:43:37.552+08:00  INFO 6072 --- [http-nio-8080-exec-6] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/MyCart.html
+2023-03-19T14:43:37.594+08:00  INFO 6072 --- [http-nio-8080-exec-8] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/selectCartList
+2023-03-19T14:43:47.175+08:00  INFO 6072 --- [http-nio-8080-exec-7] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T14:43:48.322+08:00  INFO 6072 --- [http-nio-8080-exec-10] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Cart/updateItemQuantity
+2023-03-19T14:45:12.474+08:00  INFO 6072 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-19T14:45:12.477+08:00  INFO 6072 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-19T14:45:15.118+08:00  INFO 4132 --- [main] c.z.j.JPetStoreSpringApplication         : Starting JPetStoreSpringApplication using Java 17.0.6 with PID 4132 (D:\Project\Web\JPetStore_Spring\target\classes started by Raymond Li in D:\Project\Web\JPetStore_Spring)
+2023-03-19T14:45:15.121+08:00  INFO 4132 --- [main] c.z.j.JPetStoreSpringApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-03-19T14:45:15.631+08:00  INFO 4132 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-03-19T14:45:15.640+08:00  INFO 4132 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JDBC repository interfaces.
+2023-03-19T14:45:15.983+08:00  INFO 4132 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-03-19T14:45:15.991+08:00  INFO 4132 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-19T14:45:15.991+08:00  INFO 4132 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-03-19T14:45:16.056+08:00  INFO 4132 --- [main] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring embedded WebApplicationContext
+2023-03-19T14:45:16.056+08:00  INFO 4132 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 884 ms
+2023-03-19T14:45:16.643+08:00  INFO 4132 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-19T14:45:16.956+08:00  INFO 4132 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/jpetstore'
+2023-03-19T14:45:16.964+08:00  INFO 4132 --- [main] c.z.j.JPetStoreSpringApplication         : Started JPetStoreSpringApplication in 2.251 seconds (process running for 2.732)
+2023-03-19T14:45:41.672+08:00  INFO 4132 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-19T14:45:41.675+08:00  INFO 4132 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed

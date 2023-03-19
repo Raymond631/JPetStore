@@ -10,12 +10,12 @@ import java.util.List;
  * @description
  */
 public interface CartService {
-    public void addCartItem(Cart cart);//增
+    public void addCartItem(String userId, Cart cart);// 增
 
-    public List<Cart> selectCartList(String userId);//查
+    public List<Cart> selectCartList(String userId);// 查
 
-    public int removeCartItem(int itemID);//删
+    public int removeCartItem(int cartItemId);// 删
 
-    public int updateItemQuantity(int itemID,int quantity);//改
+    public int updateItemQuantity(int cartItemId, int quantity);// 改
 
 }
