@@ -5,15 +5,21 @@ spring:
     password: ZpC498420459
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 5MB
 
 server:
   servlet:
     context-path: /jpetstore
 
 
+
 logging:
   file:
     path: log
+
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.zlp.jpetstore_spring.entity

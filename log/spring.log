@@ -2790,3 +2790,271 @@ java.lang.IllegalStateException: Optional int parameter 'itemId' is present but 
 2023-03-19T20:21:25.625+08:00  INFO 9712 --- [main] com.zlp.jpetstore_spring.commonTest      : Started commonTest in 2.897 seconds (process running for 3.683)
 2023-03-19T20:21:26.022+08:00  INFO 9712 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
 2023-03-19T20:21:26.026+08:00  INFO 9712 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-19T20:40:27.176+08:00  INFO 14084 --- [main] com.zlp.jpetstore_spring.commonTest      : Starting commonTest using Java 17.0.6 with PID 14084 (started by Raymond Li in D:\Project\Web\JPetStore_Spring)
+2023-03-19T20:40:27.177+08:00  INFO 14084 --- [main] com.zlp.jpetstore_spring.commonTest      : No active profile set, falling back to 1 default profile: "default"
+2023-03-19T20:40:27.789+08:00  INFO 14084 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-03-19T20:40:27.804+08:00  INFO 14084 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 JDBC repository interfaces.
+2023-03-19T20:40:29.312+08:00  INFO 14084 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-19T20:40:29.793+08:00  INFO 14084 --- [main] com.zlp.jpetstore_spring.commonTest      : Started commonTest in 2.963 seconds (process running for 3.765)
+2023-03-19T20:40:30.195+08:00  INFO 14084 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-19T20:40:30.201+08:00  INFO 14084 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-19T20:40:53.548+08:00  INFO 17180 --- [main] c.z.j.JPetStoreSpringApplication         : Starting JPetStoreSpringApplication using Java 17.0.6 with PID 17180 (D:\Project\Web\JPetStore_Spring\target\classes started by Raymond Li in D:\Project\Web\JPetStore_Spring)
+2023-03-19T20:40:53.550+08:00  INFO 17180 --- [main] c.z.j.JPetStoreSpringApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-03-19T20:40:54.033+08:00  INFO 17180 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-03-19T20:40:54.043+08:00  INFO 17180 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JDBC repository interfaces.
+2023-03-19T20:40:54.400+08:00  INFO 17180 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-03-19T20:40:54.408+08:00  INFO 17180 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-19T20:40:54.409+08:00  INFO 17180 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-03-19T20:40:54.472+08:00  INFO 17180 --- [main] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring embedded WebApplicationContext
+2023-03-19T20:40:54.473+08:00  INFO 17180 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 883 ms
+2023-03-19T20:40:55.060+08:00  INFO 17180 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-19T20:40:55.363+08:00  INFO 17180 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/jpetstore'
+2023-03-19T20:40:55.370+08:00  INFO 17180 --- [main] c.z.j.JPetStoreSpringApplication         : Started JPetStoreSpringApplication in 2.193 seconds (process running for 2.65)
+2023-03-19T20:42:09.938+08:00  INFO 17180 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-19T20:42:09.940+08:00  INFO 17180 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-19T20:42:13.635+08:00  INFO 14820 --- [main] c.z.j.JPetStoreSpringApplication         : Starting JPetStoreSpringApplication using Java 17.0.6 with PID 14820 (D:\Project\Web\JPetStore_Spring\target\classes started by Raymond Li in D:\Project\Web\JPetStore_Spring)
+2023-03-19T20:42:13.637+08:00  INFO 14820 --- [main] c.z.j.JPetStoreSpringApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-03-19T20:42:14.215+08:00  INFO 14820 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-03-19T20:42:14.225+08:00  INFO 14820 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 JDBC repository interfaces.
+2023-03-19T20:42:14.586+08:00  INFO 14820 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-03-19T20:42:14.595+08:00  INFO 14820 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-19T20:42:14.595+08:00  INFO 14820 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-03-19T20:42:14.665+08:00  INFO 14820 --- [main] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring embedded WebApplicationContext
+2023-03-19T20:42:14.665+08:00  INFO 14820 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 979 ms
+2023-03-19T20:42:15.249+08:00  INFO 14820 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-19T20:42:15.562+08:00  INFO 14820 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/jpetstore'
+2023-03-19T20:42:15.570+08:00  INFO 14820 --- [main] c.z.j.JPetStoreSpringApplication         : Started JPetStoreSpringApplication in 2.321 seconds (process running for 2.791)
+2023-03-19T20:42:23.657+08:00  INFO 14820 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-19T20:42:23.657+08:00  INFO 14820 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-19T20:42:23.658+08:00  INFO 14820 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-03-19T20:42:23.936+08:00  INFO 14820 --- [http-nio-8080-exec-5] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T20:42:23.936+08:00  INFO 14820 --- [http-nio-8080-exec-7] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T20:42:23.936+08:00  INFO 14820 --- [http-nio-8080-exec-4] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T20:42:39.044+08:00  INFO 14820 --- [http-nio-8080-exec-10] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/Backstage/test.html
+2023-03-19T20:43:14.392+08:00  INFO 14820 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-19T20:43:14.395+08:00  INFO 14820 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-19T20:43:18.000+08:00  INFO 8676 --- [main] c.z.j.JPetStoreSpringApplication         : Starting JPetStoreSpringApplication using Java 17.0.6 with PID 8676 (D:\Project\Web\JPetStore_Spring\target\classes started by Raymond Li in D:\Project\Web\JPetStore_Spring)
+2023-03-19T20:43:18.003+08:00  INFO 8676 --- [main] c.z.j.JPetStoreSpringApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-03-19T20:43:18.470+08:00  INFO 8676 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-03-19T20:43:18.480+08:00  INFO 8676 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JDBC repository interfaces.
+2023-03-19T20:43:18.826+08:00  INFO 8676 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-03-19T20:43:18.833+08:00  INFO 8676 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-19T20:43:18.833+08:00  INFO 8676 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-03-19T20:43:18.893+08:00  INFO 8676 --- [main] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring embedded WebApplicationContext
+2023-03-19T20:43:18.893+08:00  INFO 8676 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 855 ms
+2023-03-19T20:43:19.453+08:00  INFO 8676 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-19T20:43:19.754+08:00  INFO 8676 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/jpetstore'
+2023-03-19T20:43:19.762+08:00  INFO 8676 --- [main] c.z.j.JPetStoreSpringApplication         : Started JPetStoreSpringApplication in 2.147 seconds (process running for 2.598)
+2023-03-19T20:43:23.762+08:00  INFO 8676 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-19T20:43:23.762+08:00  INFO 8676 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-19T20:43:23.763+08:00  INFO 8676 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-03-19T20:43:28.491+08:00  INFO 8676 --- [http-nio-8080-exec-5] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T20:43:28.491+08:00  INFO 8676 --- [http-nio-8080-exec-2] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T20:43:28.491+08:00  INFO 8676 --- [http-nio-8080-exec-3] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T20:44:49.890+08:00 ERROR 8676 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/jpetstore] threw exception [Request processing failed: org.springframework.web.multipart.MaxUploadSizeExceededException: Maximum upload size exceeded] with root cause
+
+org.apache.tomcat.util.http.fileupload.impl.FileSizeLimitExceededException: The field file exceeds its maximum permitted size of 1048576 bytes.
+	at org.apache.tomcat.util.http.fileupload.impl.FileItemStreamImpl$1.raiseError(FileItemStreamImpl.java:117) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.tomcat.util.http.fileupload.util.LimitedInputStream.checkLimit(LimitedInputStream.java:76) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.tomcat.util.http.fileupload.util.LimitedInputStream.read(LimitedInputStream.java:135) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:106) ~[na:na]
+	at org.apache.tomcat.util.http.fileupload.util.Streams.copy(Streams.java:96) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.tomcat.util.http.fileupload.FileUploadBase.parseRequest(FileUploadBase.java:292) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.connector.Request.parseParts(Request.java:2884) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.connector.Request.getParts(Request.java:2778) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.connector.RequestFacade.getParts(RequestFacade.java:1074) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.parseRequest(StandardMultipartHttpServletRequest.java:93) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.<init>(StandardMultipartHttpServletRequest.java:86) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.springframework.web.multipart.support.StandardServletMultipartResolver.resolveMultipart(StandardServletMultipartResolver.java:112) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.springframework.web.servlet.DispatcherServlet.checkMultipart(DispatcherServlet.java:1219) ~[spring-webmvc-6.0.6.jar:6.0.6]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1053) ~[spring-webmvc-6.0.6.jar:6.0.6]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974) ~[spring-webmvc-6.0.6.jar:6.0.6]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011) ~[spring-webmvc-6.0.6.jar:6.0.6]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.0.6.jar:6.0.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:731) ~[tomcat-embed-core-10.1.5.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.0.6.jar:6.0.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814) ~[tomcat-embed-core-10.1.5.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2023-03-19T20:44:49.894+08:00  INFO 8676 --- [http-nio-8080-exec-2] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T20:48:18.302+08:00  INFO 8676 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-19T20:48:18.305+08:00  INFO 8676 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-19T20:48:20.588+08:00  INFO 11736 --- [main] c.z.j.JPetStoreSpringApplication         : Starting JPetStoreSpringApplication using Java 17.0.6 with PID 11736 (D:\Project\Web\JPetStore_Spring\target\classes started by Raymond Li in D:\Project\Web\JPetStore_Spring)
+2023-03-19T20:48:20.590+08:00  INFO 11736 --- [main] c.z.j.JPetStoreSpringApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-03-19T20:48:21.063+08:00  INFO 11736 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-03-19T20:48:21.073+08:00  INFO 11736 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JDBC repository interfaces.
+2023-03-19T20:48:21.429+08:00  INFO 11736 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-03-19T20:48:21.437+08:00  INFO 11736 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-19T20:48:21.437+08:00  INFO 11736 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-03-19T20:48:21.499+08:00  INFO 11736 --- [main] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring embedded WebApplicationContext
+2023-03-19T20:48:21.500+08:00  INFO 11736 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 870 ms
+2023-03-19T20:48:22.057+08:00  INFO 11736 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-19T20:48:22.356+08:00  INFO 11736 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/jpetstore'
+2023-03-19T20:48:22.363+08:00  INFO 11736 --- [main] c.z.j.JPetStoreSpringApplication         : Started JPetStoreSpringApplication in 2.14 seconds (process running for 2.568)
+2023-03-19T20:48:30.587+08:00  INFO 11736 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-19T20:48:30.587+08:00  INFO 11736 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-19T20:48:30.587+08:00  INFO 11736 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-03-19T20:49:42.003+08:00  INFO 11736 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-19T20:49:42.006+08:00  INFO 11736 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-19T20:49:45.638+08:00  INFO 10180 --- [main] c.z.j.JPetStoreSpringApplication         : Starting JPetStoreSpringApplication using Java 17.0.6 with PID 10180 (D:\Project\Web\JPetStore_Spring\target\classes started by Raymond Li in D:\Project\Web\JPetStore_Spring)
+2023-03-19T20:49:45.641+08:00  INFO 10180 --- [main] c.z.j.JPetStoreSpringApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-03-19T20:49:46.148+08:00  INFO 10180 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-03-19T20:49:46.158+08:00  INFO 10180 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JDBC repository interfaces.
+2023-03-19T20:49:46.515+08:00  INFO 10180 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-03-19T20:49:46.523+08:00  INFO 10180 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-19T20:49:46.524+08:00  INFO 10180 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-03-19T20:49:46.587+08:00  INFO 10180 --- [main] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring embedded WebApplicationContext
+2023-03-19T20:49:46.587+08:00  INFO 10180 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 905 ms
+2023-03-19T20:49:47.156+08:00  INFO 10180 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-19T20:49:47.452+08:00  INFO 10180 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/jpetstore'
+2023-03-19T20:49:47.459+08:00  INFO 10180 --- [main] c.z.j.JPetStoreSpringApplication         : Started JPetStoreSpringApplication in 2.194 seconds (process running for 2.637)
+2023-03-19T20:49:50.170+08:00  INFO 10180 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-19T20:49:50.170+08:00  INFO 10180 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-19T20:49:50.171+08:00  INFO 10180 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-03-19T21:11:21.740+08:00  INFO 10180 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-19T21:11:21.743+08:00  INFO 10180 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-19T21:11:25.490+08:00  INFO 18368 --- [main] c.z.j.JPetStoreSpringApplication         : Starting JPetStoreSpringApplication using Java 17.0.6 with PID 18368 (D:\Project\Web\JPetStore_Spring\target\classes started by Raymond Li in D:\Project\Web\JPetStore_Spring)
+2023-03-19T21:11:25.492+08:00  INFO 18368 --- [main] c.z.j.JPetStoreSpringApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-03-19T21:11:26.116+08:00  INFO 18368 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-03-19T21:11:26.135+08:00  INFO 18368 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 JDBC repository interfaces.
+2023-03-19T21:11:26.509+08:00  INFO 18368 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-03-19T21:11:26.517+08:00  INFO 18368 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-19T21:11:26.517+08:00  INFO 18368 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-03-19T21:11:26.578+08:00  INFO 18368 --- [main] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring embedded WebApplicationContext
+2023-03-19T21:11:26.578+08:00  INFO 18368 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1046 ms
+2023-03-19T21:11:27.126+08:00  INFO 18368 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-19T21:11:27.417+08:00  INFO 18368 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/jpetstore'
+2023-03-19T21:11:27.424+08:00  INFO 18368 --- [main] c.z.j.JPetStoreSpringApplication         : Started JPetStoreSpringApplication in 2.315 seconds (process running for 2.762)
+2023-03-19T21:11:45.347+08:00  INFO 18368 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-19T21:11:45.348+08:00  INFO 18368 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-19T21:11:45.349+08:00  INFO 18368 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-03-19T21:11:50.811+08:00 ERROR 18368 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/jpetstore] threw exception [Request processing failed: java.nio.file.InvalidPathException: Illegal char <:> at index 9: classpath:image\pet\TestImage.jpg] with root cause
+
+java.nio.file.InvalidPathException: Illegal char <:> at index 9: classpath:image\pet\TestImage.jpg
+	at java.base/sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182) ~[na:na]
+	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153) ~[na:na]
+	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77) ~[na:na]
+	at java.base/sun.nio.fs.WindowsPath.parse(WindowsPath.java:92) ~[na:na]
+	at java.base/sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:232) ~[na:na]
+	at java.base/java.io.File.toPath(File.java:2387) ~[na:na]
+	at com.zlp.jpetstore_spring.controller.ImageController.uploadImage(ImageController.java:112) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-6.0.6.jar:6.0.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884) ~[spring-webmvc-6.0.6.jar:6.0.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797) ~[spring-webmvc-6.0.6.jar:6.0.6]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.0.6.jar:6.0.6]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081) ~[spring-webmvc-6.0.6.jar:6.0.6]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974) ~[spring-webmvc-6.0.6.jar:6.0.6]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011) ~[spring-webmvc-6.0.6.jar:6.0.6]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.0.6.jar:6.0.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:731) ~[tomcat-embed-core-10.1.5.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.0.6.jar:6.0.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814) ~[tomcat-embed-core-10.1.5.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2023-03-19T21:11:50.817+08:00  INFO 18368 --- [http-nio-8080-exec-2] c.z.j.common.AuthInterceptor             : 0:0:0:0:0:0:0:1的用户访问了http://localhost:8080/jpetstore/error
+2023-03-19T21:43:19.393+08:00  INFO 18368 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-19T21:43:19.395+08:00  INFO 18368 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-19T21:43:23.162+08:00  INFO 4016 --- [main] c.z.j.JPetStoreSpringApplication         : Starting JPetStoreSpringApplication using Java 17.0.6 with PID 4016 (D:\Project\Web\JPetStore_Spring\target\classes started by Raymond Li in D:\Project\Web\JPetStore_Spring)
+2023-03-19T21:43:23.164+08:00  INFO 4016 --- [main] c.z.j.JPetStoreSpringApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-03-19T21:43:23.631+08:00  INFO 4016 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-03-19T21:43:23.641+08:00  INFO 4016 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JDBC repository interfaces.
+2023-03-19T21:43:23.978+08:00  INFO 4016 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-03-19T21:43:23.985+08:00  INFO 4016 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-19T21:43:23.986+08:00  INFO 4016 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-03-19T21:43:24.046+08:00  INFO 4016 --- [main] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring embedded WebApplicationContext
+2023-03-19T21:43:24.046+08:00  INFO 4016 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 840 ms
+2023-03-19T21:43:24.592+08:00  INFO 4016 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-19T21:43:24.888+08:00  INFO 4016 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/jpetstore'
+2023-03-19T21:43:24.895+08:00  INFO 4016 --- [main] c.z.j.JPetStoreSpringApplication         : Started JPetStoreSpringApplication in 2.1 seconds (process running for 2.54)
+2023-03-19T21:44:30.708+08:00  INFO 4016 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-19T21:44:30.708+08:00  INFO 4016 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-19T21:44:30.709+08:00  INFO 4016 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-03-19T21:45:04.791+08:00  INFO 4016 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-19T21:45:04.794+08:00  INFO 4016 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-19T21:45:08.628+08:00  INFO 10620 --- [main] c.z.j.JPetStoreSpringApplication         : Starting JPetStoreSpringApplication using Java 17.0.6 with PID 10620 (D:\Project\Web\JPetStore_Spring\target\classes started by Raymond Li in D:\Project\Web\JPetStore_Spring)
+2023-03-19T21:45:08.631+08:00  INFO 10620 --- [main] c.z.j.JPetStoreSpringApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-03-19T21:45:09.090+08:00  INFO 10620 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-03-19T21:45:09.099+08:00  INFO 10620 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JDBC repository interfaces.
+2023-03-19T21:45:09.434+08:00  INFO 10620 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-03-19T21:45:09.450+08:00  INFO 10620 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-19T21:45:09.451+08:00  INFO 10620 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-03-19T21:45:09.511+08:00  INFO 10620 --- [main] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring embedded WebApplicationContext
+2023-03-19T21:45:09.511+08:00  INFO 10620 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 839 ms
+2023-03-19T21:45:10.059+08:00  INFO 10620 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-19T21:45:10.352+08:00  INFO 10620 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/jpetstore'
+2023-03-19T21:45:10.359+08:00  INFO 10620 --- [main] c.z.j.JPetStoreSpringApplication         : Started JPetStoreSpringApplication in 2.132 seconds (process running for 2.758)
+2023-03-19T21:45:20.189+08:00  INFO 10620 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/jpetstore]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-19T21:45:20.189+08:00  INFO 10620 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-19T21:45:20.190+08:00  INFO 10620 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-03-19T21:46:16.838+08:00  INFO 10620 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-19T21:46:16.841+08:00  INFO 10620 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed

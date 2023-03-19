@@ -23,6 +23,11 @@ public class BackstageController {
         return "/Backstage/production/OrderManage";
     }
 
+    @GetMapping("/test.html")
+    public String showTest() {
+        return "/Backstage/test.html";
+    }
+
     @GetMapping("/getOrderManageData")
     @ResponseBody
     public Object getOrderManageData(HttpSession session) {
