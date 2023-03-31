@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/jpetstore
+    username: Raymond
+    password: CSU@82092102
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+server:
+  servlet:
+    context-path: /jpetstore
+  port: 8080
+
+logging:
+  file:
+    path: log
+
+mybatis:
+  mapper-locations: classpath:mybatis/*.xml
+  type-aliases-package: com/example/jpetstore/POJO/DataObject
+  configuration:
+    map-underscore-to-camel-case: true

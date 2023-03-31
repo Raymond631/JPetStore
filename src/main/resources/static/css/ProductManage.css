@@ -1,0 +1,12 @@
+.change{
+    position: absolute;
+    right:80px;
+    border:white;
+    background-color: transparent;
+    font-size: 15px;
+    color:rgb(90,115,142);
+}
+
+.change:hover{
+    color: rgb(0,86,179);
+}

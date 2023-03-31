@@ -1,0 +1,73 @@
+/*确认订单*/
+.orderEnsure{
+    position: absolute;
+    border: 1px solid white;
+    border-radius: 5px;
+    width:80px;
+    height:40px;
+    left: 200px;
+    z-index: 1;
+    font-size: 15px;
+    color:white;
+    font-weight: bold ;
+    background-color: rgb(38,185,154);
+}
+
+.orderEnsure:hover{
+    background-color: white;
+    color:black;
+    border:1px solid rgb(38,185,154);
+    transition:all 1s ease;
+}
+
+/*取消订单*/
+.orderCancel{
+    position: absolute;
+    border: 1px solid white;
+    border-radius: 5px;
+    width:80px;
+    height:40px;
+    left: 300px;
+    z-index: 1;
+    font-size: 15px;
+    color:white;
+    font-weight: bold ;
+    background-color: rgb(220,53,69);
+}
+
+.orderCancel:hover{
+    background-color: white;
+    color:black;
+    border:1px solid rgb(220,53,69);
+    transition:all 1s ease;
+}
+
+/*已下单*/
+.OrderT{
+    position: absolute;
+    width:20px;
+    height:20px;
+    border-radius: 10px;
+    background-color: rgb(38,185,154);
+    right: 100px;
+}
+
+/*未下单*/
+.OrderF{
+    position: absolute;
+    width:20px;
+    height:20px;
+    border-radius: 10px;
+    background-color: rgb(220,53,69);
+    right: 100px;
+}
+
+/*已接收*/
+.OrderFinish{
+    position: absolute;
+    width:20px;
+    height:20px;
+    border-radius: 10px;
+    background-color: rgb(186,184,184);
+    right: 100px;
+}

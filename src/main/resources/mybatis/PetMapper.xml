@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.jpetstore.Mapper.PetMapper">
+
+    <select id="getPetList" resultType="com.example.jpetstore.POJO.DataObject.PetProductDO">
+        select product_id,product_name_Chinese,product_name_English,product_image from pet_product where category = #{category}
+    </select>
+</mapper>

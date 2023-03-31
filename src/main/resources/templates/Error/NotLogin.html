@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div style="text-align: center;margin-top: 10%">您没有权限进行此操作，请先登陆！</div>
+<div id="box" style="text-align: center"></div>
+<div style="text-align: center"><a href="/jpetstore/User/Login.html">点击这里</a>，直接跳转至登陆界面</div>
+</body>
+<script>
+    //5秒跳转页面
+    var b = document.getElementById("box");
+    b.innerHTML = "5秒钟后，自动跳转到登录页面。。。";
+    var time = 5;
+    //每隔一秒执行定时器
+    var timer = setInterval(function () {
+        if (time > 0) {
+            time--;
+            b.innerHTML = time + "秒钟后，自动跳转到登录页面。。。";
+        } else {
+            window.location.href = "/jpetstore/User/Login.html";
+            timer.clearInterval();
+        }
+    }, 1000);
+</script>
+</html>
