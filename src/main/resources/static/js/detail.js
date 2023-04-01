@@ -1,4 +1,5 @@
 ﻿window.addEventListener('load', function () {
+    isLogin();
     getDetails();
 })
 
@@ -6,6 +7,16 @@ var itemID_list = [];
 let stock_list = [];
 let price_list = [];
 var index = 0;
+
+function isLogin(){
+    if(document.cookie.indexOf('token')===-1){
+        $('#notLogin').show();
+        $('#logined').hide();
+    }else{
+        $('#notLogin').hide();
+        $('#logined').show();
+    }
+}
 
 function getDetails() {
     //TODO 前端json-get标准格式

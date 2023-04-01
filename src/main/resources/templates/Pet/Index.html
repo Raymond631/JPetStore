@@ -125,14 +125,6 @@
                         </a>
                         <div class="children">
                             <ul class="children-list myclear" id="catSwiper">
-                                <li th:each="product,productStat:${catList}" th:if="${productStat.index} le 5">
-                                    <a class="link myclear"
-                                       th:href="@{Pet/showDetails(productid=${product.productId})}">
-                                        <img alt=""
-                                             class="small-img" th:src="${product.productImage}">
-                                        <span class="text" th:text="${product.productNameChinese}">Bulldog</span>
-                                    </a>
-                                </li>
                             </ul>
                         </div>
                     </li>
@@ -143,14 +135,6 @@
                         </a>
                         <div class="children">
                             <ul class="children-list myclear" id="birdSwiper">
-                                <li th:each="product,productStat:${smallList}" th:if="${productStat.index} le 5">
-                                    <a class="link myclear"
-                                       th:href="@{Pet/showDetails(productid=${product.productId})}">
-                                        <img alt=""
-                                             class="small-img" th:src="${product.productImage}">
-                                        <span class="text" th:text="${product.productNameChinese}">Bulldog</span>
-                                    </a>
-                                </li>
                             </ul>
                         </div>
                     </li>
@@ -161,14 +145,6 @@
                         </a>
                         <div class="children">
                             <ul class="children-list myclear" id="fishSwiper">
-                                <li th:each="product,productStat:${fishList}" th:if="${productStat.index} le 5">
-                                    <a class="link myclear"
-                                       th:href="@{Pet/showDetails(productid=${product.productId})}">
-                                        <img alt=""
-                                             class="small-img" th:src="${product.productImage}">
-                                        <span class="text" th:text="${product.productNameChinese}">Bulldog</span>
-                                    </a>
-                                </li>
                             </ul>
                         </div>
                     </li>
@@ -179,14 +155,6 @@
                         </a>
                         <div class="children">
                             <ul class="children-list myclear" id="reptileSwiper">
-                                <li th:each="product,productStat:${pythonList}" th:if="${productStat.index} le 5">
-                                    <a class="link myclear"
-                                       th:href="@{Pet/showDetails(productid=${product.productId})}">
-                                        <img alt=""
-                                             class="small-img" th:src="${product.productImage}">
-                                        <span class="text" th:text="${product.productNameChinese}">Bulldog</span>
-                                    </a>
-                                </li>
                             </ul>
                         </div>
                     </li>

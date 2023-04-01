@@ -47,22 +47,16 @@
                 </div>
             </div>
             <!-- 登录注册 -->
-            <c:if test="${sessionScope.user==null}">
-                <div class="topbar-info">
-                    <a href="/jpetstore/User/showLogin">登录</a>
-                    <span class="sep">|</span>
-                    <a href="/jpetstore/User/showRegister">注册</a>
-                </div>
-            </c:if>
-            <c:if test="${sessionScope.user!=null}">
-                <div class="topbar-info">
-                    <a href="#">欢迎光临：${sessionScope.user.username}</a>
-                    <span class="sep">|</span>
-                    <a href="/jpetstore/User/signOut">退出登录</a>
-                    <span class="sep">|</span>
-                    <a href="/jpetstore/Order/showMyOrder">我的订单</a>
-                </div>
-            </c:if>
+            <div class="topbar-info" id="notLogin">
+                <a href="/jpetstore/Login.html">登录</a>
+                <span class="sep">|</span>
+                <a href="/jpetstore/Register.html">注册</a>
+            </div>
+            <div class="topbar-info" id="logined">
+                <a href="javascript:logout();">退出登录</a>
+                <span class="sep">|</span>
+                <a href="/jpetstore/MyOrder.html">我的订单</a>
+            </div>
         </div>
     </div>
     <!-- 顶部导航栏end -->
@@ -71,7 +65,7 @@
     <div class="nav">
         <div class="w">
             <div class="dropdown fl">
-                <div class="dt" onclick="window.location=''">
+                <div class="dt">
                     <a href="/jpetstore"><img src="/image/header/logo.png"></a>
                 </div>
             </div>

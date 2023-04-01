@@ -43,17 +43,17 @@ public class PetController {
         return CommonResponse.success(petMap);
     }
 
-    @GetMapping("/image/look/{imageName}")
-    public void imageLook(@PathVariable("imageName") String imageName, HttpServletResponse response) {
-        File file = new File("D:/jpetstoreImage/" + imageName);
-        byte[] bytes = new byte[1024];
-        try (OutputStream os = response.getOutputStream(); FileInputStream fis = new FileInputStream(file)) {
-            while ((fis.read(bytes)) != -1) {
-                os.write(bytes);
-                os.flush();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+    // @GetMapping("/image/look/{imageName}")
+    // public void imageLook(@PathVariable("imageName") String imageName, HttpServletResponse response) {
+    //     File file = new File("D:/jpetstoreImage/" + imageName);
+    //     byte[] bytes = new byte[1024];
+    //     try (OutputStream os = response.getOutputStream(); FileInputStream fis = new FileInputStream(file)) {
+    //         while ((fis.read(bytes)) != -1) {
+    //             os.write(bytes);
+    //             os.flush();
+    //         }
+    //     } catch (IOException e) {
+    //         e.printStackTrace();
+    //     }
+    // }
 }
