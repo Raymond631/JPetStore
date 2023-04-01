@@ -1,5 +1,6 @@
 package com.example.jpetstore.POJO.ViewObject;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,8 +14,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserVO {
+    @NotBlank(message = "账号不能为空")
     private String username;
     private String oldPassword;
+    @NotBlank(message = "密码不能为空")
     private String password;
     private String rePassword;
     private String id;// 验证码（键）

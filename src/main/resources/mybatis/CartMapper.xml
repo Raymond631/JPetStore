@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.jpetstore.Mapper.CartMapper">
+
+    <select id="selectCartList" resultType="com.example.jpetstore.POJO.DataObject.CartDO">
+        select cart_item_id,product_id,item_id,quantity from cart where user_id = #{userId}
+    </select>
+
+    <select id="getProduct" resultType="com.example.jpetstore.POJO.DataObject.PetProductDO">
+        select product_name_Chinese,product_image,supplier_id from pet_product where product_id = #{productId}
+    </select>
+
+    <select id="getItem" resultType="com.example.jpetstore.POJO.DataObject.PetItemDO">
+        select item_specification,item_price,item_stock from pet_item where item_id = #{itemId}
+    </select>
+
+
+
+    <select id="selectQuantity" resultType="com.example.jpetstore.POJO.DataObject.CartDO">
+        select * from cart where user_id = #{userId} and item_id = #{itemId}
+    </select>
+
+
+    <insert id="addCartItem">
+        insert into cart (user_id,product_id,item_id,quantity) values (#{userId},#{productId},#{itemId},#{quantity})
+    </insert>
+
+    <update id="updateItemQuantity">
+        update cart set quantity = #{quantity} where cart_item_id = #{cartItemId}
+    </update>
+
+    <delete id="removeCartItem">
+        delete from cart where cart_item_id = #{cartItemId}
+    </delete>
+</mapper>

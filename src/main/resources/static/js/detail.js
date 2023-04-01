@@ -3,6 +3,7 @@
     getDetails();
 })
 
+var productID;
 var itemID_list = [];
 let stock_list = [];
 let price_list = [];
@@ -28,6 +29,7 @@ function getDetails() {
         dataType: "json",
         success: function (res) {
             let data = res.data;
+            productID=data.productId;
             $("#product_name_Chinese").html(data.productNameChinese);
             $("#product_name_English").html(data.productNameEnglish);
             $("#product_character").html(data.productCharacter);
@@ -67,7 +69,7 @@ function chooseItem() {
     let item_list = document.getElementsByClassName('list_item');
     for (let i = 0; i < item_list.length; i++) {
         item_list[0].classList.add("current");
-        $("#pet_price").html(price_list[i]+"元");
+        $("#pet_price").html(price_list[0]+"元");
 
         item_list[i].onclick = function () {
             item_list[i].classList.add("current");
@@ -86,6 +88,7 @@ function num_up() {
     let num = Number($("#item_num").val());
     if (num + 1 <= stock_list[index]) {
         $("#item_num").val(num + 1);
+        $("#pet_price").html(math.multiply(math.bignumber(price_list[index]),math.bignumber(num+1))+"元");
     } else {
         alert("您购买的商品超过了限制的数量");
     }
@@ -95,6 +98,7 @@ function num_down() {
     let num = Number($("#item_num").val());
     if (num - 1 > 0) {
         $("#item_num").val(num - 1);
+        $("#pet_price").html(math.multiply(math.bignumber(price_list[index]),math.bignumber(num-1))+"元");
     } else {
         alert("不能再少了哦");
     }
@@ -108,15 +112,17 @@ function addToCart() {
         alert("您购买的商品超过了限制的数量");
     } else {
         let data = {
-            itemID: itemID_list[index],
+            productId:productID,
+            itemId: itemID_list[index],
             quantity: num
         };
         $.ajax({
-            url: "../Cart/addCartItem",
+            url: "/jpetstore/cart",
             type: "post",
+            contentType: 'application/json',
             data: JSON.stringify(data),
-            success: function (data) {
-                $("#addToCart").after('<span id="msg">' + data + '</span>');
+            success: function (res) {
+                $("#addToCart").after('<span id="msg">' + res.data + '</span>');
                 $("#msg").fadeOut(3000);
             }
         });

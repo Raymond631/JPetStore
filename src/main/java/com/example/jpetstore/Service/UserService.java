@@ -40,4 +40,8 @@ public interface UserService {
     UserInfoDO auth(UserAuthDO userAuthDO);
 
     String getAccount(int userId);
+
+    UserInfoDO getUserInfo(int userId);
+
+    void updateReceiver(UserInfoDO userInfoDO);
 }

@@ -20,7 +20,7 @@ public class AllPageController {
 
     @GetMapping("/NotLogin.html")
     public String showNotLogin() {
-        return "/Error/NotLogin";
+        return "Error/NotLogin";
     }
 
     @GetMapping("/Login.html")
@@ -40,36 +40,36 @@ public class AllPageController {
 
     @GetMapping("/MyCart.html")
     public String showMyCart() {
-        return "/Cart/MyCart";
+        return "Cart/MyCart";
     }
 
     @GetMapping("/MyOrder.html")
     public String showMyOrder() {
-        return "/Order/MyOrder";
+        return "Order/MyOrder";
     }
 
     @GetMapping("/OrderDetails.html")
     public String showOrderDetails() {
-        return "/Order/OrderDetails";
+        return "Order/OrderDetails";
     }
 
     @GetMapping("/OrderSubmit.html")
     public String showOrderSubmit() {
-        return "/Order/OrderSubmit";
+        return "Order/OrderSubmit";
     }
 
     @GetMapping("/Details.html")
     public String showDetails(){
-        return "/Pet/Details";
+        return "Pet/Details";
     }
 
     @GetMapping("/Index.html")
     public String showIndex(){
-        return "/Pet/Index";
+        return "Pet/Index";
     }
 
     @GetMapping("/Search.html")
     public String showSearch(){
-        return "/Pet/Search";
+        return "Pet/Search";
     }
 }

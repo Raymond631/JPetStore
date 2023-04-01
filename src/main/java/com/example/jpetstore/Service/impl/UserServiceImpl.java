@@ -159,4 +159,14 @@ public class UserServiceImpl implements UserService {
         return userMapper.selectUserAccountById(userId);
     }
 
+    @Override
+    public UserInfoDO getUserInfo(int userId) {
+        return userMapper.getUserInfo(userId);
+    }
+
+    @Override
+    public void updateReceiver(UserInfoDO userInfoDO) {
+        userMapper.updateReceiver(userInfoDO);
+    }
+
 }

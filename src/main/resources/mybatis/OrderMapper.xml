@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.jpetstore.Mapper.OrderMapper">
+    <insert id="insertOrderMain">
+        <selectKey keyProperty="orderId" order="AFTER" resultType="java.lang.Integer">
+            select last_insert_id()
+        </selectKey>
+        insert into order_main (user_id,order_time,order_cost,order_payment,receiver_name,receiver_phone,receiver_address,supplier_id,status)
+            values (#{userId},#{orderTime},#{orderCost},#{orderPayment},#{receiverName},#{receiverPhone},#{receiverAddress},#{supplierId},#{status})
+    </insert>
+
+    <insert id="insertOrderItem">
+        insert into order_item (order_id,item_id,product_id,item_image,product_name_Chinese,item_specification,item_price,item_quantity)
+            values (#{orderId},#{itemId},#{productId},#{itemImage},#{productNameChinese},#{itemSpecification},#{itemPrice},#{itemQuantity})
+    </insert>
+
+    <update id="confirmReceipt">
+        update order_main set status = 3 where order_id = #{orderId}
+    </update>
+
+    <select id="getOrderList" resultType="com.example.jpetstore.POJO.DataObject.OrderMainDO">
+        select order_id,order_time,order_cost,status from order_main where user_id = #{userId} and status not in (4,6) order by order_id desc
+    </select>
+
+    <select id="getOrderDetails" resultMap="detail">
+        select * from order_main m,order_item i where m.order_id=i.order_id and m.order_id=#{orderId}
+    </select>
+    <resultMap type="com.example.jpetstore.POJO.DataObject.OrderMainDO" id="detail">
+        <id property="orderId" column="order_id" />
+        <result property="orderTime" column="order_time" />
+        <result property="orderCost" column="order_cost" />
+        <result property="orderPayment" column="order_payment" />
+        <result property="receiverName" column="receiver_name" />
+        <result property="receiverPhone" column="receiver_phone" />
+        <result property="receiverAddress" column="receiver_address" />
+        <result property="supplierId" column="supplier_id" />
+        <result property="status" column="status" />
+        <collection property="orderItemDOList" column="order_id" ofType="com.example.jpetstore.POJO.DataObject.OrderItemDO">
+            <id property="orderItemId" column="order_item_id" />
+            <result property="itemId" column="item_id" />
+            <result property="productId" column="product_id" />
+            <result property="itemImage" column="item_image" />
+            <result property="productNameChinese" column="product_name_Chinese" />
+            <result property="itemSpecification" column="item_specification" />
+            <result property="itemPrice" column="item_price" />
+            <result property="itemQuantity" column="item_quantity" />
+        </collection>
+    </resultMap>
+
+    <update id="updateStock">
+        update pet_item set item_stock = item_stock-#{itemQuantity} where item_stock &gt;= #{itemQuantity} and item_id = #{itemId}
+    </update>
+    <delete id="removeFromCart">
+        delete from cart where user_id = #{userId} and item_id = #{itemId}
+    </delete>
+
+</mapper>

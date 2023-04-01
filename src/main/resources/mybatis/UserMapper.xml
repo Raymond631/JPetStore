@@ -24,6 +24,9 @@
     <update id="updateNickname">
         update user_info set nickname = #{nickname} where user_id = #{userId}
     </update>
+    <update id="updateReceiver">
+        update user_info set receiver_name=#{receiverName},receiver_phone=#{receiverPhone},receiver_address=#{receiverAddress} where user_id = #{userId}
+    </update>
 
     <select id="selectUserByAccount" resultType="com.example.jpetstore.POJO.DataObject.UserAuthDO">
         select * from user_auth where login_type = #{loginType} and account = #{account}
@@ -43,6 +46,10 @@
 
     <select id="selectUserAccountById" resultType="java.lang.String">
         select account from user_auth where user_id = #{userId}
+    </select>
+
+    <select id="getUserInfo" resultType="com.example.jpetstore.POJO.DataObject.UserInfoDO">
+        select * from user_info where user_id = #{userId}
     </select>
 
 </mapper>

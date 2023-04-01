@@ -45,4 +45,8 @@ public interface UserMapper {
     public int updateNickname(String nickname, int userId);
 
     String selectUserAccountById(int userId);
+
+    UserInfoDO getUserInfo(int userId);
+
+    void updateReceiver(UserInfoDO userInfoDO);
 }

@@ -11,13 +11,12 @@
 <div class="order_head">
     <div class="head_background">
         <div class="head_box">
-            <a class="head_left_a" href="/jpetstore"><img alt="" class="head_left_p"
-                                                          src="/jpetstore/image/header/logo.png"></a>
+            <a class="head_left_a" href="/jpetstore">
+                <img alt="" class="head_left_p" src="/jpetstore/image/header/logo.png">
+            </a>
             <h1 class="head_h1">确认订单</h1>
             <div class="head_right">
-                <span class="head_right_in" th:text="'欢迎光临：'+${session.loginUser.userId}"></span>
-                <span class="head_right_in">|</span>
-                <a class="head_right_in" href="/jpetstore/Order/list">我的订单</a>
+                <a class="head_right_in" href="/jpetstore/MyOrder.html">我的订单</a>
             </div>
         </div>
     </div>
@@ -29,20 +28,12 @@
                 <h3 class="order_title">收货地址</h3>
             </div>
             <div class="order_lien_in">
-                <a class="order_lien_in" href="#">单击选择地址，双击修改地址</a>
+                <a class="order_lien_in" href="#">双击修改地址</a>
             </div>
             <div class="order_lien_in"></div>
         </div>
         <div class="order_box" id="adr_list">
-            <a class="order_box_in address_box">
-                <div class="order_box_circle"><p class="order_box_p1">+</p></div>
-                <p class="order_box_p">填加新地址</p>
-            </a>
-            <a class="order_box_in address_box">
-                <div class="order_box_circle"><p class="order_box_p1">+</p></div>
-                <p class="order_box_p">填加新地址</p>
-            </a>
-            <a class="order_box_in address_box">
+            <a class="order_box_in" id="address_box">
                 <div class="order_box_circle"><p class="order_box_p1">+</p></div>
                 <p class="order_box_p">填加新地址</p>
             </a>
@@ -61,8 +52,9 @@
                 <h3 class="order_title">宠物清单</h3>
             </div>
             <div class="order_lien_in">
-                <a href="/jpetstore/Cart/MyCart.html"><span class="order_span_rigth"
-                                                            style="color: #ff6700">返回购物车→</span></a>
+                <a href="/jpetstore/MyCart.html">
+                    <span class="order_span_rigth" style="color: #ff6700">返回购物车→</span>
+                </a>
             </div>
             <div class="order_lien_in"></div>
         </div>

@@ -21,9 +21,7 @@
             <p>点击订单编号查看详情</p>
         </div>
         <div class="topbar-info" id="J_userInfo">
-            <a class="link link-order" href="#" rel="nofollow" th:text="'欢迎光临，'+${session.loginUser.userId}"></a>
-            <span class="sep">|</span>
-            <a class="link link-order" href="/jpetstore/Cart/MyCart.html" rel="nofollow">我的购物车</a>
+            <a class="link link-order" href="/jpetstore/MyCart.html" rel="nofollow">我的购物车</a>
         </div>
     </div>
 </header>
@@ -34,8 +32,8 @@
             <div class="list-head myclear" data-checked="false">
                 <div class="col col-price" style="width: 300px">订单编号</div>
                 <div class="col col-name" style="padding-left: 40px;width: 300px">下单时间</div>
-                <div class="col col-price" style="padding-left: 80px">收件人</div>
-                <div class="col col-total" style="margin-left: 80px">金额</div>
+                <div class="col col-price" style="padding-left: 80px">总金额</div>
+                <div class="col col-total" style="margin-left: 140px">状态</div>
             </div>
             <div id="wapper"></div>
         </div>
