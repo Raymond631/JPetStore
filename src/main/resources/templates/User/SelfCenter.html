@@ -26,8 +26,7 @@
                 </div>
                 <div class="loginbox">
                     <div class="btn login_area">
-                        <form action="/jpetstore/User/changePassword" autocomplete="off" id="registerForm"
-                              method="post">
+                        <div>
                             <input class="item_account" id="password_old" name="password_old" placeholder="原密码"
                                    required="required" type="password">
                             <div class="err_tip" id="name_repeat"></div>
@@ -42,11 +41,9 @@
                                 <img alt="验证码" class="code_img" id="verificationCode"
                                      onclick="newVerification()" src="/jpetstore/verificationCode">
                             </a>
-                            <div class="err_tip" id="errer">
-                                <span class="error-con">${requestScope.messageBox}</span>
-                            </div>
-                            <input class="btnadpt item_account" type="submit" value="保存">
-                        </form>
+                            <div class="err_tip" id="errer"></div>
+                            <button class="btnadpt item_account" onclick="changePassword()">保存</button>
+                        </div>
                         <div class="other_panel myclear">
                             <div class="links_area">
                                 <a href="/jpetstore/">返回首页</a>

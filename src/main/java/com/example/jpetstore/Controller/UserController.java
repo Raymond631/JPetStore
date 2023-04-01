@@ -154,4 +154,23 @@ public class UserController {
         userService.updateReceiver(userInfoDO);
         return CommonResponse.success("修改成功");
     }
+
+    @PutMapping("/user/auth")
+    public CommonResponse changePassword(@RequestBody UserVO userVO, @CookieValue("token") String token) {
+        int userId = (int) JwtUtil.resolveToken(token).get("userId");
+        if (checkCode(userVO.getId(), userVO.getCode())) {
+            if (userVO.getPassword().equals(userVO.getRePassword())) {
+                // 旧密码
+                UserAuthDO oldUserAuthDO = new UserAuthDO(userId, 1, "", DigestUtils.md5DigestAsHex(userVO.getOldPassword().getBytes()));
+                // 新密码
+                UserAuthDO newUserAuthDO = new UserAuthDO(userId, 1, "", DigestUtils.md5DigestAsHex(userVO.getPassword().getBytes()));
+                // 修改密码,返回提示信息
+                return userService.changePassword(oldUserAuthDO, newUserAuthDO);
+            } else {
+                throw new RuntimeException("两次输入的密码不一致");
+            }
+        } else {
+            throw new RuntimeException("验证码错误");
+        }
+    }
 }
