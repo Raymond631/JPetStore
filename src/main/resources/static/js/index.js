@@ -3,17 +3,33 @@ var xiaomi = {
     start() {
         this.getData();
         this.isLogin();
+        this.setUrl();
+        this.searchTips();
         this.sectionHeader();
         this.categoryList();
     },
 
+    setUrl(){
+        let petDiv = $('.more-link');
+        petDiv.eq(0).attr("href","/jpetstore/Search.html?keyword="+encodeURIComponent("狗狗"))
+        petDiv.eq(1).attr("href","/jpetstore/Search.html?keyword="+encodeURIComponent("猫咪"))
+        petDiv.eq(2).attr("href","/jpetstore/Search.html?keyword="+encodeURIComponent("小宠"))
+        petDiv.eq(3).attr("href","/jpetstore/Search.html?keyword="+encodeURIComponent("水族"))
+        petDiv.eq(4).attr("href","/jpetstore/Search.html?keyword="+encodeURIComponent("爬虫"))
+
+    },
+
     isLogin(){
         if(document.cookie.indexOf('token')===-1){
+            //未登录
             $('#notLogin').show();
             $('#logined').hide();
+            $('#userButton').hide();
         }else{
+            //已登录
             $('#notLogin').hide();
             $('#logined').show();
+            $('#userButton').show();
         }
     },
 
@@ -44,6 +60,30 @@ var xiaomi = {
             $('#reptileList').html(resolveData1(reptile));
             $('#reptileSwiper').html(resolveData2(reptile));
         });
+    },
+
+    searchTips(){
+        $("#search").on("input", function () {
+            $("#tips").empty();
+            let keyword = $(this).val();
+            if (keyword !== null && keyword !== "") {
+                $.ajax({
+                    type: 'GET',
+                    url: "/jpetstore/pets/searchTip?keyword=" + encodeURIComponent(keyword),
+                    dataType: "json",
+                    success: function (res) {
+                        let data = res.data;
+                        if (data.length > 0) {
+                            let str = '';
+                            for (let i = 0, len = data.length; i < len; i++) {
+                                str += `<li><a href="/jpetstore/Search.html?keyword=${encodeURIComponent(data[i])}">${data[i]}</a></li>`
+                            }
+                            $("#tips").html(str);
+                        }
+                    }
+                })
+            }
+        })
     },
 
     //主体部分的头部方法

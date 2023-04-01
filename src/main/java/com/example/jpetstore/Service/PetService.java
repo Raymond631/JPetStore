@@ -12,4 +12,10 @@ import java.util.List;
 public interface PetService {
 
     List<PetProductDO> getPetList(String category);
+
+    PetProductDO getPetDetail(int productId);
+
+    List<PetProductDO> searchPet(String keyword);
+
+    List<String> searchTip(String keyword);
 }

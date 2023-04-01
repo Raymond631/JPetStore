@@ -5,4 +5,35 @@
     <select id="getPetList" resultType="com.example.jpetstore.POJO.DataObject.PetProductDO">
         select product_id,product_name_Chinese,product_name_English,product_image from pet_product where category = #{category}
     </select>
+    <select id="getPetDetail" resultMap="detail">
+        select * from pet_product p,pet_item i where p.product_id=i.product_id and p.product_id = #{productId}
+    </select>
+    <resultMap id="detail" type="com.example.jpetstore.POJO.DataObject.PetProductDO">
+        <id property="productId" column="product_id" />
+        <result column="category" property="category" />
+        <result column="product_name_Chinese" property="productNameChinese" />
+        <result column="product_name_English" property="productNameEnglish" />
+        <result column="product_character" property="productCharacter" />
+        <result column="product_ancestry" property="productAncestry" />
+        <result column="product_disease" property="productDisease" />
+        <result column="product_life" property="productLife" />
+        <result column="product_introduce" property="productIntroduce" />
+        <result column="product_image" property="productImage" />
+        <result column="supplier_id" property="supplierId" />
+        <collection property="petItemList" column="product_id" ofType="com.example.jpetstore.POJO.DataObject.PetItemDO">
+            <id column="item_id" property="itemId" />
+            <result column="item_specification" property="itemSpecification" />
+            <result column="item_price" property="itemPrice" />
+            <result column="item_stock" property="itemStock" />
+        </collection>
+    </resultMap>
+
+    <select id="searchPet" resultType="com.example.jpetstore.POJO.DataObject.PetProductDO">
+        <bind name="keyword" value="'%' + keyword + '%'" />
+        select product_id,product_name_Chinese,product_name_English,product_image from pet_product where category like #{keyword} or product_name_Chinese like #{keyword} or product_name_English like #{keyword}
+    </select>
+    <select id="searchTip" resultType="java.lang.String">
+        <bind name="keyword" value="'%' + keyword + '%'" />
+        select product_name_Chinese from pet_product where category like #{keyword} or product_name_Chinese like #{keyword} or product_name_English like #{keyword}
+    </select>
 </mapper>

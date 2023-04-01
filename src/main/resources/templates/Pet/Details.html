@@ -66,7 +66,7 @@
         <div class="w">
             <div class="dropdown fl">
                 <div class="dt">
-                    <a href="/jpetstore"><img src="/image/header/logo.png"></a>
+                    <a href="/jpetstore"><img src="/jpetstore/image/header/logo.png"></a>
                 </div>
             </div>
             <!-- 右侧导航 -->
@@ -83,34 +83,62 @@
     </div>
     <!-- nav end -->
 </header>
-<%-- 详情 --%>
+<!--详情-->
 <section>
     <div class="de_container w">
         <div class="product_intro clearfix">
-            <!-- 预览区域 -->
-            <div class="preview_wrap fl">
-                <div class="preview_img">
-                    <img alt="" id="pet_img" src="">
-                    <div class="mask"></div>
-                    <div class="big">
-                        <img alt="" class="bigImg"
-                             src="http://img.ixiupet.com/uploads/allimg/150423/3-1504230946360-L.jpg">
-                    </div>
+
+            <div class="entry_tit">
+                <dl class="entry_tit_pet">
+                    <dt>基本信息栏</dt>
+                    <dd>
+                        <span>中文名：</span>
+                        <em id="product_name_Chinese"></em>
+                    </dd>
+                    <dd>
+                        <span>英文名：</span>
+                        <em id="product_name_English"></em>
+                    </dd>
+                    <dd>
+                        <span>性　格：</span>
+                        <em id="product_character"></em>
+                    </dd>
+                    <dd>
+                        <span>祖　籍：</span>
+                        <em id="product_ancestry"></em>
+                    </dd>
+                    <dd>
+                        <span>易患病：</span>
+                        <em id="product_disease"></em>
+                    </dd>
+                    <dd>
+                        <span>寿　命：</span>
+                        <em id="product_life"></em>
+                    </dd>
+                </dl>
+                <div class="entry_tit_rig">
+                    <img id="petImage" alt="暂无图片" src="/jpetstore/image/img.png"/>
+                </div>
+                <div style="font: 16px/20px 'Microsoft YaHei'">
+                    <span>简  介：</span>
+                    <em id="product_introduce"></em>
                 </div>
             </div>
-            <!-- 产品详细信息 -->
-            <div class="itemInfo_wrap fr">
+
+            <div style="float: left;width: 450px;margin-top: 29px;margin-bottom: 20px">
+                <dl class="choose_color">
+                    <dt style="font: 20px 'Microsoft YaHei';margin-bottom: 20px">选择子项</dt>
+                    <dd id="pet_list"></dd>
+                </dl>
+            </div>
+            <div class="itemInfo_wrap fr" style="margin-top: 45px">
                 <div class="sku_name" id="pet_name"></div>
                 <div class="summary">
                     <dl class="summary_price">
-                        <dt>价格</dt>
+                        <dt style="font: 20px 'Microsoft YaHei'">价格</dt>
                         <dd>
                             <i class="price" id="pet_price"></i>
                         </dd>
-                    </dl>
-                    <dl class="choose_color">
-                        <dt>选择宠物</dt>
-                        <dd id="pet_list"></dd>
                     </dl>
                     <div class="choose_btns">
                         <div class="choose_amount">
@@ -130,10 +158,10 @@
 <footer>
     <!-- 固定 -->
     <div class="div_home">
-        <c:if test="${sessionScope.user!=null}">
-            <a class="home2" href="/jpetstore/User/SelfCenter"><span>个人中心</span></a>
-            <a class="home5" href="/jpetstore/Cart/cartList"><span>购物车</span></a>
-        </c:if>
+        <div class="div_home" id="userButton">
+            <a class="home2" href="/jpetstore/SelfCenter.html"><span>个人中心</span></a>
+            <a class="home5" href="/jpetstore/MyCart.html"><span>购物车</span></a>
+        </div>
         <a class="img_yincang" href="#top"><span>回到顶部</span></a>
     </div>
 </footer>

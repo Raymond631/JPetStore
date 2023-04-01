@@ -9,15 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.OutputStream;
+import java.io.*;
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -43,17 +39,20 @@ public class PetController {
         return CommonResponse.success(petMap);
     }
 
-    // @GetMapping("/image/look/{imageName}")
-    // public void imageLook(@PathVariable("imageName") String imageName, HttpServletResponse response) {
-    //     File file = new File("D:/jpetstoreImage/" + imageName);
-    //     byte[] bytes = new byte[1024];
-    //     try (OutputStream os = response.getOutputStream(); FileInputStream fis = new FileInputStream(file)) {
-    //         while ((fis.read(bytes)) != -1) {
-    //             os.write(bytes);
-    //             os.flush();
-    //         }
-    //     } catch (IOException e) {
-    //         e.printStackTrace();
-    //     }
-    // }
+    @GetMapping("/pets/{productId}")
+    public CommonResponse getPetDetail(@PathVariable("productId") int productId){
+        return CommonResponse.success(petService.getPetDetail(productId));
+    }
+    @GetMapping("/pets/searchTip")
+    public CommonResponse searchTip(@RequestParam("keyword") String keyword){
+        return CommonResponse.success(petService.searchTip(URLDecoder.decode(keyword, StandardCharsets.UTF_8)));
+    }
+
+    @GetMapping("/pets/search")
+    public CommonResponse searchPet(@RequestParam("keyword") String keyword){
+        return CommonResponse.success(petService.searchPet(URLDecoder.decode(keyword, StandardCharsets.UTF_8)));
+    }
+
+
+
 }

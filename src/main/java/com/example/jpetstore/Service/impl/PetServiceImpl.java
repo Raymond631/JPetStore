@@ -22,4 +22,19 @@ public class PetServiceImpl implements PetService {
     public List<PetProductDO> getPetList(String category) {
         return petMapper.getPetList(category);
     }
+
+    @Override
+    public PetProductDO getPetDetail(int productId) {
+        return petMapper.getPetDetail(productId);
+    }
+
+    @Override
+    public List<PetProductDO> searchPet(String keyword) {
+        return petMapper.searchPet(keyword);
+    }
+
+    @Override
+    public List<String> searchTip(String keyword) {
+        return petMapper.searchTip(keyword);
+    }
 }

@@ -12,31 +12,38 @@ function isLogin(){
     if(document.cookie.indexOf('token')===-1){
         $('#notLogin').show();
         $('#logined').hide();
+        $('#userButton').hide();
     }else{
         $('#notLogin').hide();
         $('#logined').show();
+        $('#userButton').show();
     }
 }
 
 function getDetails() {
-    //TODO 前端json-get标准格式
-    let name = getQueryVariable("name");
+    let productId = getQueryVariable("productId");
     $.ajax({
-        url: "../Pet/getDetails?name=" + name,
+        url: "/jpetstore/pets/" + productId,
         type: "get",
         dataType: "json",
-        success: function (data) {
-            //TODO js修改标签属性、文本
-            $("#pet_img").attr("src", data.img);
-            $("#pet_name").html("（" + data.productID + "）" + data.name + "----------" + data.introduce);
-            $("#pet_price").html("$" + data.itemList[0].listPrice);
-            let itemList = data.itemList;
+        success: function (res) {
+            let data = res.data;
+            $("#product_name_Chinese").html(data.productNameChinese);
+            $("#product_name_English").html(data.productNameEnglish);
+            $("#product_character").html(data.productCharacter);
+            $("#product_ancestry").html(data.productAncestry);
+            $("#product_disease").html(data.productDisease);
+            $("#product_life").html(data.productLife);
+            $("#product_introduce").html(data.productIntroduce);
+            $("#petImage").attr("src", "/jpetstore/image/look/"+data.productImage);
+
+            let itemList = data.petItemList;
             let str = "";
-            for (var key in itemList) {
-                str += '<a class="item_list">' + "（" + itemList[key].itemID + "）" + itemList[key].description + '</a><br>'
-                itemID_list.push(itemList[key].itemID);
-                stock_list.push(itemList[key].stock);
-                price_list.push(itemList[key].listPrice);
+            for (let key in itemList) {
+                str+=`<a class="list_item">${itemList[key].itemSpecification}</a><br>`
+                itemID_list.push(itemList[key].itemId);
+                stock_list.push(itemList[key].itemStock);
+                price_list.push(itemList[key].itemPrice);
             }
             $("#pet_list").html(str);
             chooseItem();
@@ -57,10 +64,10 @@ function getQueryVariable(variable) {
 }
 
 function chooseItem() {
-    let item_list = document.getElementsByClassName('item_list');
+    let item_list = document.getElementsByClassName('list_item');
     for (let i = 0; i < item_list.length; i++) {
         item_list[0].classList.add("current");
-        $("#pet_price").html("$" + price_list[i]);
+        $("#pet_price").html(price_list[i]+"元");
 
         item_list[i].onclick = function () {
             item_list[i].classList.add("current");
@@ -70,6 +77,7 @@ function chooseItem() {
                     item_list[j].classList.remove("current");
                 }
             }
+            $("#pet_price").html(price_list[i]+"元");
         }
     }
 }
