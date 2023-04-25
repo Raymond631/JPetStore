@@ -135,8 +135,13 @@ function newOrder() {
             contentType: 'application/json',
             data: JSON.stringify(data),
             success: function (res) {
+                console.log(res)
                 if (res.code === 200) {
                     window.location.href = "/jpetstore/MyOrder.html"
+                }
+                else{
+
+                    window.alert(res.data)
                 }
             }
         });

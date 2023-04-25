@@ -11,7 +11,7 @@ import java.util.List;
  * @description
  */
 public interface OrderService {
-    void newOrder(List<OrderMainDO> orderMainDOList);
+    boolean newOrder(List<OrderMainDO> orderMainDOList);
 
     List<OrderMainDO> splitOrder(OrderVO orderVO, int userId);
 

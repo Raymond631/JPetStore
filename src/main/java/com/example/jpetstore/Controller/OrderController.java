@@ -44,7 +44,11 @@ public class OrderController {
         List<OrderMainDO> orderMainDOList = orderService.splitOrder(orderVO, userId);
 
         System.out.println(JSON.toJSONString(orderMainDOList));
-        orderService.newOrder(orderMainDOList);
-        return CommonResponse.success("订单创建成功");
+        if(orderService.newOrder(orderMainDOList)) {
+            return CommonResponse.success("订单创建成功");
+        }else{
+            return CommonResponse.error("库存不足");
+        }
+
     }
 }

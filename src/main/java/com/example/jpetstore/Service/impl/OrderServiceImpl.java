@@ -95,7 +95,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public void newOrder(List<OrderMainDO> orderMainDOList) {
+    public boolean newOrder(List<OrderMainDO> orderMainDOList) {
         for (OrderMainDO orderMainDO : orderMainDOList) {
             // 插入一个订单
             orderMapper.insertOrderMain(orderMainDO);
@@ -118,6 +118,7 @@ public class OrderServiceImpl implements OrderService {
                 }
             }
         }
+        return true;
     }
 
 
