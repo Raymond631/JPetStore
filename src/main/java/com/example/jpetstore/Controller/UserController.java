@@ -84,7 +84,8 @@ public class UserController {
      * 退出登录由前端直接删除token即可
      */
     @PostMapping("/token")
-    public CommonResponse login(@RequestBody UserVO userVO, HttpServletResponse resp) {
+    public CommonResponse login(@RequestBody UserVO userVO, HttpServletResponse resp, @CookieValue String CaptchaCode) {
+        userVO.setId(CaptchaCode);
         if (checkCode(userVO.getId(), userVO.getCode())) {
             // 对象转换
             UserAuthDO userAuthDO = userMapping.toUserAuthDO(userVO);
@@ -98,6 +99,7 @@ public class UserController {
                 // 生成令牌
                 String token = JwtUtil.generateToken(JwtUtil.userInfoDOtoMap(userInfo));
                 Cookie cookie = new Cookie("token", token);
+                System.out.println(token);
                 resp.addCookie(cookie);
 
                 return CommonResponse.success("登录成功");
@@ -113,7 +115,8 @@ public class UserController {
      * 注册
      */
     @PostMapping("/user")
-    public CommonResponse register(@RequestBody @Validated UserVO userVO, HttpServletResponse resp) {
+    public CommonResponse register(@RequestBody @Validated UserVO userVO, HttpServletResponse resp, @CookieValue String CaptchaCode) {
+        userVO.setId(CaptchaCode);
         if (checkCode(userVO.getId(), userVO.getCode())) {
             if (userVO.getPassword().equals(userVO.getRePassword())) {
                 // 对象转换
@@ -156,7 +159,8 @@ public class UserController {
     }
 
     @PutMapping("/user/auth")
-    public CommonResponse changePassword(@RequestBody UserVO userVO, @CookieValue("token") String token) {
+    public CommonResponse changePassword(@RequestBody UserVO userVO, @CookieValue("token") String token, @CookieValue String CaptchaCode) {
+        userVO.setId(CaptchaCode);
         int userId = (int) JwtUtil.resolveToken(token).get("userId");
         if (checkCode(userVO.getId(), userVO.getCode())) {
             if (userVO.getPassword().equals(userVO.getRePassword())) {

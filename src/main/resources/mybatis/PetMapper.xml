@@ -3,7 +3,7 @@
 <mapper namespace="com.example.jpetstore.Mapper.PetMapper">
 
     <select id="getPetList" resultType="com.example.jpetstore.POJO.DataObject.PetProductDO">
-        select product_id,product_name_Chinese,product_name_English,product_image from pet_product where category = #{category}
+        select product_id,product_name_Chinese,product_name_English,product_image from pet_product where category = #{category} limit 8
     </select>
     <select id="getPetDetail" resultMap="detail">
         select * from pet_product p,pet_item i where p.product_id=i.product_id and p.product_id = #{productId}
