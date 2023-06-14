@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.*;
 import java.awt.*;
 import java.io.IOException;
 import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author Raymond Li
@@ -72,6 +73,7 @@ public class UserController {
         // 存入redis
         String code = specCaptcha.text().toLowerCase();
         stringRedisTemplate.opsForValue().set(id, code);
+        stringRedisTemplate.expire(id, 10, TimeUnit.MINUTES);
     }
 
     /**

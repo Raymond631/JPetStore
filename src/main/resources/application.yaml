@@ -5,11 +5,19 @@ spring:
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      database: 3
+      password:
+      timeout: 5s
 
 server:
   servlet:
     context-path: /jpetstore
   port: 8080
+
 
 logging:
   file:

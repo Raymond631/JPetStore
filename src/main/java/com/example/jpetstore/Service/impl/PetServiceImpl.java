@@ -10,6 +10,7 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author Raymond Li
@@ -33,6 +34,7 @@ public class PetServiceImpl implements PetService {
             log.info("缓存未命中");
             json = JSON.toJSONString(petMapper.getPetList(category));
             stringRedisTemplate.opsForValue().set(englishName, json);
+            stringRedisTemplate.expire(englishName, 10, TimeUnit.MINUTES);
         }
         return json;
     }
