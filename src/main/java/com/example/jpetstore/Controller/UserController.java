@@ -105,7 +105,6 @@ public class UserController {
                 // 生成令牌
                 String token = JwtUtil.generateToken(JwtUtil.userInfoDOtoMap(userInfo));
                 Cookie cookie = new Cookie("token", token);
-                System.out.println(token);
                 resp.addCookie(cookie);
 
                 return CommonResponse.success("登录成功");

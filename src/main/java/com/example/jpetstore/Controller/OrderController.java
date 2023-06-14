@@ -43,7 +43,6 @@ public class OrderController {
         int userId = (int) JwtUtil.resolveToken(token).get("userId");
         List<OrderMainDO> orderMainDOList = orderService.splitOrder(orderVO, userId);
 
-        System.out.println(JSON.toJSONString(orderMainDOList));
         if(orderService.newOrder(orderMainDOList)) {
             return CommonResponse.success("订单创建成功");
         }else{
