@@ -1,9 +1,12 @@
 package com.example.jpetstore.Service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.example.jpetstore.Mapper.PetMapper;
 import com.example.jpetstore.POJO.DataObject.PetProductDO;
 import com.example.jpetstore.Service.PetService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,13 +17,47 @@ import java.util.List;
  * @description
  */
 @Service
+@Slf4j
 public class PetServiceImpl implements PetService {
     @Autowired
     private PetMapper petMapper;
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
 
     @Override
-    public List<PetProductDO> getPetList(String category) {
-        return petMapper.getPetList(category);
+    public String getPetList(String category) {
+        String englishName = petNameMap(category);
+        // TODO redis
+        String json = stringRedisTemplate.opsForValue().get(englishName);
+        if(json==null || json.equals("")){
+            log.info("缓存未命中");
+            json = JSON.toJSONString(petMapper.getPetList(category));
+            stringRedisTemplate.opsForValue().set(englishName, json);
+        }
+        return json;
+    }
+
+    private String petNameMap(String chineseName){
+        switch (chineseName){
+            case "狗狗"-> {
+                return "dog";
+            }
+            case "猫咪"->{
+                return "cat";
+            }
+            case "小宠"->{
+                return "bird";
+            }
+            case "水族"->{
+                return "fish";
+            }
+            case "爬虫"->{
+                return "reptile";
+            }
+            default -> {
+                throw new RuntimeException("参数错误");
+            }
+        }
     }
 
     @Override

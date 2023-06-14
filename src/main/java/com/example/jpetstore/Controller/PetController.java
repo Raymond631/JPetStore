@@ -30,7 +30,7 @@ public class PetController {
 
     @GetMapping("/pets")
     public CommonResponse getPetList(){
-        Map<String,List<PetProductDO>> petMap=new HashMap<>();
+        Map<String,String> petMap=new HashMap<>();
         petMap.put("dog",petService.getPetList("狗狗"));
         petMap.put("cat",petService.getPetList("猫咪"));
         petMap.put("bird",petService.getPetList("小宠"));

@@ -26,6 +26,10 @@ import java.util.UUID;
  * @author Raymond Li
  * @create 2023-04-01 0:02
  * @description
+ * TODO 第三方登录
+ * TODO Redis
+ * TODO 文件服务器
+ * TODO 下单事务操作
  */
 @Slf4j
 @RestController

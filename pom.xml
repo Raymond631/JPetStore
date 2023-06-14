@@ -13,6 +13,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>JPetstore</name>
     <description>JPetstore</description>
+    <packaging>war</packaging>
     <properties>
         <java.version>17</java.version>
     </properties>
@@ -26,6 +27,13 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <!--tomcat-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <!--参数校验-->
@@ -118,9 +126,6 @@
             <scope>runtime</scope>
         </dependency>
 
-
-
-
         <!-- 验证码 -->
         <dependency>
             <groupId>com.github.whvcse</groupId>
@@ -135,9 +140,6 @@
             <version>1.9.4</version>
         </dependency>
 
-
-
-
         <!--JustAuth第三方登录-->
         <dependency>
             <groupId>me.zhyd.oauth</groupId>
@@ -151,21 +153,23 @@
             <artifactId>alipay-sdk-java</artifactId>
             <version>4.35.83.ALL</version>
         </dependency>
-
-
-        <!--图片上传-->
-        <dependency>
-            <groupId>commons-fileupload</groupId>
-            <artifactId>commons-fileupload</artifactId>
-            <version>1.4</version>
-        </dependency>
     </dependencies>
 
     <build>
+        <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+            <!--打包时跳过Test文件夹-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
             </plugin>
         </plugins>
     </build>
