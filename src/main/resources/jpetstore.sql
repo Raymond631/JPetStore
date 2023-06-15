@@ -11,7 +11,7 @@
  Target Server Version : 80032 (8.0.32)
  File Encoding         : 65001
 
- Date: 01/04/2023 23:03:00
+ Date: 15/06/2023 10:03:14
 */
 
 SET NAMES utf8mb4;
@@ -33,14 +33,11 @@ CREATE TABLE `cart`  (
   INDEX `cart_ibfk_3`(`user_id` ASC) USING BTREE,
   CONSTRAINT `cart_ibfk_2` FOREIGN KEY (`item_id`) REFERENCES `pet_item` (`item_id`) ON DELETE CASCADE ON UPDATE RESTRICT,
   CONSTRAINT `cart_ibfk_3` FOREIGN KEY (`user_id`) REFERENCES `user_info` (`user_id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 26 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of cart
 -- ----------------------------
-INSERT INTO `cart` VALUES (7, 17, 1, 1, 5);
-INSERT INTO `cart` VALUES (8, 17, 2, 8, 5);
-INSERT INTO `cart` VALUES (11, 17, 3, 9, 1);
 
 -- ----------------------------
 -- Table structure for order_item
@@ -61,7 +58,7 @@ CREATE TABLE `order_item`  (
   INDEX `product_id`(`product_id` ASC) USING BTREE,
   INDEX `order_item_ibfk_4`(`order_id` ASC) USING BTREE,
   CONSTRAINT `order_item_ibfk_4` FOREIGN KEY (`order_id`) REFERENCES `order_main` (`order_id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 23 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 40 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of order_item
@@ -76,6 +73,15 @@ INSERT INTO `order_item` VALUES (17, 14, 1, 1, '1.jpg', '金毛', '成年雄性'
 INSERT INTO `order_item` VALUES (18, 14, 2, 1, '1.jpg', '金毛', '成年雌性', 9373.79, 2);
 INSERT INTO `order_item` VALUES (19, 15, 9, 3, '3.jpg', '罗威纳犬', '成年雄性', 674.43, 1);
 INSERT INTO `order_item` VALUES (22, 18, 1, 1, '1.jpg', '金毛', '雄性', 10.58, 557);
+INSERT INTO `order_item` VALUES (23, 19, 1, 1, '1.jpg', '金毛', '成年雄性', 8807.95, 1);
+INSERT INTO `order_item` VALUES (24, 20, 1, 1, '1.jpg', '金毛', '成年雄性', 8807.95, 5);
+INSERT INTO `order_item` VALUES (25, 21, 16, 4, '4.jpg', '博美犬', '幼年雌性', 6253.76, 1);
+INSERT INTO `order_item` VALUES (26, 22, 69, 18, '18.jpg', '暹罗猫', '成年雄性', 7861.74, 1);
+INSERT INTO `order_item` VALUES (27, 23, 246, 63, '352959cf-019c-4957-b568-77e5c7485508-3.jpg', '测试狗', '雄性', 10.90, 1);
+INSERT INTO `order_item` VALUES (28, 24, 1, 1, '0449fb40-9b5a-4090-9c59-d4305faebe74-1.jpg', '金毛', '成年雄性1', 8807.95, 3);
+INSERT INTO `order_item` VALUES (29, 25, 246, 63, '352959cf-019c-4957-b568-77e5c7485508-3.jpg', '测试狗', '雄性', 10.90, 9);
+INSERT INTO `order_item` VALUES (38, 34, 5, 2, '2.jpg', '哈士奇', '成年雄性', 2819.68, 8);
+INSERT INTO `order_item` VALUES (39, 35, 25, 7, '7.jpg', '拉布拉多猎犬', '成年雄性', 7094.02, 1);
 
 -- ----------------------------
 -- Table structure for order_main
@@ -95,20 +101,29 @@ CREATE TABLE `order_main`  (
   PRIMARY KEY (`order_id`) USING BTREE,
   INDEX `order_main_ibfk_1`(`user_id` ASC) USING BTREE,
   CONSTRAINT `order_main_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user_info` (`user_id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 19 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 36 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of order_main
 -- ----------------------------
 INSERT INTO `order_main` VALUES (8, 17, '2023-04-01 19:07:51', 3814.90, '微信支付', '李四', '12', '23', 1, 6);
 INSERT INTO `order_main` VALUES (9, 17, '2023-04-01 19:07:51', 44039.75, '微信支付', '李四', '12', '23', 18, 5);
-INSERT INTO `order_main` VALUES (10, 17, '2023-04-01 19:09:58', 3814.90, '支付宝', 'ZHANGSAN', '123', '123', 1, 4);
+INSERT INTO `order_main` VALUES (10, 17, '2023-04-01 19:09:58', 3814.90, '支付宝', 'ZHANGSAN', '123', '123', 1, 5);
 INSERT INTO `order_main` VALUES (11, 17, '2023-04-01 19:09:58', 44039.75, '支付宝', 'ZHANGSAN', '123', '123', 18, 3);
-INSERT INTO `order_main` VALUES (12, 17, '2023-04-01 19:09:58', 674.43, '支付宝', 'ZHANGSAN', '123', '123', 19, 2);
-INSERT INTO `order_main` VALUES (13, 17, '2023-04-01 19:11:10', 3814.90, '货到付款', 'ZHANGSAN123', '123', '123', 1, 2);
+INSERT INTO `order_main` VALUES (12, 17, '2023-04-01 19:09:58', 674.43, '支付宝', 'ZHANGSAN', '123', '123', 19, 3);
+INSERT INTO `order_main` VALUES (13, 17, '2023-04-01 19:11:10', 3814.90, '货到付款', 'ZHANGSAN123', '123', '123', 1, 3);
 INSERT INTO `order_main` VALUES (14, 17, '2023-04-01 19:11:10', 62787.33, '货到付款', 'ZHANGSAN123', '123', '123', 18, 1);
-INSERT INTO `order_main` VALUES (15, 17, '2023-04-01 19:11:10', 674.43, '货到付款', 'ZHANGSAN123', '123', '123', 19, 2);
+INSERT INTO `order_main` VALUES (15, 17, '2023-04-01 19:11:10', 674.43, '货到付款', 'ZHANGSAN123', '123', '123', 19, 3);
 INSERT INTO `order_main` VALUES (18, 17, '2023-04-01 19:07:51', 45.87, '微信支付', '张三', '158', '中南', 1, 1);
+INSERT INTO `order_main` VALUES (19, 18, '2023-04-17 16:15:22', 8807.95, '微信支付', '一号', '123', '456', 1, 1);
+INSERT INTO `order_main` VALUES (20, 17, '2023-04-17 16:23:01', 44039.75, '支付宝', '二号', '123', '123456', 1, 2);
+INSERT INTO `order_main` VALUES (21, 17, '2023-04-17 16:28:45', 6253.76, '微信支付', '三号', '123', '123', 1, 3);
+INSERT INTO `order_main` VALUES (22, 17, '2023-04-17 16:55:00', 7861.74, '微信支付', '五号', '123', '123', 1, 3);
+INSERT INTO `order_main` VALUES (23, 17, '2023-04-17 17:08:12', 10.90, '微信支付', 'ZHANGSAN', '123', '123', 1, 1);
+INSERT INTO `order_main` VALUES (24, 17, '2023-04-17 17:09:16', 26423.85, '微信支付', 'ZHANGSAN', '123', '123', 1, 1);
+INSERT INTO `order_main` VALUES (25, 17, '2023-04-17 17:09:56', 98.10, '微信支付', 'ZHANGSAN', '123', '123', 1, 1);
+INSERT INTO `order_main` VALUES (34, 17, '2023-04-17 17:28:21', 22557.44, '货到付款', 'WU', '123', '123123', 1, 3);
+INSERT INTO `order_main` VALUES (35, 17, '2023-04-17 18:08:10', 7094.02, '微信支付', 'ZHANGSAN', '123', '123', 1, 3);
 
 -- ----------------------------
 -- Table structure for pet_item
@@ -123,16 +138,16 @@ CREATE TABLE `pet_item`  (
   PRIMARY KEY (`item_id`) USING BTREE,
   INDEX `pet_item_ibfk_1`(`product_id` ASC) USING BTREE,
   CONSTRAINT `pet_item_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `pet_product` (`product_id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 245 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 247 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of pet_item
 -- ----------------------------
-INSERT INTO `pet_item` VALUES (1, 1, '成年雄性', 8807.95, 556);
+INSERT INTO `pet_item` VALUES (1, 1, '成年雄性1', 8807.95, 547);
 INSERT INTO `pet_item` VALUES (2, 1, '成年雌性', 9373.79, 624);
 INSERT INTO `pet_item` VALUES (3, 1, '幼年雄性', 1201.45, 830);
 INSERT INTO `pet_item` VALUES (4, 1, '幼年雌性', 3965.29, 773);
-INSERT INTO `pet_item` VALUES (5, 2, '成年雄性', 2819.68, 868);
+INSERT INTO `pet_item` VALUES (5, 2, '成年雄性', 2819.68, 860);
 INSERT INTO `pet_item` VALUES (6, 2, '成年雌性', 5949.23, 794);
 INSERT INTO `pet_item` VALUES (7, 2, '幼年雄性', 1857.41, 973);
 INSERT INTO `pet_item` VALUES (8, 2, '幼年雌性', 762.98, 475);
@@ -143,7 +158,7 @@ INSERT INTO `pet_item` VALUES (12, 3, '幼年雌性', 5293.03, 714);
 INSERT INTO `pet_item` VALUES (13, 4, '成年雄性', 5834.55, 832);
 INSERT INTO `pet_item` VALUES (14, 4, '成年雌性', 3682.15, 320);
 INSERT INTO `pet_item` VALUES (15, 4, '幼年雄性', 890.45, 906);
-INSERT INTO `pet_item` VALUES (16, 4, '幼年雌性', 6253.76, 961);
+INSERT INTO `pet_item` VALUES (16, 4, '幼年雌性', 6253.76, 960);
 INSERT INTO `pet_item` VALUES (17, 5, '成年雄性', 3089.92, 524);
 INSERT INTO `pet_item` VALUES (18, 5, '成年雌性', 7138.74, 458);
 INSERT INTO `pet_item` VALUES (19, 5, '幼年雄性', 961.15, 210);
@@ -152,7 +167,7 @@ INSERT INTO `pet_item` VALUES (21, 6, '成年雄性', 9161.67, 708);
 INSERT INTO `pet_item` VALUES (22, 6, '成年雌性', 7835.98, 565);
 INSERT INTO `pet_item` VALUES (23, 6, '幼年雄性', 6551.72, 662);
 INSERT INTO `pet_item` VALUES (24, 6, '幼年雌性', 2478.28, 700);
-INSERT INTO `pet_item` VALUES (25, 7, '成年雄性', 7094.02, 178);
+INSERT INTO `pet_item` VALUES (25, 7, '成年雄性', 7094.02, 177);
 INSERT INTO `pet_item` VALUES (26, 7, '成年雌性', 808.45, 556);
 INSERT INTO `pet_item` VALUES (27, 7, '幼年雄性', 7298.23, 566);
 INSERT INTO `pet_item` VALUES (28, 7, '幼年雌性', 5535.81, 362);
@@ -196,7 +211,7 @@ INSERT INTO `pet_item` VALUES (65, 17, '成年雄性', 2775.14, 274);
 INSERT INTO `pet_item` VALUES (66, 17, '成年雌性', 2368.13, 712);
 INSERT INTO `pet_item` VALUES (67, 17, '幼年雄性', 1695.39, 502);
 INSERT INTO `pet_item` VALUES (68, 17, '幼年雌性', 5242.14, 132);
-INSERT INTO `pet_item` VALUES (69, 18, '成年雄性', 7861.74, 28);
+INSERT INTO `pet_item` VALUES (69, 18, '成年雄性', 7861.74, 27);
 INSERT INTO `pet_item` VALUES (70, 18, '成年雌性', 6755.64, 268);
 INSERT INTO `pet_item` VALUES (71, 18, '幼年雄性', 8567.37, 527);
 INSERT INTO `pet_item` VALUES (72, 18, '幼年雌性', 629.63, 123);
@@ -256,10 +271,6 @@ INSERT INTO `pet_item` VALUES (125, 32, '成年雄性', 7768.80, 979);
 INSERT INTO `pet_item` VALUES (126, 32, '成年雌性', 5810.81, 54);
 INSERT INTO `pet_item` VALUES (127, 32, '幼年雄性', 8739.70, 606);
 INSERT INTO `pet_item` VALUES (128, 32, '幼年雌性', 9936.25, 756);
-INSERT INTO `pet_item` VALUES (129, 33, '成年雄性', 4139.35, 825);
-INSERT INTO `pet_item` VALUES (130, 33, '成年雌性', 720.60, 196);
-INSERT INTO `pet_item` VALUES (131, 33, '幼年雄性', 7144.88, 917);
-INSERT INTO `pet_item` VALUES (132, 33, '幼年雌性', 1663.42, 690);
 INSERT INTO `pet_item` VALUES (133, 34, '成年雄性', 6485.89, 326);
 INSERT INTO `pet_item` VALUES (134, 34, '成年雌性', 9785.76, 501);
 INSERT INTO `pet_item` VALUES (135, 34, '幼年雄性', 3630.70, 321);
@@ -368,6 +379,7 @@ INSERT INTO `pet_item` VALUES (237, 60, '成年雄性', 2385.46, 817);
 INSERT INTO `pet_item` VALUES (238, 60, '成年雌性', 8397.39, 821);
 INSERT INTO `pet_item` VALUES (239, 60, '幼年雄性', 6164.43, 814);
 INSERT INTO `pet_item` VALUES (240, 60, '幼年雌性', 5934.63, 365);
+INSERT INTO `pet_item` VALUES (246, 63, '雄性', 10.90, 0);
 
 -- ----------------------------
 -- Table structure for pet_product
@@ -388,14 +400,14 @@ CREATE TABLE `pet_product`  (
   PRIMARY KEY (`product_id`) USING BTREE,
   INDEX `product_supplier`(`supplier_id` ASC) USING BTREE,
   CONSTRAINT `pet_product_ibfk_1` FOREIGN KEY (`supplier_id`) REFERENCES `user_info` (`user_id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 62 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 64 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of pet_product
 -- ----------------------------
-INSERT INTO `pet_product` VALUES (1, '狗狗', '金毛', 'Golden Retriever', '活泼、忠诚、憨厚、友善', '苏格兰', '髋关节发育不良', '10-15年', '金毛巡回猎犬（Golden Retriever），原产于苏格兰，祖先有雪达犬血统，因有较强的游泳能力，并能把猎物从水中叼回给主人，故最初用作狩猎及巡回被枪猎射落的水鸟，AKC分类属于运动犬组。', '1.jpg', 18);
+INSERT INTO `pet_product` VALUES (1, '狗狗', '金毛', 'Golden Retriever', '活泼、忠诚、憨厚、友善', '苏格兰', '髋关节发育不良', '10-15年', '金毛巡回猎犬（Golden Retriever），原产于苏格兰，祖先有雪达犬血统，因有较强的游泳能力，并能把猎物从水中叼回给主人，故最初用作狩猎及巡回被枪猎射落的水鸟，AKC分类属于运动犬组。', '77ab8828-f00a-4e0c-bd8b-eb363b7751a7-2.jpg', 1);
 INSERT INTO `pet_product` VALUES (2, '狗狗', '哈士奇', 'Siberian Huskiy', '聪明机灵、极度热情、神经质', '俄罗斯', '肠胃疾病', '9-15年', '西伯利亚雪橇犬（Siberian Huskiy)又称为哈士奇，原产于西伯利亚地区，AKC分类属于工作犬组。西伯利亚雪橇犬是东西伯利亚游牧民族伊奴特乔克治族饲养的犬种，长期担任拉雪橇。引导驯鹿及守卫等工作。20世纪初，被毛皮商人带至美国，多年来，一直成为举世闻名的拉雪橇竞赛冠军犬。目前，西伯利亚雪橇犬多被用作伴侣犬。家庭玩赏犬。', '2.jpg', 1);
-INSERT INTO `pet_product` VALUES (3, '狗狗', '罗威纳犬', 'Rottweiler', '聪明懂事，个性沉稳，对主人绝对忠诚', '德国', '肠胃疾病', '9-11年', '罗威纳犬（Rottweiler），又称为罗威拿犬，罗纳维德犬，原产于德国，AKC分类属于工作犬组。历史上该犬曾用于帮助人类拖拉物品、打斗、护卫等工作，属于多重用途的大型工作犬种。第一次世界大战时，该犬被作为军犬大量使用于战场，20世纪中期逐步被训练为警用犬。目前，该犬是世界各国最受欢迎的警用犬、军用犬之一，受训后可成为优良的家庭护卫犬。', '3.jpg', 19);
+INSERT INTO `pet_product` VALUES (3, '狗狗', '罗威纳犬', 'Rottweiler', '聪明懂事，个性沉稳，对主人绝对忠诚', '德国', '肠胃疾病', '9-11年', '罗威纳犬（Rottweiler），又称为罗威拿犬，罗纳维德犬，原产于德国，AKC分类属于工作犬组。历史上该犬曾用于帮助人类拖拉物品、打斗、护卫等工作，属于多重用途的大型工作犬种。第一次世界大战时，该犬被作为军犬大量使用于战场，20世纪中期逐步被训练为警用犬。目前，该犬是世界各国最受欢迎的警用犬、军用犬之一，受训后可成为优良的家庭护卫犬。', '3.jpg', 1);
 INSERT INTO `pet_product` VALUES (4, '狗狗', '博美犬', 'Pomeranian', '友善亲切、活泼好动、聪明可训、好管闲事', '德国', '气管塌陷、心脏病', '10-16年', '谈及小型玩赏犬及伴侣犬，令人们立刻联想起博美犬，由于博美犬的性格极其外向且活泼可爱，深受广大爱宠人士的喜爱。博美犬原产自德国，属于狐狸犬一种。早期的博美犬体型比较大，而且大多都是白色的毛发。在19世纪以来，经过选拔配种繁育而逐渐发展成为今天小型的犬种。现在的博美犬属于小型玩赏犬种。', '4.jpg', 1);
 INSERT INTO `pet_product` VALUES (5, '狗狗', '比熊犬', 'Bichon Frise', '聪明伶俐、活泼好动 、温和友善', '法国', '眼病、耳病', '12-15岁', '比熊犬（Bichon Frisé）是一种小型常见的宠物狗，1500年，当法国入侵意大利时，法国人被比熊犬白绒绒可爱的样子迷住了，并把它作为战利品带回法国。比熊犬对居住环境的要求很高，经常需要有人陪伴，这点需要特别注意。', '5.jpg', 1);
 INSERT INTO `pet_product` VALUES (6, '狗狗', '阿拉斯加雪橇犬', 'Alaskan Malamute', '非常聪明友好、喜欢吠叫', '美国', '肠胃疾病', '12-15年', '比熊犬性情温顺、敏感、顽皮又不乏可爱。整体外貌而言，比熊犬体型较小，但身体强壮，活泼可爱，长满蓬松毛发的小尾巴竖在背后，长着一双萌动而又好奇的黑眼睛，它的动作优雅，轻灵惹人欢喜。\"', '6.jpg', 1);
@@ -425,7 +437,6 @@ INSERT INTO `pet_product` VALUES (29, '小宠', '安哥拉兔', 'Angora', '温�
 INSERT INTO `pet_product` VALUES (30, '小宠', '小葵花凤头鹦鹉', 'Yellow-crested Cockatoo', '性格比较暴烈，攻击性太强', '澳大利亚、印尼', '呼吸器官、消化器官以及寄生虫疾病', '50年左右', '小葵花凤头鹦鹉极具特色的外表能让它们从众多鸟儿中脱颖而出，不过也因为相貌出众，它们遭到人们的肆意捕捉。一般在城市中，我们不太会见到有很多人饲养它们，但是如果你欣赏过马戏团的表演，你可能就会发现它们也可以成为一名优秀的演员。由于数量锐减，目前小葵花凤头鹦鹉已被列为极危物种。', '30.jpg', 1);
 INSERT INTO `pet_product` VALUES (31, '小宠', '布丁仓鼠', 'Cricetidae', '温顺、胆小', '亚洲', '肠胃病', '1-3年', '布丁仓鼠，别称腮鼠、搬仓鼠、葵鼠，拉丁学名Cricetidae。布丁仓鼠在宠物市场上属于比较常见的品种，由于布丁仓鼠的体色为黄色，而且非常像布丁的那种黄色，所以称为布丁仓鼠，非常受鼠友们的喜爱。', '31.jpg', 1);
 INSERT INTO `pet_product` VALUES (32, '小宠', '指猴', 'aye-aye', '性格温和', '马达加斯加', '肠胃疾病', '23年左右', '在大多数人的印象中，指猴体型非常小，它们的体长不会超过人类一根手指的长度，而由于实在太过迷你，它们甚至可以把人类的手指当成攀爬物紧抱，所以人们便将它们称呼为指猴。但指猴之所以被称为指猴，原因并不在此，指趾特长才是指猴名字由来的真正原因。', '32.jpg', 1);
-INSERT INTO `pet_product` VALUES (33, '小宠', '标准灰龙猫', 'Gray Totoro', '性格开朗；见生人不乱吵', '南美洲安第斯山脉', '腹泻、肠炎', '8-10年', '龙猫中文学名叫栗鼠或绒鼠，又名毛丝鼠，由拉丁名Chinchilla直译过来，是一种史前已存在的啮齿类动物。它的寿命平均为八至十年，最长可达二十年；性格活泼、好动，喜欢跳来跳去，又富好奇心，由于龙猫仔干净、温驯、易打理又无虱，可说是城市人的理想宠物。', '33.jpg', 1);
 INSERT INTO `pet_product` VALUES (34, '小宠', '三线仓鼠', 'Phodopus sungorus', '容易受惊吓，不太亲近人，活泼可爱', '叙利亚', '肠胃疾病', '2-3年', '三线仓鼠也称加卡利亚仓鼠，俗名很多，仓鼠应该属动物类比较好养的宠物之一了，而且三线仓鼠刚养的时候很乖，但会不会咬人，还得看他的个性，就像狗一样，并不是所有的泰迪、比熊性格都好、都不会咬人。', '34.jpg', 1);
 INSERT INTO `pet_product` VALUES (35, '小宠', '奶茶仓鼠', 'Milk Tea Hamster', '生性较懒性格温顺', '加卡利亚', '湿尾症、皮肤病', '2-6年', '奶茶仓鼠（DwarfWinterWhiteRussianHamster）因它背部整体的颜色比较均匀与我们日常所饮的珍珠奶茶色非常相似，故以奶茶仓鼠来命名的。', '35.jpg', 1);
 INSERT INTO `pet_product` VALUES (36, '小宠', '相思鸟', 'Leiothrix argentauris', '性格活泼、生性泼辣', '中国、印度、越南等地', '呼吸器官、消化器官疾病', '4-5年', '相思鸟名字的由来相比不少人都能猜得出来——它们总是成对出现，于是人们便给它们的这种行为做出“对爱情坚贞不二”的拟人化解释，进而给它们取名相思鸟。相思鸟是无危物种，在中国很常见，花鸟市场中也有很多商家会出售这种鸟。除了在中国出现外，相思鸟也见于印度、越南等地。', '36.jpg', 1);
@@ -453,6 +464,7 @@ INSERT INTO `pet_product` VALUES (57, '爬虫', '黑颈乌龟', 'Red-necked pond
 INSERT INTO `pet_product` VALUES (58, '爬虫', '中华石龙子', 'Chinese skink', '性格活跃，适应性强', '中国、越南', '软骨症', '5-6年', '中华石龙子（Chinese skink），比较向往低海拔地区，平原耕作区，1000公尺以下山区及平地草丛。中国化石龙子主要分布在越南、台湾以及中国大陆等地。', '58.jpg', 1);
 INSERT INTO `pet_product` VALUES (59, '爬虫', '火焰龟', 'Painted Turtle', '活泼', '北美大陆', '腐甲', '30年左右', '火焰龟，又叫红肚龟，其实是巴西龟的一个分支，但其美丽的花纹比巴西更胜一筹。价格不贵、形态可爱，同时长大后的成龟以素食为主，成本低廉，所以，火焰龟成为水族爱好者饲养宠物龟的首选。', '59.jpg', 1);
 INSERT INTO `pet_product` VALUES (60, '爬虫', '加拉帕戈斯象龟', 'Galapagos Giant Tortoise', '高傲', '加拉帕戈斯群岛', '腐甲', '200年左右', '加拉帕戈斯象龟是现存最大的陆龟品种，一共有12个亚种，但是无论哪一个亚种，数量均很稀少，有两个亚种也已经确定灭绝，最让人感到可惜的就是2012年去世的“孤单的乔治”他的死亡受到了世界的关注，代表着该亚种最后一只龟的死亡。', '60.jpg', 1);
+INSERT INTO `pet_product` VALUES (63, '狗狗', '测试狗', '123', '无', '无', '无', '无', '无', '352959cf-019c-4957-b568-77e5c7485508-3.jpg', 1);
 
 -- ----------------------------
 -- Table structure for user_auth
@@ -473,8 +485,10 @@ CREATE TABLE `user_auth`  (
 -- ----------------------------
 INSERT INTO `user_auth` VALUES (1, 1, '123', '202cb962ac59075b964b07152d234b70');
 INSERT INTO `user_auth` VALUES (18, 1, 'A', '202cb962ac59075b964b07152d234b70');
+INSERT INTO `user_auth` VALUES (22, 1, 'ABC', '202cb962ac59075b964b07152d234b70');
 INSERT INTO `user_auth` VALUES (19, 1, 'B', '202cb962ac59075b964b07152d234b70');
 INSERT INTO `user_auth` VALUES (17, 1, 'hhh', '202cb962ac59075b964b07152d234b70');
+INSERT INTO `user_auth` VALUES (23, 2, '2088242523246181', NULL);
 
 -- ----------------------------
 -- Table structure for user_info
@@ -487,14 +501,16 @@ CREATE TABLE `user_info`  (
   `receiver_phone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `receiver_address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`user_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 22 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 24 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of user_info
 -- ----------------------------
-INSERT INTO `user_info` VALUES (1, 'pr', '张三', '15852358372', '中南大学');
+INSERT INTO `user_info` VALUES (1, 'pr', '张三1', '15852358372', '中南大学');
 INSERT INTO `user_info` VALUES (17, '123', 'ZHANGSAN', '123', '123');
-INSERT INTO `user_info` VALUES (18, 'HE', '', '', '');
+INSERT INTO `user_info` VALUES (18, 'HE', '一号', '123', '456');
 INSERT INTO `user_info` VALUES (19, 'B', '', '', '');
+INSERT INTO `user_info` VALUES (22, 'ABC', '', '', '');
+INSERT INTO `user_info` VALUES (23, '2088242523246181', '', '', '');
 
 SET FOREIGN_KEY_CHECKS = 1;
