@@ -10,14 +10,16 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  */
 @Configuration
 public class FilePathMapConfig implements WebMvcConfigurer {
-    private static final String StaticResourcePath = "/image/look/**";
+    private static final String staticResourcePath = "/image/look/**";
+    private static final String mapToLocalPath = "file:~/PetImage/";
+
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler(StaticResourcePath).addResourceLocations("file:D:/jpetstoreImage/");
+        registry.addResourceHandler(staticResourcePath).addResourceLocations(mapToLocalPath);
     }
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new AccessLogInterceptor()).addPathPatterns("/**").excludePathPatterns(StaticResourcePath);
+        registry.addInterceptor(new AccessLogInterceptor()).addPathPatterns("/**").excludePathPatterns(staticResourcePath);
     }
 }
