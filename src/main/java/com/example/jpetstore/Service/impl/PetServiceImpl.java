@@ -28,9 +28,8 @@ public class PetServiceImpl implements PetService {
     @Override
     public String getPetList(String category) {
         String englishName = petNameMap(category);
-        // TODO redis
         String json = stringRedisTemplate.opsForValue().get(englishName);
-        if(json==null || json.equals("")){
+        if (json == null || json.equals("")) {
             log.info("缓存未命中");
             json = JSON.toJSONString(petMapper.getPetList(category));
             stringRedisTemplate.opsForValue().set(englishName, json);
@@ -39,21 +38,21 @@ public class PetServiceImpl implements PetService {
         return json;
     }
 
-    private String petNameMap(String chineseName){
-        switch (chineseName){
-            case "狗狗"-> {
+    private String petNameMap(String chineseName) {
+        switch (chineseName) {
+            case "狗狗" -> {
                 return "dog";
             }
-            case "猫咪"->{
+            case "猫咪" -> {
                 return "cat";
             }
-            case "小宠"->{
+            case "小宠" -> {
                 return "bird";
             }
-            case "水族"->{
+            case "水族" -> {
                 return "fish";
             }
-            case "爬虫"->{
+            case "爬虫" -> {
                 return "reptile";
             }
             default -> {

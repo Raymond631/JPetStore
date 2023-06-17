@@ -181,7 +181,7 @@
     <!--        </plugins>-->
     <!--    </build>-->
 
-    <!--war包部署-->
+    <!-- TODO war包部署-->
     <build>
         <!-- 一般为你的项目名，与配置文件中的context-path保持一致 -->
         <finalName>jpetstore</finalName>

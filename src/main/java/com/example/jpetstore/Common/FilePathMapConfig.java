@@ -5,13 +5,11 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-/**
- * 对/image/look/**的资源访问均映射到D:/jpetstoreImage/文件夹
- */
 @Configuration
 public class FilePathMapConfig implements WebMvcConfigurer {
     private static final String staticResourcePath = "/image/look/**";
-    private static final String mapToLocalPath = "file:/home/raymond/PetImage/";
+
+    private static final String mapToLocalPath = "file:/home/raymond/PetImage/";    // TODO 配置本地图片文件夹
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
