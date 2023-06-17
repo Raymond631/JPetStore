@@ -29,7 +29,7 @@ public class JwtUtil {
     /**
      * 令牌过期时间,单位为秒,默认1800秒
      */
-    private static final Long EXPIRE_SECONDS = 3600L;
+    private static final Long EXPIRE_SECONDS = 1800L;
 
 
     /**

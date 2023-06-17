@@ -18,7 +18,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public CommonResponse exceptionHandler(Exception e) {
-        log.error(e.getMessage());
+        log.error(e.getClass() + " | " + e.getMessage());
         return CommonResponse.error(e.getMessage());
     }
 

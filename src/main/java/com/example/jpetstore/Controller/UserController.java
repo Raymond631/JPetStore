@@ -9,6 +9,7 @@ import com.example.jpetstore.POJO.ViewObject.UserVO;
 import com.example.jpetstore.Service.UserService;
 import com.wf.captcha.SpecCaptcha;
 import com.wf.captcha.base.Captcha;
+import io.jsonwebtoken.JwtException;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
@@ -74,7 +75,7 @@ public class UserController {
 
         // 存入redis
         String code = specCaptcha.text().toLowerCase();
-        stringRedisTemplate.opsForValue().set(id, code);
+        stringRedisTemplate.opsForValue().set("CaptchaCode:" + id, code);
         stringRedisTemplate.expire(id, 10, TimeUnit.MINUTES);
     }
 
@@ -82,8 +83,8 @@ public class UserController {
      * 检查验证码
      */
     public boolean checkCode(String id, String code) {
-        String s = stringRedisTemplate.opsForValue().get(id);
-        stringRedisTemplate.delete(id);
+        String s = stringRedisTemplate.opsForValue().get("CaptchaCode:" + id);
+        stringRedisTemplate.delete("CaptchaCode:" + id);
         return code.equalsIgnoreCase(s);
     }
 
@@ -92,7 +93,7 @@ public class UserController {
      * 退出登录由前端直接删除token即可
      */
     @PostMapping("/token")
-    public CommonResponse login(@RequestBody UserVO userVO, HttpServletResponse resp, @CookieValue String CaptchaCode) {
+    public CommonResponse login(@RequestBody UserVO userVO, HttpServletResponse resp, @CookieValue("CaptchaCode") String CaptchaCode) {
         userVO.setId(CaptchaCode);
         if (checkCode(userVO.getId(), userVO.getCode())) {
             // 对象转换
@@ -109,6 +110,10 @@ public class UserController {
                 Cookie cookie = new Cookie("token", token);
                 resp.addCookie(cookie);
 
+                // token存入redis并设置过期时间
+                stringRedisTemplate.opsForValue().set("user:" + token, String.valueOf(userInfo.getUserId()));
+                stringRedisTemplate.expire(token, 30, TimeUnit.MINUTES);
+
                 return CommonResponse.success("登录成功");
             } else {
                 throw new RuntimeException("用户名或密码错误");
@@ -118,11 +123,17 @@ public class UserController {
         }
     }
 
+    @DeleteMapping("/token")
+    public CommonResponse logout(@CookieValue("token") String token) {
+        stringRedisTemplate.delete("user:" + token);
+        return CommonResponse.success("退出成功");
+    }
+
     /**
      * 注册
      */
     @PostMapping("/user")
-    public CommonResponse register(@RequestBody @Validated UserVO userVO, HttpServletResponse resp, @CookieValue String CaptchaCode) {
+    public CommonResponse register(@RequestBody @Validated UserVO userVO, HttpServletResponse resp, @CookieValue("CaptchaCode") String CaptchaCode) {
         userVO.setId(CaptchaCode);
         if (checkCode(userVO.getId(), userVO.getCode())) {
             if (userVO.getPassword().equals(userVO.getRePassword())) {
@@ -139,6 +150,11 @@ public class UserController {
                     String token = JwtUtil.generateToken(JwtUtil.userInfoDOtoMap(userInfo));
                     Cookie cookie = new Cookie("token", token);
                     resp.addCookie(cookie);
+
+                    // token存入redis并设置过期时间
+                    stringRedisTemplate.opsForValue().set("user:" + token, String.valueOf(userInfo.getUserId()));
+                    stringRedisTemplate.expire(token, 30, TimeUnit.MINUTES);
+
                     return CommonResponse.success("注册成功");
                 } else {
                     throw new RuntimeException("该账号已存在,请换一个id注册");
@@ -153,20 +169,34 @@ public class UserController {
 
     @GetMapping("/user/info")
     public CommonResponse getUserInfo(@CookieValue("token") String token) {
+        if (stringRedisTemplate.opsForValue().get("user:" + token) == null) {
+            throw new JwtException("token已过期，请重新登陆");
+        }
         int userId = (int) JwtUtil.resolveToken(token).get("userId");
         return CommonResponse.success(userService.getUserInfo(userId));
     }
 
     @PutMapping("/user/info")
     public CommonResponse updateReceiver(@RequestBody UserInfoDO userInfoDO, @CookieValue("token") String token) {
+        if (stringRedisTemplate.opsForValue().get("user:" + token) == null) {
+            throw new JwtException("token已过期，请重新登陆");
+        }
         int userId = (int) JwtUtil.resolveToken(token).get("userId");
         userInfoDO.setUserId(userId);
         userService.updateReceiver(userInfoDO);
+
+        // token存入redis并设置过期时间
+        stringRedisTemplate.opsForValue().set("user:" + token, String.valueOf(userId));
+        stringRedisTemplate.expire(token, 30, TimeUnit.MINUTES);
+
         return CommonResponse.success("修改成功");
     }
 
     @PutMapping("/user/auth")
     public CommonResponse changePassword(@RequestBody UserVO userVO, @CookieValue("token") String token, @CookieValue String CaptchaCode) {
+        if (stringRedisTemplate.opsForValue().get("user:" + token) == null) {
+            throw new JwtException("token已过期，请重新登陆");
+        }
         userVO.setId(CaptchaCode);
         int userId = (int) JwtUtil.resolveToken(token).get("userId");
         if (checkCode(userVO.getId(), userVO.getCode())) {

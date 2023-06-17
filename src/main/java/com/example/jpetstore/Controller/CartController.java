@@ -4,10 +4,9 @@ import com.example.jpetstore.Common.CommonResponse;
 import com.example.jpetstore.Common.JwtUtil;
 import com.example.jpetstore.POJO.DataObject.CartDO;
 import com.example.jpetstore.Service.CartService;
-import jakarta.servlet.http.HttpSession;
+import io.jsonwebtoken.JwtException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.validation.annotation.Validated;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -20,8 +19,14 @@ public class CartController {
     @Autowired
     private CartService cartService;
 
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
+
     @GetMapping("/cart")
     public CommonResponse selectCartList(@CookieValue("token") String token) {
+        if (stringRedisTemplate.opsForValue().get("user:" + token) == null) {
+            throw new JwtException("token已过期，请重新登陆");
+        }
         int userId = (int) JwtUtil.resolveToken(token).get("userId");
         return CommonResponse.success(cartService.selectCartList(userId));
     }
@@ -32,6 +37,9 @@ public class CartController {
      */
     @PostMapping("/cart")
     public CommonResponse addCartItem(@RequestBody CartDO cartDO, @CookieValue("token") String token) {
+        if (stringRedisTemplate.opsForValue().get("user:" + token) == null) {
+            throw new JwtException("token已过期，请重新登陆");
+        }
         int userId = (int) JwtUtil.resolveToken(token).get("userId");
         cartDO.setUserId(userId);
         cartService.addCartItem(cartDO);
