@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class FilePathMapConfig implements WebMvcConfigurer {
     private static final String staticResourcePath = "/image/look/**";
-    private static final String mapToLocalPath = "file:~/PetImage/";
+    private static final String mapToLocalPath = "file:/home/raymond/PetImage/";
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
