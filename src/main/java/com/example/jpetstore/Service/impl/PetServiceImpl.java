@@ -34,6 +34,8 @@ public class PetServiceImpl implements PetService {
             json = JSON.toJSONString(petMapper.getPetList(category));
             stringRedisTemplate.opsForValue().set(englishName, json);
             stringRedisTemplate.expire(englishName, 10, TimeUnit.MINUTES);
+        } else {
+            log.info("命中缓存");
         }
         return json;
     }

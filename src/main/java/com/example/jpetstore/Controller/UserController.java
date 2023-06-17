@@ -76,7 +76,7 @@ public class UserController {
         // 存入redis
         String code = specCaptcha.text().toLowerCase();
         stringRedisTemplate.opsForValue().set("CaptchaCode:" + id, code);
-        stringRedisTemplate.expire(id, 10, TimeUnit.MINUTES);
+        stringRedisTemplate.expire(id, 5, TimeUnit.MINUTES);
     }
 
     /**
