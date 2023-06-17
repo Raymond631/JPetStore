@@ -12,6 +12,12 @@ import com.wf.captcha.base.Captcha;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
+import me.zhyd.oauth.exception.AuthException;
+import me.zhyd.oauth.model.AuthCallback;
+import me.zhyd.oauth.model.AuthResponse;
+import me.zhyd.oauth.model.AuthUser;
+import me.zhyd.oauth.request.AuthRequest;
+import me.zhyd.oauth.utils.AuthStateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.util.DigestUtils;
@@ -26,8 +32,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * @author Raymond Li
  * @create 2023-04-01 0:02
- * @description
- * TODO 第三方登录
+ * @description TODO 第三方登录
  * TODO Redis
  * TODO 文件服务器
  * TODO 下单事务操作
@@ -180,6 +185,48 @@ public class UserController {
             }
         } else {
             throw new RuntimeException("验证码错误");
+        }
+    }
+
+    /**
+     * 眺往第三方登录界面
+     */
+    @GetMapping("/render/{source}")
+    public void renderAuth(@PathVariable("source") String source, HttpServletResponse response) throws IOException {
+        AuthRequest authRequest = userService.getAuthRequest(source);
+        response.sendRedirect(authRequest.authorize(AuthStateUtils.createState()));
+    }
+
+    /**
+     * 回调，取得授权码（callback）
+     * 用授权码去获取令牌，再用令牌去获取用户信息（response）
+     */
+    @RequestMapping("/callback/{source}")
+    public void login(@PathVariable("source") String source, AuthCallback callback, HttpServletResponse resp) throws IOException {
+        AuthRequest authRequest = userService.getAuthRequest(source);
+        AuthResponse<AuthUser> response = authRequest.login(callback);
+        if (response.ok()) {
+            UserAuthDO userAuthDO = new UserAuthDO();
+            userAuthDO.setAccount(response.getData().getUuid());
+            switch (source) {
+                case "alipay":
+                    userAuthDO.setLoginType(2);
+                    break;
+                case "weibo":
+                    userAuthDO.setLoginType(3);
+                    break;
+                default:
+                    throw new AuthException("未获取到有效的Auth配置");
+            }
+            UserInfoDO userInfo = userService.auth(userAuthDO);
+            String token = JwtUtil.generateToken(JwtUtil.userInfoDOtoMap(userInfo));
+
+            Cookie cookie = new Cookie("token", token);
+            resp.addCookie(cookie);
+            System.out.println(cookie);
+            resp.sendRedirect("http://localhost:8888/jpetstore/OrderManage.html");
+        } else {
+            throw new RuntimeException(response.getMsg());
         }
     }
 }
