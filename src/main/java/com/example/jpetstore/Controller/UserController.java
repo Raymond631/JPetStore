@@ -193,7 +193,7 @@ public class UserController {
     }
 
     @PutMapping("/user/auth")
-    public CommonResponse changePassword(@RequestBody UserVO userVO, @CookieValue("token") String token, @CookieValue String CaptchaCode) {
+    public CommonResponse changePassword(@RequestBody UserVO userVO, @CookieValue("token") String token, @CookieValue("CaptchaCode") String CaptchaCode) {
         if (stringRedisTemplate.opsForValue().get("user:" + token) == null) {
             throw new JwtException("token已过期，请重新登陆");
         }
