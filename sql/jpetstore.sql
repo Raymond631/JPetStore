@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : localhost_3306
+ Source Server         : 192.168.3.195_3306
  Source Server Type    : MySQL
- Source Server Version : 80032 (8.0.32)
- Source Host           : localhost:3306
+ Source Server Version : 80033
+ Source Host           : 192.168.3.195:3306
  Source Schema         : jpetstore
 
  Target Server Type    : MySQL
- Target Server Version : 80032 (8.0.32)
+ Target Server Version : 80033
  File Encoding         : 65001
 
- Date: 15/06/2023 10:03:14
+ Date: 17/06/2023 12:09:06
 */
 
 SET NAMES utf8mb4;
@@ -33,7 +33,7 @@ CREATE TABLE `cart`  (
   INDEX `cart_ibfk_3`(`user_id` ASC) USING BTREE,
   CONSTRAINT `cart_ibfk_2` FOREIGN KEY (`item_id`) REFERENCES `pet_item` (`item_id`) ON DELETE CASCADE ON UPDATE RESTRICT,
   CONSTRAINT `cart_ibfk_3` FOREIGN KEY (`user_id`) REFERENCES `user_info` (`user_id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 26 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 27 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of cart
@@ -58,30 +58,11 @@ CREATE TABLE `order_item`  (
   INDEX `product_id`(`product_id` ASC) USING BTREE,
   INDEX `order_item_ibfk_4`(`order_id` ASC) USING BTREE,
   CONSTRAINT `order_item_ibfk_4` FOREIGN KEY (`order_id`) REFERENCES `order_main` (`order_id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 40 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 41 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of order_item
 -- ----------------------------
-INSERT INTO `order_item` VALUES (11, 8, 8, 2, '2.jpg', '哈士奇', '幼年雌性', 762.98, 5);
-INSERT INTO `order_item` VALUES (12, 9, 1, 1, '1.jpg', '金毛', '成年雄性', 8807.95, 5);
-INSERT INTO `order_item` VALUES (13, 10, 8, 2, '2.jpg', '哈士奇', '幼年雌性', 762.98, 5);
-INSERT INTO `order_item` VALUES (14, 11, 1, 1, '1.jpg', '金毛', '成年雄性', 8807.95, 5);
-INSERT INTO `order_item` VALUES (15, 12, 9, 3, '3.jpg', '罗威纳犬', '成年雄性', 674.43, 1);
-INSERT INTO `order_item` VALUES (16, 13, 8, 2, '2.jpg', '哈士奇', '幼年雌性', 762.98, 5);
-INSERT INTO `order_item` VALUES (17, 14, 1, 1, '1.jpg', '金毛', '成年雄性', 8807.95, 5);
-INSERT INTO `order_item` VALUES (18, 14, 2, 1, '1.jpg', '金毛', '成年雌性', 9373.79, 2);
-INSERT INTO `order_item` VALUES (19, 15, 9, 3, '3.jpg', '罗威纳犬', '成年雄性', 674.43, 1);
-INSERT INTO `order_item` VALUES (22, 18, 1, 1, '1.jpg', '金毛', '雄性', 10.58, 557);
-INSERT INTO `order_item` VALUES (23, 19, 1, 1, '1.jpg', '金毛', '成年雄性', 8807.95, 1);
-INSERT INTO `order_item` VALUES (24, 20, 1, 1, '1.jpg', '金毛', '成年雄性', 8807.95, 5);
-INSERT INTO `order_item` VALUES (25, 21, 16, 4, '4.jpg', '博美犬', '幼年雌性', 6253.76, 1);
-INSERT INTO `order_item` VALUES (26, 22, 69, 18, '18.jpg', '暹罗猫', '成年雄性', 7861.74, 1);
-INSERT INTO `order_item` VALUES (27, 23, 246, 63, '352959cf-019c-4957-b568-77e5c7485508-3.jpg', '测试狗', '雄性', 10.90, 1);
-INSERT INTO `order_item` VALUES (28, 24, 1, 1, '0449fb40-9b5a-4090-9c59-d4305faebe74-1.jpg', '金毛', '成年雄性1', 8807.95, 3);
-INSERT INTO `order_item` VALUES (29, 25, 246, 63, '352959cf-019c-4957-b568-77e5c7485508-3.jpg', '测试狗', '雄性', 10.90, 9);
-INSERT INTO `order_item` VALUES (38, 34, 5, 2, '2.jpg', '哈士奇', '成年雄性', 2819.68, 8);
-INSERT INTO `order_item` VALUES (39, 35, 25, 7, '7.jpg', '拉布拉多猎犬', '成年雄性', 7094.02, 1);
 
 -- ----------------------------
 -- Table structure for order_main
@@ -101,29 +82,11 @@ CREATE TABLE `order_main`  (
   PRIMARY KEY (`order_id`) USING BTREE,
   INDEX `order_main_ibfk_1`(`user_id` ASC) USING BTREE,
   CONSTRAINT `order_main_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user_info` (`user_id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 36 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 37 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of order_main
 -- ----------------------------
-INSERT INTO `order_main` VALUES (8, 17, '2023-04-01 19:07:51', 3814.90, '微信支付', '李四', '12', '23', 1, 6);
-INSERT INTO `order_main` VALUES (9, 17, '2023-04-01 19:07:51', 44039.75, '微信支付', '李四', '12', '23', 18, 5);
-INSERT INTO `order_main` VALUES (10, 17, '2023-04-01 19:09:58', 3814.90, '支付宝', 'ZHANGSAN', '123', '123', 1, 5);
-INSERT INTO `order_main` VALUES (11, 17, '2023-04-01 19:09:58', 44039.75, '支付宝', 'ZHANGSAN', '123', '123', 18, 3);
-INSERT INTO `order_main` VALUES (12, 17, '2023-04-01 19:09:58', 674.43, '支付宝', 'ZHANGSAN', '123', '123', 19, 3);
-INSERT INTO `order_main` VALUES (13, 17, '2023-04-01 19:11:10', 3814.90, '货到付款', 'ZHANGSAN123', '123', '123', 1, 3);
-INSERT INTO `order_main` VALUES (14, 17, '2023-04-01 19:11:10', 62787.33, '货到付款', 'ZHANGSAN123', '123', '123', 18, 1);
-INSERT INTO `order_main` VALUES (15, 17, '2023-04-01 19:11:10', 674.43, '货到付款', 'ZHANGSAN123', '123', '123', 19, 3);
-INSERT INTO `order_main` VALUES (18, 17, '2023-04-01 19:07:51', 45.87, '微信支付', '张三', '158', '中南', 1, 1);
-INSERT INTO `order_main` VALUES (19, 18, '2023-04-17 16:15:22', 8807.95, '微信支付', '一号', '123', '456', 1, 1);
-INSERT INTO `order_main` VALUES (20, 17, '2023-04-17 16:23:01', 44039.75, '支付宝', '二号', '123', '123456', 1, 2);
-INSERT INTO `order_main` VALUES (21, 17, '2023-04-17 16:28:45', 6253.76, '微信支付', '三号', '123', '123', 1, 3);
-INSERT INTO `order_main` VALUES (22, 17, '2023-04-17 16:55:00', 7861.74, '微信支付', '五号', '123', '123', 1, 3);
-INSERT INTO `order_main` VALUES (23, 17, '2023-04-17 17:08:12', 10.90, '微信支付', 'ZHANGSAN', '123', '123', 1, 1);
-INSERT INTO `order_main` VALUES (24, 17, '2023-04-17 17:09:16', 26423.85, '微信支付', 'ZHANGSAN', '123', '123', 1, 1);
-INSERT INTO `order_main` VALUES (25, 17, '2023-04-17 17:09:56', 98.10, '微信支付', 'ZHANGSAN', '123', '123', 1, 1);
-INSERT INTO `order_main` VALUES (34, 17, '2023-04-17 17:28:21', 22557.44, '货到付款', 'WU', '123', '123123', 1, 3);
-INSERT INTO `order_main` VALUES (35, 17, '2023-04-17 18:08:10', 7094.02, '微信支付', 'ZHANGSAN', '123', '123', 1, 3);
 
 -- ----------------------------
 -- Table structure for pet_item
@@ -143,7 +106,7 @@ CREATE TABLE `pet_item`  (
 -- ----------------------------
 -- Records of pet_item
 -- ----------------------------
-INSERT INTO `pet_item` VALUES (1, 1, '成年雄性1', 8807.95, 547);
+INSERT INTO `pet_item` VALUES (1, 1, '成年雄性', 8807.95, 547);
 INSERT INTO `pet_item` VALUES (2, 1, '成年雌性', 9373.79, 624);
 INSERT INTO `pet_item` VALUES (3, 1, '幼年雄性', 1201.45, 830);
 INSERT INTO `pet_item` VALUES (4, 1, '幼年雌性', 3965.29, 773);
@@ -168,7 +131,7 @@ INSERT INTO `pet_item` VALUES (22, 6, '成年雌性', 7835.98, 565);
 INSERT INTO `pet_item` VALUES (23, 6, '幼年雄性', 6551.72, 662);
 INSERT INTO `pet_item` VALUES (24, 6, '幼年雌性', 2478.28, 700);
 INSERT INTO `pet_item` VALUES (25, 7, '成年雄性', 7094.02, 177);
-INSERT INTO `pet_item` VALUES (26, 7, '成年雌性', 808.45, 556);
+INSERT INTO `pet_item` VALUES (26, 7, '成年雌性', 808.45, 554);
 INSERT INTO `pet_item` VALUES (27, 7, '幼年雄性', 7298.23, 566);
 INSERT INTO `pet_item` VALUES (28, 7, '幼年雌性', 5535.81, 362);
 INSERT INTO `pet_item` VALUES (29, 8, '成年雄性', 7836.61, 913);
@@ -379,7 +342,6 @@ INSERT INTO `pet_item` VALUES (237, 60, '成年雄性', 2385.46, 817);
 INSERT INTO `pet_item` VALUES (238, 60, '成年雌性', 8397.39, 821);
 INSERT INTO `pet_item` VALUES (239, 60, '幼年雄性', 6164.43, 814);
 INSERT INTO `pet_item` VALUES (240, 60, '幼年雌性', 5934.63, 365);
-INSERT INTO `pet_item` VALUES (246, 63, '雄性', 10.90, 0);
 
 -- ----------------------------
 -- Table structure for pet_product
@@ -405,7 +367,7 @@ CREATE TABLE `pet_product`  (
 -- ----------------------------
 -- Records of pet_product
 -- ----------------------------
-INSERT INTO `pet_product` VALUES (1, '狗狗', '金毛', 'Golden Retriever', '活泼、忠诚、憨厚、友善', '苏格兰', '髋关节发育不良', '10-15年', '金毛巡回猎犬（Golden Retriever），原产于苏格兰，祖先有雪达犬血统，因有较强的游泳能力，并能把猎物从水中叼回给主人，故最初用作狩猎及巡回被枪猎射落的水鸟，AKC分类属于运动犬组。', '77ab8828-f00a-4e0c-bd8b-eb363b7751a7-2.jpg', 1);
+INSERT INTO `pet_product` VALUES (1, '狗狗', '金毛', 'Golden Retriever', '活泼、忠诚、憨厚、友善', '苏格兰', '髋关节发育不良', '10-15年', '金毛巡回猎犬（Golden Retriever），原产于苏格兰，祖先有雪达犬血统，因有较强的游泳能力，并能把猎物从水中叼回给主人，故最初用作狩猎及巡回被枪猎射落的水鸟，AKC分类属于运动犬组。', '1.jpg', 1);
 INSERT INTO `pet_product` VALUES (2, '狗狗', '哈士奇', 'Siberian Huskiy', '聪明机灵、极度热情、神经质', '俄罗斯', '肠胃疾病', '9-15年', '西伯利亚雪橇犬（Siberian Huskiy)又称为哈士奇，原产于西伯利亚地区，AKC分类属于工作犬组。西伯利亚雪橇犬是东西伯利亚游牧民族伊奴特乔克治族饲养的犬种，长期担任拉雪橇。引导驯鹿及守卫等工作。20世纪初，被毛皮商人带至美国，多年来，一直成为举世闻名的拉雪橇竞赛冠军犬。目前，西伯利亚雪橇犬多被用作伴侣犬。家庭玩赏犬。', '2.jpg', 1);
 INSERT INTO `pet_product` VALUES (3, '狗狗', '罗威纳犬', 'Rottweiler', '聪明懂事，个性沉稳，对主人绝对忠诚', '德国', '肠胃疾病', '9-11年', '罗威纳犬（Rottweiler），又称为罗威拿犬，罗纳维德犬，原产于德国，AKC分类属于工作犬组。历史上该犬曾用于帮助人类拖拉物品、打斗、护卫等工作，属于多重用途的大型工作犬种。第一次世界大战时，该犬被作为军犬大量使用于战场，20世纪中期逐步被训练为警用犬。目前，该犬是世界各国最受欢迎的警用犬、军用犬之一，受训后可成为优良的家庭护卫犬。', '3.jpg', 1);
 INSERT INTO `pet_product` VALUES (4, '狗狗', '博美犬', 'Pomeranian', '友善亲切、活泼好动、聪明可训、好管闲事', '德国', '气管塌陷、心脏病', '10-16年', '谈及小型玩赏犬及伴侣犬，令人们立刻联想起博美犬，由于博美犬的性格极其外向且活泼可爱，深受广大爱宠人士的喜爱。博美犬原产自德国，属于狐狸犬一种。早期的博美犬体型比较大，而且大多都是白色的毛发。在19世纪以来，经过选拔配种繁育而逐渐发展成为今天小型的犬种。现在的博美犬属于小型玩赏犬种。', '4.jpg', 1);
@@ -464,7 +426,6 @@ INSERT INTO `pet_product` VALUES (57, '爬虫', '黑颈乌龟', 'Red-necked pond
 INSERT INTO `pet_product` VALUES (58, '爬虫', '中华石龙子', 'Chinese skink', '性格活跃，适应性强', '中国、越南', '软骨症', '5-6年', '中华石龙子（Chinese skink），比较向往低海拔地区，平原耕作区，1000公尺以下山区及平地草丛。中国化石龙子主要分布在越南、台湾以及中国大陆等地。', '58.jpg', 1);
 INSERT INTO `pet_product` VALUES (59, '爬虫', '火焰龟', 'Painted Turtle', '活泼', '北美大陆', '腐甲', '30年左右', '火焰龟，又叫红肚龟，其实是巴西龟的一个分支，但其美丽的花纹比巴西更胜一筹。价格不贵、形态可爱，同时长大后的成龟以素食为主，成本低廉，所以，火焰龟成为水族爱好者饲养宠物龟的首选。', '59.jpg', 1);
 INSERT INTO `pet_product` VALUES (60, '爬虫', '加拉帕戈斯象龟', 'Galapagos Giant Tortoise', '高傲', '加拉帕戈斯群岛', '腐甲', '200年左右', '加拉帕戈斯象龟是现存最大的陆龟品种，一共有12个亚种，但是无论哪一个亚种，数量均很稀少，有两个亚种也已经确定灭绝，最让人感到可惜的就是2012年去世的“孤单的乔治”他的死亡受到了世界的关注，代表着该亚种最后一只龟的死亡。', '60.jpg', 1);
-INSERT INTO `pet_product` VALUES (63, '狗狗', '测试狗', '123', '无', '无', '无', '无', '无', '352959cf-019c-4957-b568-77e5c7485508-3.jpg', 1);
 
 -- ----------------------------
 -- Table structure for user_auth
@@ -478,7 +439,7 @@ CREATE TABLE `user_auth`  (
   PRIMARY KEY (`login_type`, `account`) USING BTREE,
   INDEX `user_id`(`user_id` ASC) USING BTREE,
   CONSTRAINT `user_auth_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user_info` (`user_id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of user_auth
@@ -501,7 +462,7 @@ CREATE TABLE `user_info`  (
   `receiver_phone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `receiver_address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`user_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 24 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 24 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of user_info
